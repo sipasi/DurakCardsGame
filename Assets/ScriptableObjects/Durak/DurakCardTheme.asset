@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554ce9db9bd704f40bfe5a3b8b901772, type: 3}
+  m_Name: DurakCardTheme
+  m_EditorClassIdentifier: 
+  faces: {fileID: 11400000, guid: 6a9cb22103a05ec469ed67012e2575e5, type: 2}
+  backs: {fileID: 11400000, guid: ba4662d3d01c1dc4ebc39ffa99f73f09, type: 2}
+  backIndex: 0

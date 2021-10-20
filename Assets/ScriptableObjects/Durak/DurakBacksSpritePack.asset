@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f6565e0857ad74da8a97a087af0d88, type: 3}
+  m_Name: DurakBacksSpritePack
+  m_EditorClassIdentifier: 
+  collection:
+  - {fileID: 4651979625543809409, guid: 4b8452470a9c6a442992844b9659390a, type: 3}
+  - {fileID: -1846090893293454605, guid: 4b8452470a9c6a442992844b9659390a, type: 3}
+  - {fileID: 3956876447573030973, guid: 4b8452470a9c6a442992844b9659390a, type: 3}
+  - {fileID: -2433198192703193335, guid: 4b8452470a9c6a442992844b9659390a, type: 3}
+  - {fileID: -794316736105886363, guid: 4b8452470a9c6a442992844b9659390a, type: 3}
+  - {fileID: -658893071663803703, guid: 4b8452470a9c6a442992844b9659390a, type: 3}
+  - {fileID: -9023624673604608408, guid: 4b8452470a9c6a442992844b9659390a, type: 3}
+  - {fileID: -4593731306274379027, guid: 4b8452470a9c6a442992844b9659390a, type: 3}
+  - {fileID: 5752508236098671485, guid: 4b8452470a9c6a442992844b9659390a, type: 3}
+  - {fileID: 4201204335310624672, guid: 4b8452470a9c6a442992844b9659390a, type: 3}
+  - {fileID: -837436464875232882, guid: 4b8452470a9c6a442992844b9659390a, type: 3}
+  - {fileID: 5923372943806480191, guid: 4b8452470a9c6a442992844b9659390a, type: 3}
+  - {fileID: -4722196980637623853, guid: 4b8452470a9c6a442992844b9659390a, type: 3}
+  - {fileID: -911015882460527006, guid: 4b8452470a9c6a442992844b9659390a, type: 3}
+  - {fileID: -8178314185957204229, guid: 4b8452470a9c6a442992844b9659390a, type: 3}
