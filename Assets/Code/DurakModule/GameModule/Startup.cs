@@ -8,7 +8,7 @@ namespace ProjectCard.DurakModule.GameModule
     public class Startup : MonoBehaviour
     {
         [SerializeField] private ScriptableSaveService saveService;
-        [SerializeField] private DurakGameLoader gameLoader;
+        [SerializeField] private DurakGame gameLoader;
 
         [SerializeField] private GameLoadProperties loadProperties;
 

@@ -41,7 +41,7 @@ namespace ProjectCard.DurakModule.SaveModule
 
             Debug.Log(message);
 
-            foreach (var loadable in saveEntities.GetLoadableEntities())
+            foreach (var loadable in saveEntities)
             {
                 loadable.Load(saveService);
             }

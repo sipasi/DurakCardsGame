@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace ProjectCard.DurakModule.GameModule
 {
-    public class DurakGameLoader : GameLoader
+    public class DurakGame : GameLoader
     {
         [Header("State Machine")]
         [SerializeField] private DurakGameStateMachine stateMachine;
@@ -32,17 +32,15 @@ namespace ProjectCard.DurakModule.GameModule
         }
 
 
-        public override async UniTask LoadNewGame()
+        public override UniTask LoadNewGame()
         {
-            await UniTask.Delay(millisecondsDelay: 1000);
-
             newGameLoader.Load();
+
+            return UniTask.CompletedTask;
         }
 
         public override async UniTask LoadSavedGame()
         {
-            await UniTask.Delay(millisecondsDelay: 1000);
-
             await savedGameLoader.Load();
         }
 

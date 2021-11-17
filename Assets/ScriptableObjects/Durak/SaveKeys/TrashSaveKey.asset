@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf76f9393a2cf9f489b5e32b91380cca, type: 3}
+  m_Script: {fileID: 11500000, guid: f479bc2b62efee04b905efaef4a98dc3, type: 3}
   m_Name: TrashSaveKey
   m_EditorClassIdentifier: 
-  text: cd58e461-8dce-4850-9d0b-65d0b6b21196
+  text: 168613d7-c24f-40aa-a825-792fe0dcc08b

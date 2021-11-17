@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf76f9393a2cf9f489b5e32b91380cca, type: 3}
+  m_Script: {fileID: 11500000, guid: f479bc2b62efee04b905efaef4a98dc3, type: 3}
   m_Name: GameplayDataSaveKey
   m_EditorClassIdentifier: 
-  text: 60c67d7b-491b-45f9-a41f-67ab53b05a76
+  text: e049c3bc-0266-4d1d-ac2b-e1a906a6426c

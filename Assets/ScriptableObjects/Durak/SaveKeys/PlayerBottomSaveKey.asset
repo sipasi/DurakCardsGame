@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d1ea21271723fc41aec3c4501b24c9d, type: 3}
-  m_Name: BattleResultInfo
+  m_Script: {fileID: 11500000, guid: f479bc2b62efee04b905efaef4a98dc3, type: 3}
+  m_Name: PlayerBottomSaveKey
   m_EditorClassIdentifier: 
-  key: {fileID: 11400000, guid: 93faa7ab923922e4fa5d78c1e371c6b7, type: 2}
-  winnerDefined: 0
-  isAttakerWinner: 0
+  text: 6e391fb9-b595-458c-a104-ec0689de2819

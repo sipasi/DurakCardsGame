@@ -29,7 +29,7 @@ namespace ProjectCard.DurakModule.SaveModule
             saveService.Store(saveInfoKey.Key, new SaveInfo("Durak"));
             saveService.Store(gameplayDataKey.Key, new GameplayData() { GameState = DurakGameState.PlayerAction });
 
-            foreach (var savable in saveEntities.GetSavableEntities())
+            foreach (var savable in saveEntities)
             {
                 savable.Save(saveService);
             }

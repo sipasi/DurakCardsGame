@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf76f9393a2cf9f489b5e32b91380cca, type: 3}
+  m_Script: {fileID: 11500000, guid: f479bc2b62efee04b905efaef4a98dc3, type: 3}
   m_Name: BattleResultInfoSaveKey
   m_EditorClassIdentifier: 
-  text: c8ca5cd9-dc56-49fd-be33-720733fb633e
+  text: 9994d1b0-3d08-4e5e-b8e3-5561d2806918

@@ -1,8 +1,11 @@
 ﻿
+using System;
+
 using Cysharp.Threading.Tasks;
 
 using ProjectCard.DurakModule.SaveModule;
 using ProjectCard.Shared.GameModule;
+using ProjectCard.Shared.SaveModule;
 using ProjectCard.Shared.ServiceModule.SaveModule;
 using ProjectCard.Shared.ServiceModule.SceneModule;
 using ProjectCard.Shared.WindowModule;
@@ -20,10 +23,11 @@ namespace ProjectCard.Shared.SceneModule
         [SerializeField] private Button button;
 
         [Header("Save")]
-        [SerializeField] private TypeSaveService saveService;
+        [SerializeField] private GuidSaveService saveService;
+        [SerializeField] private SaveKey saveInfoKey;
 
-        [Header("Game")]
-        [SerializeField] private GameLoader game;
+        [Header("Load")]
+        [SerializeField] private GameLoadProperties loadProperties;
 
         [Header("Scnes")]
         [SerializeField] private SceneLoadingService sceneLoadingService;
@@ -45,26 +49,28 @@ namespace ProjectCard.Shared.SceneModule
 
             var result = await ShowMessageIfSaveContains();
 
+            loadProperties.LoadType = result == DialogResult.Ok
+                ? GameLoadType.Saved
+                : GameLoadType.New;
+
             await sceneLoadingService.Load(loadScreenScene.ScenePath, LoadSceneMode.Single);
 
             var background = await sceneLoadingService.LoadInBackground(gameScene.ScenePath, LoadSceneMode.Single);
-
-            UniTask loading = result == DialogResult.Ok
-                ? game.LoadSavedGame()
-                : game.LoadNewGame();
-
-            await loading;
+             
+            await UniTask.Delay(1000);
 
             background.Activate();
         }
         private async UniTask<DialogResult> ShowMessageIfSaveContains()
         {
-            if (saveService.Contains<SaveInfo>() is false)
+            Guid key = saveInfoKey.Key;
+
+            if (saveService.Contains(key) is false)
             {
                 return DialogResult.Cancel;
             }
 
-            SaveInfo save = saveService.Restore<SaveInfo>();
+            SaveInfo save = saveService.Restore<SaveInfo>(key);
 
             IDialogWindowProperties properties = loadSavedGameDialog.Propeties;
 

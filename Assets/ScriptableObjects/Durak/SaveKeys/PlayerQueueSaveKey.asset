@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf76f9393a2cf9f489b5e32b91380cca, type: 3}
+  m_Script: {fileID: 11500000, guid: f479bc2b62efee04b905efaef4a98dc3, type: 3}
   m_Name: PlayerQueueSaveKey
   m_EditorClassIdentifier: 
-  text: fa08830f-a1fe-4ef2-a8df-e48a2b958eeb
+  text: e8d80e4c-30cf-4743-b8c8-416800b0e804
