@@ -5,8 +5,13 @@
         GameStart,
         GameEnd,
 
+        BattleFirstStart,
         BattleStart,
+        BattleAttackerWinner,
+        BattleDefenderWinner,
         BattleEnd,
+
+        Toss,
 
         PlayerAction,
         GameRestart,

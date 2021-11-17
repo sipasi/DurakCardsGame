@@ -1,7 +1,6 @@
 ﻿
 using ProjectCard.DurakModule.BattleModule.ScriptableModule;
-using ProjectCard.DurakModule.GameModule;
-using ProjectCard.DurakModule.PlayerModule;
+using ProjectCard.DurakModule.EntityModule;
 
 using UnityEngine;
 
@@ -11,27 +10,16 @@ namespace ProjectCard.DurakModule.HandlerModule
     public class PassSelectionHandler : MonoBehaviour
     {
         [Header("Players")]
-        [SerializeField] private PlayerQueue playerQueue;
+        [SerializeField] private PlayerQueueEntity playerQueue;
 
         [Header("Shared")]
-        [SerializeField] private SharedEntities shared;
-        [SerializeField] private BattleResultInfo result;
-
+        [SerializeField] private BoardEntity board;
 
         public bool Handle()
         {
-            if (shared.Board.IsEmpty)
+            if (board.Entity.IsEmpty)
             {
                 return false;
-            }
-
-            if (playerQueue.IsAttackerQueue)
-            {
-                result.SetDefenderAsBattleWinner();
-            }
-            else
-            {
-                result.SetAttackerAsBattleWinner();
             }
 
             return true;

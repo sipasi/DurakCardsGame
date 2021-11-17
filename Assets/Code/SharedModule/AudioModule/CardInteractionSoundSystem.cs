@@ -41,10 +41,10 @@ namespace ProjectCard.Shared.AudioModule
         private struct AudioEventPair
         {
             [SerializeField] private AudioClip audio;
-            [SerializeField] private EmptyAction @event;
+            [SerializeField] private ScriptableAction @event;
 
             public AudioClip Clip => audio;
-            public EmptyAction Event => @event;
+            public ScriptableAction Event => @event;
         }
     }
 }

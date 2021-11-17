@@ -8,7 +8,7 @@ namespace ProjectCard.DurakModule.PlayerModule
     public class RealInputCardSelector : CardSelector
     {
         [SerializeField] private ScriptableAction<ICard> cardClicked;
-        [SerializeField] private EmptyAction passClicked;
+        [SerializeField] private ScriptableAction passClicked;
 
         public override void Begin()
         {

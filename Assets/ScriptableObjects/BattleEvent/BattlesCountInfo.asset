@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b76c98f80aa3b44835d63248836943, type: 3}
   m_Name: BattlesCountInfo
   m_EditorClassIdentifier: 
+  key: {fileID: 11400000, guid: 92fb23c1e2c25d7458b3164872daf907, type: 2}
+  battlesCount: 0

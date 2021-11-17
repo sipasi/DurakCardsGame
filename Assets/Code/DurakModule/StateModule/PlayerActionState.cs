@@ -1,6 +1,8 @@
 ﻿
+using ProjectCard.DurakModule.EntityModule;
 using ProjectCard.DurakModule.HandlerModule;
 using ProjectCard.DurakModule.PlayerModule;
+using ProjectCard.DurakModule.ViewModule;
 using ProjectCard.Shared.CardModule;
 using ProjectCard.Shared.EventModule;
 
@@ -11,17 +13,21 @@ namespace ProjectCard.DurakModule.StateModule
     public class PlayerActionState : DurakState
     {
         [Header("Players")]
-        [SerializeField] private PlayerQueue playerQueue;
+        [SerializeField] private PlayerQueueEntity playerQueue;
+        [SerializeField] private PlayerSelectorList playerSelectorList;
 
         [Header("Handlers")]
         [SerializeField] private CardSelectionHandler selectionHandler;
         [SerializeField] private PassSelectionHandler passSelectionHandler;
 
-        [Header("Events")]
-        [SerializeField] private ScriptableAction<PlayerInfo, ICard> cardSelected;
-        [SerializeField] private ScriptableAction<PlayerInfo> passAction;
+        [Header("Views")]
+        [SerializeField] private BoardPlaces places;
 
-        private PlayerInfo current;
+        [Header("Events")]
+        [SerializeField] private ScriptableAction<IPlayer, ICard> cardSelected;
+        [SerializeField] private ScriptableAction<IPlayer> passAction;
+
+        private IPlayer current;
 
         public override void Enter()
         {
@@ -30,9 +36,9 @@ namespace ProjectCard.DurakModule.StateModule
             cardSelected.Action += OnCardSelected;
             passAction.Action += OnPass;
 
-            current = playerQueue.Current;
+            current = playerQueue.Entity.Current;
 
-            CardSelector selector = current.Selector;
+            ICardSelector selector = playerSelectorList.Get(current.Selector);
 
             selector.Begin();
         }
@@ -43,27 +49,33 @@ namespace ProjectCard.DurakModule.StateModule
             cardSelected.Action -= OnCardSelected;
             passAction.Action -= OnPass;
 
-            CardSelector selector = current.Selector;
+            ICardSelector selector = playerSelectorList.Get(current.Selector);
 
             selector.End();
 
             current = null;
         }
 
-        private async void OnCardSelected(PlayerInfo player, ICard card)
+        private async void OnCardSelected(IPlayer player, ICard card)
         {
             if (await selectionHandler.Handle(card) is false)
             {
                 return;
             }
 
-            machine.Fire(DurakGameState.PlayerAction);
+            playerQueue.Entity.SwitchActionType();
+
+            NextState(DurakGameState.PlayerAction);
         }
-        private void OnPass(PlayerInfo player)
+        private void OnPass(IPlayer player)
         {
             if (passSelectionHandler.Handle() is false) return;
 
-            machine.Fire(DurakGameState.BattleEnd);
+            DurakGameState state = playerQueue.Entity.IsAttackerQueue 
+                ? DurakGameState.BattleDefenderWinner 
+                : DurakGameState.Toss;
+
+            NextState(state);
         }
     }
 }

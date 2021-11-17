@@ -1,52 +1,31 @@
-﻿
-using ProjectCard.DurakModule.CardModule;
-using ProjectCard.DurakModule.CollectionModule;
-using ProjectCard.DurakModule.PlayerModule;
-using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.ScriptableModule;
+﻿using ProjectCard.DurakModule.SaveModule;
+using ProjectCard.Shared.GameModule;
+using ProjectCard.Shared.ServiceModule.SaveModule;
 
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace ProjectCard.DurakModule.GameModule
 {
     public class Startup : MonoBehaviour
     {
-        [Header("Card Property")]
-        [SerializeField] private CardEntity cardPrefab;
-        [SerializeField] private Transform cardParent;
-        [SerializeField] private CardTheme cardTheme;
+        [SerializeField] private ScriptableSaveService saveService;
+        [SerializeField] private DurakGameLoader gameLoader; 
 
-        [Header("Deck")]
-        [SerializeField] private PlayingDeckSize deckSize;
-
-        [Header("Collections")]
-        [SerializeField] private CardEntityDataMap pairsMap;
-
-        [Header("Players")]
-        [SerializeField] private PlayerInfo[] players;
-        [SerializeField] private PlayerStorage playerStorage;
-        [SerializeField] private PlayerQueue playerQueue;
-
-        [Header("Shared")]
-        [SerializeField] private SharedEntities shared;
-
-        [Header("Events")]
-        [SerializeField] private UnityEvent StartupCompleted;
+        [SerializeField] private GameLoadProperties loadProperties;
 
 
-        private void Awake()
+        private async void Awake()
         {
-            var datas = DataCreator.Create(deckSize.Suits, deckSize.Ranks);
-            var entities = CardEntityCreator.Create(cardPrefab, cardParent, cardTheme, datas.Length);
+            await saveService.LoadStorage();
 
-            pairsMap.Initialize(entities, datas);
-
-            playerStorage.Initialize(players);
-
-            shared.Initialize(datas, boardRowItemsCount: 6);
-
-            StartupCompleted.Invoke();
+            if (loadProperties.LoadType is GameLoadType.New)
+            {
+                await gameLoader.LoadNewGame();
+            }
+            if (loadProperties.LoadType is GameLoadType.Saved)
+            {
+                await gameLoader.LoadSavedGame();
+            }
         }
     }
 }

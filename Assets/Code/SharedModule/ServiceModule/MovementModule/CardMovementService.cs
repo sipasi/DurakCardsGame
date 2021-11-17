@@ -21,8 +21,8 @@ namespace ProjectCard.Shared.ServiceModule.MovementModule
         [SerializeField] private PoolService pool;
 
         [Header("Move Events")]
-        [SerializeField] private EmptyAction Begin;
-        [SerializeField] private EmptyAction End;
+        [SerializeField] private ScriptableAction Begin;
+        [SerializeField] private ScriptableAction End;
 
         public async UniTask MoveToParent(ICard temporary, ICard entity, Transform parent, float speed)
         {

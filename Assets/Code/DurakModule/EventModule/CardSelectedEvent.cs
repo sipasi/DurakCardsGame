@@ -7,5 +7,5 @@ using UnityEngine;
 namespace ProjectCard.DurakModule.EventModule
 {
     [CreateAssetMenu(fileName = "CardSelectedEvent", menuName = "MyAsset/Durak/EventModule/CardSelectedEvent")]
-    public class CardSelectedEvent : ScriptableAction<PlayerInfo, ICard> { }
+    public class CardSelectedEvent : ScriptableAction<IPlayer, ICard> { }
 }

@@ -1,12 +1,13 @@
 ﻿
 using ProjectCard.DurakModule.CardModule;
 using ProjectCard.DurakModule.CardModule.ExtensionModule;
+using ProjectCard.Shared.CollectionModule;
 
 namespace ProjectCard.DurakModule.CollectionModule.ExtensionModule
 {
     public static class BoardExtension
     {
-        public static bool ContainsSuit(this Board<Data> board, Data data)
+        public static bool ContainsSuit(this IReadonlyBoard<Data> board, Data data)
         {
             foreach (var item in board)
             {
@@ -19,7 +20,7 @@ namespace ProjectCard.DurakModule.CollectionModule.ExtensionModule
             return false;
         }
 
-        public static bool ContainsRank(this Board<Data> board, Data data)
+        public static bool ContainsRank(this IReadonlyBoard<Data> board, Data data)
         {
             foreach (var item in board)
             {

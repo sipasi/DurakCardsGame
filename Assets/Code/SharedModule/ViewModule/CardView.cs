@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 namespace ProjectCard.Shared.ViewModule
 {
-    [RequireComponent(typeof(Image))]
     public class CardView : MonoBehaviour
     {
-        private Image source;
+        [SerializeField] private Image source;
 
         private Sprite face;
         private Sprite back;
@@ -59,19 +58,15 @@ namespace ProjectCard.Shared.ViewModule
             {
                 look = value;
 
+                var gameObject = this.gameObject;
+                var na = gameObject.name;
+
                 source.sprite = value == CardLookSide.Face ? face : back;
             }
         }
 
-
-        private void Awake()
-        {
-            source = GetComponent<Image>();
-        }
         private void OnValidate()
         {
-            source = GetComponent<Image>();
-
             LookSide = look;
             IsVisible = visible;
         }

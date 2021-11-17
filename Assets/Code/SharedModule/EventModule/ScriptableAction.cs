@@ -5,6 +5,16 @@ using UnityEngine;
 
 namespace ProjectCard.Shared.EventModule
 {
+    [CreateAssetMenu(fileName = "EmptyAction", menuName = "MyAsset/Shared/EventModule/EmptyAction")]
+    public class ScriptableAction : ScriptableObject
+    {
+        public event Action Action;
+
+        public void Rise()
+        {
+            Action?.Invoke();
+        }
+    }
     public class ScriptableAction<T> : ScriptableObject
     {
         public event Action<T> Action;

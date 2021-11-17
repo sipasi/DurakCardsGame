@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1ea21271723fc41aec3c4501b24c9d, type: 3}
   m_Name: BattleResultInfo
   m_EditorClassIdentifier: 
+  key: {fileID: 11400000, guid: 93faa7ab923922e4fa5d78c1e371c6b7, type: 2}
+  winnerDefined: 0
+  isAttakerWinner: 0

@@ -9,17 +9,17 @@ namespace ProjectCard.DurakModule.PlayerModule
 {
     public static class PlayerTool
     {
-        public static PlayerInfo DefineFirstPlayerBySmallestTrump(PlayerStorage players, Deck<Data> deck)
+        public static IPlayer DefineFirstPlayerBySmallestTrump(IPlayerStorage players, Deck<Data> deck)
             => DefineFirstPlayerBySmallestTrump(players.Active, deck.Bottom);
 
-        public static PlayerInfo DefineFirstPlayerBySmallestTrump(IReadOnlyList<PlayerInfo> active, Data trump)
+        public static IPlayer DefineFirstPlayerBySmallestTrump(IReadOnlyList<IPlayer> active, Data trump)
         {
-            PlayerInfo first = default;
+            IPlayer first = default;
             Data smallest = default;
 
             foreach (var player in active)
             {
-                if (DataTool.TryGetSmallestTrump(player.Hand.Datas, trump, out var result))
+                if (DataTool.TryGetSmallestTrump(player.Hand, trump, out var result))
                 {
                     if (first == null)
                     {

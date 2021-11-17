@@ -6,7 +6,7 @@ namespace ProjectCard.DurakModule.StateModule
 {
     public abstract class DurakState : MonoBehaviour, IState
     {
-        [Space(height: 15), SerializeField] protected DurakGameStateMachine machine;
+        [Space(height: 15), SerializeField] private DurakGameStateMachine machine;
 
         public virtual void Enter()
         {
@@ -16,5 +16,7 @@ namespace ProjectCard.DurakModule.StateModule
         {
             // Debug.Log($"{nameof(Exit)}: {GetType().Name}", this);
         }
+
+        protected void NextState(DurakGameState state) => machine.Fire(state);
     }
 }

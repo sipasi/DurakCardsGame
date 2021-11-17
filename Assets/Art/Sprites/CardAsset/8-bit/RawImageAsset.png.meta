@@ -198,6 +198,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -207,8 +208,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -229,6 +230,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -1502,6 +1505,65 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      8BitDeckAssets_7: -299258118475828617
+      8BitDeckAssets_31: 1643134627994013614
+      8BitDeckAssets_57: 5942381542478621416
+      8BitDeckAssets_26: 5389238820240882804
+      8BitDeckAssets_39: -3518169887475478178
+      8BitDeckAssets_37: 6622807587235977615
+      8BitDeckAssets_33: 8381280752204152853
+      8BitDeckAssets_32: -7789761996989939200
+      8BitDeckAssets_15: -6531438337539286634
+      8BitDeckAssets_25: -5629551069344004242
+      8BitDeckAssets_47: 7881601550259347632
+      8BitDeckAssets_28: 2041332794081832404
+      8BitDeckAssets_52: -8128205494039784886
+      8BitDeckAssets_3: 8002119216224854869
+      8BitDeckAssets_27: 659046735627377108
+      8BitDeckAssets_6: -5483608749270851397
+      8BitDeckAssets_11: -2905558514409974660
+      8BitDeckAssets_53: -839227416142153083
+      8BitDeckAssets_1: -6595781994077090958
+      8BitDeckAssets_42: -2272721608834117857
+      8BitDeckAssets_4: -8597738847345059004
+      8BitDeckAssets_16: 5108746832893246654
+      8BitDeckAssets_19: 2536981172073748883
+      8BitDeckAssets_43: 264777423523733670
+      8BitDeckAssets_35: 1736256657205141101
+      8BitDeckAssets_18: -5892645596774105255
+      8BitDeckAssets_45: -129039881323564314
+      8BitDeckAssets_40: -1432889945774224704
+      8BitDeckAssets_48: 1888704447278586260
+      8BitDeckAssets_46: 5722153545295331252
+      8BitDeckAssets_29: 987224590173998692
+      8BitDeckAssets_49: -5707941539380000155
+      8BitDeckAssets_23: 8546098440679624361
+      8BitDeckAssets_56: -8400460703064076358
+      8BitDeckAssets_36: -1554706614796760067
+      8BitDeckAssets_50: -3978956660203194776
+      8BitDeckAssets_55: -3579520602560944142
+      8BitDeckAssets_10: 3498103547527549379
+      8BitDeckAssets_30: 4843414572028866387
+      8BitDeckAssets_13: -7733743142069244911
+      8BitDeckAssets_12: 1704082628835227883
+      8BitDeckAssets_17: 1834547135466191316
+      8BitDeckAssets_34: 8365328819036124340
+      8BitDeckAssets_14: 5466358583426109798
+      8BitDeckAssets_38: 8006835533354258308
+      8BitDeckAssets_44: 5949856349481144707
+      8BitDeckAssets_41: -1639799043813891702
+      8BitDeckAssets_54: 7225193009496767498
+      8BitDeckAssets_24: -6259575037450742600
+      8BitDeckAssets_5: -1762899490127655764
+      8BitDeckAssets_9: 9138478252050595607
+      8BitDeckAssets_20: -6976312399419530836
+      8BitDeckAssets_21: 8972821770460227603
+      8BitDeckAssets_22: -7873867098201456254
+      8BitDeckAssets_8: 1287477335644201787
+      8BitDeckAssets_51: 8971195533914883617
+      8BitDeckAssets_0: -1535244524692844915
+      8BitDeckAssets_2: -7709040272094715751
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

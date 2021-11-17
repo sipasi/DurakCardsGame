@@ -2,8 +2,7 @@
 using Cysharp.Threading.Tasks;
 
 using ProjectCard.DurakModule.BattleModule.ScriptableModule;
-using ProjectCard.DurakModule.GameModule;
-using ProjectCard.DurakModule.PlayerModule;
+using ProjectCard.DurakModule.EntityModule;
 using ProjectCard.Shared.ServiceModule.MovementModule;
 using ProjectCard.Shared.ViewModule;
 
@@ -14,19 +13,18 @@ namespace ProjectCard.DurakModule.StateModule
     public class GameRestartState : DurakState
     {
         [Header("Players")]
-        [SerializeField] private PlayerStorage playerStorage;
+        [SerializeField] private PlayerStorageEntity playerStorage;
 
         [Header("Movement")]
         [SerializeField] private CardMovementManager movement;
 
         [Header("Places")]
-        [SerializeField] private Transform deck;
+        [SerializeField] private Transform deckPlace;
 
-        [Header("Scriptable")]
-        [SerializeField] private SharedEntities shared;
-        [SerializeField] private BattleMovementInfo movementInfo;
-        [SerializeField] private BattlesCountInfo countInfo;
-        [SerializeField] private BattleResultInfo resultInfo;
+        [Header("Entities")]
+        [SerializeField] private BoardEntity board;
+        [SerializeField] private DeckEntity deck;
+        [SerializeField] private TrashEntity trash;
 
         public override async void Enter()
         {
@@ -36,28 +34,27 @@ namespace ProjectCard.DurakModule.StateModule
 
             ClearEntities();
 
-            machine.Fire(DurakGameState.GameStart);
+            NextState(DurakGameState.GameStart);
         }
 
         private async UniTask MoveCards()
         {
-            await movement.MoveToPlace(shared.Board.All, deck, CardLookSide.Back);
+            await movement.MoveToPlace(board.Entity.All, deckPlace, CardLookSide.Back);
+            await movement.MoveToPlace(trash.Entity, deckPlace, CardLookSide.Back);
 
-            foreach (var player in playerStorage.All)
+            foreach (var player in playerStorage.Entity.All)
             {
-                await movement.MoveToPlace(player.Hand.Cards, deck, CardLookSide.Back);
+                await movement.MoveToPlace(player.Hand, deckPlace, CardLookSide.Back);
             }
         }
+
         private void ClearEntities()
         {
-            playerStorage.Restore();
+            playerStorage.Entity.Restore();
 
-            movementInfo.Clear();
-            countInfo.Clear();
-            resultInfo.Clear();
-
-            shared.Board.Clear();
-            shared.Deck.Reset();
+            board.Entity.Clear();
+            deck.Entity.Clear();
+            trash.Entity.Clear();
         }
     }
 }

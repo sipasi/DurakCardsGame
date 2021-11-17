@@ -1,9 +1,8 @@
 ﻿
 using ProjectCard.DurakModule.BattleModule.ScriptableModule;
-using ProjectCard.DurakModule.CardModule;
-using ProjectCard.DurakModule.GameModule;
+using ProjectCard.DurakModule.EntityModule;
 using ProjectCard.DurakModule.ViewModule;
-using ProjectCard.Shared.CollectionModule;
+using ProjectCard.Shared.ViewModule;
 
 using UnityEngine;
 
@@ -11,29 +10,22 @@ namespace ProjectCard.DurakModule.StateModule
 {
     public class GameStartState : DurakState
     {
-        [Header("Shared")]
-        [SerializeField] private SharedEntities shared;
-        [SerializeField] private BattleMovementInfo movementInfo;
-        [SerializeField] private BattlesCountInfo countInfo;
-        [SerializeField] private BattleResultInfo resultInfo;
+        [Header("Entities")]
+        [SerializeField] private DeckEntity deck;
 
-        [Header("Views")]
-        [SerializeField] private ViewUpdater viewUpdater;
+        [Header("View")]
+        [SerializeField] private DeckViewUpdater viewUpdater;
 
         public override void Enter()
         {
             base.Enter();
 
-            movementInfo.Clear();
-            countInfo.Clear();
-            resultInfo.Clear();
+            deck.Entity.Shuffle(times: 500);
 
-            Deck<Data> deck = shared.Deck;
+            viewUpdater.UpdateSprites();
+            viewUpdater.UpdateCount();
 
-            deck.Shuffle(times: 5);
-            viewUpdater.UpdateDeck();
-
-            machine.Fire(DurakGameState.BattleStart);
+            NextState(DurakGameState.BattleFirstStart);
         }
     }
 }

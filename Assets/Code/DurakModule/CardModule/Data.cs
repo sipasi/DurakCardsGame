@@ -23,7 +23,7 @@ namespace ProjectCard.DurakModule.CardModule
         /// </summary>
         /// <param name="info"></param>
         /// <param name="text"></param>
-        public Data(SerializationInfo info, StreamingContext context)
+        private Data(SerializationInfo info, StreamingContext context)
         {
             suit = info.GetInt32(nameof(suit));
             rank = info.GetInt32(nameof(rank));
@@ -64,7 +64,7 @@ namespace ProjectCard.DurakModule.CardModule
         /// <param name="info"></param>
         /// <param name="context"></param>
         [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue(nameof(suit), suit);
             info.AddValue(nameof(rank), rank);

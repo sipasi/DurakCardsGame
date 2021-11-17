@@ -1,34 +1,44 @@
-﻿
+﻿#nullable enable
+
 using System;
 using System.Collections.Generic;
 
-using UnityEngine;
-
 namespace ProjectCard.DurakModule.PlayerModule
-{
-    public class PlayerStorage : MonoBehaviour
+{ 
+    [Serializable]
+    public class PlayerStorage : IPlayerStorage
     {
-        private PlayerInfo[] players;
+        private readonly IReadOnlyList<IPlayer> players;
 
-        private List<PlayerInfo> active;
-        private List<PlayerInfo> removed;
+        private readonly List<IPlayer> active;
+        private readonly List<IPlayer> removed;
 
-        public IReadOnlyList<PlayerInfo> All => players;
-        public IReadOnlyList<PlayerInfo> Active => active;
-        public IReadOnlyList<PlayerInfo> Removed => removed;
+        public IReadOnlyList<IPlayer> All => players;
+        public IReadOnlyList<IPlayer> Active => active;
+        public IReadOnlyList<IPlayer> Removed => removed;
 
 
-        public void Initialize(PlayerInfo[] players)
+        public PlayerStorage(IReadOnlyList<IPlayer> players)
         {
             this.players = players;
 
-            active = new List<PlayerInfo>(players);
-            removed = new List<PlayerInfo>(players.Length);
+            this.active = new List<IPlayer>(players);
+            this.removed = new List<IPlayer>(players.Count);
         }
 
-        public int IndexOf(PlayerInfo player) => active.IndexOf(player);
 
-        public bool Remove(PlayerInfo player)
+        public int IndexOf(IPlayer player) => active.IndexOf(player);
+        public IPlayer? ById(Guid id)
+        {
+            foreach (var item in players)
+            {
+                if (item.Id == id) return item;
+            }
+
+            return null;
+        }
+
+        public bool Remove(IPlayer player)
         {
             if (active.Remove(player))
             {
@@ -39,7 +49,7 @@ namespace ProjectCard.DurakModule.PlayerModule
 
             return false;
         }
-        public void RemoveRange(IEnumerable<PlayerInfo> players)
+        public void RemoveRange(IEnumerable<IPlayer> players)
         {
             if (players == Active)
             {
@@ -52,7 +62,7 @@ namespace ProjectCard.DurakModule.PlayerModule
             }
         }
 
-        public List<PlayerInfo>.Enumerator GetEnumerator() => active.GetEnumerator();
+        public List<IPlayer>.Enumerator GetEnumerator() => active.GetEnumerator();
 
         public void Restore()
         {

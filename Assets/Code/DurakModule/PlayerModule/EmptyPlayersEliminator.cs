@@ -5,14 +5,14 @@ namespace ProjectCard.DurakModule.PlayerModule
 {
     public static class EmptyPlayersEliminator
     {
-        public static void EliminateAndUpdateQueue(PlayerStorage storage, PlayerQueue queue)
+        public static void EliminateAndUpdateQueue(IPlayerStorage storage, IPlayerQueue queue)
         {
-            List<PlayerInfo> eliminated = Eliminate(storage);
+            List<IPlayer> eliminated = Eliminate(storage);
 
             UpdateQueueAfterPlayersEliminated(eliminated, storage, queue);
         }
 
-        private static List<PlayerInfo> Eliminate(PlayerStorage storage)
+        private static List<IPlayer> Eliminate(IPlayerStorage storage)
         {
             var empty = storage.Active.Where(player => player.Hand.Count == 0).ToList();
 
@@ -20,7 +20,7 @@ namespace ProjectCard.DurakModule.PlayerModule
 
             return empty;
         }
-        private static void UpdateQueueAfterPlayersEliminated(List<PlayerInfo> eliminated, PlayerStorage storage, PlayerQueue queue)
+        private static void UpdateQueueAfterPlayersEliminated(List<IPlayer> eliminated, IPlayerStorage storage, IPlayerQueue queue)
         {
             if (eliminated.Count == 0)
             {

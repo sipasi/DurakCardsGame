@@ -1,14 +1,13 @@
 ﻿
+using System;
 using System.Collections.Generic;
-
-using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace ProjectCard.DurakModule.PlayerModule
 {
-    public class PlayerQueue : MonoBehaviour
+    [Serializable]
+    public class PlayerQueue : IPlayerQueue
     {
-        [SerializeField] private PlayerStorage storage;
+        private IPlayerStorage storage;
 
         private PlayerActionType action;
 
@@ -28,21 +27,21 @@ namespace ProjectCard.DurakModule.PlayerModule
             }
         }
 
-        public PlayerInfo Attacker { get; private set; }
-        public PlayerInfo Defender { get; private set; }
-        public PlayerInfo Current { get; private set; }
+        public IPlayer Attacker { get; private set; }
+        public IPlayer Defender { get; private set; }
+        public IPlayer Current { get; private set; }
 
         public bool IsAttackerQueue => Current == Attacker;
         public bool IsDefenderQueue => Current == Defender;
 
 
-        private void Awake()
+        public PlayerQueue(IPlayerStorage storage)
         {
-            Assert.IsNotNull(storage, $"You have forgotten set the {nameof(PlayerStorage)} reference");
+            this.storage = storage;
         }
 
 
-        public void Set(PlayerInfo attacker, PlayerInfo defender, PlayerActionType action)
+        public void Set(IPlayer attacker, IPlayer defender, PlayerActionType action)
         {
             Attacker = attacker;
             Defender = defender;
@@ -55,9 +54,9 @@ namespace ProjectCard.DurakModule.PlayerModule
             Action = Action == PlayerActionType.Attack ? PlayerActionType.Defend : PlayerActionType.Attack;
         }
 
-        public PlayerInfo GetNextFrom(PlayerInfo player, int andSkip = 0)
+        public IPlayer GetNextFrom(IPlayer player, int andSkip = 0)
         {
-            IReadOnlyList<PlayerInfo> active = storage.Active;
+            IReadOnlyList<IPlayer> active = storage.Active;
 
             int index = storage.IndexOf(player);
 

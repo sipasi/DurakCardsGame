@@ -28,6 +28,15 @@ namespace ProjectCard.Shared.ServiceModule.MovementModule
 
             card.View.LookSide = lookSide;
         }
+        public async UniTask MoveToPlace(Data data, Transform place, CardLookSide lookSide)
+        {
+            ICard card = entityDataMap.Get(data);
+
+            await movement.MoveToParent(temporary, card, place, animationsSpeed.CardMovement);
+
+            card.View.LookSide = lookSide;
+        }
+
         public async UniTask MoveToPlace(IReadOnlyList<ICard> cards, Transform place, CardLookSide lookSide)
         {
             for (int i = 0; i < cards.Count; i++)
@@ -41,9 +50,26 @@ namespace ProjectCard.Shared.ServiceModule.MovementModule
         {
             for (int i = 0; i < datas.Count; i++)
             {
-                ICard card = entityDataMap.Get(datas[i]);
+                Data data = datas[i];
 
+                await MoveToPlace(data, place, lookSide);
+            }
+        }
+
+        public async UniTask MoveToPlace(IEnumerable<ICard> cards, Transform place, CardLookSide lookSide)
+        {
+            foreach (var card in cards)
+            {
                 await MoveToPlace(card, place, lookSide);
+
+            }
+        }
+        public async UniTask MoveToPlace(IEnumerable<Data> datas, Transform place, CardLookSide lookSide)
+        {
+            foreach (var data in datas)
+            {
+                await MoveToPlace(data, place, lookSide);
+
             }
         }
     }
