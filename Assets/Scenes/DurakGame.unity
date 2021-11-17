@@ -4000,7 +4000,7 @@ MonoBehaviour:
   - name: Marta
     position: 0
     selector: 1
-    side: 0
+    side: 1
   - name: Sasha
     position: 1
     selector: 0
