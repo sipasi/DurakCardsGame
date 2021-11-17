@@ -7,7 +7,7 @@ using UnityEngine;
 
 
 namespace ProjectCard.DurakModule.BattleModule.StateModule
-{ 
+{
     public class BattleStartState : DurakState
     {
         [Header("Players")]

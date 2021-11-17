@@ -3,9 +3,7 @@ using System;
 
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.DurakModule.CardModule;
 using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.CollectionModule;
 using ProjectCard.Shared.ServiceModule.MovementModule;
 using ProjectCard.Shared.ViewModule;
 

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
-
-using ProjectCard.Shared.SerializationModule;
 
 namespace ProjectCard.Shared.CollectionModule
 {

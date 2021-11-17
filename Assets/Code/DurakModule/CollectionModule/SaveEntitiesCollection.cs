@@ -15,7 +15,7 @@ namespace ProjectCard.DurakModule.CollectionModule
 
         public IEnumerable<ISavableEntity<Guid>> GetSavableEntities() => Enumerate<ISavableEntity<Guid>>();
         public IEnumerable<ILoadableEntity<Guid>> GetLoadableEntities() => Enumerate<ILoadableEntity<Guid>>();
-          
+
         private IEnumerable<T> Enumerate<T>() where T : class
         {
             foreach (var item in scriptables)

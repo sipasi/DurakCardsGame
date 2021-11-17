@@ -71,8 +71,8 @@ namespace ProjectCard.DurakModule.StateModule
         {
             if (passSelectionHandler.Handle() is false) return;
 
-            DurakGameState state = playerQueue.Entity.IsAttackerQueue 
-                ? DurakGameState.BattleDefenderWinner 
+            DurakGameState state = playerQueue.Entity.IsAttackerQueue
+                ? DurakGameState.BattleDefenderWinner
                 : DurakGameState.Toss;
 
             NextState(state);

@@ -1,14 +1,15 @@
 ﻿
-using ProjectCard.DurakModule.CardModule;
 using System.Collections.Generic;
 
+using Cysharp.Threading.Tasks;
+
+using ProjectCard.DurakModule.CardModule;
 using ProjectCard.DurakModule.EntityModule;
 using ProjectCard.DurakModule.PlayerModule;
+using ProjectCard.Shared.ServiceModule.MovementModule;
 using ProjectCard.Shared.ViewModule;
 
 using UnityEngine;
-using ProjectCard.Shared.ServiceModule.MovementModule;
-using Cysharp.Threading.Tasks;
 
 namespace ProjectCard.DurakModule.BattleModule.StateModule
 {

@@ -1,6 +1,5 @@
 ﻿using System;
 
-using ProjectCard.DurakModule.BattleModule.ScriptableModule;
 using ProjectCard.DurakModule.EntityModule;
 using ProjectCard.DurakModule.PlayerModule;
 using ProjectCard.Shared.CollectionModule;

@@ -1,11 +1,11 @@
 ﻿
-using Cysharp.Threading.Tasks;
-using ProjectCard.DurakModule.CardModule;
 using System.Collections.Generic;
 
+using Cysharp.Threading.Tasks;
+
+using ProjectCard.DurakModule.CardModule;
 using ProjectCard.DurakModule.EntityModule;
 using ProjectCard.DurakModule.PlayerModule;
-using ProjectCard.DurakModule.StateModule;
 using ProjectCard.Shared.ServiceModule.MovementModule;
 using ProjectCard.Shared.ViewModule;
 

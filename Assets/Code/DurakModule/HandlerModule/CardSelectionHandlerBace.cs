@@ -8,8 +8,6 @@ using ProjectCard.DurakModule.ValidatorModule;
 using ProjectCard.DurakModule.ViewModule;
 using ProjectCard.Shared.CardModule;
 using ProjectCard.Shared.CollectionModule;
-using ProjectCard.Shared.ServiceModule.MovementModule;
-using ProjectCard.Shared.ViewModule;
 
 using UnityEngine;
 
@@ -38,7 +36,7 @@ namespace ProjectCard.DurakModule.HandlerModule
             if (playerSelectionValidator.Validate(card) is false)
             {
                 return false;
-            } 
+            }
 
             Data data = entityDataMap.Get(card);
 

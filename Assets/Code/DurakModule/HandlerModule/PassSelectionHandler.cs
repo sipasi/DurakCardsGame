@@ -1,6 +1,4 @@
-﻿
-using ProjectCard.DurakModule.BattleModule.ScriptableModule;
-using ProjectCard.DurakModule.EntityModule;
+﻿using ProjectCard.DurakModule.EntityModule;
 
 using UnityEngine;
 

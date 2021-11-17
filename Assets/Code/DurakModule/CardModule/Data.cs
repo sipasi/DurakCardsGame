@@ -1,13 +1,11 @@
 #nullable enable
 
 using System;
-using System.Runtime.Serialization;
-using System.Security.Permissions;
 
 namespace ProjectCard.DurakModule.CardModule
 {
     [Serializable]
-    public readonly struct Data : ISerializable
+    public readonly struct Data
     {
         public readonly int suit;
         public readonly int rank;
@@ -17,16 +15,6 @@ namespace ProjectCard.DurakModule.CardModule
         {
             this.suit = suit;
             this.rank = rank;
-        }
-        /// <summary>
-        /// This constructor is used for deserialization
-        /// </summary>
-        /// <param name="info"></param>
-        /// <param name="text"></param>
-        private Data(SerializationInfo info, StreamingContext context)
-        {
-            suit = info.GetInt32(nameof(suit));
-            rank = info.GetInt32(nameof(rank));
         }
 
 
@@ -56,18 +44,6 @@ namespace ProjectCard.DurakModule.CardModule
             int hash = tuple.GetHashCode();
 
             return hash;
-        }
-
-        /// <summary>
-        /// This method is called during serialization
-        /// </summary>
-        /// <param name="info"></param>
-        /// <param name="context"></param>
-        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-        void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            info.AddValue(nameof(suit), suit);
-            info.AddValue(nameof(rank), rank);
         }
 
         public override string ToString()

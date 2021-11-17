@@ -306,7 +306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a71655afa67f1a84d826dd12efb08996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveKey: {fileID: 11400000, guid: f047a430f838df542a5dc316796bbce3, type: 2}
 --- !u!1 &90576361
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +353,10 @@ MonoBehaviour:
   gameStart: {fileID: 1994460524}
   gameEnd: {fileID: 1226627676}
   restartState: {fileID: 2085551009}
+  battleFirstStart: {fileID: 209475106}
   battleStart: {fileID: 287663128}
+  battleAttackerWinner: {fileID: 1177579133}
+  battleDefenderWinner: {fileID: 580549826}
   battleEnd: {fileID: 1604744169}
   playerAction: {fileID: 1968924995}
   oneAttackerTossState: {fileID: 570822311}
@@ -645,6 +647,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &209475104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 209475105}
+  - component: {fileID: 209475106}
+  m_Layer: 0
+  m_Name: BattleFirstStartState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &209475105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209475104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 575022928}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &209475106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209475104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fe0cff29aa222469194a4a3ac27256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  machine: {fileID: 90576363}
+  playerStorage: {fileID: 48643686}
+  playerQueue: {fileID: 1680203889}
+  dealer: {fileID: 1131853918}
+  deck: {fileID: 1165979027}
 --- !u!1 &233695778
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,7 +789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c49c23703717942b7f4f0bf372a0fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveKey: {fileID: 11400000, guid: 770558f142b6a214d8b0c908394a51be, type: 2}
 --- !u!1 &262422812
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +855,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 575022928}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &287663128
 MonoBehaviour:
@@ -824,8 +874,6 @@ MonoBehaviour:
   playerQueue: {fileID: 1680203889}
   dealer: {fileID: 1131853918}
   deck: {fileID: 1165979027}
-  info: {fileID: 11400000, guid: 45062f39eca5fa547acfeb88fdc53231, type: 2}
-  result: {fileID: 11400000, guid: 2c4bfcdf1a9873f4e84b2477fb52a143, type: 2}
 --- !u!1 &291152515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,7 +1541,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 575022928}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &570822311
 MonoBehaviour:
@@ -1548,13 +1596,69 @@ Transform:
   - {fileID: 2085551008}
   - {fileID: 1994460523}
   - {fileID: 1226627675}
+  - {fileID: 209475105}
   - {fileID: 287663127}
+  - {fileID: 1177579132}
+  - {fileID: 580549825}
   - {fileID: 1604744168}
   - {fileID: 1968924996}
   - {fileID: 570822310}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &580549824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 580549825}
+  - component: {fileID: 580549826}
+  m_Layer: 0
+  m_Name: BattleDefenderWinnerState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &580549825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580549824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 575022928}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &580549826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580549824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e13a376d3b1674d85072fbb3a67c4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  machine: {fileID: 90576363}
+  boardPlaces: {fileID: 645871}
+  playerStorage: {fileID: 48643686}
+  playerQueue: {fileID: 1680203889}
+  board: {fileID: 2071064807}
+  deck: {fileID: 1165979027}
+  movement: {fileID: 1257770811}
+  trash: {fileID: 1871072340}
+  trashPlace: {fileID: 262422813}
 --- !u!1 &611664022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,7 +2287,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saveService: {fileID: 11400000, guid: 80fbe20f251e8704aa5c936bbfc17c11, type: 2}
   gameLoader: {fileID: 1935765582}
-  applicator: {fileID: 1712290203}
   loadProperties: {fileID: 11400000, guid: cc26bb744bd8418439eb1e13cbba8e59, type: 2}
 --- !u!1 &834138792
 GameObject:
@@ -2216,7 +2319,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerQueue: {fileID: 1680203889}
   board: {fileID: 2071064807}
-  result: {fileID: 11400000, guid: 2c4bfcdf1a9873f4e84b2477fb52a143, type: 2}
 --- !u!4 &834138794
 Transform:
   m_ObjectHideFlags: 0
@@ -3121,7 +3223,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f35b0ec13336b48a82ebe2f6034d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveKey: {fileID: 11400000, guid: cdae4dcf55d46ff49ae25d8584f41299, type: 2}
+--- !u!1 &1177579131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1177579132}
+  - component: {fileID: 1177579133}
+  m_Layer: 0
+  m_Name: BattleAttackerWinnerState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1177579132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177579131}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 575022928}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1177579133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177579131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44889328b5d37574f851e3ace3607429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  machine: {fileID: 90576363}
+  boardPlaces: {fileID: 645871}
+  playerStorage: {fileID: 48643686}
+  playerQueue: {fileID: 1680203889}
+  board: {fileID: 2071064807}
+  deck: {fileID: 1165979027}
+  movement: {fileID: 1257770811}
+  queue: {fileID: 1680203889}
+  playerPlaceList: {fileID: 1115656234}
 --- !u!1 &1192063304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3166,7 +3320,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c49c23703717942b7f4f0bf372a0fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveKey: {fileID: 11400000, guid: 7fdd5833d51542b4f96d8169a7015c54, type: 2}
 --- !u!1 &1223396767
 GameObject:
   m_ObjectHideFlags: 0
@@ -4345,7 +4498,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 575022928}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1604744169
 MonoBehaviour:
@@ -4360,16 +4513,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   machine: {fileID: 90576363}
-  movement: {fileID: 1257770811}
-  playerStorage: {fileID: 48643686}
-  playerQueue: {fileID: 1680203889}
-  playerPlaceList: {fileID: 1115656234}
-  trash: {fileID: 262422813}
-  boardPlaces: {fileID: 645871}
-  board: {fileID: 2071064807}
-  deck: {fileID: 1165979027}
-  info: {fileID: 11400000, guid: 45062f39eca5fa547acfeb88fdc53231, type: 2}
-  result: {fileID: 11400000, guid: 2c4bfcdf1a9873f4e84b2477fb52a143, type: 2}
 --- !u!1 &1680203887
 GameObject:
   m_ObjectHideFlags: 0
@@ -4414,7 +4557,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f910481f8d2a54c8aa46f6facaa809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveKey: {fileID: 11400000, guid: 5691178bda0b7014ca736d4c139f2206, type: 2}
 --- !u!1 &1693223692
 GameObject:
   m_ObjectHideFlags: 0
@@ -5129,7 +5271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b178e61829c14d346a800324256945a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveKey: {fileID: 11400000, guid: ac47c2a2db01f424d916f3fcf46940af, type: 2}
 --- !u!1 &1872770737
 GameObject:
   m_ObjectHideFlags: 0
@@ -5389,7 +5530,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 575022928}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1994460522
 GameObject:
@@ -5436,8 +5577,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   machine: {fileID: 90576363}
-  countInfo: {fileID: 11400000, guid: 45062f39eca5fa547acfeb88fdc53231, type: 2}
-  resultInfo: {fileID: 11400000, guid: 2c4bfcdf1a9873f4e84b2477fb52a143, type: 2}
   deck: {fileID: 1165979027}
   viewUpdater: {fileID: 1872770739}
 --- !u!1 &2071064805
@@ -5484,7 +5623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c650ea445df36964cb69f69ef62efc63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveKey: {fileID: 11400000, guid: db0711590d5e6974599462c96a665b0a, type: 2}
 --- !u!1 &2085551007
 GameObject:
   m_ObjectHideFlags: 0
@@ -5536,8 +5674,6 @@ MonoBehaviour:
   board: {fileID: 2071064807}
   deck: {fileID: 1165979027}
   trash: {fileID: 1871072340}
-  countInfo: {fileID: 11400000, guid: 45062f39eca5fa547acfeb88fdc53231, type: 2}
-  resultInfo: {fileID: 11400000, guid: 2c4bfcdf1a9873f4e84b2477fb52a143, type: 2}
 --- !u!1 &2120290821
 GameObject:
   m_ObjectHideFlags: 0

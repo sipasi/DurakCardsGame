@@ -1,7 +1,7 @@
 ﻿#nullable enable 
 
 using System;
- 
+
 using ProjectCard.Shared.CollectionModule;
 using ProjectCard.Shared.EntityModule;
 

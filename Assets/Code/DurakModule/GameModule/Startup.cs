@@ -1,5 +1,4 @@
-﻿using ProjectCard.DurakModule.SaveModule;
-using ProjectCard.Shared.GameModule;
+﻿using ProjectCard.Shared.GameModule;
 using ProjectCard.Shared.ServiceModule.SaveModule;
 
 using UnityEngine;
@@ -9,7 +8,7 @@ namespace ProjectCard.DurakModule.GameModule
     public class Startup : MonoBehaviour
     {
         [SerializeField] private ScriptableSaveService saveService;
-        [SerializeField] private DurakGameLoader gameLoader; 
+        [SerializeField] private DurakGameLoader gameLoader;
 
         [SerializeField] private GameLoadProperties loadProperties;
 

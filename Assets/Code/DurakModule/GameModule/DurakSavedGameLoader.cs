@@ -6,7 +6,6 @@ using ProjectCard.DurakModule.CollectionModule;
 using ProjectCard.DurakModule.SaveModule;
 using ProjectCard.DurakModule.StateModule;
 using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.GameModule;
 using ProjectCard.Shared.SaveModule;
 using ProjectCard.Shared.ScriptableModule;
 using ProjectCard.Shared.ServiceModule.SaveModule;

@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using NUnit.Framework;
-
 using ProjectCard.DurakModule.CardModule;
 using ProjectCard.DurakModule.PlayerModule;
 using ProjectCard.Shared.CollectionModule;
@@ -51,7 +49,7 @@ namespace ProjectCard.Shared.TestData
 
             map = new Map<Guid, Data>(guids, datas);
 
-            EntityCreator.CreatePlayerPack(out players, out playerStorage, out playerQueue); 
+            EntityCreator.CreatePlayerPack(out players, out playerStorage, out playerQueue);
         }
 
 

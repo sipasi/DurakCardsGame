@@ -1,7 +1,6 @@
 ﻿
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.DurakModule.BattleModule.ScriptableModule;
 using ProjectCard.DurakModule.EntityModule;
 using ProjectCard.Shared.ServiceModule.MovementModule;
 using ProjectCard.Shared.ViewModule;

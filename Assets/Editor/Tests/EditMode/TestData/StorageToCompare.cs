@@ -18,7 +18,7 @@ namespace ProjectCard.Shared.TestData
 
             if (storage is null)
             {
-                return false; 
+                return false;
             }
 
             var countResult = local.Count == storage.Count;

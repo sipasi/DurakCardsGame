@@ -1,7 +1,6 @@
 ﻿#nullable enable 
 
 using System;
-using System.Diagnostics.CodeAnalysis;
 
 using ProjectCard.Shared.CoreModule.AttributeModule;
 

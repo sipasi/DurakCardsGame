@@ -1,8 +1,5 @@
-﻿
-using ProjectCard.DurakModule.BattleModule.ScriptableModule;
-using ProjectCard.DurakModule.EntityModule;
+﻿using ProjectCard.DurakModule.EntityModule;
 using ProjectCard.DurakModule.ViewModule;
-using ProjectCard.Shared.ViewModule;
 
 using UnityEngine;
 

@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
 using NUnit.Framework;
 
 using ProjectCard.DurakModule.CardModule;
-using ProjectCard.DurakModule.PlayerModule;
 using ProjectCard.Shared.CollectionModule;
 using ProjectCard.Shared.TestData;
 

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 
 namespace ProjectCard.DurakModule.PlayerModule
-{ 
+{
     [Serializable]
     public class PlayerStorage : IPlayerStorage
     {

@@ -6,8 +6,6 @@ using ProjectCard.DurakModule.ViewModule;
 using ProjectCard.Shared.CardModule;
 using ProjectCard.Shared.CollectionModule;
 
-using UnityEngine;
-
 
 namespace ProjectCard.DurakModule.HandlerModule
 {

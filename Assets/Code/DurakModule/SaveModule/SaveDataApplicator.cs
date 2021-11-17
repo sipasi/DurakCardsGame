@@ -12,9 +12,7 @@ using ProjectCard.DurakModule.ViewModule;
 using ProjectCard.Shared.CardModule;
 using ProjectCard.Shared.CollectionModule;
 using ProjectCard.Shared.EntityModule;
-using ProjectCard.Shared.SaveModule;
 using ProjectCard.Shared.ServiceModule.MovementModule;
-using ProjectCard.Shared.ServiceModule.SaveModule;
 using ProjectCard.Shared.ViewModule;
 
 using UnityEngine;

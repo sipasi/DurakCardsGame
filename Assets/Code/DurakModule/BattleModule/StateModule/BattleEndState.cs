@@ -1,16 +1,4 @@
-﻿using System.Collections.Generic;
-
-using ProjectCard.DurakModule.BattleModule.ScriptableModule;
-using ProjectCard.DurakModule.CardModule;
-using ProjectCard.DurakModule.EntityModule;
-using ProjectCard.DurakModule.PlayerModule;
-using ProjectCard.DurakModule.StateModule;
-using ProjectCard.DurakModule.ViewModule;
-using ProjectCard.Shared.ServiceModule.MovementModule;
-using ProjectCard.Shared.ViewModule;
-
-using UnityEngine;
-using UnityEngine.Assertions;
+﻿using ProjectCard.DurakModule.StateModule;
 
 namespace ProjectCard.DurakModule.BattleModule.StateModule
 {
