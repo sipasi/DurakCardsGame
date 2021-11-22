@@ -16,5 +16,10 @@ namespace ProjectCard.DurakModule.PlayerModule
         public List<Data> Hand { get; set; }
         public CardLookSide LookSide { get; set; }
         public CardSelectorType Selector { get; set; }
+
+        public override string ToString()
+        {
+            return $"Name: {Name}. Position: {Position}. Selector: {Selector}";
+        }
     }
 }

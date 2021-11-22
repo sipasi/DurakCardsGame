@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1b9edbe9c6349542ae4b5a3aad0db88, type: 3}
-  m_Name: DurakGameLoadProperties
+  m_Script: {fileID: 11500000, guid: f479bc2b62efee04b905efaef4a98dc3, type: 3}
+  m_Name: AnimationsSpeedSaveKey
   m_EditorClassIdentifier: 
-  <LoadType>k__BackingField: 0
+  text: 6b5b4ee2-d145-4a03-88a0-291080d713b0

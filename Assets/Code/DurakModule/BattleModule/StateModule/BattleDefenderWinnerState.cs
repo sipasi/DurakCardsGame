@@ -28,7 +28,7 @@ namespace ProjectCard.DurakModule.BattleModule.StateModule
 
         protected override async UniTask MoveCards(IReadOnlyList<Data> datas)
         {
-            trash.Entity.AddRange(datas);
+            trash.Value.AddRange(datas);
 
             await movement.MoveToPlace(datas, trashPlace, CardLookSide.Back);
 

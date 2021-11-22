@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿#nullable enable
+
+using System.Collections.Generic;
 
 using ProjectCard.DurakModule.CardModule;
 using ProjectCard.DurakModule.CardModule.ExtensionModule;
@@ -23,56 +25,56 @@ namespace ProjectCard.DurakModule.PlayerModule
         {
             base.Begin();
 
-            if (queue.Entity.IsAttackerQueue)
+            ICard? card = queue.Value.IsAttackerQueue
+                ? Attacking()
+                : Defending();
+
+            if (card is null)
             {
-                Attacking();
+                Pass();
+
+                return;
             }
-            else
-            {
-                Defending();
-            }
+
+            SelectCard(card);
         }
 
-        private void Attacking()
+        private ICard? Attacking()
         {
-            List<Data> hand = Player.Hand;
+            List<Data> hand = Current.Hand;
 
-            if (board.Entity.IsEmpty)
+            if (board.Value.IsEmpty)
             {
                 int random = UnityEngine.Random.Range(0, hand.Count);
 
                 ICard card = entityDataMap.Get(hand[random]);
 
-                SelectCard(card);
-
-                return;
+                return card;
             }
 
-            if (board.Entity.IsFull is false)
+            if (board.Value.IsFull is false)
             {
                 foreach (var data in hand)
                 {
-                    if (board.Entity.ContainsRank(data))
+                    if (board.Value.ContainsRank(data))
                     {
                         ICard card = entityDataMap.Get(data);
 
-                        SelectCard(card);
-
-                        return;
+                        return card;
                     }
                 }
             }
 
-            Pass();
+            return default;
         }
-        private void Defending()
+        private ICard? Defending()
         {
-            List<Data> hand = Player.Hand;
+            List<Data> hand = Current.Hand;
 
-            Data trump = deck.Entity.Bottom;
+            Data trump = deck.Value.Bottom;
             Data last = default;
 
-            Assert.IsTrue(board.Entity.TryGetLast(out last), "In defending state the board can't be empty");
+            Assert.IsTrue(board.Value.TryGetLast(out last), "In defending state the board can't be empty");
 
             foreach (var data in hand)
             {
@@ -80,13 +82,11 @@ namespace ProjectCard.DurakModule.PlayerModule
                 {
                     ICard card = entityDataMap.Get(data);
 
-                    SelectCard(card);
-
-                    return;
+                    return card;
                 }
             }
 
-            Pass();
+            return default;
         }
     }
 }

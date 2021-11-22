@@ -25,7 +25,7 @@ namespace ProjectCard.DurakModule.BattleModule.StateModule
 
         protected override async UniTask MoveCards(IReadOnlyList<Data> datas)
         {
-            IPlayer defender = queue.Entity.Defender;
+            IPlayer defender = queue.Value.Defender;
             PlayerPosition position = defender.Position;
             List<Data> hand = defender.Hand;
             CardLookSide lookSide = defender.LookSide;

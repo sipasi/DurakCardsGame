@@ -18,7 +18,7 @@ namespace ProjectCard.DurakModule.SaveModule
         {
             var saveData = storage.Restore<PlayerQueueSaveData>(Key);
 
-            var playerStorage = playerStorageEntity.Entity;
+            var playerStorage = playerStorageEntity.Value;
 
             Assert.IsNotNull(playerStorage, $"Can't create {nameof(IPlayerQueue)} while {nameof(IPlayerStorage)} not loaded");
             Assert.IsTrue(playerStorage.All.Count > 0, $"Can't create {nameof(IPlayerQueue)} without players");

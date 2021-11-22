@@ -43,6 +43,9 @@ namespace ProjectCard.DurakModule.GameModule
         [SerializeField] private BoardEntity boardEntity;
         [SerializeField] private PlayerEntity[] playerEntities;
 
+        [Header("Game")]
+        [SerializeField] private GamePlayersType gamePlayersType;
+
         public void Load()
         {
             var datas = DataCreator.Create(deckSize.Suits, deckSize.Ranks);
@@ -53,7 +56,7 @@ namespace ProjectCard.DurakModule.GameModule
             IDeck<Data> deck = new Deck<Data>(datas);
             IBoard<Data> board = new Board<Data>(rowItemsCount: 6);
 
-            IPlayer[] players = new IPlayer[playersInfo.Length];
+            Player[] players = new Player[playersInfo.Length];
 
             for (int i = 0; i < playersInfo.Length; i++)
             {
@@ -71,8 +74,16 @@ namespace ProjectCard.DurakModule.GameModule
                 playerEntities[i].Initialize(player);
             }
 
+            if (gamePlayersType.PlayersType == PlayersType.AiOnly)
+            {
+                foreach (var player in players)
+                {
+                    player.Selector = CardSelectorType.Ai;
+                }
+            }
+
             playerStorage.Initialize(new PlayerStorage(players));
-            playerQueue.Initialize(new PlayerQueue(playerStorage.Entity));
+            playerQueue.Initialize(new PlayerQueue(playerStorage.Value));
 
             deckEntity.Initialize(deck);
             boardEntity.Initialize(board);

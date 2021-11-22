@@ -20,8 +20,6 @@ namespace ProjectCard.Shared.SceneModule
     {
         [Header("Ui")]
         [SerializeField] private DialogWindow loadSavedGameDialog;
-        [SerializeField] private Button button;
-
         [Header("Save")]
         [SerializeField] private GuidSaveService saveService;
         [SerializeField] private SaveKey saveInfoKey;
@@ -34,17 +32,8 @@ namespace ProjectCard.Shared.SceneModule
         [SerializeField] private SceneReference loadScreenScene;
         [SerializeField] private SceneReference gameScene;
 
-
-        private void Awake()
+        public async void Load()
         {
-            button.onClick.AddListener(Load);
-        }
-
-
-        private async void Load()
-        {
-            button.onClick.RemoveListener(Load);
-
             await saveService.LoadStorage();
 
             var result = await ShowMessageIfSaveContains();
@@ -56,7 +45,7 @@ namespace ProjectCard.Shared.SceneModule
             await sceneLoadingService.Load(loadScreenScene.ScenePath, LoadSceneMode.Single);
 
             var background = await sceneLoadingService.LoadInBackground(gameScene.ScenePath, LoadSceneMode.Single);
-             
+
             await UniTask.Delay(1000);
 
             background.Activate();

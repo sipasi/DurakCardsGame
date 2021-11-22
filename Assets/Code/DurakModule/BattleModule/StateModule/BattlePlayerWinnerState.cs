@@ -29,26 +29,14 @@ namespace ProjectCard.DurakModule.BattleModule.StateModule
 
         public sealed override async void Enter()
         {
-            IReadOnlyList<Data> all = board.Entity.All;
+            IReadOnlyList<Data> all = board.Value.All;
 
             await MoveCards(all);
 
-            UpdatePlayerQueue(playerQueue.Entity);
+            UpdatePlayerQueue(playerQueue.Value);
 
             boardPlaces.Clear();
-            board.Entity.Clear();
-
-            if (deck.Entity.IsEmpty)
-            {
-                EmptyPlayersEliminator.EliminateAndUpdateQueue(playerStorage.Entity, playerQueue.Entity);
-
-                if (playerStorage.Entity.Active.Count < 2)
-                {
-                    NextState(DurakGameState.GameEnd);
-
-                    return;
-                }
-            }
+            board.Value.Clear();
 
             NextState(DurakGameState.BattleEnd);
         }

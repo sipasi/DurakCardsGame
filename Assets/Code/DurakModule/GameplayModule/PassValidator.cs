@@ -10,7 +10,7 @@ namespace ProjectCard.DurakModule.ValidatorModule
 
         public bool Validate()
         {
-            return board.Entity.IsEmpty is false;
+            return board.Value.IsEmpty is false;
         }
     }
 }

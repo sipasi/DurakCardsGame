@@ -27,9 +27,9 @@ namespace ProjectCard.DurakModule.ValidatorModule
 
         public bool Validate(ICard card)
         {
-            var board = this.board.Entity;
-            var deck = this.deck.Entity;
-            var playerQueue = this.playerQueue.Entity;
+            var board = this.board.Value;
+            var deck = this.deck.Value;
+            var playerQueue = this.playerQueue.Value;
 
             IPlayer current = playerQueue.Current;
 

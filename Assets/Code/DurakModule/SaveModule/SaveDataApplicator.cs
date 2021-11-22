@@ -57,7 +57,7 @@ namespace ProjectCard.DurakModule.SaveModule
 
         private async UniTask MoveCardsToPlayers()
         {
-            var active = playerStorage.Entity.Active;
+            var active = playerStorage.Value.Active;
 
             foreach (var player in active)
             {
@@ -81,7 +81,7 @@ namespace ProjectCard.DurakModule.SaveModule
                     await func.Invoke(card, i);
                 }
             }
-            var board = boardEntity.Entity;
+            var board = boardEntity.Value;
 
             var attacks = board.Attacks;
             var defends = board.Defends;
@@ -93,7 +93,7 @@ namespace ProjectCard.DurakModule.SaveModule
         private UniTask MoveToPlace<T>(EntityPlace<T> entityPlace, CardLookSide lookSide)
             where T : class, IEnumerable<Data>
         {
-            IEnumerable<Data> datas = entityPlace.Entity.Entity;
+            IEnumerable<Data> datas = entityPlace.Entity.Value;
 
             return movement.MoveToPlace(datas, entityPlace.Place, lookSide);
         }

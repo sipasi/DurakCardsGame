@@ -36,11 +36,11 @@ namespace ProjectCard.DurakModule.StateModule
             cardSelected.Action += OnCardSelected;
             passAction.Action += OnPass;
 
-            current = playerQueue.Entity.Current;
+            current = playerQueue.Value.Current;
 
             ICardSelector selector = playerSelectorList.Get(current.Selector);
 
-            selector.Begin();
+            selector.Begin(current);
         }
         public override void Exit()
         {
@@ -51,7 +51,7 @@ namespace ProjectCard.DurakModule.StateModule
 
             ICardSelector selector = playerSelectorList.Get(current.Selector);
 
-            selector.End();
+            selector.End(current);
 
             current = null;
         }
@@ -63,7 +63,7 @@ namespace ProjectCard.DurakModule.StateModule
                 return;
             }
 
-            playerQueue.Entity.SwitchActionType();
+            playerQueue.Value.SwitchActionType();
 
             NextState(DurakGameState.PlayerAction);
         }
@@ -71,7 +71,7 @@ namespace ProjectCard.DurakModule.StateModule
         {
             if (passSelectionHandler.Handle() is false) return;
 
-            DurakGameState state = playerQueue.Entity.IsAttackerQueue
+            DurakGameState state = playerQueue.Value.IsAttackerQueue
                 ? DurakGameState.BattleDefenderWinner
                 : DurakGameState.Toss;
 

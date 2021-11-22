@@ -33,16 +33,16 @@ namespace ProjectCard.DurakModule.BattleModule.StateModule
         }
         private void FirstBallte()
         {
-            IPlayer first = PlayerTool.DefineFirstPlayerBySmallestTrump(playerStorage.Entity.Active, deck.Entity.Bottom);
+            IPlayer first = PlayerTool.DefineFirstPlayerBySmallestTrump(playerStorage.Value.Active, deck.Value.Bottom);
 
             Debug.Log(nameof(BattleFirstStartState));
 
-            playerQueue.Entity.Set(
+            playerQueue.Value.Set(
                 attacker: first,
-                defender: playerQueue.Entity.GetNextFrom(first),
+                defender: playerQueue.Value.GetNextFrom(first),
                 action: PlayerActionType.Attack);
 
-            Debug.Log($"Attacker: {playerQueue.Entity.Attacker.Name}, Defender: {playerQueue.Entity.Defender.Name}");
+            Debug.Log($"Attacker: {playerQueue.Value.Attacker.Name}, Defender: {playerQueue.Value.Defender.Name}");
         }
     }
 }

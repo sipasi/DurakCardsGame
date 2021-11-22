@@ -15,7 +15,7 @@ namespace ProjectCard.DurakModule.HandlerModule
 
         public bool Handle()
         {
-            if (board.Entity.IsEmpty)
+            if (board.Value.IsEmpty)
             {
                 return false;
             }

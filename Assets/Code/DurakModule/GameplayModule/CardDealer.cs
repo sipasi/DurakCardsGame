@@ -35,9 +35,9 @@ namespace ProjectCard.DurakModule.GameplayModule
 
         public async UniTask DealCard()
         {
-            foreach (var player in storage.Entity.Active)
+            foreach (var player in storage.Value.Active)
             {
-                var entity = deck.Entity;
+                var entity = deck.Value;
 
                 foreach (var data in Dealer.DealCards(entity, player.Hand, rules.MaxCardsInHand))
                 {

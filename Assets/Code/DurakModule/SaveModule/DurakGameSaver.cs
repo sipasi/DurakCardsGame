@@ -19,6 +19,10 @@ namespace ProjectCard.DurakModule.SaveModule
 
         [SerializeField] private SaveEntitiesCollection saveEntities;
 
+        public async void SaveGameAsyncVoid()
+        {
+            await SaveGame();
+        }
 
         public async UniTask SaveGame()
         {

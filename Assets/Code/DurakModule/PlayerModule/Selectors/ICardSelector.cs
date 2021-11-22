@@ -4,7 +4,7 @@
     {
         CardSelectorType Type { get; }
 
-        void Begin();
-        void End();
+        void Begin(IPlayer player);
+        void End(IPlayer player);
     }
 }

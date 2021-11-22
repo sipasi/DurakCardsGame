@@ -2,6 +2,7 @@
 using Cysharp.Threading.Tasks;
 
 using ProjectCard.DurakModule.EntityModule;
+using ProjectCard.DurakModule.ViewModule;
 using ProjectCard.Shared.ServiceModule.MovementModule;
 using ProjectCard.Shared.ViewModule;
 
@@ -18,7 +19,8 @@ namespace ProjectCard.DurakModule.StateModule
         [SerializeField] private CardMovementManager movement;
 
         [Header("Places")]
-        [SerializeField] private Transform deckPlace;
+        [SerializeField] private Transform deckPlace; 
+        [SerializeField] private BoardPlaces boardPlaces;
 
         [Header("Entities")]
         [SerializeField] private BoardEntity board;
@@ -33,15 +35,17 @@ namespace ProjectCard.DurakModule.StateModule
 
             ClearEntities();
 
+            boardPlaces.Clear();
+
             NextState(DurakGameState.GameStart);
         }
 
         private async UniTask MoveCards()
         {
-            await movement.MoveToPlace(board.Entity.All, deckPlace, CardLookSide.Back);
-            await movement.MoveToPlace(trash.Entity, deckPlace, CardLookSide.Back);
+            await movement.MoveToPlace(board.Value.All, deckPlace, CardLookSide.Back);
+            await movement.MoveToPlace(trash.Value, deckPlace, CardLookSide.Back);
 
-            foreach (var player in playerStorage.Entity.All)
+            foreach (var player in playerStorage.Value.All)
             {
                 await movement.MoveToPlace(player.Hand, deckPlace, CardLookSide.Back);
             }
@@ -49,11 +53,11 @@ namespace ProjectCard.DurakModule.StateModule
 
         private void ClearEntities()
         {
-            playerStorage.Entity.Restore();
+            playerStorage.Value.Restore();
 
-            board.Entity.Clear();
-            deck.Entity.Clear();
-            trash.Entity.Clear();
+            board.Value.Clear();
+            deck.Value.Clear();
+            trash.Value.Clear();
         }
     }
 }

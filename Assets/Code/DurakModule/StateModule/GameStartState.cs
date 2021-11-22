@@ -17,7 +17,7 @@ namespace ProjectCard.DurakModule.StateModule
         {
             base.Enter();
 
-            deck.Entity.Shuffle(times: 500);
+            deck.Value.Shuffle(times: 500);
 
             viewUpdater.UpdateSprites();
             viewUpdater.UpdateCount();

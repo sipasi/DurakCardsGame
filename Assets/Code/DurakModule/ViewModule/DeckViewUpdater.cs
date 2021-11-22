@@ -14,7 +14,7 @@ namespace ProjectCard.DurakModule.ViewModule
 
         public void UpdateSprites()
         {
-            var deck = entity.Entity;
+            var deck = entity.Value;
 
             var trumpView = map.Get(deck.Bottom).View;
 
@@ -23,7 +23,7 @@ namespace ProjectCard.DurakModule.ViewModule
 
         public void UpdateCount()
         {
-            var deck = entity.Entity;
+            var deck = entity.Value;
 
             view.Count = deck.Count.ToString();
         }

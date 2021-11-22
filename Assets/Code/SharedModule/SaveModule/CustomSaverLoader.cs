@@ -1,5 +1,4 @@
-﻿#nullable enable 
-
+﻿
 using System;
 
 using ProjectCard.Shared.CollectionModule;
@@ -17,5 +16,4 @@ namespace ProjectCard.Shared.SaveModule
         public abstract void Load(IStorage<Guid> storage);
         public abstract void Save(IStorage<Guid> storage);
     }
-
 }

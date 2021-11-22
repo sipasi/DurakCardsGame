@@ -40,9 +40,9 @@ namespace ProjectCard.DurakModule.HandlerModule
 
             Data data = entityDataMap.Get(card);
 
-            playerQueue.Entity.Current.Hand.Remove(data);
+            playerQueue.Value.Current.Hand.Remove(data);
 
-            AddDataToBoard(board.Entity, data);
+            AddDataToBoard(board.Value, data);
 
             await AddToBoardPlace(boardPlaces, card);
 

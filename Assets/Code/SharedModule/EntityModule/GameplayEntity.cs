@@ -7,7 +7,7 @@ namespace ProjectCard.Shared.EntityModule
     {
         private T entity;
 
-        public T Entity => entity;
+        public T Value => entity;
 
         public void Initialize(T entity)
         {

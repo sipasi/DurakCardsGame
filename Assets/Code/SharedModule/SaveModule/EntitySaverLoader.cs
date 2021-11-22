@@ -1,5 +1,4 @@
-﻿#nullable enable 
-
+﻿
 using System;
 
 using ProjectCard.Shared.CollectionModule;
@@ -14,7 +13,7 @@ namespace ProjectCard.Shared.SaveModule
     {
         [SerializeField] private GameplayEntity<T> entity;
 
-        public T Data => entity.Entity;
+        public T Data => entity.Value;
 
         public override void Load(IStorage<Guid> storage)
         {
