@@ -38,6 +38,7 @@ namespace ProjectCard.Shared.ServiceModule.MovementModule
             for (int i = 0; i < entities.Count; i++)
             {
                 ICard entity = entities[i];
+
                 await MoveToParent(temporary, entity, parent, speed);
             }
         }

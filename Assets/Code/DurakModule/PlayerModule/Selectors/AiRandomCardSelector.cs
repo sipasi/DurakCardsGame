@@ -31,6 +31,11 @@ namespace ProjectCard.DurakModule.PlayerModule
 
             if (card is null)
             {
+                if (board.Value.IsEmpty)
+                {
+                    throw new System.Exception($"{nameof(AiRandomCardSelector)} throw [board.Value.IsEmpty is true]");
+                }
+
                 Pass();
 
                 return;
@@ -43,7 +48,9 @@ namespace ProjectCard.DurakModule.PlayerModule
         {
             List<Data> hand = Current.Hand;
 
-            if (board.Value.IsEmpty)
+            var board = this.board.Value;
+
+            if (board.IsEmpty)
             {
                 int random = UnityEngine.Random.Range(0, hand.Count);
 
@@ -52,11 +59,11 @@ namespace ProjectCard.DurakModule.PlayerModule
                 return card;
             }
 
-            if (board.Value.IsFull is false)
+            if (board.IsFull is false)
             {
                 foreach (var data in hand)
                 {
-                    if (board.Value.ContainsRank(data))
+                    if (board.ContainsRank(data))
                     {
                         ICard card = entityDataMap.Get(data);
 

@@ -1,6 +1,8 @@
 ﻿using ProjectCard.DurakModule.SettingsModule;
 using ProjectCard.Shared.GameModule;
+using ProjectCard.Shared.ServiceModule.CollectionModule;
 using ProjectCard.Shared.ServiceModule.SaveModule;
+using ProjectCard.Shared.ServiceModule.TaskModule;
 
 using UnityEngine;
 
@@ -12,10 +14,12 @@ namespace ProjectCard.DurakModule.GameModule
 
         [SerializeField] private GameLoadProperties loadProperties;
 
+        [SerializeField] private DurakSettingsSaverLoader settingsLoader;
+
+        [SerializeField] private TaskServiceAsync taskService;
+        [SerializeField] private PoolService poolService;
+
         [SerializeField] private ScriptableSaveService[] saveServices;
-
-        [SerializeField] DurakSettingsSaverLoader settingsLoader;
-
 
         private async void Awake()
         {
@@ -25,6 +29,9 @@ namespace ProjectCard.DurakModule.GameModule
             }
 
             await settingsLoader.Load();
+
+            poolService.Clear();
+            taskService.Clear();
 
             if (loadProperties.LoadType is GameLoadType.New)
             {

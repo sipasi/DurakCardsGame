@@ -12,7 +12,6 @@ namespace ProjectCard.Shared.ServiceModule.CollectionModule
     {
         private readonly Dictionary<Type, object> pairs = new Dictionary<Type, object>(capacity: 10);
 
-
         public T Get<T>() where T : class, new()
         {
             Queue<T> pool = GetOrCreatePool<T>();
@@ -30,6 +29,8 @@ namespace ProjectCard.Shared.ServiceModule.CollectionModule
             objects.Enqueue(item);
         }
 
+        public void Clear() => pairs.Clear();
+
         private Queue<T> GetOrCreatePool<T>()
         {
             var type = typeof(T);
@@ -45,7 +46,7 @@ namespace ProjectCard.Shared.ServiceModule.CollectionModule
 
             return pool;
         }
-
+         
         private void ReuseEntity(object entity)
         {
             if (entity is IReusable reusable) reusable.Reuse();

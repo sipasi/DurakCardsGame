@@ -2526,10 +2526,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameLoader: {fileID: 1935765582}
   loadProperties: {fileID: 11400000, guid: cc26bb744bd8418439eb1e13cbba8e59, type: 2}
+  settingsLoader: {fileID: 849986154}
+  taskService: {fileID: 11400000, guid: 0731030e5d44fd644ab44f7e97de4db8, type: 2}
+  poolService: {fileID: 11400000, guid: dc309993bba0e814bb7f4de6f2e1d4a8, type: 2}
   saveServices:
   - {fileID: 11400000, guid: a32109b4ee464b340b0a2b3ae182e84f, type: 2}
   - {fileID: 11400000, guid: 80fbe20f251e8704aa5c936bbfc17c11, type: 2}
-  settingsLoader: {fileID: 849986154}
 --- !u!1 &834138792
 GameObject:
   m_ObjectHideFlags: 0
