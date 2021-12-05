@@ -13,7 +13,10 @@
 
         Toss,
 
-        PlayerAction,
+        DefinePlayerAction,
+        PlayerAttacking,
+        PlayerDefending,
+
         GameRestart,
     }
 }

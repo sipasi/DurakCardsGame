@@ -16,7 +16,7 @@ namespace ProjectCard.Shared.WindowModule
         private UnityAction okClickAction;
         private UnityAction cancelClickAction;
 
-        private readonly Func<DialogWindow, bool> monitor = static (window) => window.result != null;
+        private readonly Func<DialogWindow, bool> monitor = (window) => window.result != null;
 
         private DialogResult? result;
 

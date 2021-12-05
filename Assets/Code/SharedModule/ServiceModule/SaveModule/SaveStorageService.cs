@@ -21,7 +21,7 @@ namespace ProjectCard.Shared.ServiceModule.SaveModule
             return await StorageService.Save(storage);
         }
 
-        public void Store(TKey key, object data) 
+        public void Store(TKey key, object data)
             => storage.Store(key, data);
 
         public TData Restore<TData>(TKey key) => storage.Restore<TData>(key);

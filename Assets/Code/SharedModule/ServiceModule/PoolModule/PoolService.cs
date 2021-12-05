@@ -1,4 +1,4 @@
-﻿#nullable enable
+﻿
 
 using System;
 using System.Collections.Generic;
@@ -46,7 +46,7 @@ namespace ProjectCard.Shared.ServiceModule.CollectionModule
 
             return pool;
         }
-         
+
         private void ReuseEntity(object entity)
         {
             if (entity is IReusable reusable) reusable.Reuse();

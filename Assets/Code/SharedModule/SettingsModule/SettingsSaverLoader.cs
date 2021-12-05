@@ -3,9 +3,6 @@ using System;
 
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.DurakModule.CardModule;
-using ProjectCard.DurakModule.GameModule;
-using ProjectCard.DurakModule.SettingsModule;
 using ProjectCard.Shared.CollectionModule;
 using ProjectCard.Shared.SaveModule;
 using ProjectCard.Shared.ScriptableModule;
@@ -14,13 +11,13 @@ using ProjectCard.Shared.ServiceModule.SaveModule;
 using UnityEngine;
 
 namespace ProjectCard.Shared.SettingsModule
-{ 
+{
     public class SettingsSaverLoader : MonoBehaviour
     {
         [SerializeField] private GuidSaveService settingsStorage;
 
         [Header("Save")]
-        [SerializeField] private ScriptableItem<AnimationsSpeed> animations;
+        [SerializeField] private ScriptableItem<SpeedVariables> animations;
 
         public async void LoadAsyncVoid() => await Load();
         public async void SaveAsyncVoid() => await Save();
@@ -31,7 +28,7 @@ namespace ProjectCard.Shared.SettingsModule
 
             var data = settingsStorage.Restore<AnimationSpeedSaveData>(animations.Key);
 
-            if (data is not null)
+            if (data != null)
             {
                 data.CopyTo(animations.Data);
             }
@@ -70,12 +67,12 @@ namespace ProjectCard.Shared.SettingsModule
         {
             public float CardMovement { get; set; }
 
-            public AnimationSpeedSaveData(AnimationsSpeed animations)
+            public AnimationSpeedSaveData(SpeedVariables animations)
             {
                 CardMovement = animations.CardMovement;
             }
 
-            public void CopyTo(AnimationsSpeed animations)
+            public void CopyTo(SpeedVariables animations)
             {
                 animations.CardMovement = CardMovement;
             }

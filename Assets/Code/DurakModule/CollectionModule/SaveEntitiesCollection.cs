@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using ProjectCard.Shared.SaveModule;
 
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace ProjectCard.DurakModule.CollectionModule
 {

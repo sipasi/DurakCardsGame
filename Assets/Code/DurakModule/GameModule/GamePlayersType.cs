@@ -1,5 +1,4 @@
-﻿using ProjectCard.Shared.GameModule;
-
+﻿
 using UnityEngine;
 
 namespace ProjectCard.DurakModule.GameModule

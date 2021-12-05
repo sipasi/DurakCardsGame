@@ -12,11 +12,11 @@ namespace ProjectCard.Shared.ServiceModule.TaskModule
 
 
         public Parallel() : this(6) { }
-        public Parallel(int capacity) : this(new List<IProcess>(capacity)) { }
-        public Parallel(List<IProcess> processes) => this.collection = processes;
+        public Parallel(int capacity) => collection = new List<IProcess>(capacity);
 
 
         public void Add(IProcess process) => collection.Add(process);
+        public void AddRange(IEnumerable<IProcess> processes) => collection.AddRange(processes);
 
         public void Execute(float delta)
         {

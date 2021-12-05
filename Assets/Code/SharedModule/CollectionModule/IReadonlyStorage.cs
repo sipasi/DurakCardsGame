@@ -1,4 +1,4 @@
-﻿#nullable enable
+﻿
 
 
 namespace ProjectCard.Shared.CollectionModule

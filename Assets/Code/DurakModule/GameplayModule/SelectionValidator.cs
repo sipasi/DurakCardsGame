@@ -1,77 +1,34 @@
 ﻿
-using System;
-
 using ProjectCard.DurakModule.CardModule;
-using ProjectCard.DurakModule.CardModule.ExtensionModule;
 using ProjectCard.DurakModule.CollectionModule;
-using ProjectCard.DurakModule.CollectionModule.ExtensionModule;
 using ProjectCard.DurakModule.EntityModule;
 using ProjectCard.DurakModule.PlayerModule;
 using ProjectCard.Shared.CardModule;
+using ProjectCard.Shared.CollectionModule;
 
 using UnityEngine;
 
 namespace ProjectCard.DurakModule.ValidatorModule
 {
-    public class SelectionValidator : MonoBehaviour
+    public abstract class SelectionValidator : MonoBehaviour, IValidator<ICard>
     {
-        [Header("Players")]
-        [SerializeField] private PlayerQueueEntity playerQueue;
-
         [Header("Entities")]
+        [SerializeField] private PlayerQueueEntity playerQueue;
         [SerializeField] private BoardEntity board;
         [SerializeField] private DeckEntity deck;
 
         [Header("Collections")]
-        [SerializeField] private CardEntityDataMap entityDataMap;
+        [SerializeField] private CardEntityDataMap map;
 
-        public bool Validate(ICard card)
-        {
-            var board = this.board.Value;
-            var deck = this.deck.Value;
-            var playerQueue = this.playerQueue.Value;
+        protected IBoard<Data> Board => board.Value;
+        protected IDeck<Data> Deck => deck.Value;
+        protected IPlayerQueue PlayerQueue => playerQueue.Value;
 
-            IPlayer current = playerQueue.Current;
+        public abstract bool Validate(ICard value);
 
-            Data data = entityDataMap.Get(card);
+        protected Data ConvertToData(ICard card) => map.Get(card);
 
-            if (current.Hand.Contains(data) is false)
-            {
-                return false;
-            }
-
-
-            if (playerQueue.IsAttackerQueue)
-            {
-                if (board.IsEmpty is false && board.ContainsRank(data) is false)
-                {
-                    return false;
-                }
-
-                if (board.IsAttacksFull)
-                {
-                    return false;
-                }
-            }
-
-
-            if (board.TryGetLast(out Data last))
-            {
-                bool canMove = playerQueue.Action switch
-                {
-                    PlayerActionType.Attack => board.ContainsRank(data),
-                    PlayerActionType.Defend => data.CanBeat(last, deck.Bottom),
-
-                    _ => throw new ArgumentException()
-                };
-
-                if (canMove is false)
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
+        protected void Deconstruct(out IBoard<Data> board, out IDeck<Data> deck, out IPlayerQueue playerQueue)
+            => (board, deck, playerQueue) = (Board, Deck, PlayerQueue);
     }
 }

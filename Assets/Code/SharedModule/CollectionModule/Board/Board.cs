@@ -73,6 +73,15 @@ namespace ProjectCard.Shared.CollectionModule
             return place.IsNotEmpty();
         }
 
+        public T GetLast()
+        {
+            int lastIndex = (index + 1) % BoardIndexes.count;
+
+            List<T> place = places[lastIndex];
+
+            return place.Last();
+        }
+
         public void Clear()
         {
             foreach (var place in places)

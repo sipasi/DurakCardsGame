@@ -6,6 +6,7 @@
         void AddToAttacks(T item);
         void AddToDefends(T item);
         bool TryGetLast(out T item);
+        T GetLast();
         void Clear();
     }
 }

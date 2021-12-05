@@ -2,7 +2,7 @@
 {
     public interface IPlayerQueue
     {
-        public PlayerActionType Action { get; }
+        public PlayerActionType Action { get; set; }
 
         public IPlayer Attacker { get; }
         public IPlayer Defender { get; }
@@ -12,8 +12,6 @@
         public bool IsDefenderQueue { get; }
 
         public void Set(IPlayer attacker, IPlayer defender, PlayerActionType action);
-
-        public void SwitchActionType();
 
         IPlayer GetNextFrom(IPlayer player, int andSkip = 0);
     }

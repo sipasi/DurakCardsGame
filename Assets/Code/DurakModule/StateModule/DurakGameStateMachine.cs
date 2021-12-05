@@ -1,5 +1,5 @@
 ﻿
-using ProjectCard.DurakModule.BattleModule.StateModule;
+using ProjectCard.DurakModule.StateModule.BattleModule;
 using ProjectCard.Shared.StateModule;
 
 using UnityEngine;
@@ -19,7 +19,9 @@ namespace ProjectCard.DurakModule.StateModule
         [SerializeField] private BattleAttackerWinnerState battleAttackerWinner;
         [SerializeField] private BattleDefenderWinnerState battleDefenderWinner;
         [SerializeField] private BattleEndState battleEnd;
-        [SerializeField] private PlayerActionState playerAction;
+        [SerializeField] private DefinePlayerActionState definePlayerAction;
+        [SerializeField] private PlayerAttackingState playerAttacking;
+        [SerializeField] private PlayerDefendingState playerDefending;
         [SerializeField] private OneAttackerTossState oneAttackerTossState;
 
         public void Initialize()
@@ -32,11 +34,13 @@ namespace ProjectCard.DurakModule.StateModule
             machine.DefineState(() => battleAttackerWinner);
             machine.DefineState(() => battleDefenderWinner);
             machine.DefineState(() => battleEnd);
-            machine.DefineState(() => playerAction);
+            machine.DefineState(() => definePlayerAction);
+            machine.DefineState(() => playerAttacking);
+            machine.DefineState(() => playerDefending);
             machine.DefineState(() => oneAttackerTossState);
 
             machine.DefineStartTransition<GameStartState>(DurakGameState.GameStart);
-            machine.DefineStartTransition<PlayerActionState>(DurakGameState.PlayerAction);
+            machine.DefineStartTransition<DefinePlayerActionState>(DurakGameState.DefinePlayerAction);
 
             DefineGameTransitions();
             DefinePlayerTransitions();
@@ -57,12 +61,21 @@ namespace ProjectCard.DurakModule.StateModule
         }
         private void DefinePlayerTransitions()
         {
-            machine.DefineTransition<PlayerActionState, PlayerActionState>(DurakGameState.PlayerAction);
-            machine.DefineTransition<PlayerActionState, GameRestartState>(DurakGameState.GameRestart);
-            machine.DefineTransition<PlayerActionState, OneAttackerTossState>(DurakGameState.Toss);
-            machine.DefineTransition<PlayerActionState, BattleEndState>(DurakGameState.BattleEnd);
+            machine.DefineTransition<DefinePlayerActionState, PlayerDefendingState>(DurakGameState.PlayerDefending);
+            machine.DefineTransition<DefinePlayerActionState, PlayerAttackingState>(DurakGameState.PlayerAttacking);
+            machine.DefineTransition<PlayerAttackingState, PlayerDefendingState>(DurakGameState.PlayerDefending);
+            machine.DefineTransition<PlayerDefendingState, PlayerAttackingState>(DurakGameState.PlayerAttacking);
 
-            machine.DefineTransition<PlayerActionState, BattleDefenderWinnerState>(DurakGameState.BattleDefenderWinner);
+            machine.DefineTransition<PlayerAttackingState, GameRestartState>(DurakGameState.GameRestart);
+            machine.DefineTransition<PlayerDefendingState, GameRestartState>(DurakGameState.GameRestart);
+
+            machine.DefineTransition<PlayerDefendingState, OneAttackerTossState>(DurakGameState.Toss);
+            machine.DefineTransition<PlayerAttackingState, OneAttackerTossState>(DurakGameState.Toss);
+
+            machine.DefineTransition<PlayerDefendingState, BattleEndState>(DurakGameState.BattleEnd);
+            machine.DefineTransition<PlayerAttackingState, BattleEndState>(DurakGameState.BattleEnd);
+
+            machine.DefineTransition<PlayerAttackingState, BattleDefenderWinnerState>(DurakGameState.BattleDefenderWinner);
 
             machine.DefineTransition<OneAttackerTossState, OneAttackerTossState>(DurakGameState.Toss);
             machine.DefineTransition<OneAttackerTossState, BattleAttackerWinnerState>(DurakGameState.BattleAttackerWinner);
@@ -70,8 +83,8 @@ namespace ProjectCard.DurakModule.StateModule
         }
         private void DefineBattleTransitions()
         {
-            machine.DefineTransition<BattleFirstStartState, PlayerActionState>(DurakGameState.PlayerAction);
-            machine.DefineTransition<BattleStartState, PlayerActionState>(DurakGameState.PlayerAction);
+            machine.DefineTransition<BattleFirstStartState, PlayerAttackingState>(DurakGameState.PlayerAttacking);
+            machine.DefineTransition<BattleStartState, PlayerAttackingState>(DurakGameState.PlayerAttacking);
 
             machine.DefineTransition<BattleEndState, BattleStartState>(DurakGameState.BattleStart);
 

@@ -26,14 +26,14 @@ namespace ProjectCard.DurakModule.HandlerModule
         [SerializeField] private BoardEntity board;
 
         [Header("Validators")]
-        [SerializeField] private SelectionValidator playerSelectionValidator;
+        [SerializeField] private SelectionValidator selectionValidator;
 
         [Header("Collections")]
         [SerializeField] private CardEntityDataMap entityDataMap;
 
         public async UniTask<bool> Handle(ICard card)
         {
-            if (playerSelectionValidator.Validate(card) is false)
+            if (selectionValidator.Validate(card) is false)
             {
                 return false;
             }

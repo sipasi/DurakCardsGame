@@ -1,4 +1,4 @@
-﻿#nullable enable
+﻿
 
 using System;
 using System.Collections.Generic;
@@ -27,7 +27,7 @@ namespace ProjectCard.Shared.CollectionModule
             dictionary.Add(key, data);
         }
 
-        public T? Restore<T>(TKey key)
+        public T Restore<T>(TKey key)
         {
             if (Contains(key) is false)
             {
@@ -36,7 +36,7 @@ namespace ProjectCard.Shared.CollectionModule
 
             var value = dictionary[key];
 
-            T? data = (T)value;
+            T data = (T)value;
 
             Assert.IsFalse(data == null, $"Can't cast value by the key[{key}]. Value type[{value.GetType()}]. Cast type [{typeof(T).Name}]");
 

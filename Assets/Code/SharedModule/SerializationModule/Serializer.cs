@@ -1,7 +1,5 @@
-﻿#nullable enable
-
+﻿
 using System;
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
 
 using Cysharp.Threading.Tasks;
@@ -12,9 +10,9 @@ namespace ProjectCard.Shared.SerializationModule
 {
     public abstract class Serializer : ISerializer, IDeserializer
     {
-        public async UniTask<T?> Deserialize<T>(Stream stream)
+        public async UniTask<T> Deserialize<T>(Stream stream)
         {
-            T? result = default;
+            T result = default;
 
             var type = typeof(T);
 
@@ -53,11 +51,10 @@ namespace ProjectCard.Shared.SerializationModule
             return true;
         }
 
-        [return: MaybeNull]
         protected abstract UniTask<T> DeserializeObject<T>(Stream stream);
         protected abstract UniTask SerializeObject<T>(Stream stream, T data);
 
-        private void Message(Action<object> log, string action, string? exception = null)
+        private void Message(Action<object> log, string action, string exception = null)
         {
             string text = $"Can't {action}.\nException Message: {exception}";
 

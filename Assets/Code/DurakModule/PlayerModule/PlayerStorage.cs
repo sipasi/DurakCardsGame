@@ -38,6 +38,8 @@ namespace ProjectCard.DurakModule.PlayerModule
             return null;
         }
 
+        public bool IsActive(IPlayer player) => active.Contains(player);
+
         public bool Remove(IPlayer player)
         {
             if (active.Remove(player))

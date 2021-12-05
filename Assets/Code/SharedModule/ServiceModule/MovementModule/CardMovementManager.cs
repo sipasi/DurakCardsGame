@@ -18,7 +18,7 @@ namespace ProjectCard.Shared.ServiceModule.MovementModule
         [SerializeField] private CardEntity temporary;
 
         [SerializeField] private CardMovementService movement;
-        [SerializeField] private AnimationsSpeed animationsSpeed;
+        [SerializeField] private SpeedVariables animationsSpeed;
 
         [SerializeField] private CardEntityDataMap entityDataMap;
 

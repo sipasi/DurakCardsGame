@@ -7,11 +7,11 @@ namespace ProjectCard.DurakModule.PlayerModule
 {
     public class PlayerSelectorList : MonoBehaviour
     {
-        [SerializeField] private List<CardSelector> selectors;
+        [SerializeField] private List<PlayerCardSelection> selectors;
 
-        public ICardSelector Get(CardSelectorType type)
+        public IPlayerCardSelection Get(CardSelectorType type)
         {
-            foreach (ICardSelector selector in selectors)
+            foreach (IPlayerCardSelection selector in selectors)
             {
                 if (selector.Type == type)
                 {

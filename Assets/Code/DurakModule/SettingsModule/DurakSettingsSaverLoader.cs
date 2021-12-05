@@ -21,7 +21,7 @@ namespace ProjectCard.DurakModule.SettingsModule
         {
             var data = storage.Restore<LoadPropertiesSaveData>(gamePlayersType.Key);
 
-            if (data is not null)
+            if (data != null)
             {
                 data.CopyTo(gamePlayersType.Data);
             }

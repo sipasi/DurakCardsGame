@@ -12,7 +12,6 @@ using ProjectCard.Shared.WindowModule;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace ProjectCard.Shared.SceneModule
 {

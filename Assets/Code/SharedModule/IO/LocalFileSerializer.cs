@@ -1,4 +1,4 @@
-﻿#nullable enable
+﻿
 
 using System.IO;
 
@@ -19,7 +19,7 @@ namespace ProjectCard.Shared.IO
             => file = new FileInfo(path);
 
 
-        public async UniTask<T?> LoadAsync<T>()
+        public async UniTask<T> LoadAsync<T>()
         {
             using FileStream stream = GetFileStream(FileMode.OpenOrCreate, FileAccess.Read);
 

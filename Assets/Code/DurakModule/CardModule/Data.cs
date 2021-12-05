@@ -1,4 +1,4 @@
-#nullable enable
+
 
 using System;
 
@@ -32,7 +32,7 @@ namespace ProjectCard.DurakModule.CardModule
             return suit == data.suit &&
                    rank == data.rank;
         }
-        public override bool Equals(object? obj)
+        public override bool Equals(object obj)
         {
             return obj is Data data && Equals(in data);
         }

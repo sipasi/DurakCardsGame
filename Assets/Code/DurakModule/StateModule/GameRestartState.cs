@@ -19,7 +19,7 @@ namespace ProjectCard.DurakModule.StateModule
         [SerializeField] private CardMovementManager movement;
 
         [Header("Places")]
-        [SerializeField] private Transform deckPlace; 
+        [SerializeField] private Transform deckPlace;
         [SerializeField] private BoardPlaces boardPlaces;
 
         [Header("Entities")]

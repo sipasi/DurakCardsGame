@@ -39,9 +39,9 @@ namespace ProjectCard.DurakModule.GameModule
             return UniTask.CompletedTask;
         }
 
-        public override async UniTask LoadSavedGame()
+        public override UniTask LoadSavedGame()
         {
-            await savedGameLoader.Load();
+            return savedGameLoader.Load();
         }
 
         private void OnGameRestart()

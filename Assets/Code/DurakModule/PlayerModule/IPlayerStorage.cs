@@ -1,4 +1,4 @@
-﻿#nullable enable
+﻿
 
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,9 @@ namespace ProjectCard.DurakModule.PlayerModule
         IReadOnlyList<IPlayer> Removed { get; }
 
         int IndexOf(IPlayer player);
-        IPlayer? ById(Guid id);
+        IPlayer ById(Guid id);
+
+        bool IsActive(IPlayer player);
 
         bool Remove(IPlayer player);
         void RemoveRange(IEnumerable<IPlayer> players);

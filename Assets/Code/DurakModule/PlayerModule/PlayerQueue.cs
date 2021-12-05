@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 
+using UnityEngine.Assertions;
+
 namespace ProjectCard.DurakModule.PlayerModule
 {
     [Serializable]
@@ -14,7 +16,7 @@ namespace ProjectCard.DurakModule.PlayerModule
         public PlayerActionType Action
         {
             get => action;
-            private set
+            set
             {
                 action = value;
 
@@ -43,15 +45,13 @@ namespace ProjectCard.DurakModule.PlayerModule
 
         public void Set(IPlayer attacker, IPlayer defender, PlayerActionType action)
         {
+            Assert.IsTrue(storage.IsActive(attacker));
+            Assert.IsTrue(storage.IsActive(defender));
+
             Attacker = attacker;
             Defender = defender;
 
             Action = action;
-        }
-
-        public void SwitchActionType()
-        {
-            Action = Action == PlayerActionType.Attack ? PlayerActionType.Defend : PlayerActionType.Attack;
         }
 
         public IPlayer GetNextFrom(IPlayer player, int andSkip = 0)

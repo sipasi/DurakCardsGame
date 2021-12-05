@@ -1,4 +1,6 @@
-﻿using ProjectCard.Shared.ScriptableModule;
+﻿using System;
+
+using ProjectCard.Shared.ScriptableModule;
 
 using TMPro;
 
@@ -9,7 +11,7 @@ namespace ProjectCard.Shared.SettingsModule
 {
     public class AnimationSpeedModifier : MonoBehaviour
     {
-        [SerializeField] private AnimationsSpeed animationsSpeed;
+        [SerializeField] private SpeedVariables animationsSpeed;
         [SerializeField] private TextMeshProUGUI text;
         [SerializeField] private Slider slider;
 
@@ -31,12 +33,16 @@ namespace ProjectCard.Shared.SettingsModule
 
         private void UpdateSpeedText()
         {
-            text.text = $"Animation speed: {animationsSpeed.CardMovement}";
+            text.text = $"Animation speed: {animationsSpeed.CardMovement:0.00}";
         }
 
         private void OnValueChanged(float value)
         {
-            animationsSpeed.CardMovement = value;
+            float rounded = (float)Math.Round(value, digits: 2);
+
+            slider.SetValueWithoutNotify(rounded);
+
+            animationsSpeed.CardMovement = rounded;
 
             UpdateSpeedText();
         }

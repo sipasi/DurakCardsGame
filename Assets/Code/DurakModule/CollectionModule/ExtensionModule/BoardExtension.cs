@@ -1,6 +1,7 @@
 ﻿
 using ProjectCard.DurakModule.CardModule;
 using ProjectCard.DurakModule.CardModule.ExtensionModule;
+using ProjectCard.DurakModule.PlayerModule;
 using ProjectCard.Shared.CollectionModule;
 
 namespace ProjectCard.DurakModule.CollectionModule.ExtensionModule
@@ -25,6 +26,24 @@ namespace ProjectCard.DurakModule.CollectionModule.ExtensionModule
             foreach (var item in board)
             {
                 if (item.EqualRank(data))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public static bool CanToss(this IReadonlyBoard<Data> board, IPlayer attacker)
+        {
+            if (board.IsAttacksFull)
+            {
+                return false;
+            }
+
+            foreach (var card in attacker.Hand)
+            {
+                if (board.ContainsRank(card))
                 {
                     return true;
                 }

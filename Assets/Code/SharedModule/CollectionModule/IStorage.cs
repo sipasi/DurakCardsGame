@@ -1,4 +1,4 @@
-﻿#nullable enable
+﻿
 
 
 namespace ProjectCard.Shared.CollectionModule
@@ -7,7 +7,7 @@ namespace ProjectCard.Shared.CollectionModule
     {
         void Store(TKey key, object data);
 
-        T? Restore<T>(TKey key);
+        T Restore<T>(TKey key);
 
         T RestoreOrCreate<T>(TKey key) where T : new();
 

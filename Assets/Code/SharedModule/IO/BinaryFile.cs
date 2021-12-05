@@ -1,6 +1,5 @@
-﻿#nullable enable
+﻿
 
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -15,14 +14,13 @@ namespace ProjectCard.Shared.IO
         public BinaryFile(string directory, string name)
             : base(directory, name) { }
 
-        [return: MaybeNull]
         protected override UniTask<T> DeserializeObject<T>(Stream stream)
         {
             BinaryFormatter formatter = new BinaryFormatter();
 
             var raw = formatter.Deserialize(stream);
 
-            T? result = (T)raw;
+            T result = (T)raw;
 
             return UniTask.FromResult(result);
         }
