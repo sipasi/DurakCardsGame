@@ -5,5 +5,5 @@ using ProjectCard.Shared.SaveModule;
 
 namespace ProjectCard.DurakModule.SaveModule
 {
-    public sealed class TrashSaverLoader : EntitySaverLoader<List<Data>> { }
+    public sealed class DiscardPileSaverLoader : EntitySaverLoader<List<Data>> { }
 }

@@ -6,5 +6,5 @@ using ProjectCard.Shared.EntityModule;
 
 namespace ProjectCard.DurakModule.EntityModule
 {
-    public class TrashEntity : GameplayEntity<List<Data>> { }
+    public class DiscardPileEntity : GameplayEntity<List<Data>> { }
 }

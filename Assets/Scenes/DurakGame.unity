@@ -789,7 +789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 262422813}
   m_Layer: 5
-  m_Name: Trash
+  m_Name: DiscardPilePlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1822,7 +1822,7 @@ MonoBehaviour:
   board: {fileID: 2071064807}
   deck: {fileID: 1165979027}
   movement: {fileID: 1257770811}
-  trash: {fileID: 1871072340}
+  discardPile: {fileID: 1871072340}
   trashPlace: {fileID: 262422813}
 --- !u!1 &611664022
 GameObject:
@@ -2031,7 +2031,7 @@ GameObject:
   - component: {fileID: 698903466}
   - component: {fileID: 698903467}
   m_Layer: 0
-  m_Name: TrashSaverLoader
+  m_Name: DiscardPileSaverLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4487,7 +4487,7 @@ MonoBehaviour:
   playerStorage: {fileID: 48643686}
   playerQueue: {fileID: 1680203889}
   deckEntity: {fileID: 1165979027}
-  trashEntity: {fileID: 1871072340}
+  discardPileEntity: {fileID: 1871072340}
   boardEntity: {fileID: 2071064807}
   playerEntities:
   - {fileID: 1192063306}
@@ -5431,7 +5431,7 @@ MonoBehaviour:
     entity: {fileID: 1165979027}
     place: {fileID: 1248580613}
   trash:
-    entity: {fileID: 1871072340}
+    entity: {fileID: 0}
     place: {fileID: 262422813}
   boardEntity: {fileID: 2071064807}
   boardPlaces: {fileID: 645871}
@@ -5989,7 +5989,7 @@ GameObject:
   - component: {fileID: 1871072339}
   - component: {fileID: 1871072340}
   m_Layer: 0
-  m_Name: TrashEntity
+  m_Name: DiscardPileEntity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6018,7 +6018,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1871072338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b178e61829c14d346a800324256945a1, type: 3}
+  m_Script: {fileID: 11500000, guid: fad5c2d59f88da94489f2463eeb8c878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1872770737
@@ -6512,7 +6512,7 @@ MonoBehaviour:
   boardPlaces: {fileID: 645871}
   board: {fileID: 2071064807}
   deck: {fileID: 1165979027}
-  trash: {fileID: 1871072340}
+  discardPile: {fileID: 1871072340}
 --- !u!1 &2101131584
 GameObject:
   m_ObjectHideFlags: 0

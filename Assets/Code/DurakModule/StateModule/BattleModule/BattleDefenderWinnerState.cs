@@ -21,14 +21,14 @@ namespace ProjectCard.DurakModule.StateModule.BattleModule
         [SerializeField] private CardMovementManager movement;
 
         [Header("Entities")]
-        [SerializeField] TrashEntity trash;
+        [SerializeField] DiscardPileEntity discardPile;
 
         [Header("Places")]
         [SerializeField] private Transform trashPlace;
 
         protected override async UniTask MoveCards(IReadOnlyList<Data> datas)
         {
-            trash.Value.AddRange(datas);
+            discardPile.Value.AddRange(datas);
 
             await movement.MoveToPlace(datas, trashPlace, CardLookSide.Back);
 

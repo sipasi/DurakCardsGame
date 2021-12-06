@@ -25,7 +25,7 @@ namespace ProjectCard.DurakModule.StateModule
         [Header("Entities")]
         [SerializeField] private BoardEntity board;
         [SerializeField] private DeckEntity deck;
-        [SerializeField] private TrashEntity trash;
+        [SerializeField] private DiscardPileEntity discardPile;
 
         public override async void Enter()
         {
@@ -43,7 +43,7 @@ namespace ProjectCard.DurakModule.StateModule
         private async UniTask MoveCards()
         {
             await movement.MoveToPlace(board.Value.All, deckPlace, CardLookSide.Back);
-            await movement.MoveToPlace(trash.Value, deckPlace, CardLookSide.Back);
+            await movement.MoveToPlace(discardPile.Value, deckPlace, CardLookSide.Back);
 
             foreach (var player in playerStorage.Value.All)
             {
@@ -57,7 +57,7 @@ namespace ProjectCard.DurakModule.StateModule
 
             board.Value.Clear();
             deck.Value.Clear();
-            trash.Value.Clear();
+            discardPile.Value.Clear();
         }
     }
 }

@@ -39,7 +39,7 @@ namespace ProjectCard.DurakModule.GameModule
         [SerializeField] private PlayerStorageEntity playerStorage;
         [SerializeField] private PlayerQueueEntity playerQueue;
         [SerializeField] private DeckEntity deckEntity;
-        [SerializeField] private TrashEntity trashEntity;
+        [SerializeField] private DiscardPileEntity discardPileEntity;
         [SerializeField] private BoardEntity boardEntity;
         [SerializeField] private PlayerEntity[] playerEntities;
 
@@ -87,7 +87,7 @@ namespace ProjectCard.DurakModule.GameModule
 
             deckEntity.Initialize(deck);
             boardEntity.Initialize(board);
-            trashEntity.Initialize(new List<Data>(deck.Count));
+            discardPileEntity.Initialize(new List<Data>(deck.Count));
 
             stateMachine.Initialize();
 
