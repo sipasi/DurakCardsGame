@@ -1,6 +1,6 @@
 ﻿
 using ProjectCard.Durak.PlayerModule;
-using ProjectCard.Shared.Entities.Wrapper; 
+using ProjectCard.Shared.Entities.Wrapper;
 
 namespace ProjectCard.Durak.EntityModule
 {

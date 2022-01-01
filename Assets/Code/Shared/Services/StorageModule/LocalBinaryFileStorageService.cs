@@ -1,4 +1,4 @@
-﻿ 
+﻿
 using ProjectCard.Shared.IO;
 
 using UnityEngine;
@@ -11,7 +11,7 @@ namespace ProjectCard.Shared.Services.StorageModule
         protected override IFileAsync GetFile()
         {
             IFileAsync file = new BinaryFile(FullPath);
-             
+
             return file;
         }
     }

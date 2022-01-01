@@ -36,7 +36,7 @@ namespace ProjectCard.Durak.GameModule
 
             return UniTask.CompletedTask;
         }
-         
+
         private void OnGameRestart()
         {
             stateMachine.Fire(DurakGameState.GameRestart);

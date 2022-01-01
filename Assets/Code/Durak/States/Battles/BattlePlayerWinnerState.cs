@@ -6,7 +6,7 @@ using Cysharp.Threading.Tasks;
 using ProjectCard.Durak.CardModule;
 using ProjectCard.Durak.EntityModule;
 using ProjectCard.Durak.Gameplay;
-using ProjectCard.Durak.PlayerModule; 
+using ProjectCard.Durak.PlayerModule;
 
 using UnityEngine;
 

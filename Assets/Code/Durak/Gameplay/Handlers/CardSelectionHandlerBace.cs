@@ -4,8 +4,8 @@ using Cysharp.Threading.Tasks;
 using ProjectCard.Durak.CardModule;
 using ProjectCard.Durak.CollectionModule;
 using ProjectCard.Durak.EntityModule;
-using ProjectCard.Durak.ValidatorModule;
 using ProjectCard.Durak.Gameplay;
+using ProjectCard.Durak.ValidatorModule;
 using ProjectCard.Shared.CardModule;
 using ProjectCard.Shared.Collections;
 

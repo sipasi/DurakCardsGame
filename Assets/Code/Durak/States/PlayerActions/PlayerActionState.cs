@@ -7,7 +7,6 @@ using ProjectCard.Durak.PlayerModule;
 using ProjectCard.Durak.ValidatorModule;
 using ProjectCard.Shared.CardModule;
 using ProjectCard.Shared.EventModule;
-using ProjectCard.Shared.ScriptableModule;
 
 using UnityEngine;
 

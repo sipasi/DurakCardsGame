@@ -1,4 +1,4 @@
-﻿using ProjectCard.Durak.EntityModule; 
+﻿using ProjectCard.Durak.EntityModule;
 using ProjectCard.Durak.ViewModule;
 
 using UnityEngine;

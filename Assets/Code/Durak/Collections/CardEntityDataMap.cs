@@ -1,6 +1,6 @@
 ﻿
 using ProjectCard.Durak.CardModule;
-using ProjectCard.Shared.CardModule; 
+using ProjectCard.Shared.CardModule;
 using ProjectCard.Shared.Collections;
 
 using UnityEngine;

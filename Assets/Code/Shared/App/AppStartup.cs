@@ -1,4 +1,4 @@
-﻿using ProjectCard.Shared.SceneModule; 
+﻿using ProjectCard.Shared.SceneModule;
 using ProjectCard.Shared.Services.SceneModule;
 
 using UnityEngine;
