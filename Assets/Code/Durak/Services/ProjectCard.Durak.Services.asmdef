@@ -1,0 +1,20 @@
+{
+    "name": "ProjectCard.Durak.Services",
+    "rootNamespace": "ProjectCard.Durak.Services",
+    "references": [
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:a8a1b2aa1d914d84c8760529c4cd3077",
+        "GUID:cb2bba070bd409d40957128512f36c7a",
+        "GUID:de2659b602184da44be8081fad21dbfa",
+        "GUID:598203f6a0e40454fb22c959e7accefd"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

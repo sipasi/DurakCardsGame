@@ -1,0 +1,30 @@
+{
+    "name": "ProjectCard.Shared.IO.Tests",
+    "rootNamespace": "ProjectCard.Shared.IO",
+    "references": [
+        "UniTask",
+        "UnityEditor.TestRunner",
+        "UnityEngine.TestRunner",
+        "ProjectCard.Shared.Tests",
+        "ProjectCard.Shared.Collections",
+        "ProjectCard.Shared.Serialization",
+        "ProjectCard.Shared.IO",
+        "ProjectCard.Durak.Datas",
+        "ProjectCard.Durak.Players"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

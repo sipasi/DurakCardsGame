@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 534791977462043129}
   - component: {fileID: 8224344465264386550}
-  - component: {fileID: 6038765446244744951}
+  - component: {fileID: 6877789495181766563}
   m_Layer: 5
   m_Name: Card Playable
   m_TagString: Untagged
@@ -28,7 +28,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3628474301084568671}
   m_Father: {fileID: 0}
@@ -48,12 +47,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2683339618962367303}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5f6a5d06224cf949a0dc4755e05ccb8, type: 3}
+  m_Script: {fileID: 11500000, guid: 634824d917bbf674c9c09cfe921994d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <View>k__BackingField: {fileID: 1033505324026011514}
   <Transform>k__BackingField: {fileID: 534791977462043129}
---- !u!114 &6038765446244744951
+--- !u!114 &6877789495181766563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,7 +61,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2683339618962367303}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c27d28b6f2021c64e8ad3225aafe6a66, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b9d5fd93b1a3e74688487560403727b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
@@ -96,7 +95,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 534791977462043129}
   m_RootOrder: 0
@@ -153,7 +151,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5770799026076985134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be428b99891a8814a93bc5e6d0d96ea4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0109e06304e9fc54d9b624b9f0ddb2f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 7196082191461104483}

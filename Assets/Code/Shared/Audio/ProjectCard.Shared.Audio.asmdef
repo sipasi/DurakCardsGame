@@ -1,0 +1,16 @@
+{
+    "name": "ProjectCard.Shared.Audio",
+    "rootNamespace": "ProjectCard.Shared.Audio",
+    "references": [
+        "GUID:762e2ccb45cd2db40989ea6fb2079c58"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

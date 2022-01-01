@@ -1,0 +1,31 @@
+{
+    "name": "ProjectCard.Durak.States",
+    "rootNamespace": "ProjectCard.Durak.States",
+    "references": [
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:c23d8554e1fa8c74a8918184075c8fbf",
+        "GUID:762e2ccb45cd2db40989ea6fb2079c58",
+        "GUID:cb2bba070bd409d40957128512f36c7a",
+        "GUID:a8a1b2aa1d914d84c8760529c4cd3077",
+        "GUID:0ad731529371bf8479bd2d2150c75836",
+        "GUID:fdd2eb8d8ebfa5a49bfa04a4c363dd18",
+        "GUID:00ebd3058ea3192409b4d13cedff300e",
+        "GUID:be13ceadb969a174b84fd69830460591",
+        "GUID:de2659b602184da44be8081fad21dbfa",
+        "GUID:c5a560722d2f4a845afd75b1cf6847aa",
+        "GUID:81b793cd2f662114fa3dc736c0e6e112",
+        "GUID:6153f80e1d4c4ac47a01671afe321a4b",
+        "GUID:e8337f90c24c86c4e9823006cb97dd71",
+        "GUID:ef3d62aa2bf7b67478af2e0fa113baaf",
+        "GUID:966f19d62eef08448adab6557872337f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

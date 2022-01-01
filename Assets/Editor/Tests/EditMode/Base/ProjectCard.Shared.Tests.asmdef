@@ -1,0 +1,22 @@
+{
+    "name": "ProjectCard.Shared.Tests",
+    "rootNamespace": "ProjectCard.Shared.Tests",
+    "references": [
+        "GUID:c23d8554e1fa8c74a8918184075c8fbf",
+        "GUID:cb2bba070bd409d40957128512f36c7a",
+        "GUID:a8a1b2aa1d914d84c8760529c4cd3077",
+        "GUID:de2659b602184da44be8081fad21dbfa",
+        "GUID:c5a560722d2f4a845afd75b1cf6847aa"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

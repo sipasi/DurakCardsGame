@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554ce9db9bd704f40bfe5a3b8b901772, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f87051550c5c6b45961acf02a599448, type: 3}
   m_Name: DurakCardTheme
   m_EditorClassIdentifier: 
   faces: {fileID: 11400000, guid: 6a9cb22103a05ec469ed67012e2575e5, type: 2}

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 877893c11dd809647bc87b7fcf57c982, type: 3}
+  m_Script: {fileID: 11500000, guid: 4519ece3f83c4464a89ed1de0a58feeb, type: 3}
   m_Name: DurakRules
   m_EditorClassIdentifier: 
   maxCardsInHand: 6

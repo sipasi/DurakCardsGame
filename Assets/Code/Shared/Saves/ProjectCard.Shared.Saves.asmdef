@@ -1,0 +1,17 @@
+{
+    "name": "ProjectCard.Shared.Saves",
+    "rootNamespace": "ProjectCard.Shared.Saves",
+    "references": [
+        "GUID:676b16af7f5e5a14ba40aeff55d44347",
+        "GUID:c23d8554e1fa8c74a8918184075c8fbf"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

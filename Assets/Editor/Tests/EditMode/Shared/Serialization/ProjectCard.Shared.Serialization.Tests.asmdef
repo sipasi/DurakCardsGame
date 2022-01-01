@@ -1,0 +1,28 @@
+{
+    "name": "ProjectCard.Shared.Serialization.Tests",
+    "rootNamespace": "ProjectCard.Shared.Serialization",
+    "references": [
+        "UniTask",
+        "UnityEditor.TestRunner",
+        "UnityEngine.TestRunner",
+        "ProjectCard.Shared.Tests",
+        "ProjectCard.Shared.Collections",
+        "ProjectCard.Shared.Serialization",
+        "ProjectCard.Durak.Datas"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

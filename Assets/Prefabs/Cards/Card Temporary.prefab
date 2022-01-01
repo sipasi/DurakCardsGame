@@ -27,7 +27,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 541977813691357434}
   m_Father: {fileID: 0}
@@ -47,7 +46,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1216729457164498914}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5f6a5d06224cf949a0dc4755e05ccb8, type: 3}
+  m_Script: {fileID: 11500000, guid: 634824d917bbf674c9c09cfe921994d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <View>k__BackingField: {fileID: 4289727340973083615}
@@ -81,7 +80,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3653656988734866780}
   m_RootOrder: 0
@@ -138,7 +136,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7334794753764881291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be428b99891a8814a93bc5e6d0d96ea4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0109e06304e9fc54d9b624b9f0ddb2f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 6197530830583984070}

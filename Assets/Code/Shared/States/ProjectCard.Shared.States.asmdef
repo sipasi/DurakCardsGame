@@ -1,0 +1,14 @@
+{
+    "name": "ProjectCard.Shared.States",
+    "rootNamespace": "ProjectCard.Shared.States",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
