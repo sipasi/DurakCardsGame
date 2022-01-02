@@ -5,7 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 using Cysharp.Threading.Tasks;
 
-namespace ProjectCard.Shared.IO
+namespace Framework.Shared.IO
 {
     public class BinaryFile : LocalFileSerializer
     {

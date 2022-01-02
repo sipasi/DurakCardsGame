@@ -1,9 +1,9 @@
-﻿using ProjectCard.Durak.EntityModule;
-using ProjectCard.Durak.ViewModule;
+﻿using Framework.Durak.Entities;
+using Framework.Durak.Views;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.StateModule
+namespace Framework.Durak.States
 {
     public class GameStartState : DurakState
     {

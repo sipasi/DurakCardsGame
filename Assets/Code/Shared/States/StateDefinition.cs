@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProjectCard.Shared.StateModule
+namespace Framework.Shared.States
 {
     public interface IStateDefinition
     {
@@ -8,7 +8,7 @@ namespace ProjectCard.Shared.StateModule
         IState GetState();
     }
 
-    class StateDefinition<T> : IStateDefinition where T : IState
+    internal class StateDefinition<T> : IStateDefinition where T : IState
     {
         private readonly StateFactory<T> factory;
         private readonly Type type;
@@ -19,7 +19,7 @@ namespace ProjectCard.Shared.StateModule
         public StateDefinition(StateFactory<T> factory)
         {
             this.factory = factory;
-            this.type = typeof(T);
+            type = typeof(T);
         }
 
 

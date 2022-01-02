@@ -2,7 +2,7 @@
 
 using Cysharp.Threading.Tasks;
 
-namespace ProjectCard.Shared.IO
+namespace Framework.Shared.IO
 {
     public interface IFileAsync
     {

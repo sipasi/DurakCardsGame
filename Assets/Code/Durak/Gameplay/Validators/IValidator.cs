@@ -1,4 +1,4 @@
-﻿namespace ProjectCard.Durak.ValidatorModule
+﻿namespace Framework.Durak.Validators
 {
     public interface IValidator<T>
     {

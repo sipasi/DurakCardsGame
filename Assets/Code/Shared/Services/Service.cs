@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-namespace ProjectCard.Shared.Services
+namespace Framework.Shared.Services
 {
     public class Service : ScriptableObject, IService { }
 }

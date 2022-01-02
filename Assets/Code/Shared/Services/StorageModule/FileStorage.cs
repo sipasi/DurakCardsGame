@@ -4,12 +4,12 @@ using System.IO;
 
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.Shared.Collections;
-using ProjectCard.Shared.IO;
+using Framework.Shared.Collections;
+using Framework.Shared.IO;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.Services.StorageModule
+namespace Framework.Shared.Services.Storages
 {
     public abstract class FileStorage : ScriptableStorage
     {

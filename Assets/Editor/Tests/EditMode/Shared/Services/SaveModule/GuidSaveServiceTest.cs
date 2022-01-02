@@ -3,12 +3,13 @@ using System.Collections;
 
 using Cysharp.Threading.Tasks;
 
+using Framework.Shared.Services.Saves;
+using Framework.Shared.Services.Storages;
+
 using NUnit.Framework;
 
 using ProjectCard.Editor.TestModule.TestData;
 using ProjectCard.Editor.TestModule.ToolModule;
-using ProjectCard.Shared.Services.SaveModule;
-using ProjectCard.Shared.Services.StorageModule;
 
 using UnityEngine;
 using UnityEngine.TestTools;

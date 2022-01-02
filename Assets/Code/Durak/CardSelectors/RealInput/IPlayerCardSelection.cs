@@ -1,4 +1,6 @@
-﻿namespace ProjectCard.Durak.PlayerModule
+﻿using Framework.Durak.Players;
+
+namespace Framework.Durak.Cards.Selectors
 {
     public interface IPlayerCardSelection
     {

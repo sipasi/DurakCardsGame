@@ -1,5 +1,4 @@
-﻿
-namespace ProjectCard.Shared.SaveModule
+﻿namespace Framework.Shared.Saves
 {
     public interface ISaveKey<T>
     {

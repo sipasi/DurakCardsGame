@@ -2,9 +2,9 @@
 
 using System.Collections.Generic;
 
-using ProjectCard.Durak.CardModule.ExtensionModule;
+using Framework.Durak.Cards.Extensions;
 
-namespace ProjectCard.Durak.CardModule.ToolModule
+namespace Framework.Durak.Cards.Tools
 {
     public static class DataTool
     {

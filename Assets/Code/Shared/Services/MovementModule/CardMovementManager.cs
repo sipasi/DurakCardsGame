@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.ViewModule;
+using Framework.Shared.Cards.Entities;
+using Framework.Shared.Cards.Views;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.Services.Movement
+namespace Framework.Shared.Services.Movements
 {
     public class CardMovementManager : MonoBehaviour
     {

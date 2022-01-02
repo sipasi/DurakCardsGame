@@ -1,16 +1,16 @@
 {
-    "name": "ProjectCard.Shared.IO.Tests",
-    "rootNamespace": "ProjectCard.Shared.IO",
+    "name": "Framework.Shared.IO.Tests",
+    "rootNamespace": "Framework.Shared.IO",
     "references": [
         "UniTask",
         "UnityEditor.TestRunner",
         "UnityEngine.TestRunner",
-        "ProjectCard.Shared.Tests",
-        "ProjectCard.Shared.Collections",
-        "ProjectCard.Shared.Serialization",
-        "ProjectCard.Shared.IO",
-        "ProjectCard.Durak.Datas",
-        "ProjectCard.Durak.Players"
+        "Framework.Shared.Tests",
+        "Framework.Shared.Collections",
+        "Framework.Shared.Serialization",
+        "Framework.Shared.IO",
+        "Framework.Durak.Datas",
+        "Framework.Durak.Players"
     ],
     "includePlatforms": [
         "Editor"

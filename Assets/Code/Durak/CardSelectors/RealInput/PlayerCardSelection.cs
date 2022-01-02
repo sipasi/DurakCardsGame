@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using Framework.Durak.Players;
 
-namespace ProjectCard.Durak.PlayerModule
+using UnityEngine;
+
+namespace Framework.Durak.Cards.Selectors
 {
     public class PlayerCardSelection : MonoBehaviour, IPlayerCardSelection
     {

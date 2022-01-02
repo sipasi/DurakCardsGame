@@ -6,7 +6,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace ProjectCard.Shared.Services.SceneModule
+namespace Framework.Shared.Services.Scenes
 {
     [CreateAssetMenu(fileName = "SceneLoadingService", menuName = "MyAsset/Shared/ServiceModule/SceneLoadingService")]
     public class SceneLoadingService : ScriptableObject, ISceneLoadingService

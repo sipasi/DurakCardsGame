@@ -1,4 +1,4 @@
-﻿namespace ProjectCard.Shared.ViewModule
+﻿namespace Framework.Shared.Cards.Views
 {
     public enum CardLookSide { Face, Back }
 }

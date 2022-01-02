@@ -1,14 +1,14 @@
 {
-    "name": "ProjectCard.Shared.Serialization.Tests",
-    "rootNamespace": "ProjectCard.Shared.Serialization",
+    "name": "Framework.Shared.Serialization.Tests",
+    "rootNamespace": "Framework.Shared.Serialization",
     "references": [
         "UniTask",
         "UnityEditor.TestRunner",
         "UnityEngine.TestRunner",
-        "ProjectCard.Shared.Tests",
-        "ProjectCard.Shared.Collections",
-        "ProjectCard.Shared.Serialization",
-        "ProjectCard.Durak.Datas"
+        "Framework.Shared.Tests",
+        "Framework.Shared.Collections",
+        "Framework.Shared.Serialization",
+        "Framework.Durak.Datas"
     ],
     "includePlatforms": [
         "Editor"

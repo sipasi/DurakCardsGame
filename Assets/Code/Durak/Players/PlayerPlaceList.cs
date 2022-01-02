@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.PlayerModule
+namespace Framework.Durak.Players
 {
     public class PlayerPlaceList : MonoBehaviour
     {

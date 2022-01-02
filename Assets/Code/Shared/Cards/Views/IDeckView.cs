@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-namespace ProjectCard.Shared.ViewModule
+namespace Framework.Shared.Cards.Views
 {
     public interface IDeckView
     {

@@ -1,11 +1,11 @@
 ﻿
 using System.Collections.Generic;
 
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Durak.CardModule.ExtensionModule;
-using ProjectCard.Shared.Collections;
+using Framework.Durak.Cards;
+using Framework.Durak.Cards.Extensions;
+using Framework.Shared.Collections;
 
-namespace ProjectCard.Durak.CollectionModule.ExtensionModule
+namespace Framework.Durak.Collections.Extensions
 {
     public static class BoardExtension
     {

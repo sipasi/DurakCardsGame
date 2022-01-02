@@ -1,13 +1,11 @@
 ﻿
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Durak.Gameplay;
-using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.Collections;
+using Framework.Durak.Cards;
+using Framework.Shared.Cards.Entities;
+using Framework.Shared.Collections;
 
-
-namespace ProjectCard.Durak.HandlerModule
+namespace Framework.Durak.Gameplay.Handlers
 {
     public class TossCardSelectionHandler : CardSelectionHandlerBace
     {

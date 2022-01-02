@@ -1,12 +1,11 @@
-﻿
-using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.EventModule;
+﻿using Framework.Shared.Cards.Entities;
+using Framework.Shared.Events;
 
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 
-namespace ProjectCard.Shared.Cards.Input
+namespace Framework.Shared.Cards.Input
 {
     [RequireComponent(typeof(ICard))]
     public sealed class InputHandler : MonoBehaviour, IPointerClickHandler

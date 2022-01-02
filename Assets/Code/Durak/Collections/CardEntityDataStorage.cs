@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Shared.CardModule;
+using Framework.Durak.Cards;
+using Framework.Shared.Cards.Entities;
 
 using UnityEngine;
 
 
-namespace ProjectCard.Durak.CollectionModule
+namespace Framework.Durak.Collections
 {
     public class CardEntityDataStorage : MonoBehaviour
     {

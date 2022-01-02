@@ -1,5 +1,5 @@
 ﻿
-using ProjectCard.Shared.CoreModule.AttributeModule;
+using Framework.Shared.Core.Attributes;
 
 using UnityEditor;
 

@@ -2,14 +2,14 @@
 
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.EventModule;
-using ProjectCard.Shared.Services.CollectionModule;
-using ProjectCard.Shared.Services.TaskModule;
+using Framework.Shared.Cards.Entities;
+using Framework.Shared.Events;
+using Framework.Shared.Services.Pools;
+using Framework.Shared.Services.Tasks;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.Services.Movement
+namespace Framework.Shared.Services.Movements
 {
     [CreateAssetMenu(fileName = "CardMovementService", menuName = "MyAsset/Shared/ServiceModule/CardMovementService")]
     public class CardMovementService : Service

@@ -1,6 +1,6 @@
 {
-    "name": "ProjectCard.Shared.Events",
-    "rootNamespace": "ProjectCard.Shared.Events",
+    "name": "Framework.Shared.Events",
+    "rootNamespace": "Framework.Shared.Events",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

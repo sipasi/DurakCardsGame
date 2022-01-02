@@ -5,7 +5,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ProjectCard.Shared.WindowModule
+namespace Framework.Shared.UI.Windows.Dialogs
 {
     public class DialogWindow : MonoBehaviour, IDialogWindow<DialogResult>
     {

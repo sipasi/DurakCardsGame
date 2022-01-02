@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.Services.TaskModule
+namespace Framework.Shared.Services.Tasks
 {
     public class TaskService : ScriptableObject, ITaskService
     {

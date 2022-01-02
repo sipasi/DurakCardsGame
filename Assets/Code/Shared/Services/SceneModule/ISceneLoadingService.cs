@@ -5,7 +5,7 @@ using Cysharp.Threading.Tasks;
 
 using UnityEngine.SceneManagement;
 
-namespace ProjectCard.Shared.Services.SceneModule
+namespace Framework.Shared.Services.Scenes
 {
     public interface ISceneLoadingService
     {

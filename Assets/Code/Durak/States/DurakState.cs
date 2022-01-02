@@ -1,8 +1,8 @@
-﻿using ProjectCard.Shared.StateModule;
+﻿using Framework.Shared.States;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.StateModule
+namespace Framework.Durak.States
 {
     public abstract class DurakState : MonoBehaviour, IState
     {

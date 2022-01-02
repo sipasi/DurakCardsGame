@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ProjectCard.Shared.Collections
+namespace Framework.Shared.Collections
 {
     [Serializable]
     public sealed class Map<T1, T2>

@@ -1,11 +1,11 @@
 ﻿
-using ProjectCard.Shared.SceneModule;
-using ProjectCard.Shared.Services.SceneModule;
-using ProjectCard.Shared.WindowModule;
+using Framework.Shared.Scenes;
+using Framework.Shared.Services.Scenes;
+using Framework.Shared.UI.Windows.Dialogs;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.StateModule
+namespace Framework.Durak.States
 {
     public class GameEndState : DurakState
     {

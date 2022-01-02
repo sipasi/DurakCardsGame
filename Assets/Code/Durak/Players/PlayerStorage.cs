@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ProjectCard.Durak.PlayerModule
+namespace Framework.Durak.Players
 {
     [Serializable]
     public class PlayerStorage : IPlayerStorage

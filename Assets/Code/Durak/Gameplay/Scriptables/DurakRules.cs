@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-namespace ProjectCard.Durak.Gameplay.Scriptables
+namespace Framework.Durak.Gameplay.Scriptables
 {
     [CreateAssetMenu(fileName = "DurakRules", menuName = "MyAsset/Durak/Gameplay/Scriptables/DurakRules")]
     public class DurakRules : ScriptableObject

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine.Assertions;
 
-namespace ProjectCard.Shared.StateModule
+namespace Framework.Shared.States
 {
     public delegate T StateFactory<out T>();
 

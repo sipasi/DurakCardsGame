@@ -1,11 +1,12 @@
 ﻿
 
-using ProjectCard.Shared.Services.CollectionModule;
-using ProjectCard.Shared.Services.TaskModule;
+using Framework.Shared.Services.Pools;
+
+using Framework.Shared.Services.Tasks;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.GameModule
+namespace Framework.Durak.Game
 {
     public class Startup : MonoBehaviour
     {

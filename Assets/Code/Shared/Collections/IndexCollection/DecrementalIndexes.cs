@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
-using ProjectCard.Shared.Collections.Extensions;
+using Framework.Shared.Collections.Extensions;
 
-namespace ProjectCard.Shared.Collections
+namespace Framework.Shared.Collections
 {
     [Serializable]
     public sealed class DecrementalIndexes : IIndexCollection

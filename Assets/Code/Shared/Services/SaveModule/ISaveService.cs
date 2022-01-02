@@ -2,7 +2,7 @@
 
 using Cysharp.Threading.Tasks;
 
-namespace ProjectCard.Shared.Services.SaveModule
+namespace Framework.Shared.Services.Saves
 {
     public interface ISaveService
     {

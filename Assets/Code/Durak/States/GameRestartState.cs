@@ -1,14 +1,14 @@
 ﻿
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.Durak.EntityModule;
-using ProjectCard.Durak.Gameplay;
-using ProjectCard.Durak.ServiceModule.MovementModule;
-using ProjectCard.Shared.ViewModule;
+using Framework.Durak.Entities;
+using Framework.Durak.Gameplay;
+using Framework.Durak.Services.Movements;
+using Framework.Shared.Cards.Views;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.StateModule
+namespace Framework.Durak.States
 {
     public class GameRestartState : DurakState
     {

@@ -1,6 +1,6 @@
 {
-    "name": "ProjectCard.Durak.Services",
-    "rootNamespace": "ProjectCard.Durak.Services",
+    "name": "Framework.Durak.Services",
+    "rootNamespace": "Framework.Durak.Services",
     "references": [
         "GUID:f51ebe6a0ceec4240a699833d6309b23",
         "GUID:a8a1b2aa1d914d84c8760529c4cd3077",

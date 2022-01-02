@@ -2,15 +2,15 @@
 
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Durak.CollectionModule;
-using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.Services.Movement;
-using ProjectCard.Shared.ViewModule;
+using Framework.Durak.Cards;
+using Framework.Durak.Collections;
+using Framework.Shared.Cards.Entities;
+using Framework.Shared.Cards.Views;
+using Framework.Shared.Services.Movements;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.ServiceModule.MovementModule
+namespace Framework.Durak.Services.Movements
 {
     public sealed class DurakCardMovementManager : CardMovementManager
     {

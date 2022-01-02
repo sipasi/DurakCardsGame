@@ -1,12 +1,12 @@
 ﻿
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.Durak.StateModule;
-using ProjectCard.Shared.EventModule;
+using Framework.Durak.States;
+using Framework.Shared.Events;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.GameModule
+namespace Framework.Durak.Game
 {
     public class DurakGame : MonoBehaviour
     {

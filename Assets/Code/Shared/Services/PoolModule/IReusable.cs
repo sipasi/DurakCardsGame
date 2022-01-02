@@ -1,6 +1,4 @@
-﻿
-
-namespace ProjectCard.Shared.Services.CollectionModule
+﻿namespace Framework.Shared.Services.Pools
 {
     public interface IReusable
     {

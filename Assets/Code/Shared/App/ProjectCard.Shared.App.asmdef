@@ -1,6 +1,6 @@
 {
-    "name": "ProjectCard.Shared.App",
-    "rootNamespace": "ProjectCard.Shared.App",
+    "name": "Framework.Shared.App",
+    "rootNamespace": "Framework.Shared.App",
     "references": [
         "GUID:f51ebe6a0ceec4240a699833d6309b23",
         "GUID:00ebd3058ea3192409b4d13cedff300e",

@@ -4,7 +4,7 @@ using System;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.Services.SaveModule
+namespace Framework.Shared.Services.Saves
 {
     [CreateAssetMenu(fileName = "TypeSaveService", menuName = "MyAsset/Shared/ServiceModule/SaveService by Type")]
     public sealed class TypeSaveService : SaveStorageService<Type>

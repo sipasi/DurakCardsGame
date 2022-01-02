@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.Services.TaskModule
+namespace Framework.Shared.Services.Tasks
 {
     [CreateAssetMenu(fileName = "TaskServiceAsync", menuName = "MyAsset/Shared/ServiceModule/TaskServiceAsync")]
     public sealed class TaskServiceAsync : TaskService, ITaskServiceAsync

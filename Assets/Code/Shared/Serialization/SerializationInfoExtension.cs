@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace ProjectCard.Shared.SerializationModule
+namespace Framework.Shared.Serializations
 {
     public static class SerializationInfoExtension
     {

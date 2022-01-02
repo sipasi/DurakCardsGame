@@ -1,5 +1,5 @@
 ﻿
-namespace ProjectCard.Shared.Services.TaskModule
+namespace Framework.Shared.Services.Tasks
 {
     public interface IProcess
     {

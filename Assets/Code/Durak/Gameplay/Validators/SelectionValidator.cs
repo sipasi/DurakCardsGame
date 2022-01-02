@@ -1,14 +1,14 @@
 ﻿
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Durak.CollectionModule;
-using ProjectCard.Durak.EntityModule;
-using ProjectCard.Durak.PlayerModule;
-using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.Collections;
+using Framework.Durak.Cards;
+using Framework.Durak.Collections;
+using Framework.Durak.Entities;
+using Framework.Durak.Players;
+using Framework.Shared.Cards.Entities;
+using Framework.Shared.Collections;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.ValidatorModule
+namespace Framework.Durak.Validators
 {
     public abstract class SelectionValidator : MonoBehaviour, IValidator<ICard>
     {

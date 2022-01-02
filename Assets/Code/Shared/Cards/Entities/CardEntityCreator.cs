@@ -1,9 +1,8 @@
-﻿
-using ProjectCard.Shared.ScriptableModule;
+﻿using Framework.Shared.Cards.Scriptables;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.CardModule
+namespace Framework.Shared.Cards.Entities
 {
     public static class CardEntityCreator
     {

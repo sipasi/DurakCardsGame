@@ -1,14 +1,14 @@
 {
-    "name": "ProjectCard.Shared.Services.Tests",
-    "rootNamespace": "ProjectCard.Shared.Services",
+    "name": "Framework.Shared.Services.Tests",
+    "rootNamespace": "Framework.Shared.Services",
     "references": [
         "UniTask",
         "UnityEditor.TestRunner",
         "UnityEngine.TestRunner",
-        "ProjectCard.Shared.Tests",
-        "ProjectCard.Shared.Collections",
-        "ProjectCard.Shared.Services",
-        "ProjectCard.Durak.Datas"
+        "Framework.Shared.Tests",
+        "Framework.Shared.Collections",
+        "Framework.Shared.Services",
+        "Framework.Durak.Datas"
     ],
     "includePlatforms": [
         "Editor"

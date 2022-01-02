@@ -1,9 +1,11 @@
 ﻿
 using System.Collections.Generic;
 
+using Framework.Durak.Players;
+
 using UnityEngine;
 
-namespace ProjectCard.Durak.PlayerModule
+namespace Framework.Durak.Cards.Selectors
 {
     public class CardSelectorList : MonoBehaviour
     {

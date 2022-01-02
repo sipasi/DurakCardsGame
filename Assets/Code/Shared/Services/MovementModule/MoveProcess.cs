@@ -1,9 +1,10 @@
-﻿using ProjectCard.Shared.Services.CollectionModule;
-using ProjectCard.Shared.Services.TaskModule;
+﻿using Framework.Shared.Services.Pools;
+
+using Framework.Shared.Services.Tasks;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.Services.Movement
+namespace Framework.Shared.Services.Movements
 {
     public class MoveProcess : IProcess, IReusable
     {
@@ -29,7 +30,7 @@ namespace ProjectCard.Shared.Services.Movement
 
         public void Set(Transform current, Transform target, float speed = 1)
         {
-            this.finished = false;
+            finished = false;
 
             this.speed = speed;
             this.current = current;

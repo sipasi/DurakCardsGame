@@ -1,10 +1,10 @@
 ﻿using Cysharp.Threading.Tasks;
 
-using ProjectCard.Shared.Services.StorageModule;
+using Framework.Shared.Services.Storages;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.Services.SaveModule
+namespace Framework.Shared.Services.Saves
 {
     public abstract class ScriptableSaveService : ScriptableObject, ISaveService
     {

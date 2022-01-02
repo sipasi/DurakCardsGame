@@ -1,4 +1,4 @@
-﻿namespace ProjectCard.Shared.SceneModule
+﻿namespace Framework.Shared.Scenes
 {
     using System;
     using System.Linq;
@@ -301,7 +301,7 @@
 
             // Right context buttons
             var buttonRect = DrawUtils.GetFieldRect(position);
-            buttonRect.width = (buttonRect.width) / 3;
+            buttonRect.width = buttonRect.width / 3;
 
             var tooltipMsg = "";
             using (new EditorGUI.DisabledScope(readOnly))

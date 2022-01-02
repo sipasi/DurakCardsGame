@@ -1,8 +1,8 @@
-﻿using ProjectCard.Shared.Services.SceneModule;
+﻿using Framework.Shared.Services.Scenes;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.SceneModule
+namespace Framework.Shared.Scenes
 {
     public class SceneLoader : MonoBehaviour
     {

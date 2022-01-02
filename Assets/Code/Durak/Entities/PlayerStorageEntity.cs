@@ -1,8 +1,8 @@
 ﻿
-using ProjectCard.Durak.PlayerModule;
-using ProjectCard.Shared.Entities.Wrapper;
+using Framework.Durak.Players;
+using Framework.Shared.Entities.Wrappers;
 
-namespace ProjectCard.Durak.EntityModule
+namespace Framework.Durak.Entities
 {
     public class PlayerStorageEntity : EntityWrapper<IPlayerStorage> { }
 }

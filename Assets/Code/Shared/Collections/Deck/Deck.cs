@@ -4,7 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace ProjectCard.Shared.Collections
+namespace Framework.Shared.Collections
 {
     [Serializable]
     public class Deck<T> : IDeck<T>

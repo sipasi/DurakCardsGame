@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-namespace ProjectCard.Shared.Entities.Wrapper
+namespace Framework.Shared.Entities.Wrappers
 {
     public abstract class EntityWrapper<T> : MonoBehaviour
     {

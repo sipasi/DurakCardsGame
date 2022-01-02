@@ -1,6 +1,6 @@
 {
-    "name": "ProjectCard.Shared.Core",
-    "rootNamespace": "ProjectCard.Shared.Core",
+    "name": "Framework.Shared.Core",
+    "rootNamespace": "Framework.Shared.Core",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

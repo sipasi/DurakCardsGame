@@ -1,11 +1,10 @@
 ﻿
-
 using System;
 using System.Collections.Generic;
 
 using UnityEngine.Assertions;
 
-namespace ProjectCard.Shared.Collections
+namespace Framework.Shared.Collections
 {
     [Serializable]
     public class Storage<TKey> : IStorage<TKey>

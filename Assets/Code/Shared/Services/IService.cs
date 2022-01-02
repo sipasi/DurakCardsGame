@@ -1,4 +1,4 @@
-﻿namespace ProjectCard.Shared.Services
+﻿namespace Framework.Shared.Services
 {
     public interface IService { }
 }

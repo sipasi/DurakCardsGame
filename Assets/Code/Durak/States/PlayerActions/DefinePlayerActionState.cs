@@ -1,9 +1,9 @@
 ﻿
-using ProjectCard.Durak.EntityModule;
+using Framework.Durak.Entities;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.StateModule
+namespace Framework.Durak.States.Actions
 {
     public class DefinePlayerActionState : DurakState
     {

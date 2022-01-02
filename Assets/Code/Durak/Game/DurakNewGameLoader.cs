@@ -2,19 +2,20 @@
 using System;
 using System.Collections.Generic;
 
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Durak.CollectionModule;
-using ProjectCard.Durak.EntityModule;
-using ProjectCard.Durak.PlayerModule;
-using ProjectCard.Durak.StateModule;
-using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.Collections;
-using ProjectCard.Shared.ScriptableModule;
-using ProjectCard.Shared.ViewModule;
+using Framework.Durak.Cards;
+using Framework.Durak.Collections;
+using Framework.Durak.Entities;
+using Framework.Durak.Gameplay.Scriptables;
+using Framework.Durak.Players;
+using Framework.Durak.States;
+using Framework.Shared.Cards.Entities;
+using Framework.Shared.Cards.Scriptables;
+using Framework.Shared.Cards.Views;
+using Framework.Shared.Collections;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.GameModule
+namespace Framework.Durak.Game
 {
     public class DurakNewGameLoader : MonoBehaviour
     {

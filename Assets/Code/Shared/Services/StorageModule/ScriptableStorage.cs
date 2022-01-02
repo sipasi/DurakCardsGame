@@ -2,11 +2,11 @@
 
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.Shared.Collections;
+using Framework.Shared.Collections;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.Services.StorageModule
+namespace Framework.Shared.Services.Storages
 {
     public abstract class ScriptableStorage : ScriptableObject
     {

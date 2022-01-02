@@ -2,11 +2,12 @@
 using System.IO;
 using System.Linq;
 
+using Framework.Durak.Cards;
+using Framework.Shared.Collections;
+
 using NUnit.Framework;
 
-using ProjectCard.Durak.CardModule;
 using ProjectCard.Editor.TestModule.TestData;
-using ProjectCard.Shared.Collections;
 
 namespace ProjectCard.Editor.TestModule.SerializationModule
 {

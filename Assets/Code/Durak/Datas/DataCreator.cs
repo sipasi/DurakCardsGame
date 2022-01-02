@@ -1,7 +1,7 @@
 ﻿
-using ProjectCard.Durak.CardModule;
+using Framework.Durak.Cards;
 
-namespace ProjectCard.Durak.GameModule
+namespace Framework.Durak.Game
 {
     public static class DataCreator
     {

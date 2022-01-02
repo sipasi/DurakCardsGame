@@ -1,4 +1,4 @@
-﻿namespace ProjectCard.Shared.Collections
+﻿namespace Framework.Shared.Collections
 {
     public interface IIndexCollection : IReadonlyIndexCollection
     {

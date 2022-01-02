@@ -1,8 +1,8 @@
-﻿using ProjectCard.Durak.EntityModule;
+﻿using Framework.Durak.Entities;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.ValidatorModule
+namespace Framework.Durak.Validators
 {
     public class PassValidator : MonoBehaviour
     {

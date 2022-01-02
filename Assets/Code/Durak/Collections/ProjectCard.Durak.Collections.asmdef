@@ -1,6 +1,6 @@
 {
-    "name": "ProjectCard.Durak.Collections",
-    "rootNamespace": "ProjectCard.Durak.Collections",
+    "name": "Framework.Durak.Collections",
+    "rootNamespace": "Framework.Durak.Collections",
     "references": [
         "GUID:c23d8554e1fa8c74a8918184075c8fbf",
         "GUID:cb2bba070bd409d40957128512f36c7a",

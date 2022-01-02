@@ -4,9 +4,9 @@ using System.IO;
 
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.Shared.SerializationModule;
+using Framework.Shared.Serializations;
 
-namespace ProjectCard.Shared.IO
+namespace Framework.Shared.IO
 {
     public abstract class LocalFileSerializer : Serializer, IFileAsync
     {

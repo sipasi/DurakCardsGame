@@ -1,7 +1,5 @@
 ﻿
-
-
-namespace ProjectCard.Shared.Collections
+namespace Framework.Shared.Collections
 {
     public struct ArrayEnumerator<T>
     {

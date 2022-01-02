@@ -1,10 +1,10 @@
 
+using Framework.Durak.Cards;
+using Framework.Durak.Cards.Extensions;
+
 using NUnit.Framework;
 
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Durak.CardModule.ExtensionModule;
-
-namespace ProjectCard.Durak.Datas
+namespace Framework.Durak.Datas
 {
     public class DataTest
     {

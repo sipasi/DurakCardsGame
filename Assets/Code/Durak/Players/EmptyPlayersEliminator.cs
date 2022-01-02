@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace ProjectCard.Durak.PlayerModule
+namespace Framework.Durak.Players
 {
     public static class EmptyPlayersEliminator
     {

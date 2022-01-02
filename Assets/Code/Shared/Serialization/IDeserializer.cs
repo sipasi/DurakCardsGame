@@ -3,7 +3,7 @@ using System.IO;
 
 using Cysharp.Threading.Tasks;
 
-namespace ProjectCard.Shared.SerializationModule
+namespace Framework.Shared.Serializations
 {
     public interface IDeserializer
     {

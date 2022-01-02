@@ -1,11 +1,11 @@
 ﻿
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.Collections;
+using Framework.Durak.Cards;
+using Framework.Shared.Cards.Entities;
+using Framework.Shared.Collections;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.CollectionModule
+namespace Framework.Durak.Collections
 {
     public class CardEntityDataMap : MonoBehaviour
     {

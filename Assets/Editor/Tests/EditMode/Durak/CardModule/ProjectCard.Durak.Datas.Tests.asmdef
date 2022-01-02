@@ -1,13 +1,13 @@
 {
-    "name": "ProjectCard.Durak.Datas.Tests",
-    "rootNamespace": "ProjectCard.Durak.Datas",
+    "name": "Framework.Durak.Datas.Tests",
+    "rootNamespace": "Framework.Durak.Datas",
     "references": [
         "UniTask",
         "UnityEditor.TestRunner",
         "UnityEngine.TestRunner",
-        "ProjectCard.Shared.Collections",
-        "ProjectCard.Shared.Services",
-        "ProjectCard.Durak.Datas"
+        "Framework.Shared.Collections",
+        "Framework.Shared.Services",
+        "Framework.Durak.Datas"
     ],
     "includePlatforms": [
         "Editor"

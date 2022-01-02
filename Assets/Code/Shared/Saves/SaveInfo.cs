@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProjectCard.Shared.SaveModule
+namespace Framework.Shared.Saves
 {
     [Serializable]
     public class SaveInfo

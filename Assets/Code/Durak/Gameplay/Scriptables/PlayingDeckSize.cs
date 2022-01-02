@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-namespace ProjectCard.Durak.CardModule
+namespace Framework.Durak.Gameplay.Scriptables
 {
     [CreateAssetMenu(fileName = "PlayingDeckSize", menuName = "MyAsset/Durak/Gameplay/Scriptables/PlayingDeckSize")]
     public class PlayingDeckSize : ScriptableObject

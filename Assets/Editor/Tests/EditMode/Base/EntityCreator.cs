@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Durak.PlayerModule;
-using ProjectCard.Shared.Collections;
+using Framework.Durak.Cards;
+using Framework.Durak.Players;
+using Framework.Shared.Collections;
 
-using CardLookSide = ProjectCard.Shared.ViewModule.CardLookSide;
+using CardLookSide = Framework.Shared.Cards.Views.CardLookSide;
 
 namespace ProjectCard.Editor.TestModule.TestData
 {

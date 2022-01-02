@@ -2,7 +2,9 @@
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.CoreModule.AttributeModule
+// Framework.Shared
+
+namespace Framework.Shared.Core.Attributes
 {
     public class ReadOnlyFieldAttribute : PropertyAttribute { }
 }

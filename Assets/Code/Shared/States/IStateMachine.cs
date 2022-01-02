@@ -1,4 +1,4 @@
-﻿namespace ProjectCard.Shared.StateModule
+﻿namespace Framework.Shared.States
 {
     public interface IStateMachine<TTrigger>
     {

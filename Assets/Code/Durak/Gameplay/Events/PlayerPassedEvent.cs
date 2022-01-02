@@ -1,9 +1,9 @@
 ﻿
-using ProjectCard.Durak.PlayerModule;
-using ProjectCard.Shared.EventModule;
+using Framework.Durak.Players;
+using Framework.Shared.Events;
 
 using UnityEngine;
-namespace ProjectCard.Durak.EventModule
+namespace Framework.Durak.Gameplay.Events
 {
     [CreateAssetMenu(fileName = "PlayerPassedEvent", menuName = "MyAsset/Durak/EventModule/PlayerPassedEvent")]
     public class PlayerPassedEvent : ScriptableAction<IPlayer> { }

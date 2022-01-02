@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-namespace ProjectCard.Shared.ViewModule
+namespace Framework.Shared.Cards.Views
 {
     public class DeckView : MonoBehaviour, IDeckView
     {

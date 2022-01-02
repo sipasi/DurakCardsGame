@@ -1,9 +1,9 @@
 ﻿
-using ProjectCard.Shared.IO;
+using Framework.Shared.IO;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.Services.StorageModule
+namespace Framework.Shared.Services.Storages
 {
     [CreateAssetMenu(fileName = "LocalBinaryFileStorage", menuName = "MyAsset/Shared/ServiceModule/Storage LocalFile Binary")]
     public sealed class LocalBinaryFileStorageService : FileStorage

@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-namespace ProjectCard.Shared.ScriptableModule
+namespace Framework.Shared.Cards.Scriptables
 {
     [CreateAssetMenu(fileName = "CardTheme", menuName = "MyAsset/Shared/Scriptables/CardTheme")]
     public class CardTheme : ScriptableObject

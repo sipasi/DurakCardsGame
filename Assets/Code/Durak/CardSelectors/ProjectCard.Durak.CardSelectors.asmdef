@@ -1,6 +1,6 @@
 {
-    "name": "ProjectCard.Durak.CardSelectors",
-    "rootNamespace": "ProjectCard.Durak.CardSelectors",
+    "name": "Framework.Durak.CardSelectors",
+    "rootNamespace": "Framework.Durak.CardSelectors",
     "references": [
         "GUID:c23d8554e1fa8c74a8918184075c8fbf",
         "GUID:762e2ccb45cd2db40989ea6fb2079c58",

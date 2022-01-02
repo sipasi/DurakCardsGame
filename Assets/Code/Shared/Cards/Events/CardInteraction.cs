@@ -1,10 +1,9 @@
-﻿
-using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.EventModule;
+﻿using Framework.Shared.Cards.Entities;
+using Framework.Shared.Events;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.Cards.Events
+namespace Framework.Shared.Cards.Events
 {
 
     [CreateAssetMenu(fileName = "CardInteraction", menuName = "MyAsset/Shared/Cards/Events")]

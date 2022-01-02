@@ -1,6 +1,6 @@
 {
-    "name": "ProjectCard.Shared.Entities",
-    "rootNamespace": "ProjectCard.Shared.Entities",
+    "name": "Framework.Shared.Entities",
+    "rootNamespace": "Framework.Shared.Entities",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

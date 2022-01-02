@@ -1,16 +1,17 @@
 ﻿
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.Durak.EntityModule;
-using ProjectCard.Durak.HandlerModule;
-using ProjectCard.Durak.PlayerModule;
-using ProjectCard.Durak.ValidatorModule;
-using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.EventModule;
+using Framework.Durak.Cards.Selectors;
+using Framework.Durak.Entities;
+using Framework.Durak.Gameplay.Handlers;
+using Framework.Durak.Players;
+using Framework.Durak.Validators;
+using Framework.Shared.Cards.Entities;
+using Framework.Shared.Events;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.StateModule
+namespace Framework.Durak.States.Actions
 {
     public abstract class PlayerActionState : DurakState
     {

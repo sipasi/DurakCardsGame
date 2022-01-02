@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace ProjectCard.Shared.WindowModule
+namespace Framework.Shared.UI.Windows.Dialogs
 {
     public class DialogWindowEvents : MonoBehaviour
     {

@@ -1,10 +1,8 @@
-﻿
-
-using ProjectCard.Shared.ViewModule;
+﻿using Framework.Shared.Cards.Views;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.CardModule
+namespace Framework.Shared.Cards.Entities
 {
     public interface ICard
     {

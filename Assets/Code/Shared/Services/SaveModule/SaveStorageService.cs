@@ -1,8 +1,8 @@
 ﻿using Cysharp.Threading.Tasks;
 
-using ProjectCard.Shared.Collections;
+using Framework.Shared.Collections;
 
-namespace ProjectCard.Shared.Services.SaveModule
+namespace Framework.Shared.Services.Saves
 {
     public class SaveStorageService<TKey> : ScriptableSaveService, IStorage<TKey>
     {

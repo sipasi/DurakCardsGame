@@ -1,6 +1,6 @@
 {
-    "name": "ProjectCard.Shared.Collections",
-    "rootNamespace": "ProjectCard.Shared.Collections",
+    "name": "Framework.Shared.Collections",
+    "rootNamespace": "Framework.Shared.Collections",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

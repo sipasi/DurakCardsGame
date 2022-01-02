@@ -1,9 +1,9 @@
-﻿using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.ViewModule;
+﻿using Framework.Shared.Cards.Entities;
+using Framework.Shared.Cards.Views;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.Services.Movement
+namespace Framework.Shared.Services.Movements
 {
     class Preparation
     {

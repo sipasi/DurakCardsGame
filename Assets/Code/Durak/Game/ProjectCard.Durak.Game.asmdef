@@ -1,6 +1,6 @@
 {
-    "name": "ProjectCard.Durak.Game",
-    "rootNamespace": "ProjectCard.Durak.Game",
+    "name": "Framework.Durak.Game",
+    "rootNamespace": "Framework.Durak.Game",
     "references": [
         "GUID:f51ebe6a0ceec4240a699833d6309b23",
         "GUID:c23d8554e1fa8c74a8918184075c8fbf",

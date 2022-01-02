@@ -1,7 +1,7 @@
 ﻿
 using Cysharp.Threading.Tasks;
 
-namespace ProjectCard.Shared.WindowModule
+namespace Framework.Shared.UI.Windows.Dialogs
 {
     public interface IDialogWindow<TResult>
     {

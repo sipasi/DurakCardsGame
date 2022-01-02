@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace ProjectCard.Shared.Services.SceneModule
+namespace Framework.Shared.Services.Scenes
 {
     public readonly struct BackgroundLoading
     {

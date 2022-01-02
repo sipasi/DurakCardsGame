@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ProjectCard.Shared.Collections
+namespace Framework.Shared.Collections
 {
     public interface IReadonlyIndexCollection : IReadOnlyCollection<int>
     {

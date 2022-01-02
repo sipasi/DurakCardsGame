@@ -1,11 +1,11 @@
 ﻿
-using ProjectCard.Durak.EntityModule;
-using ProjectCard.Durak.GameplayModule;
+using Framework.Durak.Entities;
+using Framework.Durak.Gameplay;
 
 using UnityEngine;
 
 
-namespace ProjectCard.Durak.StateModule.BattleModule
+namespace Framework.Durak.States.Battles
 {
     public class BattleStartState : DurakState
     {

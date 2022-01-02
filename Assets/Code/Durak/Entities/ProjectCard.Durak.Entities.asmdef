@@ -1,6 +1,6 @@
 {
-    "name": "ProjectCard.Durak.Entities",
-    "rootNamespace": "ProjectCard.Durak.Entities",
+    "name": "Framework.Durak.Entities",
+    "rootNamespace": "Framework.Durak.Entities",
     "references": [
         "GUID:c23d8554e1fa8c74a8918184075c8fbf",
         "GUID:fdd2eb8d8ebfa5a49bfa04a4c363dd18",

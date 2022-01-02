@@ -1,9 +1,9 @@
 ﻿
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Shared.Collections;
-using ProjectCard.Shared.Entities.Wrapper;
+using Framework.Durak.Cards;
+using Framework.Shared.Collections;
+using Framework.Shared.Entities.Wrappers;
 
-namespace ProjectCard.Durak.EntityModule
+namespace Framework.Durak.Entities
 {
     public class DeckEntity : EntityWrapper<IDeck<Data>> { }
 }

@@ -1,4 +1,4 @@
-﻿namespace ProjectCard.Durak.PlayerModule
+﻿namespace Framework.Durak.Players
 {
     public enum PlayerActionType
     {

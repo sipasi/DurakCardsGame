@@ -1,13 +1,13 @@
 ﻿
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Durak.CollectionModule.ExtensionModule;
-using ProjectCard.Durak.PlayerModule;
-using ProjectCard.Shared.CardModule;
+using Framework.Durak.Cards;
+using Framework.Durak.Collections.Extensions;
+using Framework.Durak.Players;
+using Framework.Shared.Cards.Entities;
 
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace ProjectCard.Durak.ValidatorModule
+namespace Framework.Durak.Validators
 {
     public class AttackerSelectionValidator : SelectionValidator
     {

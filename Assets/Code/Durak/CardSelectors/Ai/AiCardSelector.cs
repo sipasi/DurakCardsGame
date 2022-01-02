@@ -1,13 +1,12 @@
-﻿
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Durak.CollectionModule;
-using ProjectCard.Durak.EntityModule;
-using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.Collections;
+﻿using Framework.Durak.Collections;
+using Framework.Durak.Entities;
+using Framework.Durak.Players;
+using Framework.Shared.Cards.Entities;
+using Framework.Shared.Collections;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.PlayerModule
+namespace Framework.Durak.Cards.Selectors
 {
     public abstract class AiCardSelector : CardSelector
     {

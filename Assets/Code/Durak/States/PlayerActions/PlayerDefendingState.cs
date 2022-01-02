@@ -1,6 +1,7 @@
-﻿using ProjectCard.Durak.PlayerModule;
+﻿using Framework.Durak.Cards.Selectors;
+using Framework.Durak.Players;
 
-namespace ProjectCard.Durak.StateModule
+namespace Framework.Durak.States.Actions
 {
     public sealed class PlayerDefendingState : PlayerActionState
     {

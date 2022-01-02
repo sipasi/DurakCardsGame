@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Shared.Entities.Wrapper;
+using Framework.Durak.Cards;
+using Framework.Shared.Entities.Wrappers;
 
 
-namespace ProjectCard.Durak.EntityModule
+namespace Framework.Durak.Entities
 {
     public class DiscardPileEntity : EntityWrapper<List<Data>> { }
 }

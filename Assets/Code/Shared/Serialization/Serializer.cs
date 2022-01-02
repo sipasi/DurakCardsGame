@@ -6,7 +6,7 @@ using Cysharp.Threading.Tasks;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.SerializationModule
+namespace Framework.Shared.Serializations
 {
     public abstract class Serializer : ISerializer, IDeserializer
     {

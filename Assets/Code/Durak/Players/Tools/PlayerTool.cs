@@ -1,11 +1,11 @@
 ﻿
 using System.Collections.Generic;
 
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Durak.CardModule.ToolModule;
-using ProjectCard.Shared.Collections;
+using Framework.Durak.Cards;
+using Framework.Durak.Cards.Tools;
+using Framework.Shared.Collections;
 
-namespace ProjectCard.Durak.PlayerModule
+namespace Framework.Durak.Players.Tools
 {
     public static class PlayerTool
     {

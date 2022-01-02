@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.Services.CollectionModule
+namespace Framework.Shared.Services.Pools
 {
     [CreateAssetMenu(fileName = "PoolService", menuName = "MyAsset/Shared/ServiceModule/PoolService")]
     public class PoolService : ScriptableObject

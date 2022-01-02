@@ -3,7 +3,7 @@ using TMPro;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.WindowModule
+namespace Framework.Shared.UI.Windows.Dialogs
 {
     public class DialogWindowProperties : MonoBehaviour, IDialogWindowProperties
     {

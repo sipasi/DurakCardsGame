@@ -1,10 +1,10 @@
-﻿using ProjectCard.Durak.CollectionModule;
-using ProjectCard.Durak.EntityModule;
-using ProjectCard.Shared.ViewModule;
+﻿using Framework.Durak.Collections;
+using Framework.Durak.Entities;
+using Framework.Shared.Cards.Views;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.ViewModule
+namespace Framework.Durak.Views
 {
     public class DeckViewUpdater : MonoBehaviour
     {

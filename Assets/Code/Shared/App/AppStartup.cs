@@ -1,10 +1,10 @@
-﻿using ProjectCard.Shared.SceneModule;
-using ProjectCard.Shared.Services.SceneModule;
+﻿using Framework.Shared.Scenes;
+using Framework.Shared.Services.Scenes;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace ProjectCard.Shared.StartupModule
+namespace Framework.Shared.Apps
 {
     public class AppStartup : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 
 
 using System;
-namespace ProjectCard.Durak.CardModule
+namespace Framework.Durak.Cards
 {
     [Serializable]
     public readonly struct Data

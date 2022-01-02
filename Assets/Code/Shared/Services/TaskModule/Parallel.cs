@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-using ProjectCard.Shared.Services.CollectionModule;
+using Framework.Shared.Services.Pools;
 
-namespace ProjectCard.Shared.Services.TaskModule
+namespace Framework.Shared.Services.Tasks
 {
     public class Parallel : IProcess, IReusable
     {

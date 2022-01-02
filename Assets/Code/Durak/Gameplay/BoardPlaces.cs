@@ -3,13 +3,13 @@ using System;
 
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.Services.Movement;
-using ProjectCard.Shared.ViewModule;
+using Framework.Shared.Cards.Entities;
+using Framework.Shared.Cards.Views;
+using Framework.Shared.Services.Movements;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.Gameplay
+namespace Framework.Durak.Gameplay
 {
     public class BoardPlaces : MonoBehaviour
     {

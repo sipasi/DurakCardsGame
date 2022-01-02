@@ -1,16 +1,16 @@
 ﻿using Cysharp.Threading.Tasks;
 
-using ProjectCard.Durak.CollectionModule;
-using ProjectCard.Durak.EntityModule;
-using ProjectCard.Durak.Gameplay.Scriptables;
-using ProjectCard.Durak.PlayerModule;
-using ProjectCard.Durak.ViewModule;
-using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.Services.Movement;
+using Framework.Durak.Collections;
+using Framework.Durak.Entities;
+using Framework.Durak.Gameplay.Scriptables;
+using Framework.Durak.Players;
+using Framework.Durak.Views;
+using Framework.Shared.Cards.Entities;
+using Framework.Shared.Services.Movements;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.GameplayModule
+namespace Framework.Durak.Gameplay
 {
     public class CardDealer : MonoBehaviour
     {

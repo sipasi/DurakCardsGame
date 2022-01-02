@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.ScriptableModule
+namespace Framework.Shared.Cards.Scriptables
 {
     [CreateAssetMenu(fileName = "Pack", menuName = "MyAsset/Shared/Scriptables/SpritePack")]
     public class SpritePack : ScriptableObject

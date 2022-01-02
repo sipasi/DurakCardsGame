@@ -1,18 +1,16 @@
 ﻿
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Durak.CollectionModule;
-using ProjectCard.Durak.EntityModule;
-using ProjectCard.Durak.Gameplay;
-using ProjectCard.Durak.ValidatorModule;
-using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.Collections;
+using Framework.Durak.Cards;
+using Framework.Durak.Collections;
+using Framework.Durak.Entities;
+using Framework.Durak.Validators;
+using Framework.Shared.Cards.Entities;
+using Framework.Shared.Collections;
 
 using UnityEngine;
 
-
-namespace ProjectCard.Durak.HandlerModule
+namespace Framework.Durak.Gameplay.Handlers
 {
     public abstract class CardSelectionHandlerBace : MonoBehaviour
     {

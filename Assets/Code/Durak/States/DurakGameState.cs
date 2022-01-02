@@ -1,4 +1,4 @@
-﻿namespace ProjectCard.Durak.StateModule
+﻿namespace Framework.Durak.States
 {
     public enum DurakGameState
     {

@@ -1,6 +1,6 @@
 {
-    "name": "ProjectCard.Shared.States",
-    "rootNamespace": "ProjectCard.Shared.States",
+    "name": "Framework.Shared.States",
+    "rootNamespace": "Framework.Shared.States",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

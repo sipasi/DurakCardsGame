@@ -1,6 +1,6 @@
 {
-    "name": "ProjectCard.Durak.Datas",
-    "rootNamespace": "ProjectCard.Durak.Datas",
+    "name": "Framework.Durak.Datas",
+    "rootNamespace": "Framework.Durak.Datas",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

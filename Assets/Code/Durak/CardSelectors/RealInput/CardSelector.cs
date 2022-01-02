@@ -1,10 +1,11 @@
-﻿using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.EventModule;
+﻿using Framework.Durak.Players;
+using Framework.Shared.Cards.Entities;
+using Framework.Shared.Events;
 
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace ProjectCard.Durak.PlayerModule
+namespace Framework.Durak.Cards.Selectors
 {
     public abstract class CardSelector : MonoBehaviour, ICardSelector
     {

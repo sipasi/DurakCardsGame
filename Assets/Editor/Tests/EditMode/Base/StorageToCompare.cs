@@ -1,4 +1,4 @@
-﻿using ProjectCard.Shared.Collections;
+﻿using Framework.Shared.Collections;
 
 namespace ProjectCard.Editor.TestModule.TestData
 {

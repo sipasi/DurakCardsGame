@@ -1,5 +1,5 @@
 ﻿
-namespace ProjectCard.Shared.Collections.Extensions
+namespace Framework.Shared.Collections.Extensions
 {
     public static class ArrayExtension
     {

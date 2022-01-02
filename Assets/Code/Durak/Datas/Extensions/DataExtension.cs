@@ -1,6 +1,6 @@
 ﻿
 
-namespace ProjectCard.Durak.CardModule.ExtensionModule
+namespace Framework.Durak.Cards.Extensions
 {
     public static class DataExtension
     {

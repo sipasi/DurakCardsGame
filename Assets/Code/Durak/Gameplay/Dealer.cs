@@ -1,12 +1,12 @@
 ﻿
 using System.Collections.Generic;
 
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Shared.Collections;
+using Framework.Durak.Cards;
+using Framework.Shared.Collections;
 
 using Unity.Mathematics;
 
-namespace ProjectCard.Durak.GameplayModule
+namespace Framework.Durak.Gameplay
 {
     public static class Dealer
     {

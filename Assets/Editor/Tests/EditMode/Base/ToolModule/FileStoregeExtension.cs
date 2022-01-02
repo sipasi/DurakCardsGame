@@ -1,4 +1,4 @@
-﻿using ProjectCard.Shared.Services.StorageModule;
+﻿using Framework.Shared.Services.Storages;
 
 namespace ProjectCard.Editor.TestModule.ToolModule
 {

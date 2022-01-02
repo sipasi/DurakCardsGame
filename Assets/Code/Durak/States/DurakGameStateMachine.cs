@@ -1,10 +1,11 @@
 ﻿
-using ProjectCard.Durak.StateModule.BattleModule;
-using ProjectCard.Shared.StateModule;
+using Framework.Durak.States.Actions;
+using Framework.Durak.States.Battles;
+using Framework.Shared.States;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.StateModule
+namespace Framework.Durak.States
 {
     public class DurakGameStateMachine : MonoBehaviour, IStateMachine<DurakGameState>
     {

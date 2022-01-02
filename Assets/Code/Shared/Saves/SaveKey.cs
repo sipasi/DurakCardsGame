@@ -2,11 +2,11 @@
 
 using System;
 
-using ProjectCard.Shared.CoreModule.AttributeModule;
+using Framework.Shared.Core.Attributes;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.SaveModule
+namespace Framework.Shared.Saves
 {
     [CreateAssetMenu(fileName = "SaveKey", menuName = "MyAsset/Shared/SaveModule/SaveKey by Guid")]
     public class SaveKey : ScriptableObject, ISaveKey<Guid>

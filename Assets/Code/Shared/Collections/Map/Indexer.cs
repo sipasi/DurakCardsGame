@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace ProjectCard.Shared.Collections
+namespace Framework.Shared.Collections
 {
     [Serializable]
     public sealed class Indexer<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>

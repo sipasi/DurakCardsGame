@@ -3,7 +3,7 @@ using System;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.EventModule
+namespace Framework.Shared.Events
 {
     [CreateAssetMenu(fileName = "EmptyAction", menuName = "MyAsset/Shared/EventModule/EmptyAction")]
     public class ScriptableAction : ScriptableObject

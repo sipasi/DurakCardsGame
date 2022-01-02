@@ -1,9 +1,9 @@
-﻿using ProjectCard.Durak.EntityModule;
-using ProjectCard.Durak.PlayerModule;
+﻿using Framework.Durak.Entities;
+using Framework.Durak.Players;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.StateModule.BattleModule
+namespace Framework.Durak.States.Battles
 {
     public class BattleEndState : DurakState
     {

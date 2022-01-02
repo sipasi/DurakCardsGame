@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 using UnityEngine.Assertions;
 
-namespace ProjectCard.Durak.PlayerModule
+namespace Framework.Durak.Players
 {
     [Serializable]
     public class PlayerQueue : IPlayerQueue

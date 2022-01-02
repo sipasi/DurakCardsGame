@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 using Cysharp.Threading.Tasks;
 
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Durak.EntityModule;
-using ProjectCard.Durak.Gameplay;
-using ProjectCard.Durak.PlayerModule;
+using Framework.Durak.Cards;
+using Framework.Durak.Entities;
+using Framework.Durak.Gameplay;
+using Framework.Durak.Players;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.StateModule.BattleModule
+namespace Framework.Durak.States.Battles
 {
     public abstract class BattlePlayerWinnerState : DurakState
     {

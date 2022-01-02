@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Durak.CollectionModule.ExtensionModule;
-using ProjectCard.Shared.CardModule;
+using Framework.Durak.Collections.Extensions;
+using Framework.Durak.Players;
+using Framework.Shared.Cards.Entities;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.PlayerModule
+namespace Framework.Durak.Cards.Selectors
 {
     public sealed class AiRandomAttacker : AiCardSelector
     {

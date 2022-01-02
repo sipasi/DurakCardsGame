@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Shared.ViewModule;
+using Framework.Durak.Cards;
+using Framework.Shared.Cards.Views;
 
 
-namespace ProjectCard.Durak.PlayerModule
+namespace Framework.Durak.Players
 {
     public interface IPlayer
     {

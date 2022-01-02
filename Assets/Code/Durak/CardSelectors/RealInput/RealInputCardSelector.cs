@@ -1,9 +1,9 @@
-﻿using ProjectCard.Shared.CardModule;
-using ProjectCard.Shared.EventModule;
+﻿using Framework.Shared.Cards.Entities;
+using Framework.Shared.Events;
 
 using UnityEngine;
 
-namespace ProjectCard.Durak.PlayerModule
+namespace Framework.Durak.Cards.Selectors
 {
     public class RealInputCardSelector : CardSelector
     {

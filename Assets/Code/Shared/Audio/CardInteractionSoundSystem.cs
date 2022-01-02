@@ -1,10 +1,10 @@
 ﻿using System;
 
-using ProjectCard.Shared.EventModule;
+using Framework.Shared.Events;
 
 using UnityEngine;
 
-namespace ProjectCard.Shared.AudioModule
+namespace Framework.Shared.Audios
 {
     public class CardInteractionSoundSystem : MonoBehaviour
     {

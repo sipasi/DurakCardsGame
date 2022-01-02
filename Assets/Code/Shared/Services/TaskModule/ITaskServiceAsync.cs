@@ -1,7 +1,7 @@
 ﻿
 using Cysharp.Threading.Tasks;
 
-namespace ProjectCard.Shared.Services.TaskModule
+namespace Framework.Shared.Services.Tasks
 {
     public interface ITaskServiceAsync : ITaskService
     {

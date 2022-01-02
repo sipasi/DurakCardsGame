@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using ProjectCard.Durak.CardModule;
-using ProjectCard.Durak.PlayerModule;
-using ProjectCard.Shared.Collections;
+using Framework.Durak.Cards;
+using Framework.Durak.Players;
+using Framework.Shared.Collections;
 
 namespace ProjectCard.Editor.TestModule.TestData
 {
