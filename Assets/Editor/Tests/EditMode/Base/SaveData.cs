@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using Framework.Durak.Cards;
+using Framework.Durak.Datas;
 using Framework.Durak.Players;
 using Framework.Shared.Collections;
 
@@ -26,8 +26,8 @@ namespace ProjectCard.Editor.TestModule.TestData
         private readonly Map<Guid, Data> map;
 
         private readonly IPlayer[] players;
-        private readonly PlayerStorage playerStorage;
-        private readonly PlayerQueue playerQueue;
+        private readonly PlayerStorage<IReadonlyPlayer> playerStorage;
+        private readonly PlayerQueue<IReadonlyPlayer> playerQueue;
 
         public SaveData() : this(10) { }
         public SaveData(int dataLength)
@@ -73,7 +73,6 @@ namespace ProjectCard.Editor.TestModule.TestData
 
             if (playerQueue.Attacker.Name != save.playerQueue.Attacker.Name) return false;
             if (playerQueue.Defender.Name != save.playerQueue.Defender.Name) return false;
-            if (playerQueue.Action != save.playerQueue.Action) return false;
 
             return true;
         }

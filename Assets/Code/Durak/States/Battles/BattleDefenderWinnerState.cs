@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 using Cysharp.Threading.Tasks;
 
-using Framework.Durak.Cards;
+using Framework.Durak.Datas;
 using Framework.Durak.Entities;
-using Framework.Durak.Players;
 using Framework.Durak.Services.Movements;
 using Framework.Shared.Cards.Views;
 
@@ -23,22 +22,18 @@ namespace Framework.Durak.States.Battles
         [Header("Entities")]
         [SerializeField] DiscardPileEntity discardPile;
 
-        [Header("Places")]
-        [SerializeField] private Transform trashPlace;
-
         protected override async UniTask MoveCards(IReadOnlyList<Data> datas)
         {
-            discardPile.Value.AddRange(datas);
-
-            await movement.MoveToPlace(datas, trashPlace, CardLookSide.Back);
+            await discardPile.PlaceRange(datas);
 
         }
-        protected override void UpdatePlayerQueue(IPlayerQueue playerQueue)
+        protected override void UpdatePlayerQueue(IPlayerQueueEntity entity)
         {
-            playerQueue.Set(
-                attacker: playerQueue.Defender,
-                defender: playerQueue.GetNextFrom(playerQueue.Defender),
-                action: PlayerActionType.Attack);
+            var queue = entity.Value;
+
+            entity.SetAttackerQueue(
+                attacker: queue.Defender,
+                defender: queue.GetNextFrom(queue.Defender));
         }
     }
 }

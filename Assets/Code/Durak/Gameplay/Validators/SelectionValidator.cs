@@ -1,8 +1,6 @@
-﻿
-using Framework.Durak.Cards;
-using Framework.Durak.Collections;
+﻿using Framework.Durak.Collections;
+using Framework.Durak.Datas;
 using Framework.Durak.Entities;
-using Framework.Durak.Players;
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Collections;
 
@@ -18,17 +16,17 @@ namespace Framework.Durak.Validators
         [SerializeField] private DeckEntity deck;
 
         [Header("Collections")]
-        [SerializeField] private CardEntityDataMap map;
+        [SerializeField] private CardMap map;
 
-        protected IBoard<Data> Board => board.Value;
-        protected IDeck<Data> Deck => deck.Value;
-        protected IPlayerQueue PlayerQueue => playerQueue.Value;
+        protected IReadonlyBoard<Data> Board => board.Value;
+        protected IReadonlyDeck<Data> Deck => deck.Value;
+        protected IReadonlyPlayerQueue<IPlayerEntity> PlayerQueue => playerQueue.Value;
 
         public abstract bool Validate(ICard value);
 
         protected Data ConvertToData(ICard card) => map.Get(card);
 
-        protected void Deconstruct(out IBoard<Data> board, out IDeck<Data> deck, out IPlayerQueue playerQueue)
+        protected void Deconstruct(out IReadonlyBoard<Data> board, out IReadonlyDeck<Data> deck, out IReadonlyPlayerQueue<IPlayerEntity> playerQueue)
             => (board, deck, playerQueue) = (Board, Deck, PlayerQueue);
     }
 }

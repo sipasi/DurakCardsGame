@@ -1,7 +1,6 @@
-
-
 using System;
-namespace Framework.Durak.Cards
+
+namespace Framework.Durak.Datas
 {
     [Serializable]
     public readonly struct Data

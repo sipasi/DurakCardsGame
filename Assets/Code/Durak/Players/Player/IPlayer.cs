@@ -1,23 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-using Framework.Durak.Cards;
-using Framework.Shared.Cards.Views;
-
+using Framework.Durak.Datas;
 
 namespace Framework.Durak.Players
 {
-    public interface IPlayer
+    public interface IPlayer : IReadonlyPlayer
     {
-        Guid Id { get; }
-
-        string Name { get; }
-
-        PlayerPosition Position { get; }
-
-        List<Data> Hand { get; }
-        CardLookSide LookSide { get; }
-
-        PlayerType Type { get; }
+        void Add(Data data);
+        void Remove(Data data);
+        void AddRange(IEnumerable<Data> datas);
+         
+        void Clear();
     }
 }

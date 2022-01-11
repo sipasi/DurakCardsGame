@@ -1,12 +1,12 @@
 ﻿
 using Cysharp.Threading.Tasks;
 
-using Framework.Durak.Cards;
 using Framework.Durak.Collections;
+using Framework.Durak.Datas;
 using Framework.Durak.Entities;
 using Framework.Durak.Validators;
 using Framework.Shared.Cards.Entities;
-using Framework.Shared.Collections;
+using Framework.Shared.Entities;
 
 using UnityEngine;
 
@@ -17,9 +17,6 @@ namespace Framework.Durak.Gameplay.Handlers
         [Header("Players")]
         [SerializeField] private PlayerQueueEntity playerQueue;
 
-        [Header("Places")]
-        [SerializeField] private BoardPlaces boardPlaces;
-
         [Header("Entities")]
         [SerializeField] private BoardEntity board;
 
@@ -27,7 +24,7 @@ namespace Framework.Durak.Gameplay.Handlers
         [SerializeField] private SelectionValidator selectionValidator;
 
         [Header("Collections")]
-        [SerializeField] private CardEntityDataMap entityDataMap;
+        [SerializeField] private CardMap entityDataMap;
 
         public async UniTask<bool> Handle(ICard card)
         {
@@ -38,16 +35,13 @@ namespace Framework.Durak.Gameplay.Handlers
 
             Data data = entityDataMap.Get(card);
 
-            playerQueue.Value.Current.Hand.Remove(data);
+            playerQueue.Value.Current.Remove(data);
 
-            AddDataToBoard(board.Value, data);
-
-            await AddToBoardPlace(boardPlaces, card);
+            await AddDataToBoard(board, data);
 
             return true;
         }
 
-        protected abstract UniTask AddToBoardPlace(BoardPlaces places, ICard card);
-        protected abstract void AddDataToBoard(IBoard<Data> board, Data data);
+        protected abstract UniTask AddDataToBoard(IBoardEnity<Data> board, Data data);
     }
 }

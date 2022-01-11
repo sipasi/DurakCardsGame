@@ -1,0 +1,28 @@
+{
+    "name": "Framework.Durak.Gameplay",
+    "rootNamespace": "Framework.Durak.Gameplay",
+    "references": [
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:d8b63aba1907145bea998dd612889d6b",
+        "GUID:c23d8554e1fa8c74a8918184075c8fbf",
+        "GUID:762e2ccb45cd2db40989ea6fb2079c58",
+        "GUID:fdd2eb8d8ebfa5a49bfa04a4c363dd18",
+        "GUID:a8a1b2aa1d914d84c8760529c4cd3077",
+        "GUID:cb2bba070bd409d40957128512f36c7a",
+        "GUID:051f6d9869df31c458882c61199ed9be",
+        "GUID:d9397185d0dcdfe49b9e54553504b6e2",
+        "GUID:de2659b602184da44be8081fad21dbfa",
+        "GUID:6e388d7c77abaaa47a47dee7dccfc6ee",
+        "GUID:6153f80e1d4c4ac47a01671afe321a4b",
+        "GUID:c5a560722d2f4a845afd75b1cf6847aa"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -26,11 +26,11 @@ namespace Framework.Shared.Services.Movements
 
         public async UniTask MoveToParent(ICard temporary, ICard entity, Transform parent, float speed)
         {
-            preparation.BeforeMovement(entity, temporary, parent);
+            preparation.BeforeMovement(temporary, entity, parent);
 
-            await MoveTemporaryTo(entity, temporary, speed);
+            await MoveTemporaryTo(temporary, entity, speed);
 
-            preparation.AfterMovement(entity, temporary);
+            preparation.AfterMovement(temporary, entity);
         }
 
         public async UniTask MoveToParent(ICard temporary, IReadOnlyList<ICard> entities, Transform parent, float speed)
@@ -43,21 +43,28 @@ namespace Framework.Shared.Services.Movements
             }
         }
 
-        private async UniTask MoveTemporaryTo(ICard card, ICard temporary, float speed)
+        private async UniTask MoveTemporaryTo(ICard temporary, ICard card, float speed)
         {
-            MoveProcess moveProcess = pool.Get<MoveProcess>();
+            IProcess process = GetProcess(temporary.Transform, card.Transform, speed);
 
-            moveProcess.Set(temporary.Transform, card.Transform, speed);
-
-            task.Add(moveProcess);
+            task.Add(process);
 
             Begin.Rise();
 
-            await task.Wait(moveProcess);
+            await task.Wait(process);
 
             End.Rise();
 
-            pool.Return(moveProcess);
+            pool.Return(process);
+        }
+
+        private IProcess GetProcess(Transform temporary, Transform card, float speed)
+        {
+            MoveProcess process = pool.Get<MoveProcess>();
+
+            process.Set(temporary, card, speed);
+
+            return process;
         }
     }
 }

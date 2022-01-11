@@ -1,5 +1,4 @@
 ﻿using Framework.Durak.Entities;
-using Framework.Durak.Views;
 
 using UnityEngine;
 
@@ -10,17 +9,11 @@ namespace Framework.Durak.States
         [Header("Entities")]
         [SerializeField] private DeckEntity deck;
 
-        [Header("View")]
-        [SerializeField] private DeckViewUpdater viewUpdater;
-
         public override void Enter()
         {
             base.Enter();
 
-            deck.Value.Shuffle(times: 500);
-
-            viewUpdater.UpdateSprites();
-            viewUpdater.UpdateCount();
+            deck.Shuffle(times: 500);
 
             NextState(DurakGameState.BattleFirstStart);
         }

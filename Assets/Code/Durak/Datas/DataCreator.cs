@@ -1,7 +1,4 @@
-﻿
-using Framework.Durak.Cards;
-
-namespace Framework.Durak.Game
+﻿namespace Framework.Durak.Datas
 {
     public static class DataCreator
     {

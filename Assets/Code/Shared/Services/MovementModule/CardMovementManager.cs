@@ -38,7 +38,6 @@ namespace Framework.Shared.Services.Movements
             foreach (var card in cards)
             {
                 await MoveToPlace(card, place, lookSide);
-
             }
         }
     }

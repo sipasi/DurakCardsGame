@@ -2,8 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-using Framework.Durak.Cards;
-using Framework.Shared.Cards.Views;
+using Framework.Durak.Datas;
 
 namespace Framework.Durak.Players
 {
@@ -12,14 +11,24 @@ namespace Framework.Durak.Players
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public PlayerPosition Position { get; set; }
-        public List<Data> Hand { get; set; }
-        public CardLookSide LookSide { get; set; }
+
         public PlayerType Type { get; set; }
 
-        public override string ToString()
+        public List<Data> Cards { get; set; }
+        public IReadOnlyList<Data> Hand => Cards;
+
+        public void Add(Data data) => Cards.Add(data);
+        public void AddRange(IEnumerable<Data> datas)
         {
-            return $"Name: {Name}. Position: {Position}. Selector: {Type}";
+            throw new NotImplementedException();
         }
+
+        public void Remove(Data data) => Cards.Remove(data);
+
+        public bool Contains(Data data) => Cards.Contains(data);
+
+        public void Clear() => Cards.Clear();
+
+        public override string ToString() => $"Name: {Name}. Selector: {Type}";
     }
 }

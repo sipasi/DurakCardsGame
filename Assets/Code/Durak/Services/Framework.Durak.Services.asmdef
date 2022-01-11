@@ -1,0 +1,21 @@
+{
+    "name": "Framework.Durak.Services",
+    "rootNamespace": "Framework.Durak.Services",
+    "references": [
+        "UniTask",
+        "Framework.Shared.Collections",
+        "Framework.Shared.Services",
+        "Framework.Shared.Cards",
+        "Framework.Durak.Collections",
+        "Framework.Durak.Datas"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

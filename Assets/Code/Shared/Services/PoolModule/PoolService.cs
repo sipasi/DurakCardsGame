@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Framework.Shared.Services.Pools
 {
     [CreateAssetMenu(fileName = "PoolService", menuName = "MyAsset/Shared/ServiceModule/PoolService")]
-    public class PoolService : ScriptableObject
+    public class PoolService : ScriptableObject, IPool
     {
         private readonly Dictionary<Type, object> pairs = new Dictionary<Type, object>(capacity: 10);
 

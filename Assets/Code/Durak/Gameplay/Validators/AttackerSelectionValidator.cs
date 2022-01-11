@@ -1,8 +1,9 @@
-﻿
-using Framework.Durak.Cards;
-using Framework.Durak.Collections.Extensions;
+﻿using Framework.Durak.Collections.Extensions;
+using Framework.Durak.Datas;
+using Framework.Durak.Entities;
 using Framework.Durak.Players;
 using Framework.Shared.Cards.Entities;
+using Framework.Shared.Collections;
 
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -17,11 +18,11 @@ namespace Framework.Durak.Validators
 
             AssertState(playerQueue);
 
-            IPlayer current = playerQueue.Current;
+            IReadonlyPlayer current = playerQueue.Current.Value;
 
             Data selected = ConvertToData(value);
 
-            if (current.Hand.Contains(selected) is false)
+            if (current.Contains(selected) is false)
             {
                 return false;
             }
@@ -46,7 +47,7 @@ namespace Framework.Durak.Validators
             return contains;
         }
 
-        private static void AssertState(IPlayerQueue playerQueue)
+        private static void AssertState(IReadonlyPlayerQueue<IPlayerEntity> playerQueue)
         {
             Assert.IsTrue(playerQueue.IsAttackerQueue, "AttackerSelectionValidator can only validate attacker selection");
         }

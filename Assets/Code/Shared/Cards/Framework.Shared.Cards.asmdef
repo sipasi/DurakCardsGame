@@ -1,0 +1,18 @@
+{
+    "name": "Framework.Shared.Cards",
+    "rootNamespace": "Framework.Shared.Cards",
+    "references": [
+        "Unity.TextMeshPro",
+        "GUID:98005caaf3a3a964d90613b54a920146",
+        "Framework.Shared.Events"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -2,7 +2,6 @@
 using Cysharp.Threading.Tasks;
 
 using Framework.Durak.Entities;
-using Framework.Durak.Gameplay;
 using Framework.Durak.Services.Movements;
 using Framework.Shared.Cards.Views;
 
@@ -20,7 +19,6 @@ namespace Framework.Durak.States
 
         [Header("Places")]
         [SerializeField] private Transform deckPlace;
-        [SerializeField] private BoardPlaces boardPlaces;
 
         [Header("Entities")]
         [SerializeField] private BoardEntity board;
@@ -33,9 +31,7 @@ namespace Framework.Durak.States
 
             await MoveCards();
 
-            ClearEntities();
-
-            boardPlaces.Clear();
+            await ClearEntities();
 
             NextState(DurakGameState.GameStart);
         }
@@ -44,19 +40,16 @@ namespace Framework.Durak.States
         {
             await movement.MoveToPlace(board.Value.All, deckPlace, CardLookSide.Back);
             await movement.MoveToPlace(discardPile.Value, deckPlace, CardLookSide.Back);
-
-            foreach (var player in playerStorage.Value.All)
-            {
-                await movement.MoveToPlace(player.Hand, deckPlace, CardLookSide.Back);
-            }
         }
 
-        private void ClearEntities()
+        private async UniTask ClearEntities()
         {
             playerStorage.Value.Restore();
 
-            board.Value.Clear();
-            deck.Value.Clear();
+            board.Clear();
+
+            await deck.Reset();
+
             discardPile.Value.Clear();
         }
     }

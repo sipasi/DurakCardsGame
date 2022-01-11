@@ -1,0 +1,17 @@
+{
+    "name": "Framework.Shared.Scenes",
+    "rootNamespace": "Framework.Shared.Scenes",
+    "references": [
+        "UniTask",
+        "Framework.Shared.Services"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

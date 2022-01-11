@@ -2,8 +2,8 @@
 
 using Cysharp.Threading.Tasks;
 
-using Framework.Durak.Cards;
 using Framework.Durak.Collections;
+using Framework.Durak.Datas;
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Cards.Views;
 using Framework.Shared.Services.Movements;
@@ -14,7 +14,7 @@ namespace Framework.Durak.Services.Movements
 {
     public sealed class DurakCardMovementManager : CardMovementManager
     {
-        [SerializeField] private CardEntityDataMap entityDataMap;
+        [SerializeField] private CardMap entityDataMap;
 
         public async UniTask MoveToPlace(Data data, Transform place, CardLookSide lookSide)
         {

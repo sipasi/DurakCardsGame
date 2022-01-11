@@ -1,0 +1,17 @@
+{
+    "name": "Framework.Shared.Saves",
+    "rootNamespace": "Framework.Shared.Saves",
+    "references": [
+        "Framework.Shared.Core",
+        "Framework.Shared.Collections"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

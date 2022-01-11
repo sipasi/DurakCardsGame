@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 using Framework.Durak.Collections.Extensions;
-using Framework.Durak.Players;
+using Framework.Durak.Datas;
 using Framework.Shared.Cards.Entities;
 
 using UnityEngine;
@@ -10,10 +10,8 @@ namespace Framework.Durak.Cards.Selectors
 {
     public sealed class AiRandomAttacker : AiCardSelector
     {
-        public override ICard GetCard(IPlayer player)
+        public override ICard GetCard(IReadOnlyList<Data> hand)
         {
-            List<Data> hand = player.Hand;
-
             var board = Board;
 
             if (board.IsEmpty)

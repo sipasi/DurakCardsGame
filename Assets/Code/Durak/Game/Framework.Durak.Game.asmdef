@@ -1,0 +1,28 @@
+{
+    "name": "Framework.Durak.Game",
+    "rootNamespace": "Framework.Durak.Game",
+    "references": [
+        "UniTask",
+        "Framework.Shared.Collections",
+        "Framework.Shared.Cards",
+        "Framework.Shared.Entities",
+        "Framework.Shared.Events",
+        "Framework.Shared.Services",
+        "Framework.Durak.Collections",
+        "Framework.Durak.Datas",
+        "Framework.Durak.Rules",
+        "Framework.Durak.Entities",
+        "Framework.Durak.Gameplay",
+        "Framework.Durak.Players",
+        "Framework.Durak.States"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,4 +1,7 @@
-﻿using Framework.Durak.Collections;
+﻿using System.Collections.Generic;
+
+using Framework.Durak.Collections;
+using Framework.Durak.Datas;
 using Framework.Durak.Entities;
 using Framework.Durak.Players;
 using Framework.Shared.Cards.Entities;
@@ -13,22 +16,22 @@ namespace Framework.Durak.Cards.Selectors
         [Header("Entities")]
         [SerializeField] private BoardEntity board;
         [SerializeField] private DeckEntity deck;
-        [SerializeField] private CardEntityDataMap entityDataMap;
+        [SerializeField] private CardMap entityDataMap;
 
-        protected IBoard<Data> Board => board.Value;
-        protected IDeck<Data> Deck => deck.Value;
+        protected IReadonlyBoard<Data> Board => board.Value;
+        protected IReadonlyDeck<Data> Deck => deck.Value;
 
         protected ICard ConvertToCard(in Data data) => entityDataMap.Get(data);
 
-        public abstract ICard GetCard(IPlayer player);
+        public abstract ICard GetCard(IReadOnlyList<Data> hand);
 
         public sealed override void Begin()
         {
             base.Begin();
 
-            IPlayer player = Current;
+            IReadonlyPlayer player = Current;
 
-            ICard card = GetCard(player);
+            ICard card = GetCard(player.Hand);
 
             if (card == null)
             {

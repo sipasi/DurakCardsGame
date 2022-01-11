@@ -1,0 +1,17 @@
+{
+    "name": "Framework.Shared.UI",
+    "rootNamespace": "Framework.Shared.UI",
+    "references": [
+        "UniTask",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

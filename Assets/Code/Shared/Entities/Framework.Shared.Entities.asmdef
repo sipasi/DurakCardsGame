@@ -1,0 +1,17 @@
+{
+    "name": "Framework.Shared.Entities",
+    "rootNamespace": "Framework.Shared.Entities",
+    "references": [
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:c23d8554e1fa8c74a8918184075c8fbf"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,6 +1,4 @@
-
-using Framework.Durak.Cards;
-using Framework.Durak.Cards.Extensions;
+using Framework.Durak.Datas.Extensions;
 
 using NUnit.Framework;
 

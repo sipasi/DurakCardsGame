@@ -1,0 +1,30 @@
+{
+    "name": "Framework.Durak.States",
+    "rootNamespace": "Framework.Durak.States",
+    "references": [
+        "UniTask",
+        "Framework.Shared.Collections",
+        "Framework.Shared.Events",
+        "Framework.Shared.Cards",
+        "Framework.Shared.Services",
+        "Framework.Shared.States",
+        "Framework.Shared.Entities",
+        "Framework.Shared.Scenes",
+        "Framework.Shared.UI",
+        "Framework.Durak.Datas",
+        "Framework.Durak.Players",
+        "Framework.Durak.Services",
+        "Framework.Durak.Entities",
+        "Framework.Durak.Gameplay",
+        "Framework.Durak.CardSelectors"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

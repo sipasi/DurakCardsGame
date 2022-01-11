@@ -1,8 +1,8 @@
 ﻿
 using System.Collections.Generic;
 
-using Framework.Durak.Cards;
-using Framework.Durak.Cards.Extensions;
+using Framework.Durak.Datas;
+using Framework.Durak.Datas.Extensions;
 using Framework.Shared.Collections;
 
 namespace Framework.Durak.Collections.Extensions

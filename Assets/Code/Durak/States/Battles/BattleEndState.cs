@@ -18,7 +18,7 @@ namespace Framework.Durak.States.Battles
 
             if (deck.Value.IsEmpty)
             {
-                EmptyPlayersEliminator.EliminateAndUpdateQueue(playerStorage.Value, playerQueue.Value);
+                playerStorage.EliminateEmpty();
 
                 if (playerStorage.Value.Active.Count < 2)
                 {

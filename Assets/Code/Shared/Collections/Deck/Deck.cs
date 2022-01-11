@@ -9,7 +9,7 @@ namespace Framework.Shared.Collections
     [Serializable]
     public class Deck<T> : IDeck<T>
     {
-        private readonly IList<T> datas;
+        private readonly IReadOnlyList<T> datas;
         private readonly DecrementalIndexes indexes;
 
         public int Count => indexes.Count;
@@ -18,7 +18,7 @@ namespace Framework.Shared.Collections
         public T Top => datas[indexes.Peek()];
         public T Bottom => datas[indexes.PeekFirst()];
 
-        public Deck(IList<T> datas)
+        public Deck(IReadOnlyList<T> datas)
         {
             this.datas = datas;
 

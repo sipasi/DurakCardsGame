@@ -7,6 +7,6 @@ using UnityEngine;
 
 namespace Framework.Durak.Gameplay.Events
 {
-    [CreateAssetMenu(fileName = "CardSelectedEvent", menuName = "MyAsset/Durak/EventModule/CardSelectedEvent")]
+    [CreateAssetMenu(fileName = "CardSelectedEvent", menuName = "MyAsset/Durak/Gameplay/Events/CardSelectedEvent")]
     public class CardSelectedEvent : ScriptableAction<IPlayer, ICard> { }
 }

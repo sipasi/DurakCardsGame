@@ -1662,9 +1662,10 @@ MonoBehaviour:
   playerQueue: {fileID: 1680203889}
   selectionHandler: {fileID: 233695780}
   passValidator: {fileID: 155708625}
-  delay: 1000
+  aiWaitDelay: 0
   cardSelected: {fileID: 11400000, guid: 57d825975c0c8494bb83450bcc2a04fb, type: 2}
   passAction: {fileID: 11400000, guid: 921b15d76dd26bc47b6078367128560c, type: 2}
+  currentPlayerSwitched: {fileID: 11400000, guid: 6e039313c58dde546b8063fe623499f3, type: 2}
 --- !u!1 &575022927
 GameObject:
   m_ObjectHideFlags: 0
@@ -3553,7 +3554,6 @@ MonoBehaviour:
   placeList: {fileID: 1115656234}
   rules: {fileID: 11400000, guid: 8af6ffaca64a7fc4b891cadd0af9ef35, type: 2}
   deck: {fileID: 1165979027}
-  deckView: {fileID: 1872770739}
 --- !u!1 &1165979025
 GameObject:
   m_ObjectHideFlags: 0
@@ -4298,9 +4298,10 @@ MonoBehaviour:
   playerQueue: {fileID: 1680203889}
   selectionHandler: {fileID: 296336574}
   passValidator: {fileID: 155708625}
-  delay: 1000
+  aiWaitDelay: 0
   cardSelected: {fileID: 11400000, guid: 57d825975c0c8494bb83450bcc2a04fb, type: 2}
   passAction: {fileID: 11400000, guid: 921b15d76dd26bc47b6078367128560c, type: 2}
+  currentPlayerSwitched: {fileID: 11400000, guid: 6e039313c58dde546b8063fe623499f3, type: 2}
 --- !u!1 &1370632440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5648,9 +5649,10 @@ MonoBehaviour:
   playerQueue: {fileID: 1680203889}
   selectionHandler: {fileID: 1245152649}
   passValidator: {fileID: 155708625}
-  delay: 1000
+  aiWaitDelay: 0
   cardSelected: {fileID: 11400000, guid: 57d825975c0c8494bb83450bcc2a04fb, type: 2}
   passAction: {fileID: 11400000, guid: 921b15d76dd26bc47b6078367128560c, type: 2}
+  currentPlayerSwitched: {fileID: 11400000, guid: 6e039313c58dde546b8063fe623499f3, type: 2}
 --- !u!4 &1968924996
 Transform:
   m_ObjectHideFlags: 0

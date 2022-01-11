@@ -1,0 +1,22 @@
+{
+    "name": "Framework.Shared.Tests",
+    "rootNamespace": "Framework.Shared.Tests",
+    "references": [
+        "Framework.Shared.Collections",
+        "Framework.Shared.Cards",
+        "Framework.Shared.Services",
+        "Framework.Durak.Datas",
+        "Framework.Durak.Players"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

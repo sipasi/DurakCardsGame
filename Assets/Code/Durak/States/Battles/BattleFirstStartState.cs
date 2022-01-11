@@ -32,16 +32,17 @@ namespace Framework.Durak.States.Battles
         }
         private void FirstBallte()
         {
-            IPlayer first = PlayerTool.DefineFirstPlayerBySmallestTrump(playerStorage.Value.Active, deck.Value.Bottom);
+            IReadonlyPlayer first = PlayerTool.DefineFirstPlayerBySmallestTrump(playerStorage.GetReadonlyPlayers(), deck.Value.Bottom);
 
             Debug.Log(nameof(BattleFirstStartState));
 
-            playerQueue.Value.Set(
-                attacker: first,
-                defender: playerQueue.Value.GetNextFrom(first),
-                action: PlayerActionType.Attack);
+            var queue = playerQueue.Value;
 
-            Debug.Log($"Attacker: {playerQueue.Value.Attacker.Name}, Defender: {playerQueue.Value.Defender.Name}");
+            playerQueue.SetAttackerQueue(
+                attacker: first,
+                defender: queue.GetNextFrom(first));
+
+            Debug.Log($"Attacker: {playerQueue.Value.Attacker.Value.Name}, Defender: {playerQueue.Value.Defender.Value.Name}");
         }
     }
 }

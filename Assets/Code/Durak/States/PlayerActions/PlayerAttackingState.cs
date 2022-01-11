@@ -1,5 +1,5 @@
 ﻿using Framework.Durak.Cards.Selectors;
-using Framework.Durak.Players;
+using Framework.Durak.Entities;
 
 namespace Framework.Durak.States.Actions
 {
@@ -10,6 +10,6 @@ namespace Framework.Durak.States.Actions
 
         protected override ICardSelector GetSelector(IPlayerCardSelection selection) => selection.Attack;
 
-        protected override void UpdatePlayerQueue(IPlayerQueue queue) => queue.Action = PlayerActionType.Attack;
+        protected override void UpdatePlayerQueue(IPlayerQueueEntity entity) => entity.Action = PlayerActionType.Attack;
     }
 }

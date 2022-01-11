@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-using Framework.Durak.Cards;
+using Framework.Durak.Datas;
 using Framework.Durak.Players;
 using Framework.Shared.Collections;
 
@@ -113,32 +113,26 @@ namespace ProjectCard.Editor.TestModule.TestData
                 new Player()
                 {
                     Name = "Attacker",
-                    LookSide = CardLookSide.Back,
-                    Position = PlayerPosition.Top,
-                    Hand = new List<Data>(),
+                    Cards = new List<Data>(),
                     Type = PlayerType.Ai
                 },
                 new Player()
                 {
                     Name = "Defender",
-                    LookSide = CardLookSide.Face,
-                    Position = PlayerPosition.Bottom,
-                    Hand = new List<Data>(),
+                    Cards = new List<Data>(),
                     Type = PlayerType.Real
                 },
                 new Player()
                 {
                     Name = "Removed",
-                    LookSide = CardLookSide.Face,
-                    Position = PlayerPosition.Bottom,
-                    Hand = new List<Data>(),
+                    Cards = new List<Data>(),
                     Type = PlayerType.Real
                 },
             };
 
             return players;
         }
-        public static void CreatePlayerPack(out IPlayer[] players, out PlayerStorage storage, out PlayerQueue queue)
+        public static void CreatePlayerPack(out IPlayer[] players, out PlayerStorage<IReadonlyPlayer> storage, out PlayerQueue<IReadonlyPlayer> queue)
         {
             int attacker = 0;
             int defender = 1;
@@ -146,12 +140,12 @@ namespace ProjectCard.Editor.TestModule.TestData
 
             players = CreatePlayers();
 
-            storage = new PlayerStorage(players);
-            queue = new PlayerQueue(storage);
+            storage = new PlayerStorage<IReadonlyPlayer>(players);
+            queue = new PlayerQueue<IReadonlyPlayer>(storage);
 
             storage.Remove(players[removed]);
 
-            queue.Set(players[attacker], players[defender], PlayerActionType.Attack);
+            queue.SetAttackerQueue(players[attacker], players[defender]);
         }
     }
 }

@@ -2,8 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-using Framework.Shared.Collections.Extensions;
-
 namespace Framework.Shared.Collections
 {
     [Serializable]
@@ -35,6 +33,7 @@ namespace Framework.Shared.Collections
         {
             all = new List<T>(rowItemsCount * BoardIndexes.count);
             places = new List<T>[BoardIndexes.count];
+
             this.rowItemsCount = rowItemsCount;
 
             for (int i = 0; i < BoardIndexes.count; i++)
@@ -42,6 +41,7 @@ namespace Framework.Shared.Collections
                 places[i] = new List<T>(rowItemsCount);
             }
         }
+
 
         public void Add(T item)
         {
@@ -62,24 +62,17 @@ namespace Framework.Shared.Collections
             place.Add(item);
         }
 
-        public bool TryGetLast(out T item)
+        public void AddToAttacks(T item)
         {
-            int lastIndex = (index + 1) % BoardIndexes.count;
+            index = BoardIndexes.attacks;
 
-            List<T> place = places[lastIndex];
-
-            item = place.Last();
-
-            return place.IsNotEmpty();
+            Add(item);
         }
-
-        public T GetLast()
+        public void AddToDefends(T item)
         {
-            int lastIndex = (index + 1) % BoardIndexes.count;
+            index = BoardIndexes.defends;
 
-            List<T> place = places[lastIndex];
-
-            return place.Last();
+            Add(item);
         }
 
         public void Clear()
@@ -95,20 +88,6 @@ namespace Framework.Shared.Collections
         }
 
         public List<T>.Enumerator GetEnumerator() => all.GetEnumerator();
-
-        public void AddToAttacks(T item)
-        {
-            index = BoardIndexes.attacks;
-
-            Add(item);
-        }
-
-        public void AddToDefends(T item)
-        {
-            index = BoardIndexes.defends;
-
-            Add(item);
-        }
 
         IEnumerator<T> IEnumerable<T>.GetEnumerator() => all.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => all.GetEnumerator();

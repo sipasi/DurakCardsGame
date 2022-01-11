@@ -1,9 +1,11 @@
 ﻿
-using Framework.Durak.Cards;
-using Framework.Durak.Cards.Extensions;
+using Framework.Durak.Datas;
+using Framework.Durak.Datas.Extensions;
+using Framework.Durak.Entities;
 using Framework.Durak.Players;
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Collections;
+using Framework.Shared.Collections.Extensions;
 
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -18,11 +20,11 @@ namespace Framework.Durak.Validators
 
             AssertState(board, playerQueue);
 
-            IPlayer current = playerQueue.Current;
+            IReadonlyPlayer current = playerQueue.Current.Value;
 
             Data selected = ConvertToData(value);
 
-            board.TryGetLast(out var last);
+            Data last = board.Last();
 
             if (board.IsEmpty)
             {
@@ -31,7 +33,7 @@ namespace Framework.Durak.Validators
                 return false;
             }
 
-            if (current.Hand.Contains(selected) is false)
+            if (current.Contains(selected) is false)
             {
                 Debug.Log($"Hand does not contains card: {selected}");
 
@@ -48,7 +50,7 @@ namespace Framework.Durak.Validators
             return true;
         }
 
-        private static void AssertState(IBoard<Data> board, IPlayerQueue playerQueue)
+        private static void AssertState(IReadonlyBoard<Data> board, IReadonlyPlayerQueue<IPlayerEntity> playerQueue)
         {
             Assert.IsTrue(playerQueue.IsDefenderQueue, "DefenderSelectionValidator can only validate defender selection");
             Assert.IsFalse(board.IsEmpty, "Defender can't beat no cards");

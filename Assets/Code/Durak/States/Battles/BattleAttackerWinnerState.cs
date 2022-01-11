@@ -3,11 +3,9 @@ using System.Collections.Generic;
 
 using Cysharp.Threading.Tasks;
 
-using Framework.Durak.Cards;
+using Framework.Durak.Datas;
 using Framework.Durak.Entities;
-using Framework.Durak.Players;
 using Framework.Durak.Services.Movements;
-using Framework.Shared.Cards.Views;
 
 using UnityEngine;
 
@@ -21,28 +19,21 @@ namespace Framework.Durak.States.Battles
 
         [Header("Players")]
         [SerializeField] private PlayerQueueEntity queue;
-        [SerializeField] private PlayerPlaceList playerPlaceList;
 
         protected override async UniTask MoveCards(IReadOnlyList<Data> datas)
         {
-            IPlayer defender = queue.Value.Defender;
-            PlayerPosition position = defender.Position;
-            List<Data> hand = defender.Hand;
-            CardLookSide lookSide = defender.LookSide;
+            IPlaye defender = queue.Value.Defender;
 
-            Transform place = playerPlaceList.Get(position).Transform;
-
-            hand.AddRange(datas);
-
-            await movement.MoveToPlace(datas, place, lookSide);
+            await defender.AddRange(datas);
         }
 
-        protected override void UpdatePlayerQueue(IPlayerQueue playerQueue)
+        protected override void UpdatePlayerQueue(IPlayerQueueEntity entity)
         {
-            playerQueue.Set(
-                attacker: playerQueue.GetNextFrom(playerQueue.Defender),
-                defender: playerQueue.GetNextFrom(playerQueue.Defender, andSkip: 1),
-                action: PlayerActionType.Attack);
+            var queue = entity.Value;
+
+            entity.SetAttackerQueue(
+                attacker: queue.GetNextFrom(queue.Defender),
+                defender: queue.GetNextFrom(queue.Defender, andSkip: 1));
         }
     }
 }

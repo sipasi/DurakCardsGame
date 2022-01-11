@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 
 using Framework.Durak.Cards.Selectors;
 using Framework.Durak.Entities;
+using Framework.Durak.Gameplay.Events;
 using Framework.Durak.Gameplay.Handlers;
 using Framework.Durak.Players;
 using Framework.Durak.Validators;
@@ -23,14 +24,14 @@ namespace Framework.Durak.States.Actions
         [SerializeField] private CardSelectionHandlerBace selectionHandler;
         [SerializeField] private PassValidator passValidator;
 
-        [Header("TimeDelay")]
-        [SerializeField] private int delay;
+        [Header("Time")]
+        [SerializeField] private int aiWaitDelay;
 
         [Header("Events")]
         [SerializeField] private ScriptableAction<IPlayer, ICard> cardSelected;
         [SerializeField] private ScriptableAction<IPlayer> passAction;
 
-        protected IPlayer Current { get; private set; }
+        protected IReadonlyPlayer Current { get; private set; }
         protected abstract DurakGameState AfterCardSelected { get; }
         protected abstract DurakGameState AfterPass { get; }
 
@@ -38,16 +39,18 @@ namespace Framework.Durak.States.Actions
         {
             base.Enter();
 
-            if (playerQueue.Value.Current.Type == PlayerType.Ai)
+            var queue = playerQueue.Value;
+
+            if (queue.Current.Type == PlayerType.Ai)
             {
-                await UniTask.Delay(delay);
+                await UniTask.Delay(aiWaitDelay);
             }
 
-            UpdatePlayerQueue(playerQueue.Value);
+            UpdatePlayerQueue(playerQueue);
 
-            var current = Current = playerQueue.Value.Current;
+            var current = Current = queue.Current;
 
-            Log(Current, action: nameof(Enter), result: true);
+            Log(current, action: nameof(Enter), result: true);
 
             cardSelected.Action += OnCardSelected;
             passAction.Action += OnPass;
@@ -78,9 +81,9 @@ namespace Framework.Durak.States.Actions
 
         protected abstract ICardSelector GetSelector(IPlayerCardSelection selection);
 
-        protected abstract void UpdatePlayerQueue(IPlayerQueue queue);
+        protected abstract void UpdatePlayerQueue(IPlayerQueueEntity entity);
 
-        private async void OnCardSelected(IPlayer player, ICard card)
+        private async void OnCardSelected(IReadonlyPlayer player, ICard card)
         {
             if (await selectionHandler.Handle(card) is false)
             {
@@ -107,7 +110,7 @@ namespace Framework.Durak.States.Actions
             NextState(AfterPass);
         }
 
-        private static void Log(IPlayer player, string action, bool result)
+        private static void Log(IReadonlyPlayer player, string action, bool result)
         {
             Debug.Log($"Player: {player.Name}. Action[{action}]: {result}");
         }

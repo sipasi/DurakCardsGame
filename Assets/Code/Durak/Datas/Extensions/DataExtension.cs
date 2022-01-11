@@ -1,6 +1,5 @@
 ﻿
-
-namespace Framework.Durak.Cards.Extensions
+namespace Framework.Durak.Datas.Extensions
 {
     public static class DataExtension
     {

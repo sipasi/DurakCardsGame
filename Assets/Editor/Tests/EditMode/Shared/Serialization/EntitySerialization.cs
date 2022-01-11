@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 
-using Framework.Durak.Cards;
+using Framework.Durak.Datas;
 using Framework.Shared.Collections;
 
 using NUnit.Framework;

@@ -5,27 +5,27 @@ using UnityEngine;
 
 namespace Framework.Shared.Services.Movements
 {
-    class Preparation
+    internal class Preparation
     {
-        public void BeforeMovement(ICard card, ICard temporary, Transform parent)
+        public void BeforeMovement(ICard temporary, ICard card, Transform parent)
         {
             CopyView(from: card.View, to: temporary.View);
 
-            Activator(card, view: false, input: false);
+            Activator(card, view: false);
 
             CopyPosition(from: card.Transform, to: temporary.Transform);
 
-            Activator(temporary, view: true, input: false);
+            Activator(temporary, view: true);
 
             card.Transform.SetParent(parent);
             card.Transform.localPosition = default;
         }
 
-        public void AfterMovement(ICard card, ICard temporary)
+        public void AfterMovement(ICard temporary, ICard card)
         {
-            Activator(card, view: true, input: true);
+            Activator(card, view: true);
 
-            Activator(temporary, view: false, input: false);
+            Activator(temporary, view: false);
         }
 
         private void CopyView(CardView from, CardView to)
@@ -39,10 +39,9 @@ namespace Framework.Shared.Services.Movements
             to.position = from.position;
         }
 
-        private void Activator(ICard card, bool view, bool input)
+        private void Activator(ICard card, bool view)
         {
             card.View.IsVisible = view;
-            //TODO: card.Input.Interactable = input;
         }
     }
 }
