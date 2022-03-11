@@ -17,7 +17,7 @@ namespace Framework.Durak.Game
 
         private async void Awake()
         {
-            DurakStateMachineInitializer stateMachineInitializer = new DurakStateMachineInitializer();
+            var stateMachineInitializer = new DurakStateMachineInitializer();
 
             IDiContainer container = holder.Container = builder.Build();
 

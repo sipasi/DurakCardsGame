@@ -1684,6 +1684,13 @@ MonoBehaviour:
         prefab: {fileID: 8224344465264386550, guid: 8528f747fcb46cf4091174d7ef5eec19, type: 3}
         theme: {fileID: 11400000, guid: e778e33a052233a4f911f81b1d6294fb, type: 2}
         place: {fileID: 1248580613}
+      playerListCreator:
+        top:
+          name: Savva
+          type: 0
+        bottom:
+          name: Sasha
+          type: 1
       playerPlacesCreator:
         transforms:
         - {fileID: 545756692}
