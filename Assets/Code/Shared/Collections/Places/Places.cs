@@ -1,5 +1,7 @@
 ﻿using System;
 
+using UnityEngine;
+
 namespace Framework.Shared.Collections
 {
     public class Places<T> : IPlaces<T>
@@ -22,23 +24,27 @@ namespace Framework.Shared.Collections
             ref Item attacker = ref Current.attacker;
             ref Item defender = ref Current.defender;
 
-            if (attacker.IsEmpty) ToAttacks();
+            if (attacker.IsEmpty) return ToAttacks();
 
-            if (defender.IsEmpty) ToDefends();
+            if (defender.IsEmpty) return ToDefends();
 
             return ToAttacks();
         }
 
         private T PlaceToPosition(ref Item place)
         {
-            if (place.Contains)
+            ref Item temp = ref place;
+
+            if (temp.Contains)
             {
                 Next();
+
+                temp = ref Current.attacker;
             }
 
-            place.Set();
+            temp.Set();
 
-            return place.Transform;
+            return temp.Transform;
         }
 
         public void Clear()
@@ -75,7 +81,7 @@ namespace Framework.Shared.Collections
         [Serializable]
         public struct Item
         {
-            internal T place;
+            [SerializeField] private T place;
 
             public T Transform => place;
 

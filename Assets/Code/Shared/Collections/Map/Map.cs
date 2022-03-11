@@ -4,13 +4,13 @@ using System.Collections.Generic;
 namespace Framework.Shared.Collections
 {
     [Serializable]
-    public sealed class Map<T1, T2>
+    public sealed class Map<T1, T2> : IMap<T1, T2>
     {
         private readonly Dictionary<T1, T2> forward;
         private readonly Dictionary<T2, T1> reverse;
 
-        public Indexer<T1, T2> Forward { get; }
-        public Indexer<T2, T1> Reverse { get; }
+        public IReadonlyIndexer<T1, T2> Forward { get; }
+        public IReadonlyIndexer<T2, T1> Reverse { get; }
 
         public int Count => forward.Count;
 
@@ -39,7 +39,6 @@ namespace Framework.Shared.Collections
                 Add(first, second);
             }
         }
-
 
         public void Add(T1 first, T2 second)
         {

@@ -1,37 +1,40 @@
 ﻿
-using System.Collections.Generic;
-
 using Cysharp.Threading.Tasks;
 
+using Framework.Durak.Collections;
 using Framework.Durak.Datas;
-using Framework.Durak.Entities;
+using Framework.Durak.Players;
 using Framework.Durak.Services.Movements;
 using Framework.Shared.Cards.Views;
+using Framework.Shared.Collections;
+using Framework.Shared.States;
 
-using UnityEngine;
-
+using System.Collections.Generic;
 
 namespace Framework.Durak.States.Battles
 {
     public class BattleDefenderWinnerState : BattlePlayerWinnerState
     {
-        [Header(nameof(BattleDefenderWinnerState))]
-        [Header("Movement")]
-        [SerializeField] private DurakCardMovementManager movement;
+        private readonly IDiscardPile discardPile;
+        private readonly IGlobalCardMovement movement;
 
-        [Header("Entities")]
-        [SerializeField] DiscardPileEntity discardPile;
-
-        protected override async UniTask MoveCards(IReadOnlyList<Data> datas)
+        public BattleDefenderWinnerState(IStateMachine<DurakGameState> machine, IPlayerQueue<IPlayer> queue, IBoard<Data> board, IDiscardPile discardPile, IGlobalCardMovement movement)
+            : base(machine, board, queue)
         {
-            await discardPile.PlaceRange(datas);
+            this.discardPile = discardPile;
+            this.movement = movement;
+        }
+
+        protected override UniTask MoveCards(IReadOnlyList<Data> datas)
+        {
+            discardPile.AddRange(datas);
+
+            return movement.MoveTo(datas, EntityPlace.DiscardPile, CardLookSide.Back);
 
         }
-        protected override void UpdatePlayerQueue(IPlayerQueueEntity entity)
+        protected override void UpdatePlayerQueue(IPlayerQueue<IPlayer> queue)
         {
-            var queue = entity.Value;
-
-            entity.SetAttackerQueue(
+            queue.SetAttackerQueue(
                 attacker: queue.Defender,
                 defender: queue.GetNextFrom(queue.Defender));
         }

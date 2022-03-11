@@ -2,7 +2,7 @@
     "name": "Framework.Shared.Audio",
     "rootNamespace": "Framework.Shared.Audio",
     "references": [
-        "Framework.Shared.Events"
+        "GUID:762e2ccb45cd2db40989ea6fb2079c58"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

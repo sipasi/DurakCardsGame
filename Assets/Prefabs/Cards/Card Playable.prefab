@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
-  click: {fileID: 11400000, guid: ed89b4754a038b64f8571c94e6130e11, type: 2}
+  click: {fileID: 11400000, guid: 57d825975c0c8494bb83450bcc2a04fb, type: 2}
 --- !u!1 &5770799026076985134
 GameObject:
   m_ObjectHideFlags: 0

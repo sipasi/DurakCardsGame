@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Framework.Durak.Datas;
+﻿using Framework.Durak.Datas;
 using Framework.Durak.Players;
 using Framework.Shared.Collections;
 
-namespace ProjectCard.Editor.TestModule.TestData
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Framework.Shared.Tests
 {
     [Serializable]
     public class SaveData
@@ -26,8 +26,8 @@ namespace ProjectCard.Editor.TestModule.TestData
         private readonly Map<Guid, Data> map;
 
         private readonly IPlayer[] players;
-        private readonly PlayerStorage<IReadonlyPlayer> playerStorage;
-        private readonly PlayerQueue<IReadonlyPlayer> playerQueue;
+        private readonly PlayerStorage<IPlayer> playerStorage;
+        private readonly PlayerQueue<IPlayer> playerQueue;
 
         public SaveData() : this(10) { }
         public SaveData(int dataLength)

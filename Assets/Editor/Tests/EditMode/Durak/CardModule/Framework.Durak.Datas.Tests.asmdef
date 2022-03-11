@@ -2,12 +2,12 @@
     "name": "Framework.Durak.Datas.Tests",
     "rootNamespace": "Framework.Durak.Datas",
     "references": [
-        "UniTask",
-        "UnityEditor.TestRunner",
-        "UnityEngine.TestRunner",
-        "Framework.Shared.Collections",
-        "Framework.Shared.Services",
-        "Framework.Durak.Datas"
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:0acc523941302664db1f4e527237feb3",
+        "GUID:27619889b8ba8c24980f49ee34dbb44a",
+        "GUID:c23d8554e1fa8c74a8918184075c8fbf",
+        "GUID:a8a1b2aa1d914d84c8760529c4cd3077",
+        "GUID:de2659b602184da44be8081fad21dbfa"
     ],
     "includePlatforms": [
         "Editor"

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Framework.Shared.Collections.Extensions;
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
-
-using Framework.Shared.Collections.Extensions;
 
 namespace Framework.Shared.Collections
 {
@@ -58,6 +58,8 @@ namespace Framework.Shared.Collections
         public void Randomize(int times) => array.Randomize(from: 0, to: size, times);
         public void Randomize(int from, int times) => array.Randomize(from: from, to: size, times);
 
+        private int NextIndex() => --size;
+
         public void ResetIndex()
         {
             size = array.Length;
@@ -69,9 +71,6 @@ namespace Framework.Shared.Collections
 
             return enumerator;
         }
-
-        private int NextIndex() => --size;
-
 
         IEnumerator<int> IEnumerable<int>.GetEnumerator()
         {

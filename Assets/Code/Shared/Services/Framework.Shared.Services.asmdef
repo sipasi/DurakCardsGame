@@ -2,14 +2,14 @@
     "name": "Framework.Shared.Services",
     "rootNamespace": "Framework.Shared.Services",
     "references": [
-        "UniTask",
-        "Framework.Shared.Core",
-        "Framework.Shared.Collections",
-        "Framework.Shared.Events",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:676b16af7f5e5a14ba40aeff55d44347",
+        "GUID:c23d8554e1fa8c74a8918184075c8fbf",
+        "GUID:762e2ccb45cd2db40989ea6fb2079c58",
         "GUID:98005caaf3a3a964d90613b54a920146",
-        "Framework.Shared.IO",
-        "Framework.Shared.Serialization",
-        "Framework.Shared.Cards"
+        "GUID:9ba0b5fd22746764dba8f226114c72fc",
+        "GUID:11c7c1f836db5d8478002474feaa884f",
+        "GUID:cb2bba070bd409d40957128512f36c7a"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

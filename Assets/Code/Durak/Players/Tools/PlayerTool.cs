@@ -1,21 +1,21 @@
 ﻿
-using System.Collections.Generic;
-using System.Linq;
-
 using Framework.Durak.Datas;
 using Framework.Durak.Datas.Tools;
 using Framework.Shared.Collections;
+
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Framework.Durak.Players.Tools
 {
     public static class PlayerTool
     {
-        public static IReadonlyPlayer DefineFirstPlayerBySmallestTrump(IEnumerable<IReadonlyPlayer> active, IDeck<Data> deck)
+        public static IPlayer DefineFirstPlayerBySmallestTrump(IEnumerable<IPlayer> active, IDeck<Data> deck)
             => DefineFirstPlayerBySmallestTrump(active, deck.Bottom);
 
-        public static IReadonlyPlayer DefineFirstPlayerBySmallestTrump(IEnumerable<IReadonlyPlayer> active, Data trump)
+        public static IPlayer DefineFirstPlayerBySmallestTrump(IEnumerable<IPlayer> active, Data trump)
         {
-            IReadonlyPlayer first = default;
+            IPlayer first = default;
             Data smallest = default;
 
             foreach (var player in active)

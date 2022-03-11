@@ -2,15 +2,15 @@
     "name": "Framework.Shared.IO.Tests",
     "rootNamespace": "Framework.Shared.IO",
     "references": [
-        "UniTask",
-        "UnityEditor.TestRunner",
-        "UnityEngine.TestRunner",
-        "Framework.Shared.Tests",
-        "Framework.Shared.Collections",
-        "Framework.Shared.Serialization",
-        "Framework.Shared.IO",
-        "Framework.Durak.Datas",
-        "Framework.Durak.Players"
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:0acc523941302664db1f4e527237feb3",
+        "GUID:27619889b8ba8c24980f49ee34dbb44a",
+        "GUID:9cde7e4790f86e14393c8f6a9174950a",
+        "GUID:c23d8554e1fa8c74a8918184075c8fbf",
+        "GUID:11c7c1f836db5d8478002474feaa884f",
+        "GUID:9ba0b5fd22746764dba8f226114c72fc",
+        "GUID:de2659b602184da44be8081fad21dbfa",
+        "GUID:c5a560722d2f4a845afd75b1cf6847aa"
     ],
     "includePlatforms": [
         "Editor"

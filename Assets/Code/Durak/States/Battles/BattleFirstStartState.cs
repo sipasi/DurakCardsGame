@@ -1,7 +1,9 @@
-﻿using Framework.Durak.Entities;
+﻿using Framework.Durak.Datas;
 using Framework.Durak.Gameplay;
 using Framework.Durak.Players;
 using Framework.Durak.Players.Tools;
+using Framework.Shared.Collections;
+using Framework.Shared.States;
 
 using UnityEngine;
 
@@ -10,15 +12,20 @@ namespace Framework.Durak.States.Battles
 {
     public class BattleFirstStartState : DurakState
     {
-        [Header("Players")]
-        [SerializeField] private PlayerStorageEntity playerStorage;
-        [SerializeField] private PlayerQueueEntity playerQueue;
+        private readonly IDeck<Data> deck;
+        private readonly IPlayerStorage<IPlayer> storage;
+        private readonly IPlayerQueue<IPlayer> queue;
 
-        [Header("Gameplay")]
-        [SerializeField] private CardDealer dealer;
+        private readonly ICardDealer dealer;
 
-        [Header("Shared")]
-        [SerializeField] private DeckEntity deck;
+        public BattleFirstStartState(IStateMachine<DurakGameState> machine, IDeck<Data> deck, IPlayerStorage<IPlayer> storage, IPlayerQueue<IPlayer> queue, ICardDealer dealer)
+            : base(machine)
+        {
+            this.deck = deck;
+            this.storage = storage;
+            this.queue = queue;
+            this.dealer = dealer;
+        }
 
         public override async void Enter()
         {
@@ -32,17 +39,15 @@ namespace Framework.Durak.States.Battles
         }
         private void FirstBallte()
         {
-            IReadonlyPlayer first = PlayerTool.DefineFirstPlayerBySmallestTrump(playerStorage.GetReadonlyPlayers(), deck.Value.Bottom);
+            IPlayer first = PlayerTool.DefineFirstPlayerBySmallestTrump(storage.Active, deck.Bottom);
 
             Debug.Log(nameof(BattleFirstStartState));
 
-            var queue = playerQueue.Value;
-
-            playerQueue.SetAttackerQueue(
+            queue.SetAttackerQueue(
                 attacker: first,
                 defender: queue.GetNextFrom(first));
 
-            Debug.Log($"Attacker: {playerQueue.Value.Attacker.Value.Name}, Defender: {playerQueue.Value.Defender.Value.Name}");
+            Debug.Log($"Attacker: {queue.Attacker.Name}, Defender: {queue.Defender.Name}");
         }
     }
 }

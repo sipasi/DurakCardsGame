@@ -12,11 +12,15 @@ namespace Framework.Shared.Collections
         private readonly IReadOnlyList<T> datas;
         private readonly DecrementalIndexes indexes;
 
+        public int Capacity => datas.Count;
+
         public int Count => indexes.Count;
+
         public bool IsEmpty => indexes.IsEmpty;
 
         public T Top => datas[indexes.Peek()];
         public T Bottom => datas[indexes.PeekFirst()];
+
 
         public Deck(IReadOnlyList<T> datas)
         {
@@ -54,7 +58,6 @@ namespace Framework.Shared.Collections
             }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-            => GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }

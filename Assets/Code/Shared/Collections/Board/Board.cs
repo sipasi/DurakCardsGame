@@ -26,7 +26,7 @@ namespace Framework.Shared.Collections
         public bool IsAttacksFull => Attacks.Count == rowItemsCount;
         public bool IsDefendsFull => Defends.Count == rowItemsCount;
 
-        public int Count => places[BoardIndexes.attacks].Count + places[BoardIndexes.defends].Count;
+        public int Count => all.Count;
 
 
         public Board(int rowItemsCount)

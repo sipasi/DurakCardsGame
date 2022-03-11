@@ -1,4 +1,5 @@
-﻿namespace ProjectCard.Editor.TestModule.TestData
+﻿
+namespace Framework.Shared.Tests
 {
     public static class DataToCompare
     {

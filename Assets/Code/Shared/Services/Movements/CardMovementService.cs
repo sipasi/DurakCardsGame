@@ -1,0 +1,74 @@
+﻿using Cysharp.Threading.Tasks;
+
+using Framework.Shared.Cards.Entities;
+using Framework.Shared.Services.Pools;
+using Framework.Shared.Services.Tasks;
+
+using System.Collections.Generic;
+
+using UnityEngine;
+
+namespace Framework.Shared.Services.Movements
+{
+    public delegate void CardMovementNotifyHandler();
+
+    public class CardMovementService : ICardMovementService
+    {
+        private readonly Preparation preparation = new Preparation();
+
+        private readonly ITaskServiceAsync task;
+        private readonly IPoolService pool;
+
+        public event CardMovementNotifyHandler Begin;
+        public event CardMovementNotifyHandler End;
+
+        public CardMovementService(ITaskServiceAsync task, IPoolService pool)
+        {
+            this.task = task;
+            this.pool = pool;
+        }
+
+        public async UniTask MoveToParent(ICard temporary, ICard entity, Transform parent, float speed)
+        {
+            preparation.BeforeMovement(temporary, entity, parent);
+
+            await MoveTemporaryTo(temporary, entity, speed);
+
+            preparation.AfterMovement(temporary, entity);
+        }
+
+        public async UniTask MoveToParent(ICard temporary, IReadOnlyList<ICard> entities, Transform parent, float speed)
+        {
+            for (int i = 0; i < entities.Count; i++)
+            {
+                ICard entity = entities[i];
+
+                await MoveToParent(temporary, entity, parent, speed);
+            }
+        }
+
+        private async UniTask MoveTemporaryTo(ICard temporary, ICard card, float speed)
+        {
+            IProcess process = GetProcess(temporary.Transform, card.Transform, speed);
+
+            task.Add(process);
+
+            Begin?.Invoke();
+
+            await task.Wait(process);
+
+            End?.Invoke();
+
+            pool.Return(process);
+        }
+
+        private IProcess GetProcess(Transform temporary, Transform card, float speed)
+        {
+            MoveProcess process = pool.Get<MoveProcess>();
+
+            process.Set(temporary, card, speed);
+
+            return process;
+        }
+    }
+}

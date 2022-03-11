@@ -1,9 +1,9 @@
 ﻿
 
+using Cysharp.Threading.Tasks;
+
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-
-using Cysharp.Threading.Tasks;
 
 namespace Framework.Shared.IO
 {

@@ -1,5 +1,9 @@
-﻿using Framework.Durak.Cards.Selectors;
-using Framework.Durak.Entities;
+﻿using Framework.Durak.Datas;
+using Framework.Durak.Gameplay.Handlers;
+using Framework.Durak.Players;
+using Framework.Durak.Players.Selectors;
+using Framework.Shared.Collections;
+using Framework.Shared.States;
 
 namespace Framework.Durak.States.Actions
 {
@@ -8,8 +12,11 @@ namespace Framework.Durak.States.Actions
         protected override DurakGameState AfterCardSelected => DurakGameState.PlayerDefending;
         protected override DurakGameState AfterPass => DurakGameState.BattleDefenderWinner;
 
-        protected override ICardSelector GetSelector(IPlayerCardSelection selection) => selection.Attack;
+        public PlayerAttackingState(IStateMachine<DurakGameState> machine, IDeck<Data> deck, IBoard<Data> board, IPlayerStorage<IPlayer> storage, IPlayerQueue<IPlayer> queue, IReadonlyIndexer<PlayerType, ISelectorsGroup> selectorsIndexer, IAttackerSelectionHandler selection)
+            : base(machine, deck, board, storage, queue, selectorsIndexer, selection) { }
 
-        protected override void UpdatePlayerQueue(IPlayerQueueEntity entity) => entity.Action = PlayerActionType.Attack;
+        protected override void UpdatePlayerQueue(IPlayerQueue<IPlayer> queue) => queue.SetAttackerQueue();
+
+        protected override ICardSelector GetSelector(ISelectorsGroup group) => group.Attacking;
     }
 }

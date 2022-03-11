@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Framework.Shared.Collections.Extensions
 {
     public static class IListTool
-    { 
+    {
         public static IList<T> Randomize<T>(IList<T> array, int from, int to, int times = 1)
         {
             for (int step = 0; step < times; step++)

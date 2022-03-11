@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Framework.Shared.Collections
+﻿namespace Framework.Shared.Collections
 {
     public interface IReadonlyPlayerQueue<T>
     {

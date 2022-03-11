@@ -1,6 +1,5 @@
-﻿
-using Framework.Durak.Entities;
-using Framework.Durak.Gameplay;
+﻿using Framework.Durak.Gameplay;
+using Framework.Shared.States;
 
 using UnityEngine;
 
@@ -9,15 +8,13 @@ namespace Framework.Durak.States.Battles
 {
     public class BattleStartState : DurakState
     {
-        [Header("Players")]
-        [SerializeField] private PlayerStorageEntity playerStorage;
-        [SerializeField] private PlayerQueueEntity playerQueue;
+        private readonly ICardDealer dealer;
 
-        [Header("Gameplay")]
-        [SerializeField] private CardDealer dealer;
-
-        [Header("Shared")]
-        [SerializeField] private DeckEntity deck;
+        public BattleStartState(IStateMachine<DurakGameState> machine, ICardDealer dealer)
+            : base(machine)
+        {
+            this.dealer = dealer;
+        }
 
         public override async void Enter()
         {

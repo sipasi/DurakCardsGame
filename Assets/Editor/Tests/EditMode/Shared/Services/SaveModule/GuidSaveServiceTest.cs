@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections;
+﻿using Cysharp.Threading.Tasks;
 
-using Cysharp.Threading.Tasks;
-
-using Framework.Shared.Services.Saves;
 using Framework.Shared.Services.Storages;
+using Framework.Shared.Tests;
 
 using NUnit.Framework;
 
-using ProjectCard.Editor.TestModule.TestData;
-using ProjectCard.Editor.TestModule.ToolModule;
+using System;
+using System.Collections;
 
-using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace ProjectCard.Editor.TestModule.ServiceModule.SaveModule
+namespace Framework.Shared.Services.Saves.Tests
 {
     public class SaveStorageServiceTest
     {
@@ -23,8 +19,14 @@ namespace ProjectCard.Editor.TestModule.ServiceModule.SaveModule
         [UnityTest]
         public IEnumerator SaveLoad_KeyGuid_StorageBinaryFile_True()
         {
-            var task = SaveLoadFileOperation<GuidSaveService, Guid, LocalBinaryFileStorageService>
-                (key: Guid.NewGuid(), fileExtension: "binary");
+            string name = "guidSaveFile";
+            string extension = "binary";
+
+            var storageService = new LocalBinaryFileStorageService(directory, name, extension);
+            var saveService = new GuidSaveService(storageService);
+
+
+            var task = SaveLoadFileOperation(service: saveService, key: Guid.NewGuid());
 
             return task.ToCoroutine();
         }
@@ -32,20 +34,19 @@ namespace ProjectCard.Editor.TestModule.ServiceModule.SaveModule
         [UnityTest]
         public IEnumerator SaveLoad_KeyString_StorageBinaryFile_True()
         {
-            var task = SaveLoadFileOperation<StringSaveService, string, LocalBinaryFileStorageService>
-                (key: "binary_string_key", fileExtension: "binary");
+            string name = "stringSaveFile";
+            string extension = "binary";
+
+            var storageService = new LocalBinaryFileStorageService(directory, name, extension);
+            var saveService = new StringSaveService(storageService);
+
+            var task = SaveLoadFileOperation(service: saveService, key: "binary_string_key");
 
             return task.ToCoroutine();
         }
 
-        private UniTask SaveLoadFileOperation<TService, TKey, TStorage>(TKey key, string fileExtension)
-            where TService : SaveStorageService<TKey>
-            where TStorage : FileStorage
+        private UniTask SaveLoadFileOperation<TKey>(SaveStorageService<TKey> service, TKey key)
         {
-            var storage = FileStorageTool.Create<TStorage>(directory, typeof(TStorage).Name, fileExtension);
-
-            SaveStorageService<TKey> service = GetStorageService<TService>(storage);
-
             return SaveLoadOperation(service, key);
         }
         private async UniTask SaveLoadOperation<TKey>(SaveStorageService<TKey> service, TKey key)
@@ -69,26 +70,6 @@ namespace ProjectCard.Editor.TestModule.ServiceModule.SaveModule
             bool compare = DataToCompare.Compare(restored);
 
             Assert.IsTrue(compare);
-        }
-
-        private TService GetStorageService<TService>(ScriptableStorage storage) where TService : ScriptableSaveService
-        {
-            var service = ScriptableObject.CreateInstance<TService>();
-
-            Assert.IsNotNull(service, $"Can't create ScriptableObject by type[{typeof(TService)}]");
-
-            Assert.IsNotNull(storage);
-
-            SetSaveServiceField(service, storage);
-
-            return service;
-        }
-
-        private void SetSaveServiceField(ScriptableSaveService service, ScriptableStorage storage)
-        {
-            var field_name = "storage";
-
-            service.SetPrivateField(field_name, storage);
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Framework.Shared.Events;
 
-using Framework.Shared.Events;
+using System;
 
 using UnityEngine;
 

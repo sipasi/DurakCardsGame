@@ -1,7 +1,6 @@
 ﻿
 using Framework.Durak.Datas;
 using Framework.Durak.Datas.Extensions;
-using Framework.Durak.Entities;
 using Framework.Durak.Players;
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Collections;
@@ -12,17 +11,28 @@ using UnityEngine.Assertions;
 
 namespace Framework.Durak.Validators
 {
-    public class DefenderSelectionValidator : SelectionValidator
+    public class DefenderSelectionValidator : IValidator<ICard>, IDefenderValidator
     {
-        public override bool Validate(ICard value)
+        private readonly IDeck<Data> deck;
+        private readonly IBoard<Data> board;
+        private readonly IMap<ICard, Data> map;
+        private readonly IPlayerQueue<IPlayer> queue;
+
+        public DefenderSelectionValidator(IDeck<Data> deck, IBoard<Data> board, IMap<ICard, Data> map, IPlayerQueue<IPlayer> queue)
         {
-            var (board, deck, playerQueue) = this;
+            this.deck = deck;
+            this.board = board;
+            this.map = map;
+            this.queue = queue;
+        }
 
-            AssertState(board, playerQueue);
+        public bool Validate(ICard value)
+        {
+            AssertState(board, queue);
 
-            IReadonlyPlayer current = playerQueue.Current.Value;
+            IPlayer current = queue.Current;
 
-            Data selected = ConvertToData(value);
+            Data selected = map.Get(value);
 
             Data last = board.Last();
 
@@ -33,7 +43,7 @@ namespace Framework.Durak.Validators
                 return false;
             }
 
-            if (current.Contains(selected) is false)
+            if (current.Hand.Contains(selected) is false)
             {
                 Debug.Log($"Hand does not contains card: {selected}");
 
@@ -50,9 +60,10 @@ namespace Framework.Durak.Validators
             return true;
         }
 
-        private static void AssertState(IReadonlyBoard<Data> board, IReadonlyPlayerQueue<IPlayerEntity> playerQueue)
+        private static void AssertState(IReadonlyBoard<Data> board, IReadonlyPlayerQueue<IPlayer> playerQueue)
         {
             Assert.IsTrue(playerQueue.IsDefenderQueue, "DefenderSelectionValidator can only validate defender selection");
+
             Assert.IsFalse(board.IsEmpty, "Defender can't beat no cards");
         }
     }

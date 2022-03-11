@@ -2,8 +2,8 @@
     "name": "Framework.Shared.IO",
     "rootNamespace": "Framework.Shared.IO",
     "references": [
-        "UniTask",
-        "Framework.Shared.Serialization"
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:11c7c1f836db5d8478002474feaa884f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

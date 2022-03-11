@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Framework.Shared.Collections
 {
     [Serializable]
-    public sealed class Indexer<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>
+    public class Indexer<TKey, TValue> : IIndexer<TKey, TValue>, IEnumerable<KeyValuePair<TKey, TValue>>
     {
         private readonly Dictionary<TKey, TValue> dictionary;
 

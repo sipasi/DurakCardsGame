@@ -1,14 +1,13 @@
 ﻿
 using Cysharp.Threading.Tasks;
 
-using Framework.Durak.Cards.Selectors;
-using Framework.Durak.Entities;
-using Framework.Durak.Gameplay.Events;
+using Framework.Durak.Datas;
 using Framework.Durak.Gameplay.Handlers;
 using Framework.Durak.Players;
-using Framework.Durak.Validators;
+using Framework.Durak.Players.Selectors;
 using Framework.Shared.Cards.Entities;
-using Framework.Shared.Events;
+using Framework.Shared.Collections;
+using Framework.Shared.States;
 
 using UnityEngine;
 
@@ -16,22 +15,29 @@ namespace Framework.Durak.States.Actions
 {
     public abstract class PlayerActionState : DurakState
     {
-        [Header("Players")]
-        [SerializeField] private CardSelectorList selectors;
-        [SerializeField] private PlayerQueueEntity playerQueue;
+        private readonly int aiWaitDelay = 200;
 
-        [Header("Handlers")]
-        [SerializeField] private CardSelectionHandlerBace selectionHandler;
-        [SerializeField] private PassValidator passValidator;
+        private readonly IDeck<Data> deck;
+        private readonly IBoard<Data> board;
+        private readonly IPlayerStorage<IPlayer> storage;
+        private readonly IPlayerQueue<IPlayer> queue;
 
-        [Header("Time")]
-        [SerializeField] private int aiWaitDelay;
+        private readonly IReadonlyIndexer<PlayerType, ISelectorsGroup> selectorsIndexer;
+        private readonly ICardSelectionHandler selection;
 
-        [Header("Events")]
-        [SerializeField] private ScriptableAction<IPlayer, ICard> cardSelected;
-        [SerializeField] private ScriptableAction<IPlayer> passAction;
+        protected IPlayer Current { get; private set; }
 
-        protected IReadonlyPlayer Current { get; private set; }
+        protected PlayerActionState(IStateMachine<DurakGameState> machine, IDeck<Data> deck, IBoard<Data> board, IPlayerStorage<IPlayer> storage, IPlayerQueue<IPlayer> queue, IReadonlyIndexer<PlayerType, ISelectorsGroup> selectorsIndexer, ICardSelectionHandler selection)
+            : base(machine)
+        {
+            this.deck = deck;
+            this.board = board;
+            this.storage = storage;
+            this.queue = queue;
+            this.selectorsIndexer = selectorsIndexer;
+            this.selection = selection;
+        }
+
         protected abstract DurakGameState AfterCardSelected { get; }
         protected abstract DurakGameState AfterPass { get; }
 
@@ -39,53 +45,64 @@ namespace Framework.Durak.States.Actions
         {
             base.Enter();
 
-            var queue = playerQueue.Value;
+            UpdatePlayerQueue(queue);
 
-            if (queue.Current.Type == PlayerType.Ai)
+            Current = queue.Current;
+
+            IPlayer player = Current;
+
+            if (player.Type == PlayerType.Ai)
             {
                 await UniTask.Delay(aiWaitDelay);
             }
 
-            UpdatePlayerQueue(playerQueue);
+            Log(player, action: nameof(Enter), result: true);
 
-            var current = Current = queue.Current;
-
-            Log(current, action: nameof(Enter), result: true);
-
-            cardSelected.Action += OnCardSelected;
-            passAction.Action += OnPass;
-
-            IPlayerCardSelection playerCardSelection = selectors.Get(current.Type);
-
-            ICardSelector selector = GetSelector(playerCardSelection);
-
-            selector.Begin(current);
+            StartListener();
         }
         public sealed override void Exit()
         {
             base.Exit();
 
-            var current = Current;
-
-            cardSelected.Action -= OnCardSelected;
-            passAction.Action -= OnPass;
-
-            IPlayerCardSelection playerCardSelection = selectors.Get(current.Type);
-
-            ICardSelector selector = GetSelector(playerCardSelection);
-
-            selector.End(Current);
+            EndListener();
 
             Current = null;
         }
 
-        protected abstract ICardSelector GetSelector(IPlayerCardSelection selection);
+        protected abstract ICardSelector GetSelector(ISelectorsGroup group);
 
-        protected abstract void UpdatePlayerQueue(IPlayerQueueEntity entity);
+        protected abstract void UpdatePlayerQueue(IPlayerQueue<IPlayer> entity);
 
-        private async void OnCardSelected(IReadonlyPlayer player, ICard card)
+        private void StartListener()
         {
-            if (await selectionHandler.Handle(card) is false)
+            IPlayer player = Current;
+
+            ISelectorsGroup group = selectorsIndexer[player.Type];
+
+            ICardSelector selector = GetSelector(group);
+
+            selector.Selected += OnCardSelected;
+            selector.Passed += OnPass;
+
+            selector.Begin(player);
+        }
+        private void EndListener()
+        {
+            IPlayer player = Current;
+
+            ISelectorsGroup group = selectorsIndexer[player.Type];
+
+            ICardSelector selector = GetSelector(group);
+
+            selector.Selected -= OnCardSelected;
+            selector.Passed -= OnPass;
+
+            selector.End(player);
+        }
+
+        private async void OnCardSelected(IPlayer player, ICard card)
+        {
+            if (await selection.Handle(card) is false)
             {
                 Log(Current, action: nameof(OnCardSelected), result: false);
 
@@ -98,7 +115,7 @@ namespace Framework.Durak.States.Actions
         }
         private void OnPass(IPlayer player)
         {
-            if (passValidator.Validate() is false)
+            if (board.IsEmpty)
             {
                 Log(Current, action: nameof(OnPass), result: false);
 
@@ -110,7 +127,7 @@ namespace Framework.Durak.States.Actions
             NextState(AfterPass);
         }
 
-        private static void Log(IReadonlyPlayer player, string action, bool result)
+        private static void Log(IPlayer player, string action, bool result)
         {
             Debug.Log($"Player: {player.Name}. Action[{action}]: {result}");
         }

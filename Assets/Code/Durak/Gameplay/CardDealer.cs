@@ -1,33 +1,45 @@
 ﻿using Cysharp.Threading.Tasks;
 
-using Framework.Durak.Collections;
-using Framework.Durak.Entities;
-using Framework.Durak.Rules.Scriptables;
-using Framework.Shared.Cards.Entities;
+using Framework.Durak.Datas;
+using Framework.Durak.Players;
+using Framework.Durak.Rules;
+using Framework.Durak.Services.Movements;
+using Framework.Shared.Collections;
+using Framework.Shared.Collections.Extensions;
 
 using UnityEngine;
 
 namespace Framework.Durak.Gameplay
 {
-    public class CardDealer : MonoBehaviour
+    public class CardDealer : ICardDealer
     {
-        [Header("Players")]
-        [SerializeField] private PlayerStorageEntity storage;
+        private readonly IDeck<Data> deck;
+        private readonly IPlayerStorage<IPlayer> storage;
 
-        [Header("Shared")]
-        [SerializeField] private DurakRules rules;
+        private readonly IDurakRules rules;
+        private readonly IMap<IPlayer, Transform> map;
+        private readonly IDataMovementManager movement;
 
-        [Header("Entities")]
-        [SerializeField] private DeckEntity deck;
-
+        public CardDealer(IDeck<Data> deck, IPlayerStorage<IPlayer> storage, IDurakRules rules, IMap<IPlayer, Transform> map, IDataMovementManager movement)
+        {
+            this.deck = deck;
+            this.storage = storage;
+            this.rules = rules;
+            this.map = map;
+            this.movement = movement;
+        }
 
         public async UniTask DealCard()
         {
-            foreach (var player in storage.Value.Active)
+            foreach (var player in storage.Active)
             {
-                foreach (var data in Dealer.DealCards(deck, player.Value.Hand, rules.MaxCardsInHand))
+                foreach (var data in Dealer.DealCards(deck, player.Hand, rules.MaxCardsInHand))
                 {
-                    await player.Add(data);
+                    player.Hand.Add(data);
+
+                    var transform = map.Get(player);
+
+                    await movement.MoveToPlace(data, transform, player.Hand.LookSide);
                 }
             }
         }

@@ -2,7 +2,7 @@ using Framework.Durak.Datas.Extensions;
 
 using NUnit.Framework;
 
-namespace Framework.Durak.Datas
+namespace Framework.Durak.Datas.Tests
 {
     public class DataTest
     {

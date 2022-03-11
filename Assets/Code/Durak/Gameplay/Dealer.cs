@@ -1,9 +1,8 @@
 ﻿
-using System.Collections.Generic;
-
 using Framework.Durak.Datas;
 using Framework.Shared.Collections;
-using Framework.Shared.Entities;
+
+using System.Collections.Generic;
 
 using Unity.Mathematics;
 
@@ -11,9 +10,9 @@ namespace Framework.Durak.Gameplay
 {
     public static class Dealer
     {
-        public static IEnumerable<Data> DealCards(IDeckEntity<Data> deck, IReadOnlyList<Data> hand, int maxCardsInHand)
+        public static IEnumerable<Data> DealCards(IDeck<Data> deck, IReadOnlyList<Data> hand, int maxCardsInHand)
         {
-            if (CanDeal(deck.Value, hand, maxCardsInHand) is false)
+            if (CanDeal(deck, hand, maxCardsInHand) is false)
             {
                 yield break;
             }

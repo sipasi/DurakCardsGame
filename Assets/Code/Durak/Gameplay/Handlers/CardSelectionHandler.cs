@@ -2,15 +2,55 @@
 using Cysharp.Threading.Tasks;
 
 using Framework.Durak.Datas;
-using Framework.Shared.Entities;
+using Framework.Durak.Players;
+using Framework.Durak.Services.Movements;
+using Framework.Durak.Validators;
+using Framework.Shared.Cards.Entities;
+using Framework.Shared.Cards.Views;
+using Framework.Shared.Collections;
+using Framework.Shared.Collections.Extensions;
+
 
 namespace Framework.Durak.Gameplay.Handlers
 {
-    public class CardSelectionHandler : CardSelectionHandlerBace
+    public abstract class CardSelectionHandler : ICardSelectionHandler
     {
-        protected override UniTask AddDataToBoard(IBoardEnity<Data> board, Data data)
+        private readonly IBoard<Data> board;
+        private readonly IMap<ICard, Data> map;
+
+        private readonly IPlayerQueue<IPlayer> queue;
+
+        private readonly IValidator<ICard> validator;
+
+        private readonly IGlobalCardMovement movement;
+
+        protected CardSelectionHandler(IBoard<Data> board, IMap<ICard, Data> map, IPlayerQueue<IPlayer> queue, IValidator<ICard> validator, IGlobalCardMovement movement)
         {
-            return board.Place(data);
+            this.board = board;
+            this.map = map;
+            this.queue = queue;
+            this.validator = validator;
+            this.movement = movement;
         }
+
+        public async UniTask<bool> Handle(ICard card)
+        {
+            if (validator.Validate(card) is false)
+            {
+                return false;
+            }
+
+            Data data = map.Get(card);
+
+            queue.Current.Hand.Remove(data);
+
+            await movement.MoveTo(data, EntityPlace.Board, CardLookSide.Face);
+
+            AddDataToBoard(board, data);
+
+            return true;
+        }
+
+        protected abstract void AddDataToBoard(IBoard<Data> board, Data data);
     }
 }

@@ -1,13 +1,18 @@
-﻿using Framework.Durak.Entities;
-
-using UnityEngine;
+﻿using Framework.Durak.Datas;
+using Framework.Shared.Collections;
+using Framework.Shared.States;
 
 namespace Framework.Durak.States
 {
     public class GameStartState : DurakState
     {
-        [Header("Entities")]
-        [SerializeField] private DeckEntity deck;
+        private readonly IDeck<Data> deck;
+
+        public GameStartState(IStateMachine<DurakGameState> machine, IDeck<Data> deck)
+            : base(machine)
+        {
+            this.deck = deck;
+        }
 
         public override void Enter()
         {

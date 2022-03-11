@@ -2,9 +2,11 @@
     "name": "Framework.Durak.Players",
     "rootNamespace": "Framework.Durak.Players",
     "references": [
-        "Framework.Shared.Collections",
-        "Framework.Shared.Cards",
-        "Framework.Durak.Datas"
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:c23d8554e1fa8c74a8918184075c8fbf",
+        "GUID:cb2bba070bd409d40957128512f36c7a",
+        "GUID:de2659b602184da44be8081fad21dbfa",
+        "GUID:d9397185d0dcdfe49b9e54553504b6e2"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,6 +1,6 @@
 ﻿using Framework.Shared.Collections;
 
-namespace ProjectCard.Editor.TestModule.TestData
+namespace Framework.Shared.Tests
 {
     public static class StorageToCompare<TKey> where TKey : new()
     {

@@ -1,14 +1,12 @@
 ﻿
-using System;
-using System.Collections.Generic;
-
 using Framework.Durak.Datas;
 using Framework.Durak.Players;
 using Framework.Shared.Collections;
 
-using CardLookSide = Framework.Shared.Cards.Views.CardLookSide;
+using System;
+using System.Collections.Generic;
 
-namespace ProjectCard.Editor.TestModule.TestData
+namespace Framework.Shared.Tests
 {
     public static class EntityCreator
     {
@@ -113,26 +111,23 @@ namespace ProjectCard.Editor.TestModule.TestData
                 new Player()
                 {
                     Name = "Attacker",
-                    Cards = new List<Data>(),
                     Type = PlayerType.Ai
                 },
                 new Player()
                 {
                     Name = "Defender",
-                    Cards = new List<Data>(),
                     Type = PlayerType.Real
                 },
                 new Player()
                 {
                     Name = "Removed",
-                    Cards = new List<Data>(),
                     Type = PlayerType.Real
                 },
             };
 
             return players;
         }
-        public static void CreatePlayerPack(out IPlayer[] players, out PlayerStorage<IReadonlyPlayer> storage, out PlayerQueue<IReadonlyPlayer> queue)
+        public static void CreatePlayerPack(out IPlayer[] players, out PlayerStorage<IPlayer> storage, out PlayerQueue<IPlayer> queue)
         {
             int attacker = 0;
             int defender = 1;
@@ -140,8 +135,8 @@ namespace ProjectCard.Editor.TestModule.TestData
 
             players = CreatePlayers();
 
-            storage = new PlayerStorage<IReadonlyPlayer>(players);
-            queue = new PlayerQueue<IReadonlyPlayer>(storage);
+            storage = new PlayerStorage<IPlayer>(players);
+            queue = new PlayerQueue<IPlayer>(storage);
 
             storage.Remove(players[removed]);
 

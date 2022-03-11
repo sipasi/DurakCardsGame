@@ -1,17 +1,16 @@
-﻿using Framework.Shared.Services.Storages;
-
+﻿
 using UnityEngine;
 
-namespace ProjectCard.Editor.TestModule.ServiceModule.StorageModule
+namespace Framework.Shared.Services.Storages.Tests
 {
-    public class LocalBinaryFileStorageServiceTest : ScriptableFileStorageTest
+    public class LocalBinaryFileStorageServiceTest : FileStorageTest
     {
         protected override string FileName => "file";
         protected override string FileExtension => "binary";
 
         protected override FileStorage GetFileStorage()
         {
-            return ScriptableObject.CreateInstance<LocalBinaryFileStorageService>();
+            return new LocalBinaryFileStorageService(directory: Application.persistentDataPath, FileName, FileExtension);
         }
     }
 }

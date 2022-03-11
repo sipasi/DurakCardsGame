@@ -1,8 +1,8 @@
 ﻿
 
-using System.Collections.Generic;
-
 using Framework.Durak.Datas.Extensions;
+
+using System.Collections.Generic;
 
 namespace Framework.Durak.Datas.Tools
 {

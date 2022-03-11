@@ -1,25 +1,29 @@
 ﻿
-
-using Framework.Shared.Services.Pools;
-
+using Framework.Durak.States;
+using Framework.Shared.DependencyInjection;
 using Framework.Shared.Services.Tasks;
 
 using UnityEngine;
 
 namespace Framework.Durak.Game
 {
-    public class Startup : MonoBehaviour
+    internal class Startup : MonoBehaviour
     {
+        [SerializeField] private TaskServiceExecutor taskServiceExecutor;
+        [SerializeField] private DiContainerHolder holder;
+        [SerializeField] private DiContainerBuilder builder;
+
         [SerializeField] private DurakGame gameLoader;
-
-        [SerializeField] private TaskServiceAsync taskService;
-        [SerializeField] private PoolService poolService;
-
 
         private async void Awake()
         {
-            poolService.Clear();
-            taskService.Clear();
+            DurakStateMachineInitializer stateMachineInitializer = new DurakStateMachineInitializer();
+
+            IDiContainer container = holder.Container = builder.Build();
+
+            stateMachineInitializer.Initialize(container);
+
+            taskServiceExecutor.StartTaskService(container.Get<ITaskServiceAsync>());
 
             await gameLoader.LoadNewGame();
         }

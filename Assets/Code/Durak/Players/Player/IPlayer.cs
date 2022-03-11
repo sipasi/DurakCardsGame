@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
-
-using Framework.Durak.Datas;
+﻿
+using System;
 
 namespace Framework.Durak.Players
 {
-    public interface IPlayer : IReadonlyPlayer
+    public interface IPlayer
     {
-        void Add(Data data);
-        void Remove(Data data);
-        void AddRange(IEnumerable<Data> datas);
-         
-        void Clear();
+        Guid Id { get; }
+        string Name { get; }
+
+        PlayerType Type { get; }
+
+        IHand Hand { get; }
     }
 }

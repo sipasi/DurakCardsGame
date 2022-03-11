@@ -1,15 +1,14 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-
-using Framework.Durak.Datas;
+﻿using Framework.Durak.Datas;
 using Framework.Shared.Collections;
+using Framework.Shared.Tests;
 
 using NUnit.Framework;
 
-using ProjectCard.Editor.TestModule.TestData;
+using System;
+using System.IO;
+using System.Linq;
 
-namespace ProjectCard.Editor.TestModule.SerializationModule
+namespace Framework.Shared.Serialization.Tests
 {
     public abstract class EntitySerialization
     {

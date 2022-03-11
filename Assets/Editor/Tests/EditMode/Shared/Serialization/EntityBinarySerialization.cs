@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace ProjectCard.Editor.TestModule.SerializationModule
+namespace Framework.Shared.Serialization.Tests
 {
     public class EntityBinarySerialization : EntitySerialization
     {

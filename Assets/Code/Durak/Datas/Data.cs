@@ -9,26 +9,20 @@ namespace Framework.Durak.Datas
         public readonly int rank;
 
 
-        public Data(int suit, int rank)
-        {
-            this.suit = suit;
-            this.rank = rank;
-        }
+        public Data(int suit, int rank) => (this.suit, this.rank) = (suit, rank);
 
-
-        public readonly void Deconstruct(out int suit, out int rank)
-        {
-            suit = this.suit;
-            rank = this.rank;
-        }
 
         public static bool operator ==(in Data left, in Data right) => left.suit == right.suit && left.rank == right.rank;
         public static bool operator !=(in Data left, in Data right) => left.suit != right.suit && left.rank != right.rank;
 
         public bool Equals(in Data data)
         {
-            return suit == data.suit &&
-                   rank == data.rank;
+            bool sameSuit = suit == data.suit;
+            bool sameRank = rank == data.rank;
+
+            bool equal = sameSuit && sameRank;
+
+            return equal;
         }
         public override bool Equals(object obj)
         {
@@ -37,16 +31,15 @@ namespace Framework.Durak.Datas
 
         public override int GetHashCode()
         {
-            var tuple = (suit, rank);
+            ValueTuple<int, int> tuple = (suit, rank);
 
             int hash = tuple.GetHashCode();
 
             return hash;
         }
 
-        public override string ToString()
-        {
-            return $"Suit: {suit}, Rank: {rank}";
-        }
+        public void Deconstruct(out int suit, out int rank) => (suit, rank) = (this.suit, this.rank);
+
+        public override string ToString() => $"Suit: {suit}, Rank: {rank}";
     }
 }

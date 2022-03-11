@@ -4,17 +4,22 @@ using UnityEngine;
 
 namespace Framework.Durak.States
 {
-    public abstract class DurakState : MonoBehaviour, IState
+    public abstract class DurakState : IState
     {
-        [Space(height: 15), SerializeField] private DurakGameStateMachine machine;
+        private readonly IStateMachine<DurakGameState> machine;
+
+        protected DurakState(IStateMachine<DurakGameState> machine)
+        {
+            this.machine = machine;
+        }
 
         public virtual void Enter()
         {
-            Debug.Log($"{nameof(Enter)}: {GetType().Name}", this);
+            Debug.Log($"{nameof(Enter)}: {GetType().Name}");
         }
         public virtual void Exit()
         {
-            // Debug.Log($"{nameof(Exit)}: {GetType().Name}", this);
+            //Debug.Log($"{nameof(Exit)}: {GetType().Name}");
         }
 
         protected void NextState(DurakGameState state) => machine.Fire(state);

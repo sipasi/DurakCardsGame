@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using Framework.Shared.Collections;
 
-using Framework.Shared.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 using UnityEngine;
 
@@ -11,7 +11,7 @@ namespace Framework.Durak.Collections
     {
         private IReadOnlyList<T> collection;
 
-        public IReadOnlyList<T> Values => collection;
+        public IReadOnlyList<T> Value => collection;
 
         public void Initialize(IReadOnlyList<T> list) => this.collection = list;
 

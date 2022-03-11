@@ -1,28 +1,37 @@
 ﻿using Framework.Durak.Collections.Extensions;
 using Framework.Durak.Datas;
-using Framework.Durak.Entities;
 using Framework.Durak.Players;
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Collections;
+using Framework.Shared.Collections.Extensions;
 
 using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace Framework.Durak.Validators
 {
-    public class AttackerSelectionValidator : SelectionValidator
+    public class AttackerSelectionValidator : IValidator<ICard>, IAttackerValidator
     {
-        public override bool Validate(ICard value)
+        private readonly IBoard<Data> board;
+        private readonly IMap<ICard, Data> map;
+        private readonly IPlayerQueue<IPlayer> queue;
+
+        public AttackerSelectionValidator(IBoard<Data> board, IMap<ICard, Data> map, IPlayerQueue<IPlayer> queue)
         {
-            var (board, _, playerQueue) = this;
+            this.board = board;
+            this.map = map;
+            this.queue = queue;
+        }
 
-            AssertState(playerQueue);
+        public bool Validate(ICard value)
+        {
+            AssertState(queue);
 
-            IReadonlyPlayer current = playerQueue.Current.Value;
+            IPlayer current = queue.Current;
 
-            Data selected = ConvertToData(value);
+            Data selected = map.Get(value);
 
-            if (current.Contains(selected) is false)
+            if (current.Hand.Contains(selected) is false)
             {
                 return false;
             }
@@ -47,7 +56,7 @@ namespace Framework.Durak.Validators
             return contains;
         }
 
-        private static void AssertState(IReadonlyPlayerQueue<IPlayerEntity> playerQueue)
+        private static void AssertState(IReadonlyPlayerQueue<IPlayer> playerQueue)
         {
             Assert.IsTrue(playerQueue.IsAttackerQueue, "AttackerSelectionValidator can only validate attacker selection");
         }
