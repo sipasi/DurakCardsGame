@@ -11,7 +11,7 @@ namespace Framework.Durak.Gameplay.Handlers
 {
     public class DefenderSelectionHandler : CardSelectionHandler, IDefenderSelectionHandler
     {
-        public DefenderSelectionHandler(IBoard<Data> board, IMap<ICard, Data> map, IPlayerQueue<IPlayer> queue, IDefenderValidator validator, IGlobalCardMovement movement)
+        public DefenderSelectionHandler(IBoard<Data> board, IMap<ICard, Data> map, IPlayerQueue<IPlayer> queue, IDefenderValidator validator, IBoardCardMovement movement)
             : base(board, map, queue, validator, movement) { }
 
         protected override void AddDataToBoard(IBoard<Data> board, Data data)

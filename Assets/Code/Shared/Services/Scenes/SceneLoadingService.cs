@@ -1,7 +1,7 @@
 ﻿
 using Cysharp.Threading.Tasks;
 
-using System;
+using Framework.Shared.Scenes;
 
 using UnityEngine.SceneManagement;
 
@@ -9,27 +9,18 @@ namespace Framework.Shared.Services.Scenes
 {
     public class SceneLoadingService : ISceneLoadingService
     {
-        public UniTask Load(int index, LoadSceneMode mode = LoadSceneMode.Single, IProgress<float> progress = null)
+        public UniTask Load(SceneReference scene, LoadSceneMode mode = LoadSceneMode.Single)
         {
-            var operation = SceneManager.LoadSceneAsync(sceneBuildIndex: index, mode);
+            var operation = SceneManager.LoadSceneAsync(scene, mode);
 
-            return operation.ToUniTask(progress);
+            return operation.ToUniTask();
         }
 
-        public UniTask Load(string name, LoadSceneMode mode = LoadSceneMode.Single, IProgress<float> progress = null)
+        public UniTask<BackgroundLoading.Complete> LoadInBackground(SceneReference scene, LoadSceneMode mode = LoadSceneMode.Single)
         {
-            var operation = SceneManager.LoadSceneAsync(sceneName: name, mode);
+            var background = new BackgroundLoading(scene, mode);
 
-            return operation.ToUniTask(progress);
-        }
-
-        public async UniTask<BackgroundLoading.Complete> LoadInBackground(string name, LoadSceneMode mode = LoadSceneMode.Single)
-        {
-            var background = new BackgroundLoading(name, mode);
-
-            var complete = await background.Load();
-
-            return complete;
+            return background.Load();
         }
     }
 }

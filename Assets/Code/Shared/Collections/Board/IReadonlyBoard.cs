@@ -2,7 +2,7 @@
 
 namespace Framework.Shared.Collections
 {
-    public interface IReadonlyBoard<T> : IReadOnlyCollection<T>
+    public interface IReadonlyBoard<T> : IBoardReference, IReadOnlyCollection<T>
     {
         IReadOnlyList<T> All { get; }
         IReadOnlyList<T> Attacks { get; }

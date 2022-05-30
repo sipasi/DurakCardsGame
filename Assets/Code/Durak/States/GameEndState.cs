@@ -1,4 +1,5 @@
-﻿using Framework.Shared.Scenes;
+﻿using Framework.Durak.Ui.Windows.Dialogs;
+using Framework.Durak.Services.Scenes;
 using Framework.Shared.Services.Scenes;
 using Framework.Shared.States;
 using Framework.Shared.UI.Windows.Dialogs;
@@ -9,35 +10,31 @@ namespace Framework.Durak.States
 {
     public class GameEndState : DurakState
     {
-        private readonly ISceneLoadingService sceneLoadingService;
+        private readonly IMainMenuLoader mineMenu;
 
-        private readonly DialogWindow gameRestartDialogWindow;
+        private readonly IGameEndDialogWindow dialog;
 
-        private readonly SceneReference mainMenu;
-
-        public GameEndState(IStateMachine<DurakGameState> machine, ISceneLoadingService sceneLoadingService)
+        public GameEndState(IStateMachine<DurakGameState> machine, IMainMenuLoader mineMenu, IGameEndDialogWindow dialog)
             : base(machine)
         {
-            this.sceneLoadingService = sceneLoadingService;
+            this.mineMenu = mineMenu;
+            this.dialog = dialog;
         }
-
 
         public override async void Enter()
         {
             base.Enter();
 
-            throw new NotImplementedException();
+            var result = await dialog.Show();
 
-            //var result = await gameRestartDialogWindow.Show();
-
-            //if (result is DialogResult.Ok)
-            //{
-            //    NextState(DurakGameState.GameRestart);
-            //}
-            //else if (result is DialogResult.Cancel)
-            //{
-            //    await sceneLoadingService.Load(mainMenu);
-            //}
+            if (result is DialogResult.Ok)
+            {
+                NextState(DurakGameState.GameRestart);
+            }
+            else if (result is DialogResult.Cancel)
+            {
+                await mineMenu.Load();
+            }
         }
     }
 }

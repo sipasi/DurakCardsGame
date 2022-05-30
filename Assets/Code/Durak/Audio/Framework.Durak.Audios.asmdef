@@ -1,0 +1,18 @@
+{
+    "name": "Framework.Durak.Audios",
+    "rootNamespace": "Framework.Durak.Audios",
+    "references": [
+        "GUID:25ba10901a4f3934eb874e286e33cc79",
+        "GUID:a8a1b2aa1d914d84c8760529c4cd3077",
+        "GUID:64ef1919739fef54d92cf7a26a8f29da"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -2,6 +2,6 @@
 {
     public interface IIndexer<TKey, TValue> : IReadonlyIndexer<TKey, TValue>
     {
-        new TValue this[TKey index] { set; }
+        new TValue this[TKey index] { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
-using Framework.Durak.States;
+using Framework.Durak.DependencyInjection;
 using Framework.Shared.DependencyInjection;
-using Framework.Shared.Services.Tasks;
+using Framework.Shared.DependencyInjection.Unity;
 
 using UnityEngine;
 
@@ -9,23 +9,28 @@ namespace Framework.Durak.Game
 {
     internal class Startup : MonoBehaviour
     {
-        [SerializeField] private TaskServiceExecutor taskServiceExecutor;
         [SerializeField] private DiContainerHolder holder;
         [SerializeField] private DiContainerBuilder builder;
 
-        [SerializeField] private DurakGame gameLoader;
+        [SerializeField] private DurakGame game;
 
         private async void Awake()
         {
-            var stateMachineInitializer = new DurakStateMachineInitializer();
-
             IDiContainer container = holder.Container = builder.Build();
 
-            stateMachineInitializer.Initialize(container);
+            var collection = FindObjectsOfType<ServiceInitialization>();
 
-            taskServiceExecutor.StartTaskService(container.Get<ITaskServiceAsync>());
+            foreach (var item in collection)
+            {
+                item.Initialize(container);
+            }
 
-            await gameLoader.LoadNewGame();
+            await game.LoadNewGame();
+        }
+
+        private async void OnDestroy()
+        {
+            await game.UnloadGame();
         }
     }
 }

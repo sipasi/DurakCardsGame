@@ -4,8 +4,12 @@ using Framework.Durak.Datas;
 using Framework.Durak.Players;
 using Framework.Durak.Rules;
 using Framework.Durak.Services.Movements;
+using Framework.Durak.Ui;
+using Framework.Durak.Ui.Views;
 using Framework.Shared.Collections;
 using Framework.Shared.Collections.Extensions;
+
+using System;
 
 using UnityEngine;
 
@@ -14,15 +18,17 @@ namespace Framework.Durak.Gameplay
     public class CardDealer : ICardDealer
     {
         private readonly IDeck<Data> deck;
+        private readonly IDeckUi deckUi;
         private readonly IPlayerStorage<IPlayer> storage;
 
         private readonly IDurakRules rules;
         private readonly IMap<IPlayer, Transform> map;
-        private readonly IDataMovementManager movement;
+        private readonly IDataMovementService movement;
 
-        public CardDealer(IDeck<Data> deck, IPlayerStorage<IPlayer> storage, IDurakRules rules, IMap<IPlayer, Transform> map, IDataMovementManager movement)
+        public CardDealer(IDeck<Data> deck, IDeckUi deckUi, IPlayerStorage<IPlayer> storage, IDurakRules rules, IMap<IPlayer, Transform> map, IDataMovementService movement)
         {
             this.deck = deck;
+            this.deckUi = deckUi;
             this.storage = storage;
             this.rules = rules;
             this.map = map;
@@ -38,6 +44,8 @@ namespace Framework.Durak.Gameplay
                     player.Hand.Add(data);
 
                     var transform = map.Get(player);
+
+                    deckUi.UpdateCount();
 
                     await movement.MoveToPlace(data, transform, player.Hand.LookSide);
                 }

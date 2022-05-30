@@ -7,11 +7,18 @@ using UnityEngine.UI;
 
 namespace Framework.Shared.Cards.Views
 {
-    public class DeckView : MonoBehaviour, IDeckView
+    public class DeckView : IDeckView
     {
-        [SerializeField] private Image trump;
-        [SerializeField] private Image back;
-        [SerializeField] private TextMeshProUGUI text;
+        private readonly Image trump;
+        private readonly Image back;
+        private readonly TextMeshProUGUI text;
+
+        public DeckView(Image trump, Image back, TextMeshProUGUI text)
+        {
+            this.trump = trump;
+            this.back = back;
+            this.text = text;
+        }
 
         public Sprite Trump { get => trump.sprite; set => trump.sprite = value; }
         public Sprite Back { get => back.sprite; set => back.sprite = value; }

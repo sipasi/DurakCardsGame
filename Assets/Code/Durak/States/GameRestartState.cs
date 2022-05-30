@@ -22,9 +22,9 @@ namespace Framework.Durak.States
         private readonly IDiscardPile discard;
         private readonly IPlayerStorage<IPlayer> storage;
 
-        private readonly IGlobalCardMovement movement;
+        private readonly IDeckCardMovement movement;
 
-        public GameRestartState(IStateMachine<DurakGameState> machine, IDeck<Data> deck, IBoard<Data> board, IPlaces<Transform> places, IDiscardPile discard, IPlayerStorage<IPlayer> storage, IGlobalCardMovement movement)
+        public GameRestartState(IStateMachine<DurakGameState> machine, IDeck<Data> deck, IBoard<Data> board, IPlaces<Transform> places, IDiscardPile discard, IPlayerStorage<IPlayer> storage, IDeckCardMovement movement)
             : base(machine)
         {
             this.deck = deck;
@@ -48,8 +48,8 @@ namespace Framework.Durak.States
 
         private async UniTask MoveCards()
         {
-            await movement.MoveTo(board.All, EntityPlace.Deck, CardLookSide.Back);
-            await movement.MoveTo(discard, EntityPlace.Deck, CardLookSide.Back);
+            await movement.MoveTo(board.All);
+            await movement.MoveTo(discard);
 
             foreach (var player in storage.All)
             {
@@ -58,7 +58,7 @@ namespace Framework.Durak.States
                     continue;
                 }
 
-                await movement.MoveTo(player.Hand, EntityPlace.Deck, CardLookSide.Back);
+                await movement.MoveTo(player.Hand);
             }
         }
 

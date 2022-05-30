@@ -16,9 +16,9 @@ namespace Framework.Durak.States.Battles
     public class BattleDefenderWinnerState : BattlePlayerWinnerState
     {
         private readonly IDiscardPile discardPile;
-        private readonly IGlobalCardMovement movement;
+        private readonly IDiscardPileCardMovement movement;
 
-        public BattleDefenderWinnerState(IStateMachine<DurakGameState> machine, IPlayerQueue<IPlayer> queue, IBoard<Data> board, IDiscardPile discardPile, IGlobalCardMovement movement)
+        public BattleDefenderWinnerState(IStateMachine<DurakGameState> machine, IPlayerQueue<IPlayer> queue, IBoard<Data> board, IDiscardPile discardPile, IDiscardPileCardMovement movement)
             : base(machine, board, queue)
         {
             this.discardPile = discardPile;
@@ -29,7 +29,7 @@ namespace Framework.Durak.States.Battles
         {
             discardPile.AddRange(datas);
 
-            return movement.MoveTo(datas, EntityPlace.DiscardPile, CardLookSide.Back);
+            return movement.MoveTo(datas);
 
         }
         protected override void UpdatePlayerQueue(IPlayerQueue<IPlayer> queue)

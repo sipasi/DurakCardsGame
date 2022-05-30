@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Framework.Durak.Collections
 {
-    public interface IDiscardPile : IEnumerable<Data>
+    public interface IDiscardPile : IDiscardPileReference, IEnumerable<Data>
     {
         void Add(Data data);
         void AddRange(IEnumerable<Data> datas);

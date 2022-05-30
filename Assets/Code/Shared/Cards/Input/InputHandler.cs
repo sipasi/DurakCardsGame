@@ -1,5 +1,5 @@
 ﻿using Framework.Shared.Cards.Entities;
-using Framework.Shared.Events;
+using Framework.Shared.Signals;
 
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -7,11 +7,19 @@ using UnityEngine.EventSystems;
 
 namespace Framework.Shared.Cards.Input
 {
+    internal class CardSelectedSignal : MonoBehaviour, IItemSelectedSignal<ICard>
+    {
+        public void Send(ICard card)
+        {
+            
+        }
+    }
+
     [RequireComponent(typeof(ICard))]
     public sealed class InputHandler : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] private bool interactable = true;
-        [SerializeField] private ScriptableAction<ICard> click;
+        [SerializeField] private CardSelectedSignal signal;
 
         private ICard entity;
 
@@ -29,9 +37,9 @@ namespace Framework.Shared.Cards.Input
             if (interactable is false) return;
 
             Assert.IsNotNull(entity, "Entity can't be null");
-            Assert.IsNotNull(click, "Click event can't be null");
+            Assert.IsNotNull(signal, "Selected signal can't be null");
 
-            click.Rise(entity);
+            signal.Send(entity);
         }
     }
 }

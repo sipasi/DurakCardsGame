@@ -1,0 +1,21 @@
+{
+    "name": "Framework.Durak.Ui",
+    "rootNamespace": "Framework.Durak.Ui",
+    "references": [
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:c23d8554e1fa8c74a8918184075c8fbf",
+        "GUID:25ba10901a4f3934eb874e286e33cc79",
+        "GUID:cb2bba070bd409d40957128512f36c7a",
+        "GUID:be13ceadb969a174b84fd69830460591",
+        "GUID:de2659b602184da44be8081fad21dbfa"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

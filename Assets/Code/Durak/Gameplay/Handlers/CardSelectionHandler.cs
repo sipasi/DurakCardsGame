@@ -22,9 +22,9 @@ namespace Framework.Durak.Gameplay.Handlers
 
         private readonly IValidator<ICard> validator;
 
-        private readonly IGlobalCardMovement movement;
+        private readonly IBoardCardMovement movement;
 
-        protected CardSelectionHandler(IBoard<Data> board, IMap<ICard, Data> map, IPlayerQueue<IPlayer> queue, IValidator<ICard> validator, IGlobalCardMovement movement)
+        protected CardSelectionHandler(IBoard<Data> board, IMap<ICard, Data> map, IPlayerQueue<IPlayer> queue, IValidator<ICard> validator, IBoardCardMovement movement)
         {
             this.board = board;
             this.map = map;
@@ -44,7 +44,7 @@ namespace Framework.Durak.Gameplay.Handlers
 
             queue.Current.Hand.Remove(data);
 
-            await movement.MoveTo(data, EntityPlace.Board, CardLookSide.Face);
+            await movement.MoveTo(data);
 
             AddDataToBoard(board, data);
 

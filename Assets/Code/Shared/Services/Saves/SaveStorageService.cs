@@ -3,6 +3,8 @@
 using Framework.Shared.Collections;
 using Framework.Shared.Services.Storages;
 
+using System;
+
 namespace Framework.Shared.Services.Saves
 {
     public class SaveStorageService<TKey> : SaveService, IStorage<TKey>
@@ -29,6 +31,8 @@ namespace Framework.Shared.Services.Saves
 
         public TData Restore<TData>(TKey key) => storage.Restore<TData>(key);
         public T RestoreOrCreate<T>(TKey key) where T : new() => storage.RestoreOrCreate<T>(key);
+        public T RestoreOrCreate<T>(TKey key, Func<T> factory) => storage.RestoreOrCreate<T>(key, factory);
+        public T RestoreOrCreate<T>(TKey key, Func<TKey, T> factory) => storage.RestoreOrCreate<T>(key, factory);
 
         public bool Contains(TKey key) => storage.Contains(key);
 

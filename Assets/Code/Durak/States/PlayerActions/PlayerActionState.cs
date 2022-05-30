@@ -25,6 +25,9 @@ namespace Framework.Durak.States.Actions
         private readonly IReadonlyIndexer<PlayerType, ISelectorsGroup> selectorsIndexer;
         private readonly ICardSelectionHandler selection;
 
+        protected abstract DurakGameState AfterCardSelected { get; }
+        protected abstract DurakGameState AfterPass { get; }
+
         protected IPlayer Current { get; private set; }
 
         protected PlayerActionState(IStateMachine<DurakGameState> machine, IDeck<Data> deck, IBoard<Data> board, IPlayerStorage<IPlayer> storage, IPlayerQueue<IPlayer> queue, IReadonlyIndexer<PlayerType, ISelectorsGroup> selectorsIndexer, ICardSelectionHandler selection)
@@ -37,10 +40,7 @@ namespace Framework.Durak.States.Actions
             this.selectorsIndexer = selectorsIndexer;
             this.selection = selection;
         }
-
-        protected abstract DurakGameState AfterCardSelected { get; }
-        protected abstract DurakGameState AfterPass { get; }
-
+          
         public sealed override async void Enter()
         {
             base.Enter();

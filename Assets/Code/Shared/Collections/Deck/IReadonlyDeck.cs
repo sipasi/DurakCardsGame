@@ -2,7 +2,7 @@
 
 namespace Framework.Shared.Collections
 {
-    public interface IReadonlyDeck<T> : IReadOnlyCollection<T>
+    public interface IReadonlyDeck<T> : IDeckReference, IReadOnlyCollection<T>
     {
         int Capacity { get; }
 

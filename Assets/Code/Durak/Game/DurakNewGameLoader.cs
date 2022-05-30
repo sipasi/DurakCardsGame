@@ -1,4 +1,5 @@
 ﻿
+using Framework.Durak.DependencyInjection;
 using Framework.Durak.States;
 using Framework.Shared.States;
 

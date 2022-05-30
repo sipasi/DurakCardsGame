@@ -1,33 +1,19 @@
 ﻿
 using Cysharp.Threading.Tasks;
 
-using Framework.Durak.States;
-using Framework.Shared.Events;
-using Framework.Shared.States;
+using Framework.Durak.Players;
+using Framework.Shared.DependencyInjection;
+using Framework.Shared.DependencyInjection.Unity;
+using Framework.Shared.Signals;
 
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Framework.Durak.Game
 {
     public class DurakGame : MonoBehaviour
     {
-        [SerializeField] private DiContainerHolder holder;
-
-        [Header("Game Loaders")]
         [SerializeField] private DurakNewGameLoader newGameLoader;
-
-        [Header("Events")]
-        [SerializeField] private ScriptableAction gameRestart;
-
-        private void OnEnable()
-        {
-            gameRestart.Action += OnGameRestart;
-        }
-        private void OnDisable()
-        {
-            gameRestart.Action -= OnGameRestart;
-        }
-
 
         public UniTask LoadNewGame()
         {
@@ -35,12 +21,27 @@ namespace Framework.Durak.Game
 
             return UniTask.CompletedTask;
         }
-
-        private void OnGameRestart()
+        public UniTask UnloadGame()
         {
-            var machine = holder.Container.Get<IStateMachine<DurakGameState>>();
-
-            machine.Fire(DurakGameState.GameRestart);
+            return UniTask.CompletedTask;
         }
     }
+
+    internal abstract class GameButtonListener<TSignal> : ServiceInitialization
+        where TSignal : class, ISignal
+    {
+        private ISignal signal;
+
+        [SerializeField] private Button button;
+
+        public sealed override void Initialize(IDiContainer container) => signal = container.Get<TSignal>();
+         
+        private void OnEnable() => button.onClick.AddListener(Send);
+        private void OnDisable() => button.onClick.RemoveListener(Send);
+
+        protected void Send() => signal.Send();
+    }
+    internal class MainMenuListener : GameButtonListener<IMainMenuSignal> { }
+    internal class GameRestartListener : GameButtonListener<IGameRestartSignal> { }
+    internal class PlayerPassListener : GameButtonListener<IPlayerPassedSignal> { }
 }

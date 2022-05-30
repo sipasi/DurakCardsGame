@@ -1,5 +1,8 @@
-﻿namespace Framework.Durak.Players.Selectors
+﻿using System;
+
+namespace Framework.Durak.Players.Selectors
 {
+ 
     public class RealInputCardSelector : CardSelector
     {
         private readonly IRealInputListener listener;

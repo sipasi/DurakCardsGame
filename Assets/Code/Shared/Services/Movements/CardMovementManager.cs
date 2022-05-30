@@ -16,20 +16,20 @@ namespace Framework.Shared.Services.Movements
 
         private readonly ICardMovementService movement;
 
-        private readonly float speed;
+        private readonly MovementSpeed speed;
 
-        public CardMovementManager(ITemporaryCard temporary, ICardMovementService movement)
+        public CardMovementManager(ITemporaryCard temporary, ICardMovementService movement, MovementSpeed speed)
         {
             this.temporary = temporary;
             this.movement = movement;
-            this.speed = 100;
+            this.speed = speed;
         }
 
-        public async UniTask MoveToPlace(ICard card, Transform place, CardLookSide lookSide)
+        public UniTask MoveToPlace(ICard card, Transform place, CardLookSide lookSide)
         {
-            await movement.MoveToParent(temporary, card, place, speed);
-
             card.View.LookSide = lookSide;
+
+            return movement.MoveToParent(temporary, card, place, speed.Value);
         }
         public async UniTask MoveToPlace(IReadOnlyList<ICard> cards, Transform place, CardLookSide lookSide)
         {
