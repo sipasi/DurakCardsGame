@@ -1,8 +1,8 @@
 ﻿
+using System.Collections.Generic;
+
 using Framework.Durak.Datas;
 using Framework.Shared.Cards.Views;
-
-using System.Collections.Generic;
 
 
 namespace Framework.Durak.Players

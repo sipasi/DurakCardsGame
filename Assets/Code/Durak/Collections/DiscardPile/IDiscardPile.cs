@@ -1,7 +1,7 @@
 ﻿
-using Framework.Durak.Datas;
-
 using System.Collections.Generic;
+
+using Framework.Durak.Datas;
 
 namespace Framework.Durak.Collections
 {

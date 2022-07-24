@@ -4,12 +4,9 @@ using Framework.Durak.Datas;
 using Framework.Durak.Players;
 using Framework.Durak.Rules;
 using Framework.Durak.Services.Movements;
-using Framework.Durak.Ui;
 using Framework.Durak.Ui.Views;
 using Framework.Shared.Collections;
 using Framework.Shared.Collections.Extensions;
-
-using System;
 
 using UnityEngine;
 

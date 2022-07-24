@@ -1,8 +1,8 @@
 ﻿
 
-using Framework.Shared.Core.Attributes;
-
 using System;
+
+using Framework.Shared.Core.Attributes;
 
 using UnityEngine;
 

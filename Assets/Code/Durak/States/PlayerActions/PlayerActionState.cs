@@ -40,7 +40,7 @@ namespace Framework.Durak.States.Actions
             this.selectorsIndexer = selectorsIndexer;
             this.selection = selection;
         }
-          
+
         public sealed override async void Enter()
         {
             base.Enter();

@@ -1,5 +1,4 @@
 ﻿using Framework.Durak.Datas;
-using Framework.Durak.Ui;
 using Framework.Durak.Ui.Views;
 using Framework.Shared.Collections;
 using Framework.Shared.States;

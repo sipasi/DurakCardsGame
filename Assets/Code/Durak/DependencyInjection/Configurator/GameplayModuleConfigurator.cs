@@ -1,12 +1,10 @@
-﻿using Framework.Durak.Gameplay;
+﻿using System;
+
+using Framework.Durak.Gameplay;
 using Framework.Durak.Gameplay.Handlers;
 using Framework.Durak.Validators;
 using Framework.Shared.DependencyInjection;
 using Framework.Shared.DependencyInjection.Unity;
-
-using System;
-
-using UnityEngine;
 
 namespace Framework.Durak.DependencyInjection.Configurators
 {

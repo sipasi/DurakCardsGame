@@ -1,4 +1,6 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System.Collections.Generic;
+
+using Cysharp.Threading.Tasks;
 
 using Framework.Durak.Datas;
 using Framework.Shared.Cards.Entities;
@@ -6,8 +8,6 @@ using Framework.Shared.Cards.Views;
 using Framework.Shared.Collections;
 using Framework.Shared.Collections.Extensions;
 using Framework.Shared.Services.Movements;
-
-using System.Collections.Generic;
 
 using UnityEngine;
 

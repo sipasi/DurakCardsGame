@@ -5,7 +5,6 @@ using Framework.Durak.Collections;
 using Framework.Durak.Datas;
 using Framework.Durak.Players;
 using Framework.Durak.Services.Movements;
-using Framework.Shared.Cards.Views;
 using Framework.Shared.Collections;
 using Framework.Shared.Collections.Extensions;
 using Framework.Shared.States;

@@ -1,13 +1,10 @@
-﻿using Framework.Durak.Datas;
-using Framework.Durak.Rules;
-using Framework.Durak.Rules.Scriptables;
+﻿using System;
+using System.Collections.Generic;
+
+using Framework.Durak.Datas;
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Collections;
 
-using System;
-using System.Collections.Generic;
-
-using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace Framework.Durak.DependencyInjection.Creators

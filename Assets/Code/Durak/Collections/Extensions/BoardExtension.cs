@@ -1,9 +1,9 @@
 ﻿
+using System.Collections.Generic;
+
 using Framework.Durak.Datas;
 using Framework.Durak.Datas.Extensions;
 using Framework.Shared.Collections;
-
-using System.Collections.Generic;
 
 namespace Framework.Durak.Collections.Extensions
 {

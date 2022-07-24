@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Generic;
+
 using Cysharp.Threading.Tasks;
 
 using Framework.Durak.Datas;
@@ -6,8 +8,6 @@ using Framework.Durak.Players;
 using Framework.Durak.Services.Movements;
 using Framework.Shared.Collections;
 using Framework.Shared.States;
-
-using System.Collections.Generic;
 
 
 namespace Framework.Durak.States.Battles

@@ -1,23 +1,16 @@
 ﻿using Framework.Durak.Ui.Windows.Dialogs;
-using Framework.Durak.Services.Scenes;
-using Framework.Shared.Services.Scenes;
 using Framework.Shared.States;
 using Framework.Shared.UI.Windows.Dialogs;
-
-using System;
 
 namespace Framework.Durak.States
 {
     public class GameEndState : DurakState
     {
-        private readonly IMainMenuLoader mineMenu;
-
         private readonly IGameEndDialogWindow dialog;
 
-        public GameEndState(IStateMachine<DurakGameState> machine, IMainMenuLoader mineMenu, IGameEndDialogWindow dialog)
+        public GameEndState(IStateMachine<DurakGameState> machine, IGameEndDialogWindow dialog)
             : base(machine)
         {
-            this.mineMenu = mineMenu;
             this.dialog = dialog;
         }
 
@@ -33,7 +26,7 @@ namespace Framework.Durak.States
             }
             else if (result is DialogResult.Cancel)
             {
-                await mineMenu.Load();
+
             }
         }
     }

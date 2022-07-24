@@ -1,8 +1,8 @@
 ﻿
+using System.Collections.Generic;
+
 using Framework.Durak.Datas;
 using Framework.Shared.Collections;
-
-using System.Collections.Generic;
 
 using Unity.Mathematics;
 

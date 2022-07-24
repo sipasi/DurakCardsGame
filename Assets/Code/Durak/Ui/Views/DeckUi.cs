@@ -1,11 +1,11 @@
 ﻿
+using System;
+
 using Framework.Durak.Datas;
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Cards.Views;
 using Framework.Shared.Collections;
 using Framework.Shared.Collections.Extensions;
-
-using System;
 
 namespace Framework.Durak.Ui.Views
 {

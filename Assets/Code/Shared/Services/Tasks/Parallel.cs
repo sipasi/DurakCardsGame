@@ -1,6 +1,6 @@
-﻿using Framework.Shared.Services.Pools;
+﻿using System.Collections.Generic;
 
-using System.Collections.Generic;
+using Framework.Shared.Services.Pools;
 
 namespace Framework.Shared.Services.Tasks
 {

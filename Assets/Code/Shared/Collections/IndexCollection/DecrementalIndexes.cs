@@ -1,8 +1,8 @@
-﻿using Framework.Shared.Collections.Extensions;
-
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+
+using Framework.Shared.Collections.Extensions;
 
 namespace Framework.Shared.Collections
 {

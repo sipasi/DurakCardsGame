@@ -1,10 +1,10 @@
-﻿using Framework.Durak.Datas;
+﻿using System.Collections.Generic;
+
+using Framework.Durak.Datas;
 using Framework.Durak.Datas.Extensions;
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Collections;
 using Framework.Shared.Collections.Extensions;
-
-using System.Collections.Generic;
 
 using UnityEngine.Assertions;
 

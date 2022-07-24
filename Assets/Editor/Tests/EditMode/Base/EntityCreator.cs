@@ -1,10 +1,10 @@
 ﻿
+using System;
+using System.Collections.Generic;
+
 using Framework.Durak.Datas;
 using Framework.Durak.Players;
 using Framework.Shared.Collections;
-
-using System;
-using System.Collections.Generic;
 
 namespace Framework.Shared.Tests
 {

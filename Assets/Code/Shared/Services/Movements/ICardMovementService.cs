@@ -1,8 +1,8 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System.Collections.Generic;
+
+using Cysharp.Threading.Tasks;
 
 using Framework.Shared.Cards.Entities;
-
-using System.Collections.Generic;
 
 using UnityEngine;
 

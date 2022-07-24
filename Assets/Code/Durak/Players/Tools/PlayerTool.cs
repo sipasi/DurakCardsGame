@@ -1,10 +1,10 @@
 ﻿
+using System.Collections.Generic;
+using System.Linq;
+
 using Framework.Durak.Datas;
 using Framework.Durak.Datas.Tools;
 using Framework.Shared.Collections;
-
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Framework.Durak.Players.Tools
 {

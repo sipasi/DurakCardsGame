@@ -1,14 +1,14 @@
-﻿using Framework.Durak.Players;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+
+using Framework.Durak.Players;
 using Framework.Durak.Players.Selectors;
-using Framework.Shared.Cards.Entities;
+using Framework.Shared.Cards.Input;
 using Framework.Shared.Collections;
 using Framework.Shared.DependencyInjection;
 using Framework.Shared.DependencyInjection.Unity;
-using Framework.Shared.Signals;
-
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Framework.Shared.Events;
 
 using UnityEngine;
 
@@ -17,25 +17,51 @@ namespace Framework.Durak.DependencyInjection.Configurators
     [Serializable]
     internal class PlayerModuleConfigurator : ServiceConfigurator
     {
+        [SerializeField] private ScriptableAction pass;
+
         public override void Configure(ServiceBuilder builder)
         {
             builder.singleton
                 .Add<AiRandomAttacker>()
                 .Add<AiRandomDefender>()
                 .Add<RealInputCardSelector>()
+
+                .Add(new RealPlayerInteractions(pass))
+
                 .Add<IRealInputListener, RealInputListener>()
                 .Add<IAiSelectorsGroup, AiSelectorsGroup>()
                 .Add<IRealInputSelectorsGroup, RealInputSelectorsGroup>()
                 .Add<IReadonlyIndexer<PlayerType, ISelectorsGroup>, SelectorsIndexer>();
         }
 
-        private class RealInputListener : IRealInputListener
+
+        private sealed class RealPlayerInteractions
         {
-            public event Action<ICard> Selected;
-            public event Action Passed;
+            private readonly ScriptableAction pass;
+
+            public RealPlayerInteractions(ScriptableAction passEvent)
+            {
+                this.pass = passEvent;
+            }
+
+            public event Action Passed { add => pass.Event += value; remove => pass.Event -= value; }
+        }
+        private sealed class RealInputListener : IRealInputListener
+        {
+            private readonly ICardInputInteractions interactions;
+            private readonly RealPlayerInteractions realPlayerInteractions;
+
+            public RealInputListener(ICardInputInteractions interactions, RealPlayerInteractions realPlayerInteractions)
+            {
+                this.interactions = interactions;
+                this.realPlayerInteractions = realPlayerInteractions;
+            }
+
+            public event CardInteraction Selected { add => interactions.Selected += value; remove => interactions.Selected -= value; }
+            public event Action Passed { add => realPlayerInteractions.Passed += value; remove => realPlayerInteractions.Passed -= value; }
         }
 
-        private class AiSelectorsGroup : IAiSelectorsGroup
+        private sealed class AiSelectorsGroup : IAiSelectorsGroup
         {
             public ICardSelector Attacking { get; }
             public ICardSelector Defending { get; }
@@ -46,7 +72,7 @@ namespace Framework.Durak.DependencyInjection.Configurators
                 Defending = defending;
             }
         }
-        private class RealInputSelectorsGroup : IRealInputSelectorsGroup
+        private sealed class RealInputSelectorsGroup : IRealInputSelectorsGroup
         {
             public ICardSelector Attacking { get; }
             public ICardSelector Defending { get; }
@@ -58,7 +84,7 @@ namespace Framework.Durak.DependencyInjection.Configurators
             }
         }
 
-        private class SelectorsIndexer : IReadonlyIndexer<PlayerType, ISelectorsGroup>
+        private sealed class SelectorsIndexer : IReadonlyIndexer<PlayerType, ISelectorsGroup>
         {
             private readonly ISelectorsGroup[] array;
 

@@ -1,11 +1,11 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System.Collections.Generic;
+
+using Cysharp.Threading.Tasks;
 
 using Framework.Durak.Datas;
 using Framework.Durak.Players;
 using Framework.Shared.Collections;
 using Framework.Shared.Collections.Extensions;
-
-using System.Collections.Generic;
 
 using UnityEngine;
 

@@ -1,9 +1,8 @@
-﻿using Framework.Durak.Ui;
+﻿using System;
+
 using Framework.Shared.Cards.Views;
 using Framework.Shared.DependencyInjection;
 using Framework.Shared.DependencyInjection.Unity;
-
-using System;
 
 using TMPro;
 

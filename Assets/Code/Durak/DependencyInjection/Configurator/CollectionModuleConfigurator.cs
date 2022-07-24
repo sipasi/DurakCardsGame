@@ -1,16 +1,15 @@
-﻿using Framework.Durak.Collections;
+﻿using System;
+using System.Collections.Generic;
+
+using Framework.Durak.Collections;
 using Framework.Durak.Datas;
 using Framework.Durak.DependencyInjection.Creators;
 using Framework.Durak.Players;
 using Framework.Durak.Rules.Scriptables;
-using Framework.Durak.Services.Movements;
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Collections;
 using Framework.Shared.DependencyInjection;
 using Framework.Shared.DependencyInjection.Unity;
-
-using System;
-using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.Assertions;

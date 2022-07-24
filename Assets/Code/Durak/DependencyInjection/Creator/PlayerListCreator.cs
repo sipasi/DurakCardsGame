@@ -1,8 +1,8 @@
-﻿using Framework.Durak.Players;
-using Framework.Shared.Cards.Views;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+
+using Framework.Durak.Players;
+using Framework.Shared.Cards.Views;
 
 using UnityEngine;
 

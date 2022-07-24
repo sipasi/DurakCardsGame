@@ -1,7 +1,7 @@
-﻿using Framework.Durak.Datas;
-using Framework.Shared.Cards.Entities;
+﻿using System.Collections.Generic;
 
-using System.Collections.Generic;
+using Framework.Durak.Datas;
+using Framework.Shared.Cards.Entities;
 
 namespace Framework.Durak.Players.Selectors
 {

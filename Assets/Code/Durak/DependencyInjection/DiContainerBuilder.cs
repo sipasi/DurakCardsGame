@@ -1,8 +1,8 @@
 ﻿
+using System;
+
 using Framework.Shared.DependencyInjection;
 using Framework.Shared.DependencyInjection.Unity;
-
-using System;
 
 using UnityEngine;
 

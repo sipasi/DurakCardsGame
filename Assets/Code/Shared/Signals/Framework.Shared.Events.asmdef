@@ -1,6 +1,6 @@
 {
-    "name": "Framework.Shared.Signals",
-    "rootNamespace": "Framework.Shared.Signals",
+    "name": "Framework.Shared.Events",
+    "rootNamespace": "Framework.Shared.Events",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

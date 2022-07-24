@@ -1,10 +1,10 @@
 ﻿
+using System.Collections.Generic;
+
 using Cysharp.Threading.Tasks;
 
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Cards.Views;
-
-using System.Collections.Generic;
 
 using UnityEngine;
 

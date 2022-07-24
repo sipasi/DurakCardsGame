@@ -1,7 +1,7 @@
 
-using NUnit.Framework;
-
 using System;
+
+using NUnit.Framework;
 
 namespace Framework.Shared.DependencyInjection.Tests
 {

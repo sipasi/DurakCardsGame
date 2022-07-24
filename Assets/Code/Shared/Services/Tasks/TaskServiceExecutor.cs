@@ -31,7 +31,7 @@ namespace Framework.Shared.Services.Tasks
         {
             task.Execute(delta: Time.deltaTime);
         }
- 
+
         public void Enable() => enabled = true;
         public void Disable() => enabled = false;
     }

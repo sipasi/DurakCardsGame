@@ -1,12 +1,12 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System;
+using System.Collections;
+
+using Cysharp.Threading.Tasks;
 
 using Framework.Shared.Services.Storages;
 using Framework.Shared.Tests;
 
 using NUnit.Framework;
-
-using System;
-using System.Collections;
 
 using UnityEngine.TestTools;
 

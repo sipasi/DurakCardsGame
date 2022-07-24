@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af433f386389af14c93f9a08e7a9b0e3, type: 3}
+  m_Name: Settings
+  m_EditorClassIdentifier: 
+  loadScreen:
+    sceneAsset: {fileID: 102900000, guid: 9d674289d70b0df498e1db2f69a1d60c, type: 3}
+    scenePath: Assets/Scenes/LoadScreen.unity
+  main:
+    sceneAsset: {fileID: 102900000, guid: 4066577dfeb7d0a46a94cb950a14db32, type: 3}
+    scenePath: Assets/Scenes/Settings.unity

@@ -1,9 +1,9 @@
 
+using System;
+
 using Framework.Shared.Collections.Extensions;
 
 using NUnit.Framework;
-
-using System;
 
 namespace Framework.Shared.Collections.Tests
 {

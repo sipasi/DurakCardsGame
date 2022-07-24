@@ -1,12 +1,12 @@
-﻿using Framework.Shared.Cards.Entities;
+﻿using System;
 
-using System;
+using Framework.Shared.Cards.Input;
 
 namespace Framework.Durak.Players.Selectors
 {
     public interface IRealInputListener
     {
-        event Action<ICard> Selected;
+        event CardInteraction Selected;
         event Action Passed;
     }
 }

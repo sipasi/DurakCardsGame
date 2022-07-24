@@ -1,11 +1,10 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System.Collections.Generic;
+
+using Cysharp.Threading.Tasks;
 
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Services.Pools;
 using Framework.Shared.Services.Tasks;
-
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 using UnityEngine;
 
@@ -32,7 +31,7 @@ namespace Framework.Shared.Services.Movements
         public async UniTask MoveToParent(ICard temporary, ICard entity, Transform parent, float speed)
         {
             preparation.BeforeMovement(temporary, entity, parent);
-             
+
             await MoveTemporaryTo(temporary, entity, speed);
 
             preparation.AfterMovement(temporary, entity);
@@ -55,11 +54,11 @@ namespace Framework.Shared.Services.Movements
             task.Add(process);
 
             Begin?.Invoke();
-             
+
             await task.Wait(process);
-              
+
             End?.Invoke();
-             
+
             pool.Return(process);
         }
 

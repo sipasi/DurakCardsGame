@@ -6,7 +6,6 @@ using Framework.Durak.Players;
 using Framework.Durak.Services.Movements;
 using Framework.Durak.Validators;
 using Framework.Shared.Cards.Entities;
-using Framework.Shared.Cards.Views;
 using Framework.Shared.Collections;
 using Framework.Shared.Collections.Extensions;
 

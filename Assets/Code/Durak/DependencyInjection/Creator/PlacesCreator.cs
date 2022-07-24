@@ -1,6 +1,6 @@
-﻿using Framework.Shared.Collections;
+﻿using System;
 
-using System;
+using Framework.Shared.Collections;
 
 using UnityEngine;
 

@@ -167,13 +167,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73391861db4408c4f89967129c710026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingService: {fileID: 11400000, guid: 6c48343f6b75dbb499a3c43b2bca3730, type: 2}
-  loadScreenScene:
-    sceneAsset: {fileID: 102900000, guid: 9d674289d70b0df498e1db2f69a1d60c, type: 3}
-    scenePath: Assets/Scenes/LoadScreen.unity
-  mainScene:
-    sceneAsset: {fileID: 102900000, guid: f9b9a63a1c75f384ca1cb742a093008e, type: 3}
-    scenePath: Assets/Scenes/MainMenu.unity
-  saveServices:
-  - {fileID: 11400000, guid: a32109b4ee464b340b0a2b3ae182e84f, type: 2}
-  - {fileID: 11400000, guid: 80fbe20f251e8704aa5c936bbfc17c11, type: 2}
+  mainMenu: {fileID: 11400000, guid: 09cdcd747eab69c4aaed78e5ce893bc1, type: 2}

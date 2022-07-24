@@ -1,9 +1,9 @@
-﻿using Framework.Durak.Rules;
+﻿using System;
+
+using Framework.Durak.Rules;
 using Framework.Durak.Rules.Scriptables;
 using Framework.Shared.DependencyInjection;
 using Framework.Shared.DependencyInjection.Unity;
-
-using System;
 
 using UnityEngine;
 

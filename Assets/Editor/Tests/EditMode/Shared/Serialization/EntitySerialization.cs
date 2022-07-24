@@ -1,12 +1,12 @@
-﻿using Framework.Durak.Datas;
+﻿using System;
+using System.IO;
+using System.Linq;
+
+using Framework.Durak.Datas;
 using Framework.Shared.Collections;
 using Framework.Shared.Tests;
 
 using NUnit.Framework;
-
-using System;
-using System.IO;
-using System.Linq;
 
 namespace Framework.Shared.Serialization.Tests
 {

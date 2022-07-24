@@ -1,7 +1,7 @@
 ﻿
-using NUnit.Framework;
-
 using System.Collections.Generic;
+
+using NUnit.Framework;
 
 namespace Framework.Shared.Collections.Tests
 {

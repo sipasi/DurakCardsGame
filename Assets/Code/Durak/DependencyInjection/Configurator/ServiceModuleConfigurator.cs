@@ -1,4 +1,5 @@
-﻿using Framework.Durak.Services.Movements;
+﻿using System;
+
 using Framework.Shared.DependencyInjection;
 using Framework.Shared.DependencyInjection.Unity;
 using Framework.Shared.Services.Movements;
@@ -7,8 +8,6 @@ using Framework.Shared.Services.Saves;
 using Framework.Shared.Services.Scenes;
 using Framework.Shared.Services.Storages;
 using Framework.Shared.Services.Tasks;
-
-using System;
 
 using UnityEngine;
 

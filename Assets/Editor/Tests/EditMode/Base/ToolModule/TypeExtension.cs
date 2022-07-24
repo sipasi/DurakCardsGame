@@ -1,6 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System.Reflection;
 
-using System.Reflection;
+using NUnit.Framework;
 
 namespace ProjectCard.Editor.TestModule.ToolModule
 {

@@ -1,12 +1,9 @@
-﻿using Framework.Durak.Rules;
-using Framework.Durak.Rules.Scriptables;
-using Framework.Durak.Services.Movements;
+﻿using System;
+using System.Collections.Generic;
+
+using Framework.Durak.Rules;
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Cards.Scriptables;
-using Framework.Shared.Collections;
-
-using System;
-using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.Assertions;

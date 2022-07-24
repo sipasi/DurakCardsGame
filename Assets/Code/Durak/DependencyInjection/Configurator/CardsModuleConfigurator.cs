@@ -1,9 +1,9 @@
-﻿using Framework.Shared.Cards.Entities;
+﻿using System;
+
+using Framework.Shared.Cards.Entities;
 using Framework.Shared.Cards.Views;
 using Framework.Shared.DependencyInjection;
 using Framework.Shared.DependencyInjection.Unity;
-
-using System;
 
 using UnityEngine;
 

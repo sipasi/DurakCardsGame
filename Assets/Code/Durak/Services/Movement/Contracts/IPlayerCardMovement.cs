@@ -1,9 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System.Collections.Generic;
+
+using Cysharp.Threading.Tasks;
 
 using Framework.Durak.Datas;
 using Framework.Durak.Players;
-
-using System.Collections.Generic;
 
 namespace Framework.Durak.Services.Movements
 {
