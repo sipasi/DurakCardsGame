@@ -3,7 +3,7 @@ using System;
 namespace Framework.Durak.Datas
 {
     [Serializable]
-    public readonly struct Data
+    public readonly struct Data : IEquatable<Data>
     {
         public readonly int suit;
         public readonly int rank;
@@ -24,6 +24,7 @@ namespace Framework.Durak.Datas
 
             return equal;
         }
+        public bool Equals(Data other) => Equals(in other);
         public override bool Equals(object obj)
         {
             return obj is Data data && Equals(in data);

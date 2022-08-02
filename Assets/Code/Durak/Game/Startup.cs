@@ -14,7 +14,7 @@ namespace Framework.Durak.Game
 
         [SerializeField] private DurakGame game;
 
-        private async void Awake()
+        private async void Start()
         {
             IDiContainer container = holder.Container = builder.Build();
 

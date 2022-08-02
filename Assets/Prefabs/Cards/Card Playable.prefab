@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 534791977462043129}
   - component: {fileID: 8224344465264386550}
-  - component: {fileID: 6877789495181766563}
   m_Layer: 5
   m_Name: Card Playable
   m_TagString: Untagged
@@ -53,19 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <View>k__BackingField: {fileID: 1033505324026011514}
   <Transform>k__BackingField: {fileID: 534791977462043129}
---- !u!114 &6877789495181766563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2683339618962367303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b9d5fd93b1a3e74688487560403727b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactions: {fileID: 11400000, guid: 4e31cd584ba8f54459af58172c52de2f, type: 2}
+  <InputSensitive>k__BackingField: 1
 --- !u!1 &5770799026076985134
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,5 +9,7 @@ namespace Framework.Shared.Cards.Entities
     {
         [field: SerializeField] public CardView View { get; private set; }
         [field: SerializeField] public Transform Transform { get; private set; }
+
+        [field: SerializeField] public bool InputSensitive { get; private set; }
     }
 }

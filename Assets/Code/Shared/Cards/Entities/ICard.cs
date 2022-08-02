@@ -8,5 +8,7 @@ namespace Framework.Shared.Cards.Entities
     {
         CardView View { get; }
         Transform Transform { get; }
+
+        bool InputSensitive { get; }
     }
 }

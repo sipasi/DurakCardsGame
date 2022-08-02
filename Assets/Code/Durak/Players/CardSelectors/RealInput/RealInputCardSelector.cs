@@ -13,14 +13,14 @@
         {
             base.Begin();
 
-            listener.Selected += SelectCard;
+            listener.Tapped += SelectCard;
             listener.Passed += Pass;
         }
         public override void End()
         {
             base.End();
 
-            listener.Selected -= SelectCard;
+            listener.Tapped -= SelectCard;
             listener.Passed -= Pass;
         }
     }

@@ -1,0 +1,34 @@
+{
+    "name": "UserInputActions",
+    "maps": [
+        {
+            "name": "Interactions",
+            "id": "725c6427-de6e-4e00-8b6e-35dc133e74e3",
+            "actions": [
+                {
+                    "name": "Tap",
+                    "type": "Button",
+                    "id": "b19b0bfc-af01-400e-b1b3-a02823bfbf4d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b7bfe185-1ed1-44db-969a-314389b19c78",
+                    "path": "<Pointer>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

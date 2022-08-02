@@ -4,11 +4,12 @@ using System.Collections.Generic;
 
 using Framework.Durak.Players;
 using Framework.Durak.Players.Selectors;
-using Framework.Shared.Cards.Input;
+using Framework.Shared.Cards.Entities;
 using Framework.Shared.Collections;
 using Framework.Shared.DependencyInjection;
 using Framework.Shared.DependencyInjection.Unity;
 using Framework.Shared.Events;
+using Framework.Shared.Input;
 
 using UnityEngine;
 
@@ -48,16 +49,16 @@ namespace Framework.Durak.DependencyInjection.Configurators
         }
         private sealed class RealInputListener : IRealInputListener
         {
-            private readonly ICardInputInteractions interactions;
+            private readonly ICardTapService cardTapService;
             private readonly RealPlayerInteractions realPlayerInteractions;
 
-            public RealInputListener(ICardInputInteractions interactions, RealPlayerInteractions realPlayerInteractions)
+            public RealInputListener(ICardTapService cardTapService, RealPlayerInteractions realPlayerInteractions)
             {
-                this.interactions = interactions;
+                this.cardTapService = cardTapService;
                 this.realPlayerInteractions = realPlayerInteractions;
             }
 
-            public event CardInteraction Selected { add => interactions.Selected += value; remove => interactions.Selected -= value; }
+            public event Tapped<ICard> Tapped { add => cardTapService.Tapped += value; remove => cardTapService.Tapped -= value; }
             public event Action Passed { add => realPlayerInteractions.Passed += value; remove => realPlayerInteractions.Passed -= value; }
         }
 

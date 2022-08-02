@@ -27,6 +27,8 @@ namespace Framework.Durak.DependencyInjection.Configurators
 
             public CardView View => card.View;
             public Transform Transform => card.Transform;
+
+            public bool InputSensitive => card.InputSensitive;
         }
     }
 }
