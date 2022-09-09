@@ -1,7 +1,5 @@
 ﻿#nullable enable
 
-using System.Collections.Generic;
-
 using Framework.Shared.Cards.Entities;
 
 using UnityEngine;

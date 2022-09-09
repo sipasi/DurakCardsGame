@@ -2,8 +2,6 @@
 
 using System.Collections.Generic;
 
-using Framework.Shared.Cards.Entities;
-
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;

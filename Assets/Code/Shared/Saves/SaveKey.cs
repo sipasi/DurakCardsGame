@@ -12,7 +12,7 @@ namespace Framework.Shared.Saves
     public class SaveKey : ScriptableObject, ISaveKey<Guid>
     {
         private Guid guid;
-        [SerializeField, ReadOnlyField] private string text = string.Empty;
+        [SerializeField, ViewOnly] private string text = string.Empty;
 
         public Guid Key
         {
