@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3e163ab5a0b97e4c84a827b61fba626, type: 3}
-  m_Name: SettingsFileStorage
+  m_Script: {fileID: 11500000, guid: 5142efd9ac880694b8f095eaab5c82ad, type: 3}
+  m_Name: DurakRestartGame
   m_EditorClassIdentifier: 
-  directory: Save/Durak
-  file: settings
-  extension: binary
