@@ -1,19 +1,23 @@
-﻿
 using UnityEngine;
 using UnityEngine.UI;
 
-
 namespace Framework.Shared.Cards.Views
 {
-    public class CardView : MonoBehaviour
+    public interface ICardView
     {
-        [SerializeField] private Image source;
+        public Sprite Face { get; set; }
+        public Sprite Back { get; set; }
+
+        bool IsVisible { get; set; }
+        CardLookSide LookSide { get; set; }
+    }
+
+    public class CardView : ICardView
+    {
+        private readonly Image source;
 
         private Sprite face;
         private Sprite back;
-
-        [SerializeField] private CardLookSide look;
-        [SerializeField] private bool visible = true;
 
         public Sprite Face
         {
@@ -22,9 +26,9 @@ namespace Framework.Shared.Cards.Views
             {
                 face = value;
 
-                if (look == CardLookSide.Face)
+                if (LookSide is CardLookSide.Face)
                 {
-                    source.sprite = face;
+                    source.sprite = value;
                 }
             }
         }
@@ -35,40 +39,30 @@ namespace Framework.Shared.Cards.Views
             {
                 back = value;
 
-                if (look == CardLookSide.Back)
+                if (LookSide is CardLookSide.Back)
                 {
-                    source.sprite = back;
+                    source.sprite = value;
                 }
             }
         }
 
         public bool IsVisible
         {
-            get => visible;
-            set
-            {
-                visible = value;
-                source.color = value ? Color.white : Color.clear;
-            }
+            get => source.color != Color.clear;
+            set => source.color = value ? Color.white : Color.clear;
+
         }
         public CardLookSide LookSide
         {
-            get => look;
-            set
-            {
-                look = value;
-
-                var gameObject = this.gameObject;
-                var na = gameObject.name;
-
-                source.sprite = value == CardLookSide.Face ? face : back;
-            }
+            get => source.sprite == face ? CardLookSide.Face : CardLookSide.Back;
+            set => source.sprite = value == CardLookSide.Face ? face : back;
         }
 
-        private void OnValidate()
+        public CardView(Image source, Sprite face, Sprite back)
         {
-            LookSide = look;
-            IsVisible = visible;
+            this.source = source;
+            this.face = face;
+            this.back = back;
         }
     }
 }
