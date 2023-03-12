@@ -20,14 +20,14 @@ namespace Framework.Shared.Input
         {
             GameObject gameObject = data.gameObject;
 
-            ICard? card = gameObject.GetComponentInParent<ICard>();
+            var proxy = gameObject.GetComponentInParent<CardProxy>();
 
-            if (card is null || card.InputSensitive is false)
+            if (proxy == null)
             {
                 return;
             }
 
-            Tapped?.Invoke(card);
+            Tapped?.Invoke(proxy.Card);
         }
     }
 }
