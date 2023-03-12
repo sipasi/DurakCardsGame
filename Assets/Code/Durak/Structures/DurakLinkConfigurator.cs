@@ -1,4 +1,5 @@
 using Framework.Durak.Collections;
+using Framework.Shared.Cards.Entities;
 using Framework.Shared.Collections;
 using Framework.Shared.DependencyInjection;
 using Framework.Shared.DependencyInjection.Unity;
@@ -15,8 +16,8 @@ namespace Framework.Durak.Structures
 
         public override void Configure(ServiceBuilder builder)
         {
-            IReadonlyLink<IDeckReference, Transform> deckLink = new Link<IDeckReference, Transform>(deck);
-            IReadonlyLink<IDiscardPileReference, Transform> discardLink = new Link<IDiscardPileReference, Transform>(discard);
+            IReadonlyLink<IDeckReference, ICardOwner> deckLink = new Link<IDeckReference, ICardOwner>(new CardOwner(deck));
+            IReadonlyLink<IDiscardPileReference, ICardOwner> discardLink = new Link<IDiscardPileReference, ICardOwner>(new CardOwner(discard));
 
             builder.singleton
                 .Add(deckLink)

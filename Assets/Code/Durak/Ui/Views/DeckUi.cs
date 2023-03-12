@@ -36,7 +36,7 @@ namespace Framework.Durak.Ui.Views
 
             string text = storage.RestoreOrCreate(key: count, factory);
 
-            view.Count = text;
+            view.Text = text;
         }
 
         public void UpdateTrump()

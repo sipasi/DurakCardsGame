@@ -1,24 +1,20 @@
 ﻿using Framework.Shared.Cards.Entities;
 using Framework.Shared.Cards.Views;
-
-using UnityEngine;
-
 namespace Framework.Shared.Services.Movements
 {
     internal class Preparation
     {
-        public void BeforeMovement(ICard temporary, ICard card, Transform parent)
+        public void BeforeMovement(ICard temporary, ICard card, ICardOwner owner)
         {
             CopyView(from: card.View, to: temporary.View);
 
             Activator(card, view: false);
 
-            CopyPosition(from: card.Transform, to: temporary.Transform);
+            CopyPosition(from: card.Navigation, to: temporary.Navigation);
 
             Activator(temporary, view: true);
 
-            card.Transform.SetParent(parent);
-            card.Transform.localPosition = default;
+            owner.Take(card);
         }
 
         public void AfterMovement(ICard temporary, ICard card)
@@ -28,15 +24,15 @@ namespace Framework.Shared.Services.Movements
             Activator(temporary, view: false);
         }
 
-        private void CopyView(CardView from, CardView to)
+        private void CopyView(ICardView from, ICardView to)
         {
             to.Face = from.Face;
             to.Back = from.Back;
             to.LookSide = from.LookSide;
         }
-        private void CopyPosition(Transform from, Transform to)
+        private void CopyPosition(ICardNavigation from, ICardNavigation to)
         {
-            to.position = from.position;
+            to.Position = from.Position;
         }
 
         private void Activator(ICard card, bool view)

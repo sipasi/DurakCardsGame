@@ -1,4 +1,5 @@
-﻿using Framework.Shared.Services.Pools;
+﻿using Framework.Shared.Cards.Entities;
+using Framework.Shared.Services.Pools;
 
 using Framework.Shared.Services.Tasks;
 
@@ -12,23 +13,22 @@ namespace Framework.Shared.Services.Movements
 
         private float speed;
 
-        private Transform current;
-        private Transform target;
+        private ICardNavigation current;
+        private ICardNavigation target;
 
         public bool Finished => finished;
 
-
         public void Execute(float delta)
         {
-            Vector3 currentPosition = current.position;
-            Vector3 targetPosition = target.position;
+            Vector3 currentPosition = current.Position;
+            Vector3 targetPosition = target.Position;
 
-            current.position = Vector3.MoveTowards(currentPosition, targetPosition, speed);
+            current.Position = Vector3.MoveTowards(currentPosition, targetPosition, speed * delta);
 
             finished = currentPosition == targetPosition;
         }
 
-        public void Set(Transform current, Transform target, float speed = 1)
+        public void Set(ICardNavigation current, ICardNavigation target, float speed = 1)
         {
             finished = false;
 

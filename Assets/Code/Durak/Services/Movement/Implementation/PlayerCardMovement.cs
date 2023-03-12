@@ -15,26 +15,19 @@ namespace Framework.Durak.Services.Movements
     {
         private readonly IDataMovementService movement;
 
-        private readonly IMap<IPlayer, Transform> map;
-
-        public PlayerCardMovement(IDataMovementService movement, IMap<IPlayer, Transform> map)
+        public PlayerCardMovement(IDataMovementService movement)
         {
             this.movement = movement;
-            this.map = map;
         }
 
         public UniTask MoveTo(IPlayer player, Data data)
         {
-            var target = map.Get(player);
-
-            return movement.MoveToPlace(data, target, player.Hand.LookSide);
+            return movement.MoveToPlace(data, player.Owner, player.Hand.LookSide);
         }
 
         public UniTask MoveTo(IPlayer player, IEnumerable<Data> datas)
         {
-            var target = map.Get(player);
-
-            return movement.MoveToPlace(datas, target, player.Hand.LookSide);
+            return movement.MoveToPlace(datas, player.Owner, player.Hand.LookSide);
         }
     }
 }

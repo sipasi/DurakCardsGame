@@ -13,8 +13,8 @@ namespace Framework.Shared.Services.Movements
         event CardMovementNotifyHandler Begin;
         event CardMovementNotifyHandler End;
 
-        UniTask MoveToParent(ICard temporary, ICard entity, Transform parent, float speed);
+        UniTask MoveToParent(ICard temporary, ICard entity, ICardOwner owner, float speed);
 
-        UniTask MoveToParent(ICard temporary, IReadOnlyList<ICard> entities, Transform parent, float speed);
+        UniTask MoveToParent(ICard temporary, IReadOnlyList<ICard> entities, ICardOwner owner, float speed);
     }
 }

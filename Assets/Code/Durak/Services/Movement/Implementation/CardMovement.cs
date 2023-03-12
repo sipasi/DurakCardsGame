@@ -3,9 +3,8 @@
 using Cysharp.Threading.Tasks;
 
 using Framework.Durak.Datas;
+using Framework.Shared.Cards.Entities;
 using Framework.Shared.Cards.Views;
-
-using UnityEngine;
 
 namespace Framework.Durak.Services.Movements
 {
@@ -23,18 +22,18 @@ namespace Framework.Durak.Services.Movements
 
         public UniTask MoveTo(Data data)
         {
-            Transform target = GetTarget();
+            ICardOwner target = GetTarget();
 
             return movement.MoveToPlace(data, target, lookSide);
         }
 
         public UniTask MoveTo(IEnumerable<Data> datas)
         {
-            Transform target = GetTarget();
+            ICardOwner target = GetTarget();
 
             return movement.MoveToPlace(datas, target, lookSide);
         }
 
-        protected abstract Transform GetTarget();
+        protected abstract ICardOwner GetTarget();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Framework.Durak.Players;
+using Framework.Shared.Cards.Entities;
 using Framework.Shared.Cards.Views;
 using Framework.Shared.Collections;
 
@@ -18,7 +19,7 @@ namespace Framework.Durak.Services.Movements
             this.places = places;
         }
 
-        protected override Transform GetTarget()
+        protected override ICardOwner GetTarget()
         {
             Transform target = queue.IsAttackerQueue switch
             {
@@ -26,7 +27,7 @@ namespace Framework.Durak.Services.Movements
                 false => places.ToDefends(),
             };
 
-            return target;
+            return new CardOwner(target);
         }
     }
 }

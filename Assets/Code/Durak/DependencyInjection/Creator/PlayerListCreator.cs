@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Framework.Durak.Players;
+using Framework.Shared.Cards.Entities;
 using Framework.Shared.Cards.Views;
 
 using UnityEngine;
@@ -11,37 +13,32 @@ namespace Framework.Durak.DependencyInjection.Creators
     [Serializable]
     internal class PlayerListCreator
     {
-        [SerializeField] private Pair top;
-        [SerializeField] private Pair bottom;
+        [SerializeField] private Info top;
+        [SerializeField] private Info bottom;
 
         public IReadOnlyList<IPlayer> Create()
         {
-            var players = new IPlayer[]
+            IPlayer[] players = new Info[] { top, bottom }.Select(static info => new Player
             {
-                new Player
-                {
-                    Id = Guid.NewGuid(),
-                    Name = top.name,
-                    Type = top.type,
-                    Hand = new Hand(CardLookSide.Back),
-                },
-                new Player
-                {
-                    Id = Guid.NewGuid(),
-                    Name = bottom.name,
-                    Type = bottom.type,
-                    Hand = new Hand(CardLookSide.Face),
-                }
-            };
+                Id = Guid.NewGuid(),
+                Name = info.name,
+                Type = info.type,
+
+                Owner = new CardOwner(info.transform),
+
+                Hand = new Hand(info.lookSide),
+            }).ToArray();
 
             return players;
         }
 
         [Serializable]
-        private struct Pair
+        private struct Info
         {
             public string name;
             public PlayerType type;
+            public CardLookSide lookSide;
+            public Transform transform;
         }
     }
 }

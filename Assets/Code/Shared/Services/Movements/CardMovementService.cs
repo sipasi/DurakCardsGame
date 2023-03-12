@@ -28,28 +28,28 @@ namespace Framework.Shared.Services.Movements
             this.pool = pool;
         }
 
-        public async UniTask MoveToParent(ICard temporary, ICard entity, Transform parent, float speed)
+        public async UniTask MoveToParent(ICard temporary, ICard entity, ICardOwner owner, float speed)
         {
-            preparation.BeforeMovement(temporary, entity, parent);
+            preparation.BeforeMovement(temporary, entity, owner);
 
             await MoveTemporaryTo(temporary, entity, speed);
 
             preparation.AfterMovement(temporary, entity);
         }
 
-        public async UniTask MoveToParent(ICard temporary, IReadOnlyList<ICard> entities, Transform parent, float speed)
+        public async UniTask MoveToParent(ICard temporary, IReadOnlyList<ICard> entities, ICardOwner owner, float speed)
         {
             for (int i = 0; i < entities.Count; i++)
             {
                 ICard entity = entities[i];
 
-                await MoveToParent(temporary, entity, parent, speed);
+                await MoveToParent(temporary, entity, owner, speed);
             }
         }
 
         private async UniTask MoveTemporaryTo(ICard temporary, ICard card, float speed)
         {
-            IProcess process = GetProcess(temporary.Transform, card.Transform, speed);
+            IProcess process = GetProcess(temporary.Navigation, card.Navigation, speed);
 
             task.Add(process);
 
@@ -62,7 +62,7 @@ namespace Framework.Shared.Services.Movements
             pool.Return(process);
         }
 
-        private IProcess GetProcess(Transform temporary, Transform card, float speed)
+        private IProcess GetProcess(ICardNavigation temporary, ICardNavigation card, float speed)
         {
             MoveProcess process = pool.Get<MoveProcess>();
 

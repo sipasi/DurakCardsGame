@@ -14,7 +14,7 @@ namespace Framework.Durak.DependencyInjection.Creators
     internal class CardListCreator
     {
         [Header("Cards")]
-        [SerializeField] private CardEntity prefab;
+        [SerializeField] private CardPrefab prefab;
         [SerializeField] private CardTheme theme;
         [SerializeField] private Transform place;
 
@@ -24,7 +24,16 @@ namespace Framework.Durak.DependencyInjection.Creators
 
             Assert.IsFalse(total == 0);
 
-            var cards = CardEntityCreator.Create(prefab, place, theme, total);
+            CardsBuilder.Create(out var info);
+
+            var cards = info
+                .SetPrefab(prefab)
+                .SetParent(place)
+                .SetOwner(new CardOwner(place))
+                .SetTheme(theme)
+                .SetCount(total)
+                .SetNavigationFactory(static card => new TransformNavigation(card.Transform))
+                .Build();
 
             return cards;
         }

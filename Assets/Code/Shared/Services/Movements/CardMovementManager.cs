@@ -12,26 +12,26 @@ namespace Framework.Shared.Services.Movements
 {
     public class CardMovementManager : ICardMovementManager
     {
-        private readonly ICard temporary;
+        private readonly TemporaryCard temporary;
 
         private readonly ICardMovementService movement;
 
         private readonly MovementSpeed speed;
 
-        public CardMovementManager(ITemporaryCard temporary, ICardMovementService movement, MovementSpeed speed)
+        public CardMovementManager(TemporaryCard temporary, ICardMovementService movement, MovementSpeed speed)
         {
             this.temporary = temporary;
             this.movement = movement;
             this.speed = speed;
         }
 
-        public UniTask MoveToPlace(ICard card, Transform place, CardLookSide lookSide)
+        public UniTask MoveToPlace(ICard card, ICardOwner place, CardLookSide lookSide)
         {
             card.View.LookSide = lookSide;
 
             return movement.MoveToParent(temporary, card, place, speed.Value);
         }
-        public async UniTask MoveToPlace(IReadOnlyList<ICard> cards, Transform place, CardLookSide lookSide)
+        public async UniTask MoveToPlace(IReadOnlyList<ICard> cards, ICardOwner place, CardLookSide lookSide)
         {
             for (int i = 0; i < cards.Count; i++)
             {
@@ -40,7 +40,7 @@ namespace Framework.Shared.Services.Movements
                 await MoveToPlace(card, place, lookSide);
             }
         }
-        public async UniTask MoveToPlace(IEnumerable<ICard> cards, Transform place, CardLookSide lookSide)
+        public async UniTask MoveToPlace(IEnumerable<ICard> cards, ICardOwner place, CardLookSide lookSide)
         {
             foreach (var card in cards)
             {

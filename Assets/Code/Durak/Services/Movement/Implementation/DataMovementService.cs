@@ -24,7 +24,7 @@ namespace Framework.Durak.Services.Movements
             this.movement = movement;
         }
 
-        public async UniTask MoveToPlace(Data data, Transform place, CardLookSide lookSide)
+        public async UniTask MoveToPlace(Data data, ICardOwner place, CardLookSide lookSide)
         {
             ICard card = map.Get(data);
 
@@ -32,7 +32,7 @@ namespace Framework.Durak.Services.Movements
 
             card.View.LookSide = lookSide;
         }
-        public async UniTask MoveToPlace(IReadOnlyList<Data> datas, Transform place, CardLookSide lookSide)
+        public async UniTask MoveToPlace(IReadOnlyList<Data> datas, ICardOwner place, CardLookSide lookSide)
         {
             for (int i = 0; i < datas.Count; i++)
             {
@@ -41,7 +41,7 @@ namespace Framework.Durak.Services.Movements
                 await MoveToPlace(data, place, lookSide);
             }
         }
-        public async UniTask MoveToPlace(IEnumerable<Data> datas, Transform place, CardLookSide lookSide)
+        public async UniTask MoveToPlace(IEnumerable<Data> datas, ICardOwner place, CardLookSide lookSide)
         {
             foreach (var data in datas)
             {

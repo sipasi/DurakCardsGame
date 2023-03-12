@@ -12,23 +12,19 @@ namespace Framework.Durak.DependencyInjection.Configurators
     [Serializable]
     internal class CardsModuleConfigurator : ServiceConfigurator
     {
-        [SerializeField] private TemporaryCardEntity temporary;
+        [Header("Temporary card")]
+        [SerializeField] private CardPrefab prefab;
+        [SerializeField] private Transform place;
 
         public override void Configure(ServiceBuilder builder)
         {
-            builder.singleton
-                .Add<ITemporaryCard>(temporary);
-        }
+            var instance = Instantiate(prefab, place);
 
-        [Serializable]
-        private class TemporaryCardEntity : ITemporaryCard
-        {
-            [SerializeField] private CardEntity card;
+            CardView view = new(instance.Image, face: null, back: null);
 
-            public CardView View => card.View;
-            public Transform Transform => card.Transform;
+            TemporaryCard card = new TemporaryCard(view, new TransformNavigation(instance.transform));
 
-            public bool InputSensitive => card.InputSensitive;
+            builder.singleton.Add<TemporaryCard>(card);
         }
     }
 }
