@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+ <html xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head><meta content="en-us" http-equiv="Content-Language" /><meta content="text/html; charset=utf-16" http-equiv="Content-Type" /><title _locID="ConversionReport0">
+          Migration Report
+        </title><style> 
+                    /* Body style, for the entire document */
+                    body
+                    {
+                        background: #F3F3F4;
+                        color: #1E1E1F;
+                        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    /* Header1 style, used for the main title */
+                    h1
+                    {
+                        padding: 10px 0px 10px 10px;
+                        font-size: 21pt;
+                        background-color: #E2E2E2;
+                        border-bottom: 1px #C1C1C2 solid; 
+                        color: #201F20;
+                        margin: 0;
+                        font-weight: normal;
+                    }
+
+                    /* Header2 style, used for "Overview" and other sections */
+                    h2
+                    {
+                        font-size: 18pt;
+                        font-weight: normal;
+                        padding: 15px 0 5px 0;
+                        margin: 0;
+                    }
+
+                    /* Header3 style, used for sub-sections, such as project name */
+                    h3
+                    {
+                        font-weight: normal;
+                        font-size: 15pt;
+                        margin: 0;
+                        padding: 15px 0 5px 0;
+                        background-color: transparent;
+                    }
+
+                    /* Color all hyperlinks one color */
+                    a
+                    {
+                        color: #1382CE;
+                    }
+
+                    /* Table styles */ 
+                    table
+                    {
+                        border-spacing: 0 0;
+                        border-collapse: collapse;
+                        font-size: 10pt;
+                    }
+
+                    table th
+                    {
+                        background: #E7E7E8;
+                        text-align: left;
+                        text-decoration: none;
+                        font-weight: normal;
+                        padding: 3px 6px 3px 6px;
+                    }
+
+                    table td
+                    {
+                        vertical-align: top;
+                        padding: 3px 6px 5px 5px;
+                        margin: 0px;
+                        border: 1px solid #E7E7E8;
+                        background: #F7F7F8;
+                    }
+
+                    /* Local link is a style for hyperlinks that link to file:/// content, there are lots so color them as 'normal' text until the user mouse overs */
+                    .localLink
+                    {
+                        color: #1E1E1F;
+                        background: #EEEEED;
+                        text-decoration: none;
+                    }
+
+                    .localLink:hover
+                    {
+                        color: #1382CE;
+                        background: #FFFF99;
+                        text-decoration: none;
+                    }
+
+                    /* Center text, used in the over views cells that contain message level counts */ 
+                    .textCentered
+                    {
+                        text-align: center;
+                    }
+
+                    /* The message cells in message tables should take up all avaliable space */
+                    .messageCell
+                    {
+                        width: 100%;
+                    }
+
+                    /* Padding around the content after the h1 */ 
+                    #content 
+                    {
+	                    padding: 0px 12px 12px 12px; 
+                    }
+
+                    /* The overview table expands to width, with a max width of 97% */ 
+                    #overview table
+                    {
+                        width: auto;
+                        max-width: 75%; 
+                    }
+
+                    /* The messages tables are always 97% width */
+                    #messages table
+                    {
+                        width: 97%;
+                    }
+
+                    /* All Icons */
+                    .IconSuccessEncoded, .IconInfoEncoded, .IconWarningEncoded, .IconErrorEncoded
+                    {
+                        min-width:18px;
+                        min-height:18px; 
+                        background-repeat:no-repeat;
+                        background-position:center;
+                    }
+
+                    /* Success icon encoded */
+                    .IconSuccessEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconSuccess#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABcElEQVR4Xq2TsUsCURzHv15g8ZJcBWlyiYYgCIWcb9DFRRwMW5TA2c0/QEFwFkxxUQdxVlBwCYWOi6IhWgQhBLHJUCkhLr/BW8S7gvrAg+N+v8/v+x68Z8MGy+XSCyABQAXgBgHGALoASkIIDWSLeLBetdHryMjd5IxQPWT4rn1c/P7+xxp72Cs9m5SZ0Bq2vPnbPFafK2zDvmNHypdC0BPkLlQhxJsCAhQoZwdZU5mwxh720qGo8MzTxTTKZDPCx2HoVzp6lz0Q9tKhyx0kGs8Ny+TkWRKk8lCROwEduhyg9l/6lunOPSfmH3NUH6uQ0KHLAe7JYvJjevm+DAMGJHToKtigE+vwvIidxLamb8IBY9e+C5LiXREkfho3TSd06HJA13/oh6T51MTsfQbHrsMynQ5dDihFjiK8JJAU9AKIWTp76dCVN7HWHrajmUEGvyF9nkbAE6gLIS7kTUyuf2gscLoJrElZo/Mvj+nPz/kLTmfnEwP3tB0AAAAASUVORK5CYII=);
+                    }
+
+                    /* Information icon encoded */
+                    .IconInfoEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconInformation#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHElEQVR4Xs2TsUoDQRRF7wwoziokjZUKadInhdhukR9YP8DMX1hYW+QvdsXa/QHBbcXC7W0CamWTQnclFutceIQJwwaWNLlwm5k5d94M76mmaeCrrmsLYOocY12FcxZFUeozCqKqqgYA8uevv1H6VuPxcwlfk5N92KHBxfFeCSAxxswlYAW/Xr989x/mv9gkhtyMDhcAxgzRsp7flj8B/HF1RsMXq+NZMkopaHe7lbKxQUEIGbKsYNoGn969060hZBkQex/W8oRQwsQaW2o3Ago2SVcJUzAgY3N0lTCZZm+zPS8HB51gMmS1DEYyOz9acKO1D8JWTlafKIMxdhvlfdyT94Vv5h7P8Ky7nQzACmhvKq3zk3PjW9asz9D/1oigecsioooAAAAASUVORK5CYII=);
+                    }
+
+                    /* Warning icon encoded */
+                    .IconWarningEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconWarning#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAx0lEQVR4XpWSMQ7CMAxFf4xAyBMLCxMrO8dhaBcuwdCJS3RJBw7SA/QGTCxdWJgiQYWKXJWKIXHIlyw5lqr34tQgEOdcBsCOx5yZK3hCCKdYXneQkh4pEfqzLfu+wVDSyyzFoJjfz9NB+pAF+eizx2Vruts0k15mPgvS6GYvpVtQhB61IB/dk6AF6fS4Ben0uIX5odtFe8Q/eW1KvFeH4e8khT6+gm5B+t3juyDt7n0jpe+CANTd+oTUjN/U3yVaABnSUjFz/gFq44JaVSCXeQAAAABJRU5ErkJggg==);
+                    }
+
+                    /* Error icon encoded */
+                    .IconErrorEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconError#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQElEQVR4XqWTvUoEQRCE6wYPZUA80AfwAQz23uCMjA7MDRQEIzPBVEyNTQUFIw00vcQTTMzuAh/AxEQQT8HF/3G/oGGnEUGuoNnd6qoZuqltyKEsyzVJq5I6rnUp6SjGeGhESikzzlc1eL7opfuVbrqbU1Zw9NCgtQMaZpY0eNnaaL2fHusvTK5vKu7sjSS1Y4y3QUA6K3e3Mau5UFDyMP7tYF9o8cAHZv68vipoIJg971PZIZ5HiwdvYGGvFVFHmGmZ2MxwmQYPXubPl9Up0tfoMQGetXd6mRbvhBw+boZ6WF7Mbv1+GsHRk0fQmPAH1GfmZirbCfDJ61tw3Px8/8pZsPAG4jlVhcPgZ7adwNWBB68lkRQWFiTgFlbnLY3DGGM7izIJIyT/jjIvEJw6fdJTc6krDzh6aMwMP9bvDH4ADSsa9uSWVJkAAAAASUVORK5CYII=);
+                    }
+                 </style><script type="text/javascript" language="javascript"> 
+          
+            // Startup 
+            // Hook up the the loaded event for the document/window, to linkify the document content
+            var startupFunction = function() { linkifyElement("messages"); };
+            
+            if(window.attachEvent)
+            {
+              window.attachEvent('onload', startupFunction);
+            }
+            else if (window.addEventListener) 
+            {
+              window.addEventListener('load', startupFunction, false);
+            }
+            else 
+            {
+              document.addEventListener('load', startupFunction, false);
+            } 
+            
+            // Toggles the visibility of table rows with the specified name 
+            function toggleTableRowsByName(name)
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  if(!!currentName && currentName.indexOf(name) == 0)
+                  {
+                      var isVisible = allRows[i].style.display == ''; 
+                      isVisible ? allRows[i].style.display = 'none' : allRows[i].style.display = '';
+                  }
+               }
+            }
+            
+            function scrollToFirstVisibleRow(name) 
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  var isVisible = allRows[i].style.display == ''; 
+                  if(!!currentName && currentName.indexOf(name) == 0 && isVisible)
+                  {
+                     allRows[i].scrollIntoView(true); 
+                     return true; 
+                  }
+               }
+               
+               return false;
+            }
+            
+            // Linkifies the specified text content, replaces candidate links with html links 
+            function linkify(text)
+            {
+                 if(!text || 0 === text.length)
+                 {
+                     return text; 
+                 }
+
+                 // Find http, https and ftp links and replace them with hyper links 
+                 var urlLink = /(http|https|ftp)\:\/\/[a-zA-Z0-9\-\.]+(:[a-zA-Z0-9]*)?\/?([a-zA-Z0-9\-\._\?\,\/\\\+&%\$#\=~;\{\}])*/gi;
+                 
+                 return text.replace(urlLink, '<a href="$&">$&</a>') ;
+            }
+            
+            // Linkifies the specified element by ID
+            function linkifyElement(id)
+            {
+                var element = document.getElementById(id);
+                if(!!element)
+                {
+                  element.innerHTML = linkify(element.innerHTML); 
+                }
+            }
+            
+            function ToggleMessageVisibility(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              toggleTableRowsByName("MessageRowClass" + projectName);
+              toggleTableRowsByName('MessageRowHeaderShow' + projectName);
+              toggleTableRowsByName('MessageRowHeaderHide' + projectName); 
+            }
+            
+            function ScrollToFirstVisibleMessage(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              // First try the 'Show messages' row
+              if(!scrollToFirstVisibleRow('MessageRowHeaderShow' + projectName))
+              {
+                // Failed to find a visible row for 'Show messages', try an actual message row 
+                scrollToFirstVisibleRow('MessageRowClass' + projectName); 
+              }
+            }
+           </script></head><body><h1 _locID="ConversionReport">
+          Migration Report - </h1><div id="content"><h2 _locID="OverviewTitle">Overview</h2><div id="overview"><table><tr><th></th><th _locID="ProjectTableHeader">Project</th><th _locID="PathTableHeader">Path</th><th _locID="ErrorsTableHeader">Errors</th><th _locID="WarningsTableHeader">Warnings</th><th _locID="MessagesTableHeader">Messages</th></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Durak.Audios">Framework.Durak.Audios</a></strong></td><td>Framework.Durak.Audios.csproj</td><td class="textCentered"><a href="#Framework.Durak.AudiosError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Durak.Collections">Framework.Durak.Collections</a></strong></td><td>Framework.Durak.Collections.csproj</td><td class="textCentered"><a href="#Framework.Durak.CollectionsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Durak.Datas">Framework.Durak.Datas</a></strong></td><td>Framework.Durak.Datas.csproj</td><td class="textCentered"><a href="#Framework.Durak.DatasError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Durak.Datas.Tests">Framework.Durak.Datas.Tests</a></strong></td><td>Framework.Durak.Datas.Tests.csproj</td><td class="textCentered"><a href="#Framework.Durak.Datas.TestsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Durak.DependencyInjection">Framework.Durak.DependencyInjection</a></strong></td><td>Framework.Durak.DependencyInjection.csproj</td><td class="textCentered"><a href="#Framework.Durak.DependencyInjectionError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Durak.Game">Framework.Durak.Game</a></strong></td><td>Framework.Durak.Game.csproj</td><td class="textCentered"><a href="#Framework.Durak.GameError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Durak.Gameplay">Framework.Durak.Gameplay</a></strong></td><td>Framework.Durak.Gameplay.csproj</td><td class="textCentered"><a href="#Framework.Durak.GameplayError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Durak.Players">Framework.Durak.Players</a></strong></td><td>Framework.Durak.Players.csproj</td><td class="textCentered"><a href="#Framework.Durak.PlayersError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Durak.Rules">Framework.Durak.Rules</a></strong></td><td>Framework.Durak.Rules.csproj</td><td class="textCentered"><a href="#Framework.Durak.RulesError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Durak.Services">Framework.Durak.Services</a></strong></td><td>Framework.Durak.Services.csproj</td><td class="textCentered"><a href="#Framework.Durak.ServicesError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Durak.States">Framework.Durak.States</a></strong></td><td>Framework.Durak.States.csproj</td><td class="textCentered"><a href="#Framework.Durak.StatesError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Durak.Structures">Framework.Durak.Structures</a></strong></td><td>Framework.Durak.Structures.csproj</td><td class="textCentered"><a href="#Framework.Durak.StructuresError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Durak.Ui">Framework.Durak.Ui</a></strong></td><td>Framework.Durak.Ui.csproj</td><td class="textCentered"><a href="#Framework.Durak.UiError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.App">Framework.Shared.App</a></strong></td><td>Framework.Shared.App.csproj</td><td class="textCentered"><a href="#Framework.Shared.AppError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.Audio">Framework.Shared.Audio</a></strong></td><td>Framework.Shared.Audio.csproj</td><td class="textCentered"><a href="#Framework.Shared.AudioError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.Cards">Framework.Shared.Cards</a></strong></td><td>Framework.Shared.Cards.csproj</td><td class="textCentered"><a href="#Framework.Shared.CardsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.Collections">Framework.Shared.Collections</a></strong></td><td>Framework.Shared.Collections.csproj</td><td class="textCentered"><a href="#Framework.Shared.CollectionsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.Collections.Tests">Framework.Shared.Collections.Tests</a></strong></td><td>Framework.Shared.Collections.Tests.csproj</td><td class="textCentered"><a href="#Framework.Shared.Collections.TestsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.DependencyInjection">Framework.Shared.DependencyInjection</a></strong></td><td>Framework.Shared.DependencyInjection.csproj</td><td class="textCentered"><a href="#Framework.Shared.DependencyInjectionError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.DependencyInjection.Tests">Framework.Shared.DependencyInjection.Tests</a></strong></td><td>Framework.Shared.DependencyInjection.Tests.csproj</td><td class="textCentered"><a href="#Framework.Shared.DependencyInjection.TestsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.Entities">Framework.Shared.Entities</a></strong></td><td>Framework.Shared.Entities.csproj</td><td class="textCentered"><a href="#Framework.Shared.EntitiesError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.Events">Framework.Shared.Events</a></strong></td><td>Framework.Shared.Events.csproj</td><td class="textCentered"><a href="#Framework.Shared.EventsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.Input">Framework.Shared.Input</a></strong></td><td>Framework.Shared.Input.csproj</td><td class="textCentered"><a href="#Framework.Shared.InputError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.IO">Framework.Shared.IO</a></strong></td><td>Framework.Shared.IO.csproj</td><td class="textCentered"><a href="#Framework.Shared.IOError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.IO.Tests">Framework.Shared.IO.Tests</a></strong></td><td>Framework.Shared.IO.Tests.csproj</td><td class="textCentered"><a href="#Framework.Shared.IO.TestsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.Saves">Framework.Shared.Saves</a></strong></td><td>Framework.Shared.Saves.csproj</td><td class="textCentered"><a href="#Framework.Shared.SavesError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.Serialization">Framework.Shared.Serialization</a></strong></td><td>Framework.Shared.Serialization.csproj</td><td class="textCentered"><a href="#Framework.Shared.SerializationError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.Serialization.Tests">Framework.Shared.Serialization.Tests</a></strong></td><td>Framework.Shared.Serialization.Tests.csproj</td><td class="textCentered"><a href="#Framework.Shared.Serialization.TestsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.Services">Framework.Shared.Services</a></strong></td><td>Framework.Shared.Services.csproj</td><td class="textCentered"><a href="#Framework.Shared.ServicesError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.Services.Tests">Framework.Shared.Services.Tests</a></strong></td><td>Framework.Shared.Services.Tests.csproj</td><td class="textCentered"><a href="#Framework.Shared.Services.TestsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.States">Framework.Shared.States</a></strong></td><td>Framework.Shared.States.csproj</td><td class="textCentered"><a href="#Framework.Shared.StatesError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.Structures">Framework.Shared.Structures</a></strong></td><td>Framework.Shared.Structures.csproj</td><td class="textCentered"><a href="#Framework.Shared.StructuresError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.Tests">Framework.Shared.Tests</a></strong></td><td>Framework.Shared.Tests.csproj</td><td class="textCentered"><a href="#Framework.Shared.TestsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Framework.Shared.UI">Framework.Shared.UI</a></strong></td><td>Framework.Shared.UI.csproj</td><td class="textCentered"><a href="#Framework.Shared.UIError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#ProjectCard.Editor.PropertyDrawers">ProjectCard.Editor.PropertyDrawers</a></strong></td><td>ProjectCard.Editor.PropertyDrawers.csproj</td><td class="textCentered"><a href="#ProjectCard.Editor.PropertyDrawersError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconSuccessEncoded" /><td><strong><a href="#Solution"><span _locID="OverviewSolutionSpan">Solution</span></a></strong></td><td>DurakCardsGame.sln</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('Solution'); return false;">1</a></td></tr></table></div><h2 _locID="SolutionAndProjectsTitle">Solution and projects</h2><div id="messages"><a name="Framework.Durak.Audios" /><h3>Framework.Durak.Audios</h3><table><tr id="Framework.Durak.AudiosHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Durak.Audios"><td class="IconErrorEncoded"><a name="Framework.Durak.AudiosError" /></td><td class="messageCell"><strong>Framework.Durak.Audios.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Durak.Collections" /><h3>Framework.Durak.Collections</h3><table><tr id="Framework.Durak.CollectionsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Durak.Collections"><td class="IconErrorEncoded"><a name="Framework.Durak.CollectionsError" /></td><td class="messageCell"><strong>Framework.Durak.Collections.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Durak.Datas" /><h3>Framework.Durak.Datas</h3><table><tr id="Framework.Durak.DatasHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Durak.Datas"><td class="IconErrorEncoded"><a name="Framework.Durak.DatasError" /></td><td class="messageCell"><strong>Framework.Durak.Datas.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Durak.Datas.Tests" /><h3>Framework.Durak.Datas.Tests</h3><table><tr id="Framework.Durak.Datas.TestsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Durak.Datas.Tests"><td class="IconErrorEncoded"><a name="Framework.Durak.Datas.TestsError" /></td><td class="messageCell"><strong>Framework.Durak.Datas.Tests.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Durak.DependencyInjection" /><h3>Framework.Durak.DependencyInjection</h3><table><tr id="Framework.Durak.DependencyInjectionHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Durak.DependencyInjection"><td class="IconErrorEncoded"><a name="Framework.Durak.DependencyInjectionError" /></td><td class="messageCell"><strong>Framework.Durak.DependencyInjection.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Durak.Game" /><h3>Framework.Durak.Game</h3><table><tr id="Framework.Durak.GameHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Durak.Game"><td class="IconErrorEncoded"><a name="Framework.Durak.GameError" /></td><td class="messageCell"><strong>Framework.Durak.Game.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Durak.Gameplay" /><h3>Framework.Durak.Gameplay</h3><table><tr id="Framework.Durak.GameplayHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Durak.Gameplay"><td class="IconErrorEncoded"><a name="Framework.Durak.GameplayError" /></td><td class="messageCell"><strong>Framework.Durak.Gameplay.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Durak.Players" /><h3>Framework.Durak.Players</h3><table><tr id="Framework.Durak.PlayersHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Durak.Players"><td class="IconErrorEncoded"><a name="Framework.Durak.PlayersError" /></td><td class="messageCell"><strong>Framework.Durak.Players.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Durak.Rules" /><h3>Framework.Durak.Rules</h3><table><tr id="Framework.Durak.RulesHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Durak.Rules"><td class="IconErrorEncoded"><a name="Framework.Durak.RulesError" /></td><td class="messageCell"><strong>Framework.Durak.Rules.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Durak.Services" /><h3>Framework.Durak.Services</h3><table><tr id="Framework.Durak.ServicesHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Durak.Services"><td class="IconErrorEncoded"><a name="Framework.Durak.ServicesError" /></td><td class="messageCell"><strong>Framework.Durak.Services.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Durak.States" /><h3>Framework.Durak.States</h3><table><tr id="Framework.Durak.StatesHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Durak.States"><td class="IconErrorEncoded"><a name="Framework.Durak.StatesError" /></td><td class="messageCell"><strong>Framework.Durak.States.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Durak.Structures" /><h3>Framework.Durak.Structures</h3><table><tr id="Framework.Durak.StructuresHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Durak.Structures"><td class="IconErrorEncoded"><a name="Framework.Durak.StructuresError" /></td><td class="messageCell"><strong>Framework.Durak.Structures.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Durak.Ui" /><h3>Framework.Durak.Ui</h3><table><tr id="Framework.Durak.UiHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Durak.Ui"><td class="IconErrorEncoded"><a name="Framework.Durak.UiError" /></td><td class="messageCell"><strong>Framework.Durak.Ui.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.App" /><h3>Framework.Shared.App</h3><table><tr id="Framework.Shared.AppHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.App"><td class="IconErrorEncoded"><a name="Framework.Shared.AppError" /></td><td class="messageCell"><strong>Framework.Shared.App.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.Audio" /><h3>Framework.Shared.Audio</h3><table><tr id="Framework.Shared.AudioHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.Audio"><td class="IconErrorEncoded"><a name="Framework.Shared.AudioError" /></td><td class="messageCell"><strong>Framework.Shared.Audio.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.Cards" /><h3>Framework.Shared.Cards</h3><table><tr id="Framework.Shared.CardsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.Cards"><td class="IconErrorEncoded"><a name="Framework.Shared.CardsError" /></td><td class="messageCell"><strong>Framework.Shared.Cards.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.Collections" /><h3>Framework.Shared.Collections</h3><table><tr id="Framework.Shared.CollectionsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.Collections"><td class="IconErrorEncoded"><a name="Framework.Shared.CollectionsError" /></td><td class="messageCell"><strong>Framework.Shared.Collections.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.Collections.Tests" /><h3>Framework.Shared.Collections.Tests</h3><table><tr id="Framework.Shared.Collections.TestsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.Collections.Tests"><td class="IconErrorEncoded"><a name="Framework.Shared.Collections.TestsError" /></td><td class="messageCell"><strong>Framework.Shared.Collections.Tests.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.DependencyInjection" /><h3>Framework.Shared.DependencyInjection</h3><table><tr id="Framework.Shared.DependencyInjectionHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.DependencyInjection"><td class="IconErrorEncoded"><a name="Framework.Shared.DependencyInjectionError" /></td><td class="messageCell"><strong>Framework.Shared.DependencyInjection.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.DependencyInjection.Tests" /><h3>Framework.Shared.DependencyInjection.Tests</h3><table><tr id="Framework.Shared.DependencyInjection.TestsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.DependencyInjection.Tests"><td class="IconErrorEncoded"><a name="Framework.Shared.DependencyInjection.TestsError" /></td><td class="messageCell"><strong>Framework.Shared.DependencyInjection.Tests.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.Entities" /><h3>Framework.Shared.Entities</h3><table><tr id="Framework.Shared.EntitiesHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.Entities"><td class="IconErrorEncoded"><a name="Framework.Shared.EntitiesError" /></td><td class="messageCell"><strong>Framework.Shared.Entities.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.Events" /><h3>Framework.Shared.Events</h3><table><tr id="Framework.Shared.EventsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.Events"><td class="IconErrorEncoded"><a name="Framework.Shared.EventsError" /></td><td class="messageCell"><strong>Framework.Shared.Events.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.Input" /><h3>Framework.Shared.Input</h3><table><tr id="Framework.Shared.InputHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.Input"><td class="IconErrorEncoded"><a name="Framework.Shared.InputError" /></td><td class="messageCell"><strong>Framework.Shared.Input.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.IO" /><h3>Framework.Shared.IO</h3><table><tr id="Framework.Shared.IOHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.IO"><td class="IconErrorEncoded"><a name="Framework.Shared.IOError" /></td><td class="messageCell"><strong>Framework.Shared.IO.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.IO.Tests" /><h3>Framework.Shared.IO.Tests</h3><table><tr id="Framework.Shared.IO.TestsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.IO.Tests"><td class="IconErrorEncoded"><a name="Framework.Shared.IO.TestsError" /></td><td class="messageCell"><strong>Framework.Shared.IO.Tests.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.Saves" /><h3>Framework.Shared.Saves</h3><table><tr id="Framework.Shared.SavesHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.Saves"><td class="IconErrorEncoded"><a name="Framework.Shared.SavesError" /></td><td class="messageCell"><strong>Framework.Shared.Saves.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.Serialization" /><h3>Framework.Shared.Serialization</h3><table><tr id="Framework.Shared.SerializationHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.Serialization"><td class="IconErrorEncoded"><a name="Framework.Shared.SerializationError" /></td><td class="messageCell"><strong>Framework.Shared.Serialization.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.Serialization.Tests" /><h3>Framework.Shared.Serialization.Tests</h3><table><tr id="Framework.Shared.Serialization.TestsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.Serialization.Tests"><td class="IconErrorEncoded"><a name="Framework.Shared.Serialization.TestsError" /></td><td class="messageCell"><strong>Framework.Shared.Serialization.Tests.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.Services" /><h3>Framework.Shared.Services</h3><table><tr id="Framework.Shared.ServicesHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.Services"><td class="IconErrorEncoded"><a name="Framework.Shared.ServicesError" /></td><td class="messageCell"><strong>Framework.Shared.Services.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.Services.Tests" /><h3>Framework.Shared.Services.Tests</h3><table><tr id="Framework.Shared.Services.TestsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.Services.Tests"><td class="IconErrorEncoded"><a name="Framework.Shared.Services.TestsError" /></td><td class="messageCell"><strong>Framework.Shared.Services.Tests.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.States" /><h3>Framework.Shared.States</h3><table><tr id="Framework.Shared.StatesHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.States"><td class="IconErrorEncoded"><a name="Framework.Shared.StatesError" /></td><td class="messageCell"><strong>Framework.Shared.States.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.Structures" /><h3>Framework.Shared.Structures</h3><table><tr id="Framework.Shared.StructuresHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.Structures"><td class="IconErrorEncoded"><a name="Framework.Shared.StructuresError" /></td><td class="messageCell"><strong>Framework.Shared.Structures.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.Tests" /><h3>Framework.Shared.Tests</h3><table><tr id="Framework.Shared.TestsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.Tests"><td class="IconErrorEncoded"><a name="Framework.Shared.TestsError" /></td><td class="messageCell"><strong>Framework.Shared.Tests.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Framework.Shared.UI" /><h3>Framework.Shared.UI</h3><table><tr id="Framework.Shared.UIHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassFramework.Shared.UI"><td class="IconErrorEncoded"><a name="Framework.Shared.UIError" /></td><td class="messageCell"><strong>Framework.Shared.UI.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="ProjectCard.Editor.PropertyDrawers" /><h3>ProjectCard.Editor.PropertyDrawers</h3><table><tr id="ProjectCard.Editor.PropertyDrawersHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="ErrorRowClassProjectCard.Editor.PropertyDrawers"><td class="IconErrorEncoded"><a name="ProjectCard.Editor.PropertyDrawersError" /></td><td class="messageCell"><strong>ProjectCard.Editor.PropertyDrawers.csproj:
+        </strong><span>The application which this project type is based on was not found. Please try this link for further information: http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Solution" /><h3 _locID="ProjectDisplayNameHeader">Solution</h3><table><tr id="SolutionHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="MessageRowHeaderShowSolution"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="SolutionMessage" onclick="ToggleMessageVisibility('Solution'); return false;">
+          Show 1 additional messages
+        </a></td></tr><tr name="MessageRowClassSolution" style="display: none"><td class="IconInfoEncoded"><a name="SolutionMessage" /></td><td class="messageCell"><strong>DurakCardsGame.sln:
+        </strong><span>The solution file does not require migration.</span></td></tr><tr style="display: none" name="MessageRowHeaderHideSolution"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="SolutionMessage" onclick="ToggleMessageVisibility('Solution'); return false;">
+          Hide 1 additional messages
+        </a></td></tr></table></div></div></body></html>
