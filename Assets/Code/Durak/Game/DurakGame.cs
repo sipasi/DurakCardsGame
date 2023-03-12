@@ -1,5 +1,4 @@
-﻿
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 
 using UnityEngine;
 
@@ -17,6 +16,8 @@ namespace Framework.Durak.Game
         }
         public UniTask UnloadGame()
         {
+            newGameLoader.Unload();
+
             return UniTask.CompletedTask;
         }
     }
