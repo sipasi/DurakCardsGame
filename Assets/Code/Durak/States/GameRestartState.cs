@@ -65,6 +65,11 @@ namespace Framework.Durak.States
         {
             storage.Restore();
 
+            foreach (var player in storage.Active)
+            {
+                player.Hand.Clear();
+            }
+
             board.Clear();
 
             places.Clear();
