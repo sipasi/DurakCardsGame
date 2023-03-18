@@ -1,8 +1,6 @@
 ﻿
 using System;
 
-using Framework.Shared.Cards.Entities;
-
 namespace Framework.Durak.Players
 {
     public interface IPlayer
@@ -10,7 +8,7 @@ namespace Framework.Durak.Players
         Guid Id { get; }
         string Name { get; }
 
-        ICardOwner Owner { get; }
+        Place Place { get; }
 
         PlayerType Type { get; }
 
