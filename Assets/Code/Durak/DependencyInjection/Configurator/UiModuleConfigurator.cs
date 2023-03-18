@@ -2,7 +2,6 @@
 
 using Framework.Shared.Cards.Views;
 using Framework.Shared.DependencyInjection;
-using Framework.Shared.DependencyInjection.Unity;
 
 using TMPro;
 
@@ -12,14 +11,14 @@ using UnityEngine.UI;
 namespace Framework.Durak.DependencyInjection.Configurators
 {
     [Serializable]
-    internal class UiModuleConfigurator : ServiceConfigurator
+    internal class UiModuleConfigurator : MonoBehaviour, IConfigurator
     {
         [Header("Deck")]
         [SerializeField] private Image trump;
         [SerializeField] private Image back;
         [SerializeField] private TextMeshProUGUI text;
 
-        public override void Configure(ServiceBuilder builder)
+        public void Configure(ServiceBuilder builder)
         {
             builder.singleton
                 .Add<IDeckView>(new DeckView(trump, back, text));

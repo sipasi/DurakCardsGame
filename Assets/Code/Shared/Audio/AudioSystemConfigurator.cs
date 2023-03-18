@@ -1,11 +1,10 @@
 ﻿using Framework.Shared.DependencyInjection;
-using Framework.Shared.DependencyInjection.Unity;
 
 using UnityEngine;
 
 namespace Framework.Shared.Audios
 {
-    internal class AudioSystemConfigurator : ServiceConfigurator
+    internal class AudioSystemConfigurator : MonoBehaviour, IConfigurator
     {
         [Header("SoundSystem")]
         [SerializeField] private AudioSource source;
@@ -14,7 +13,7 @@ namespace Framework.Shared.Audios
         [SerializeField] private AudioClip begin;
         [SerializeField] private AudioClip end;
 
-        public override void Configure(ServiceBuilder builder)
+        public void Configure(ServiceBuilder builder)
         {
             var soundSystem = new SoundSystem(source);
 

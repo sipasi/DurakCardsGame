@@ -1,7 +1,6 @@
 ﻿using System;
 
 using Framework.Shared.DependencyInjection;
-using Framework.Shared.DependencyInjection.Unity;
 using Framework.Shared.Services.Movements;
 using Framework.Shared.Services.Pools;
 using Framework.Shared.Services.Saves;
@@ -14,7 +13,7 @@ using UnityEngine;
 namespace Framework.Durak.DependencyInjection.Configurators
 {
     [Serializable]
-    internal class ServiceModuleConfigurator : ServiceConfigurator
+    internal class ServiceModuleConfigurator : MonoBehaviour, IConfigurator
     {
         [Header("Movement")]
         [SerializeField] private MovementSpeed speed;
@@ -24,7 +23,7 @@ namespace Framework.Durak.DependencyInjection.Configurators
         [SerializeField] private string fileName;
         [SerializeField] private string extention;
 
-        public override void Configure(ServiceBuilder builder)
+        public void Configure(ServiceBuilder builder)
         {
             IStorageService fileStorage = new LocalBinaryFileStorageService(directory, fileName, extention);
 

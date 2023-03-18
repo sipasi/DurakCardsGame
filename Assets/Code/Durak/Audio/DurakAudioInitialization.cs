@@ -1,13 +1,14 @@
 using Framework.Shared.Audios;
 using Framework.Shared.DependencyInjection;
-using Framework.Shared.DependencyInjection.Unity;
 using Framework.Shared.Services.Movements;
+
+using UnityEngine;
 
 namespace Framework.Durak.Audios
 {
-    internal class DurakAudioInitialization : ServiceInitialization, IDestroyable
+    internal class DurakAudioInitialization : MonoBehaviour, IInitializable, IDestroyable
     {
-        public override void Initialize(IDiContainer container)
+        public void Initialize(IDiContainer container)
         {
             var movement = container.Get<ICardMovementService>();
             var sounds = container.Get<ICardMovementSounds>();

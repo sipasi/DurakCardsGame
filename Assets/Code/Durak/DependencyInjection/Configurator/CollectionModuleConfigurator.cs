@@ -8,8 +8,7 @@ using Framework.Durak.Players;
 using Framework.Durak.Rules.Scriptables;
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Collections;
-using Framework.Shared.DependencyInjection;
-using Framework.Shared.DependencyInjection.Unity;
+using Framework.Shared.DependencyInjection; 
 
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -17,7 +16,7 @@ using UnityEngine.Assertions;
 namespace Framework.Durak.DependencyInjection.Configurators
 {
     [Serializable]
-    internal class CollectionModuleConfigurator : ServiceConfigurator
+    internal class CollectionModuleConfigurator : MonoBehaviour, IConfigurator
     {
         [Header("Deck")]
         [SerializeField] private PlayingDeckSize size;
@@ -26,11 +25,10 @@ namespace Framework.Durak.DependencyInjection.Configurators
         [SerializeField] private DataListCreator dataListCreator;
         [SerializeField] private CardListCreator cardListCreator;
         [SerializeField] private PlayerListCreator playerListCreator;
-        [SerializeField] private PlayerPlacesCreator playerPlacesCreator;
         [SerializeField] private CardMapCreator cardMapCreator;
         [SerializeField] private PlacesCreator placesCreator;
 
-        public override void Configure(ServiceBuilder builder)
+        public void Configure(ServiceBuilder builder)
         {
             Builder singleton = builder.singleton;
 
@@ -41,30 +39,27 @@ namespace Framework.Durak.DependencyInjection.Configurators
 
             IDeck<Data> deck = new Deck<Data>(datas);
 
-            IBoard<Data> board = new Board<Data>(6);
+            IBoard<Data> board = new Board<Data>(rowItemsCount: 6);
 
             IPlaces<Transform> places = placesCreator.Create();
 
             IDiscardPile discard = new DiscardPile();
 
-            IReadOnlyList<IPlayer> players = playerListCreator.Create();
-            IReadOnlyList<Transform> playerPlaces = playerPlacesCreator.Create();
-
-            Assert.AreEqual(players.Count, playerPlaces.Count);
+            playerListCreator.Create(out IReadOnlyList<IPlayer> players, out IMap<Place, ICardOwner> placeMap);
 
             IPlayerStorage<IPlayer> storage = new PlayerStorage<IPlayer>(players);
             IPlayerQueue<IPlayer> queue = new PlayerQueue<IPlayer>(storage);
 
             IMap<ICard, Data> cardMap = cardMapCreator.Create(cards, datas);
-            IMap<IPlayer, Transform> playerMap = new Map<IPlayer, Transform>(players, playerPlaces);
 
             singleton
-                .Add(cardMap)
+                .Add(datas)
                 .Add(deck)
                 .Add(board)
                 .Add(places)
                 .Add(discard)
-                .Add(playerMap)
+                .Add(cardMap)
+                .Add(placeMap)
                 .Add(storage)
                 .Add(queue);
         }

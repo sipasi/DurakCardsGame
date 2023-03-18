@@ -1,11 +1,12 @@
 ﻿using Framework.Shared.DependencyInjection;
-using Framework.Shared.DependencyInjection.Unity;
+
+using UnityEngine;
 
 namespace Framework.Durak.Services.Movements
 {
-    internal class DurakMovementsConfigurator : ServiceConfigurator
+    internal class DurakMovementsConfigurator : MonoBehaviour, IConfigurator
     {
-        public override void Configure(ServiceBuilder builder)
+        public void Configure(ServiceBuilder builder)
         {
             builder.singleton
                 .Add<IDataMovementService, DataMovementService>()

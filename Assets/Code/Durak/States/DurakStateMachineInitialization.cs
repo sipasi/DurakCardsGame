@@ -2,14 +2,15 @@
 using Framework.Durak.States.Actions;
 using Framework.Durak.States.Battles;
 using Framework.Shared.DependencyInjection;
-using Framework.Shared.DependencyInjection.Unity;
 using Framework.Shared.States;
+
+using UnityEngine;
 
 namespace Framework.Durak.States
 {
-    internal class DurakStateMachineInitialization : ServiceInitialization
+    internal class DurakStateMachineInitialization : MonoBehaviour, IInitializable
     {
-        public override void Initialize(IDiContainer container)
+        public void Initialize(IDiContainer container)
         {
             IStateMachineDefinition<DurakGameState> machine = container.Get<IStateMachineDefinition<DurakGameState>>();
 

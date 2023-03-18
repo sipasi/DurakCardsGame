@@ -3,20 +3,19 @@
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Cards.Views;
 using Framework.Shared.DependencyInjection;
-using Framework.Shared.DependencyInjection.Unity;
 
 using UnityEngine;
 
 namespace Framework.Durak.DependencyInjection.Configurators
 {
     [Serializable]
-    internal class CardsModuleConfigurator : ServiceConfigurator
+    internal class CardsModuleConfigurator : MonoBehaviour, IConfigurator
     {
         [Header("Temporary card")]
         [SerializeField] private CardPrefab prefab;
         [SerializeField] private Transform place;
 
-        public override void Configure(ServiceBuilder builder)
+        public void Configure(ServiceBuilder builder)
         {
             var instance = Instantiate(prefab, place);
 

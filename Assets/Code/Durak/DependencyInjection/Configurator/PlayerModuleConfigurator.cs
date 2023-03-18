@@ -7,7 +7,6 @@ using Framework.Durak.Players.Selectors;
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Collections;
 using Framework.Shared.DependencyInjection;
-using Framework.Shared.DependencyInjection.Unity;
 using Framework.Shared.Events;
 using Framework.Shared.Input;
 
@@ -16,11 +15,11 @@ using UnityEngine;
 namespace Framework.Durak.DependencyInjection.Configurators
 {
     [Serializable]
-    internal class PlayerModuleConfigurator : ServiceConfigurator
+    internal class PlayerModuleConfigurator : MonoBehaviour, IConfigurator
     {
         [SerializeField] private ScriptableAction pass;
 
-        public override void Configure(ServiceBuilder builder)
+        public void Configure(ServiceBuilder builder)
         {
             builder.singleton
                 .Add<AiRandomAttacker>()

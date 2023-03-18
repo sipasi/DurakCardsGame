@@ -1,5 +1,4 @@
 ﻿using Framework.Shared.DependencyInjection;
-using Framework.Shared.DependencyInjection.Unity;
 
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -9,7 +8,7 @@ using UnityEngine.UI;
 
 namespace Framework.Shared.Input
 {
-    public class UserInputConfigurator : ServiceConfigurator
+    public class UserInputConfigurator : MonoBehaviour, IConfigurator
     {
         private UserInputActions user;
 
@@ -24,7 +23,7 @@ namespace Framework.Shared.Input
             user?.Disable();
         }
 
-        public override void Configure(ServiceBuilder builder)
+        public void Configure(ServiceBuilder builder)
         {
             user = new UserInputActions();
 
