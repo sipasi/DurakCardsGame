@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -7,6 +8,7 @@ using Framework.Shared.Cards.Views;
 
 namespace Framework.Durak.Players
 {
+    [Serializable]
     public class Hand : IHand
     {
         private readonly List<Data> collection = new List<Data>();
