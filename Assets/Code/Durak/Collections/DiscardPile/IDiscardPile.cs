@@ -7,6 +7,8 @@ namespace Framework.Durak.Collections
 {
     public interface IDiscardPile : IDiscardPileReference, IEnumerable<Data>
     {
+        int Count { get; }
+
         void Add(Data data);
         void AddRange(IEnumerable<Data> datas);
 

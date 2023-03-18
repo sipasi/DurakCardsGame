@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -6,9 +7,12 @@ using Framework.Durak.Datas;
 
 namespace Framework.Durak.Collections
 {
+    [Serializable]
     public class DiscardPile : IDiscardPile
     {
         private List<Data> collection = new List<Data>();
+
+        public int Count => collection.Count;
 
         public void Add(Data data)
         {
