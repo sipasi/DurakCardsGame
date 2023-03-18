@@ -7,7 +7,7 @@ namespace Framework.Shared.States
 {
     public delegate T StateFactory<out T>();
 
-    public class StateMachine<TTrigger> : IStateMachine<TTrigger>, IStateMachineDefinition<TTrigger>
+    public class StateMachine<TTrigger> : IStateMachine<TTrigger>, IStateMachineDefinition<TTrigger>, IStateTriggerInfo<TTrigger>
     {
         private readonly Dictionary<Type, IStateDefinition> states
             = new Dictionary<Type, IStateDefinition>();
@@ -16,11 +16,15 @@ namespace Framework.Shared.States
 
         private (IStateDefinition Definition, IState State) current;
 
+        public TTrigger CurrentTrigger { get; private set; }
+
         public void Fire(TTrigger trigger)
         {
             var transition = (current.Definition?.Type, trigger);
 
             AssertTransition(transition, trigger);
+
+            CurrentTrigger = trigger;
 
             var definition = transitions[transition];
 
