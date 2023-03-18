@@ -1,17 +1,16 @@
 ﻿
 
 using Framework.Shared.DependencyInjection;
-using Framework.Shared.DependencyInjection.Unity;
 
 using UnityEngine;
 
 namespace Framework.Shared.Services.Tasks
 {
-    public sealed class TaskServiceExecutor : ServiceInitialization
+    public sealed class TaskServiceExecutor : MonoBehaviour, IInitializable
     {
         private ITaskServiceAsync task;
 
-        public sealed override void Initialize(IDiContainer container)
+        public void Initialize(IDiContainer container)
         {
             task = container.Get<ITaskServiceAsync>();
 

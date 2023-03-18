@@ -1,7 +1,8 @@
 ﻿
+using System.Linq;
+
 using Framework.Durak.DependencyInjection;
 using Framework.Shared.DependencyInjection;
-using Framework.Shared.DependencyInjection.Unity;
 
 using UnityEngine;
 
@@ -18,7 +19,7 @@ namespace Framework.Durak.Game
         {
             IDiContainer container = holder.Container = builder.Build();
 
-            var collection = FindObjectsOfType<ServiceInitialization>();
+            var collection = FindObjectsOfType<MonoBehaviour>().OfType<IInitializable>();
 
             foreach (var item in collection)
             {
