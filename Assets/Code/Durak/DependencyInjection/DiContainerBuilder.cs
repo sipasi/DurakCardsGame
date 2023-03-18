@@ -1,8 +1,8 @@
 ﻿
 using System;
+using System.Linq;
 
 using Framework.Shared.DependencyInjection;
-using Framework.Shared.DependencyInjection.Unity;
 
 using UnityEngine;
 
@@ -15,7 +15,7 @@ namespace Framework.Durak.DependencyInjection
         {
             var builder = new ServiceBuilder();
 
-            IConfigurator[] configurators = FindObjectsOfType<ServiceConfigurator>();
+            var configurators = FindObjectsOfType<MonoBehaviour>().OfType<IConfigurator>();
 
             foreach (var configurator in configurators)
             {
