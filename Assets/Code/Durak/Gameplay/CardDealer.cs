@@ -5,7 +5,9 @@ using Framework.Durak.Players;
 using Framework.Durak.Rules;
 using Framework.Durak.Services.Movements;
 using Framework.Durak.Ui.Views;
+using Framework.Shared.Cards.Entities;
 using Framework.Shared.Collections;
+using Framework.Shared.Collections.Extensions;
 
 namespace Framework.Durak.Gameplay
 {
@@ -15,14 +17,17 @@ namespace Framework.Durak.Gameplay
         private readonly IDeckUi deckUi;
         private readonly IPlayerStorage<IPlayer> storage;
 
+        private readonly IMap<Place, ICardOwner> map;
+
         private readonly IDurakRules rules;
         private readonly IDataMovementService movement;
 
-        public CardDealer(IDeck<Data> deck, IDeckUi deckUi, IPlayerStorage<IPlayer> storage, IDurakRules rules, IDataMovementService movement)
+        public CardDealer(IDeck<Data> deck, IDeckUi deckUi, IPlayerStorage<IPlayer> storage, IMap<Place, ICardOwner> map, IDurakRules rules, IDataMovementService movement)
         {
             this.deck = deck;
             this.deckUi = deckUi;
             this.storage = storage;
+            this.map = map;
             this.rules = rules;
             this.movement = movement;
         }
@@ -31,13 +36,15 @@ namespace Framework.Durak.Gameplay
         {
             foreach (var player in storage.Active)
             {
+                ICardOwner owner = map.Get(player.Place);
+
                 foreach (var data in Dealer.DealCards(deck, player.Hand, rules.MaxCardsInHand))
                 {
                     player.Hand.Add(data);
 
                     deckUi.UpdateCount();
 
-                    await movement.MoveToPlace(data, player.Owner, player.Hand.LookSide);
+                    await movement.MoveToPlace(data, owner, player.Hand.LookSide);
                 }
             }
         }

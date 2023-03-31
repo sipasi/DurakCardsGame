@@ -12,8 +12,10 @@ namespace Framework.Durak.Services.Movements
 {
     public interface IDataMovementService
     {
-        UniTask MoveToPlace(Data data, ICardOwner place, CardLookSide lookSide);
-        UniTask MoveToPlace(IReadOnlyList<Data> datas, ICardOwner place, CardLookSide lookSide);
+        UniTask MoveToPlace(Data data, ICardOwner place, CardLookSide lookSide); 
         UniTask MoveToPlace(IEnumerable<Data> datas, ICardOwner place, CardLookSide lookSide);
+
+        void Teleport(Data data, ICardOwner place, CardLookSide lookSide);
+        void Teleport(IEnumerable<Data> datas, ICardOwner place, CardLookSide lookSide);
     }
 }

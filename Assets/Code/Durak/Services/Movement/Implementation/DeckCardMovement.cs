@@ -5,7 +5,7 @@ using Framework.Shared.Structures.Links;
 
 namespace Framework.Durak.Services.Movements
 {
-    internal sealed class DeckCardMovement : CardMovementByLink<IDeckReference>, IDeckCardMovement
+    public sealed class DeckCardMovement : CardMovementByLink<IDeckReference>, IDeckCardMovement
     {
         public DeckCardMovement(IDataMovementService movement, IReadonlyLink<IDeckReference, ICardOwner> link)
             : base(movement, CardLookSide.Back, link) { }

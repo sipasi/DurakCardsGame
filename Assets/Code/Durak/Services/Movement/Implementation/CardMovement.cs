@@ -8,7 +8,7 @@ using Framework.Shared.Cards.Views;
 
 namespace Framework.Durak.Services.Movements
 {
-    internal abstract class CardMovement : ICardMovement
+    public abstract class CardMovement : ICardMovement
     {
         private readonly CardLookSide lookSide;
 
@@ -32,6 +32,19 @@ namespace Framework.Durak.Services.Movements
             ICardOwner target = GetTarget();
 
             return movement.MoveToPlace(datas, target, lookSide);
+        }
+
+        public void Teleport(Data data)
+        {
+            ICardOwner target = GetTarget();
+
+            movement.Teleport(data, target, lookSide);
+        }
+        public void Teleport(IEnumerable<Data> datas)
+        {
+            ICardOwner target = GetTarget();
+
+            movement.Teleport(datas, target, lookSide);
         }
 
         protected abstract ICardOwner GetTarget();

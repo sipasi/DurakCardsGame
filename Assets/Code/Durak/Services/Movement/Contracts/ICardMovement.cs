@@ -10,5 +10,8 @@ namespace Framework.Durak.Services.Movements
     {
         UniTask MoveTo(Data data);
         UniTask MoveTo(IEnumerable<Data> datas);
+
+        void Teleport(Data data);
+        void Teleport(IEnumerable<Data> datas);
     }
 }

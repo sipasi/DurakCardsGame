@@ -16,5 +16,7 @@ namespace Framework.Shared.Services.Movements
         UniTask MoveToParent(ICard temporary, ICard entity, ICardOwner owner, float speed);
 
         UniTask MoveToParent(ICard temporary, IReadOnlyList<ICard> entities, ICardOwner owner, float speed);
+
+        void Teleport(ICard temporary, ICard entity, ICardOwner owner);
     }
 }

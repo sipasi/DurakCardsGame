@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Framework.Durak.Services.Movements
 {
-    internal class CardMovementByLink<TLink> : CardMovement
+    public class CardMovementByLink<TLink> : CardMovement
     {
         private readonly IReadonlyLink<TLink, ICardOwner> link;
 

@@ -62,6 +62,13 @@ namespace Framework.Shared.Services.Movements
             pool.Return(process);
         }
 
+        public void Teleport(ICard temporary, ICard entity, ICardOwner owner)
+        {
+            preparation.BeforeMovement(temporary, entity, owner);
+
+            preparation.AfterMovement(temporary, entity);
+        }
+
         private IProcess GetProcess(ICardNavigation temporary, ICardNavigation card, float speed)
         {
             MoveProcess process = pool.Get<MoveProcess>();

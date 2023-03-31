@@ -47,5 +47,12 @@ namespace Framework.Shared.Services.Movements
                 await MoveToPlace(card, place, lookSide);
             }
         }
+
+        public void Teleport(ICard card, ICardOwner place, CardLookSide lookSide)
+        {
+            card.View.LookSide = lookSide;
+
+            movement.Teleport(temporary, card, place);
+        }
     }
 }
