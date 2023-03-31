@@ -1,31 +1,22 @@
 ﻿
-
 using Framework.Shared.DependencyInjection;
+using Framework.Shared.Services.Tasks;
 
 using UnityEngine;
 
-namespace Framework.Shared.Services.Tasks
+namespace Framework.Durak.Game.Initializators
 {
-    public sealed class TaskServiceExecutor : MonoBehaviour, IInitializable
+    public sealed class TaskServiceExecutor : MonoBehaviour
     {
         private ITaskServiceAsync task;
 
-        public void Initialize(IDiContainer container)
-        {
-            task = container.Get<ITaskServiceAsync>();
-
-            Enable();
-        }
+        public ITaskServiceAsync Task { get => task; set => task = value; }
 
         private void Awake()
         {
-            if (task != null)
-            {
-                return;
-            }
-
             Disable();
         }
+
         private void Update()
         {
             task.Execute(delta: Time.deltaTime);
