@@ -9,8 +9,7 @@ using Framework.Shared.Collections.Extensions;
 
 namespace Framework.Durak.Ui.Views
 {
-
-    internal class DeckUi : IDeckUi
+    public class DeckUi : IDeckUi
     {
         private readonly IDeck<Data> deck;
         private readonly IDeckView view;

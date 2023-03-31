@@ -2,7 +2,7 @@
 
 namespace Framework.Shared.Audios
 {
-    internal class SoundSystem : ISoundSystem
+    public class SoundSystem : ISoundSystem
     {
         private readonly AudioSource source;
 

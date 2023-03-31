@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 namespace Framework.Shared.Input
 {
-    internal class CardTapListener : ICardTapService, IInputHandler<RaycastResult>
+    public class CardTapListener : ICardTapService, IInputHandler<RaycastResult>
     {
         public event Tapped<ICard>? Tapped;
 

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Framework.Shared.Services.Tasks
 {
-    public sealed class TaskServiceAsync : TaskService, ITaskServiceAsync
+    public class TaskServiceAsync : TaskService, ITaskServiceAsync
     {
         [SerializeField] private PlayerLoopTiming monitorTiming = PlayerLoopTiming.Update;
 

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace Framework.Shared.Input
 {
-    internal class TapListener : ITapService
+    public class TapListener : ITapService
     {
         private readonly Pointer pointer;
 

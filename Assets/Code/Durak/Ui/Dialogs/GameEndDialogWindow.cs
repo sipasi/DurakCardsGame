@@ -4,7 +4,7 @@ using Framework.Shared.UI.Windows.Dialogs;
 
 namespace Framework.Durak.Ui.Windows.Dialogs
 {
-    internal sealed class GameEndDialogWindow : IGameEndDialogWindow
+    public sealed class GameEndDialogWindow : IGameEndDialogWindow
     {
         private readonly DialogWindow dialog;
 

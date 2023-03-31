@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Framework.Shared.Audios
 {
-    internal class CardMovementSounds : ICardMovementSounds
+    public class CardMovementSounds : ICardMovementSounds
     {
         private readonly ISoundSystem sound;
 
