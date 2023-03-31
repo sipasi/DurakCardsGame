@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -12,9 +10,6 @@ using Framework.Durak.Players;
 using Framework.Shared.Cards.Views;
 using Framework.Shared.Collections;
 using Framework.Shared.IO;
-using Framework.Shared.Serializations;
-
-using Newtonsoft.Json;
 
 using NUnit.Framework;
 

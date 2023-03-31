@@ -12,7 +12,8 @@ namespace Framework.Shared.Services.Tasks
 
         public void Execute(float delta)
         {
-            if (!HasAny()) return;
+            if (!HasAny())
+                return;
 
             var process = queue.Peek();
 

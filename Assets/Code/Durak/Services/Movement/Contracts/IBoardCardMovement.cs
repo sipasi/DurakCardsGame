@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-
-using Framework.Durak.Datas;
+﻿using Framework.Durak.Datas;
 
 namespace Framework.Durak.Services.Movements
 {

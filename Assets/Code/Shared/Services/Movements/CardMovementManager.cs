@@ -6,8 +6,6 @@ using Cysharp.Threading.Tasks;
 using Framework.Shared.Cards.Entities;
 using Framework.Shared.Cards.Views;
 
-using UnityEngine;
-
 namespace Framework.Shared.Services.Movements
 {
     public class CardMovementManager : ICardMovementManager

@@ -1,5 +1,4 @@
-﻿using Framework.Durak.Game;
-using Framework.Durak.Ui.Views;
+﻿using Framework.Durak.Ui.Views;
 using Framework.Durak.Ui.Windows.Dialogs;
 using Framework.Shared.DependencyInjection;
 using Framework.Shared.UI.Windows.Dialogs;

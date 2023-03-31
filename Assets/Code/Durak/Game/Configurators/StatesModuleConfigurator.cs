@@ -1,5 +1,4 @@
-﻿using Framework.Durak.Game;
-using Framework.Durak.States;
+﻿using Framework.Durak.States;
 using Framework.Durak.States.Actions;
 using Framework.Durak.States.Battles;
 using Framework.Shared.DependencyInjection;

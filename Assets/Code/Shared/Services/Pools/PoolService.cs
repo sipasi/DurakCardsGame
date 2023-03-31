@@ -46,7 +46,8 @@ namespace Framework.Shared.Services.Pools
 
         private void ReuseEntity(object entity)
         {
-            if (entity is IReusable reusable) reusable.Reuse();
+            if (entity is IReusable reusable)
+                reusable.Reuse();
         }
     }
 }

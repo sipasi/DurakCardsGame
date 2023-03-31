@@ -24,9 +24,11 @@ namespace Framework.Shared.Collections
             ref Item attacker = ref Current.attacker;
             ref Item defender = ref Current.defender;
 
-            if (attacker.IsEmpty) return ToAttacks();
+            if (attacker.IsEmpty)
+                return ToAttacks();
 
-            if (defender.IsEmpty) return ToDefends();
+            if (defender.IsEmpty)
+                return ToDefends();
 
             return ToAttacks();
         }

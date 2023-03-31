@@ -1,6 +1,4 @@
-﻿
-using Framework.Shared.DependencyInjection;
-using Framework.Shared.Services.Tasks;
+﻿using Framework.Shared.Services.Tasks;
 
 using UnityEngine;
 

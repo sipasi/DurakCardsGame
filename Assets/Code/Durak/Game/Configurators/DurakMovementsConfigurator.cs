@@ -1,5 +1,4 @@
-﻿using Framework.Durak.Game;
-using Framework.Durak.Services.Movements;
+﻿using Framework.Durak.Services.Movements;
 using Framework.Shared.DependencyInjection;
 
 using UnityEngine;

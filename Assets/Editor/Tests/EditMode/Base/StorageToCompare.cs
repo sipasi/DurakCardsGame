@@ -22,7 +22,8 @@ namespace Framework.Shared.Tests
 
             var countResult = local.Count == storage.Count;
 
-            if (countResult is false) return false;
+            if (countResult is false)
+                return false;
 
             SaveData saveData = storage.Restore<SaveData>(key);
             SaveData localSaveData = local.Restore<SaveData>(key);

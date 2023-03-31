@@ -1,5 +1,4 @@
-﻿using Framework.Durak.Saves;
-using Framework.Shared.DependencyInjection;
+﻿using Framework.Shared.DependencyInjection;
 
 namespace Framework.Durak.Game
 {

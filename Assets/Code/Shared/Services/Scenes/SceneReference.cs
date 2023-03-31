@@ -45,7 +45,8 @@
         {
             get
             {
-                if (!sceneAsset) return false;
+                if (!sceneAsset)
+                    return false;
 
                 return sceneAsset is SceneAsset;
             }
@@ -120,7 +121,8 @@
             if (IsValidSceneAsset == false && string.IsNullOrEmpty(scenePath) == false)
             {
                 sceneAsset = GetSceneAssetFromPath();
-                if (sceneAsset == null) scenePath = string.Empty;
+                if (sceneAsset == null)
+                    scenePath = string.Empty;
 
                 EditorSceneManager.MarkAllScenesDirty();
             }
@@ -135,16 +137,20 @@
         {
             EditorApplication.update -= HandleAfterDeserialize;
             // Asset is valid, don't do anything - Path will always be set based on it when it matters
-            if (IsValidSceneAsset) return;
+            if (IsValidSceneAsset)
+                return;
 
             // Asset is invalid but have path to try and recover from
-            if (string.IsNullOrEmpty(scenePath)) return;
+            if (string.IsNullOrEmpty(scenePath))
+                return;
 
             sceneAsset = GetSceneAssetFromPath();
             // No asset found, path was invalid. Make sure we don't carry over the old invalid path
-            if (!sceneAsset) scenePath = string.Empty;
+            if (!sceneAsset)
+                scenePath = string.Empty;
 
-            if (!Application.isPlaying) EditorSceneManager.MarkAllScenesDirty();
+            if (!Application.isPlaying)
+                EditorSceneManager.MarkAllScenesDirty();
         }
 #endif
     }
@@ -218,7 +224,8 @@
                     if (EditorGUI.EndChangeCheck())
                     {
                         // If no valid scene asset was selected, reset the stored path accordingly
-                        if (buildScene.scene == null) GetScenePathProperty(property).stringValue = string.Empty;
+                        if (buildScene.scene == null)
+                            GetScenePathProperty(property).stringValue = string.Empty;
                     }
 
                     position.y += paddedLine;
@@ -364,7 +371,8 @@
                 var content = new GUIContent(msgLong) { tooltip = tooltip };
 
                 var longWidth = style.CalcSize(content).x;
-                if (longWidth > position.width) content.text = msgShort;
+                if (longWidth > position.width)
+                    content.text = msgShort;
 
                 return GUI.Button(position, content, style);
             }
@@ -419,7 +427,8 @@
                 var curTime = Time.realtimeSinceStartup;
                 var timeSinceLastCheck = curTime - lastTimeChecked;
 
-                if (!(timeSinceLastCheck > minCheckWait)) return cachedReadonlyVal;
+                if (!(timeSinceLastCheck > minCheckWait))
+                    return cachedReadonlyVal;
 
                 lastTimeChecked = curTime;
                 cachedReadonlyVal = QueryBuildSettingsStatus();
@@ -434,10 +443,12 @@
             private static bool QueryBuildSettingsStatus()
             {
                 // If no version control provider, assume not readonly
-                if (!Provider.enabled) return false;
+                if (!Provider.enabled)
+                    return false;
 
                 // If we cannot checkout, then assume we are not readonly
-                if (!Provider.hasCheckoutSupport) return false;
+                if (!Provider.hasCheckoutSupport)
+                    return false;
 
                 //// If offline (and are using a version control provider that requires checkout) we cannot edit.
                 //if (UnityEditor.VersionControl.Provider.onlineState == UnityEditor.VersionControl.OnlineState.Offline)
@@ -448,7 +459,8 @@
                 status.Wait();
 
                 // If no status listed we can edit
-                if (status.assetList == null || status.assetList.Count != 1) return true;
+                if (status.assetList == null || status.assetList.Count != 1)
+                    return true;
 
                 // If is checked out, we can edit
                 return !status.assetList[0].IsState(Asset.States.CheckedOutLocal);
@@ -465,7 +477,8 @@
                     assetGUID = new GUID(string.Empty)
                 };
 
-                if (sceneObject as SceneAsset == null) return entry;
+                if (sceneObject as SceneAsset == null)
+                    return entry;
 
                 entry.assetPath = AssetDatabase.GetAssetPath(sceneObject);
                 entry.assetGUID = new GUID(AssetDatabase.AssetPathToGUID(entry.assetPath));
@@ -473,7 +486,8 @@
                 var scenes = EditorBuildSettings.scenes;
                 for (var index = 0; index < scenes.Length; ++index)
                 {
-                    if (!entry.assetGUID.Equals(scenes[index].guid)) continue;
+                    if (!entry.assetGUID.Equals(scenes[index].guid))
+                        continue;
 
                     entry.scene = scenes[index];
                     entry.buildIndex = index;
@@ -496,7 +510,8 @@
                     modified = true;
                     break;
                 }
-                if (modified) EditorBuildSettings.scenes = scenesToModify;
+                if (modified)
+                    EditorBuildSettings.scenes = scenesToModify;
             }
 
             /// <summary>

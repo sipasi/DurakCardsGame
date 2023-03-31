@@ -55,24 +55,39 @@ namespace Framework.Shared.Tests
 
         public bool Compare(SaveData save)
         {
-            if (datas.SequenceEqual(save.datas) is false) return false;
-            if (guids.SequenceEqual(save.guids) is false) return false;
-            if (list.SequenceEqual(save.list) is false) return false;
-            if (dictionary.SequenceEqual(save.dictionary) is false) return false;
+            if (datas.SequenceEqual(save.datas) is false)
+                return false;
+            if (guids.SequenceEqual(save.guids) is false)
+                return false;
+            if (list.SequenceEqual(save.list) is false)
+                return false;
+            if (dictionary.SequenceEqual(save.dictionary) is false)
+                return false;
 
-            if (deck.SequenceEqual(save.deck) is false) return false;
-            if (board.SequenceEqual(save.board) is false) return false;
-            if (indexes.SequenceEqual(save.indexes) is false) return false;
-            if (map.Reverse.SequenceEqual(save.map.Reverse) is false) return false;
-            if (map.Forward.SequenceEqual(save.map.Forward) is false) return false;
+            if (deck.SequenceEqual(save.deck) is false)
+                return false;
+            if (board.SequenceEqual(save.board) is false)
+                return false;
+            if (indexes.SequenceEqual(save.indexes) is false)
+                return false;
+            if (map.Reverse.SequenceEqual(save.map.Reverse) is false)
+                return false;
+            if (map.Forward.SequenceEqual(save.map.Forward) is false)
+                return false;
 
-            if (players.Select(p => p.Name).SequenceEqual(save.players.Select(p => p.Name)) is false) return false;
-            if (playerStorage.All.Select(p => p.Name).SequenceEqual(save.playerStorage.All.Select(p => p.Name)) is false) return false;
-            if (playerStorage.Active.Select(p => p.Name).SequenceEqual(save.playerStorage.Active.Select(p => p.Name)) is false) return false;
-            if (playerStorage.Removed.Select(p => p.Name).SequenceEqual(save.playerStorage.Removed.Select(p => p.Name)) is false) return false;
+            if (players.Select(p => p.Name).SequenceEqual(save.players.Select(p => p.Name)) is false)
+                return false;
+            if (playerStorage.All.Select(p => p.Name).SequenceEqual(save.playerStorage.All.Select(p => p.Name)) is false)
+                return false;
+            if (playerStorage.Active.Select(p => p.Name).SequenceEqual(save.playerStorage.Active.Select(p => p.Name)) is false)
+                return false;
+            if (playerStorage.Removed.Select(p => p.Name).SequenceEqual(save.playerStorage.Removed.Select(p => p.Name)) is false)
+                return false;
 
-            if (playerQueue.Attacker.Name != save.playerQueue.Attacker.Name) return false;
-            if (playerQueue.Defender.Name != save.playerQueue.Defender.Name) return false;
+            if (playerQueue.Attacker.Name != save.playerQueue.Attacker.Name)
+                return false;
+            if (playerQueue.Defender.Name != save.playerQueue.Defender.Name)
+                return false;
 
             return true;
         }

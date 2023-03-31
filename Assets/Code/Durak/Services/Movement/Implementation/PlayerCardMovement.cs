@@ -8,8 +8,6 @@ using Framework.Shared.Cards.Entities;
 using Framework.Shared.Collections;
 using Framework.Shared.Collections.Extensions;
 
-using static UnityEngine.UI.GridLayoutGroup;
-
 namespace Framework.Durak.Services.Movements
 {
     public sealed class PlayerCardMovement : IPlayerCardMovement

@@ -6,8 +6,6 @@ using Framework.Shared.Cards.Entities;
 using Framework.Shared.Services.Pools;
 using Framework.Shared.Services.Tasks;
 
-using UnityEngine;
-
 namespace Framework.Shared.Services.Movements
 {
     public delegate void CardMovementNotifyHandler();

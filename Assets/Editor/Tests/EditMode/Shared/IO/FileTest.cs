@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.IO;
-
-using Cysharp.Threading.Tasks;
+﻿using System.IO;
 
 using Framework.Shared.IO;
 using Framework.Shared.Tests;
@@ -9,7 +6,6 @@ using Framework.Shared.Tests;
 using NUnit.Framework;
 
 using UnityEngine;
-using UnityEngine.TestTools;
 
 namespace ProjectCard.Editor.TestModule.IO
 {

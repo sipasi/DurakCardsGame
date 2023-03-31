@@ -2,8 +2,6 @@
 using Framework.Shared.Cards.Views;
 using Framework.Shared.Structures.Links;
 
-using UnityEngine;
-
 namespace Framework.Durak.Services.Movements
 {
     public class CardMovementByLink<TLink> : CardMovement
