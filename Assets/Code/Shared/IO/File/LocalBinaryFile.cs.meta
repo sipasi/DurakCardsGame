@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Code/Durak/Collections/DiscardPile/IDiscardPile.cs.meta
+guid: 9cee50018a54fb04faed7c64955189a4
+=======
+guid: f388a29d799efc541988780abd053050
+>>>>>>> refactor rewrite:Assets/Code/Shared/IO/File/LocalBinaryFile.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

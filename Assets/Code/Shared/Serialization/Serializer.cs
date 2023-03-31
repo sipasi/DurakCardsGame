@@ -1,43 +1,19 @@
-﻿
-using System;
+﻿using System;
 using System.IO;
-
-using Cysharp.Threading.Tasks;
 
 using UnityEngine;
 
 namespace Framework.Shared.Serializations
 {
-    public abstract class Serializer : ISerializer, IDeserializer
+    public abstract class Serializer : ISerializer
     {
-        public async UniTask<T> Deserialize<T>(Stream stream)
-        {
-            T result = default;
-
-            var type = typeof(T);
-
-            try
-            {
-                result = await DeserializeObject<T>(stream);
-            }
-            catch (Exception ex)
-            {
-                string exception = ex.Message;
-
-                Message(log: Debug.LogWarning, action: nameof(DeserializeObject), exception);
-
-                return default;
-            }
-
-            return result;
-        }
-        public async UniTask<bool> Serialize<T>(Stream stream, T data)
+        public bool Serialize<T>(Stream stream, T data)
         {
             var type = typeof(T);
 
             try
             {
-                await SerializeObject(stream, data);
+                SerializeObject(stream, data);
             }
             catch (Exception ex)
             {
@@ -50,9 +26,30 @@ namespace Framework.Shared.Serializations
 
             return true;
         }
+        public T Deserialize<T>(Stream stream)
+        {
+            T result = default;
 
-        protected abstract UniTask<T> DeserializeObject<T>(Stream stream);
-        protected abstract UniTask SerializeObject<T>(Stream stream, T data);
+            var type = typeof(T);
+
+            try
+            {
+                result = DeserializeObject<T>(stream);
+            }
+            catch (Exception ex)
+            {
+                string exception = ex.Message;
+
+                Message(log: Debug.LogWarning, action: nameof(DeserializeObject), exception);
+
+                return default;
+            }
+
+            return result;
+        }
+
+        protected abstract void SerializeObject<T>(Stream stream, T data);
+        protected abstract T DeserializeObject<T>(Stream stream);
 
         private void Message(Action<object> log, string action, string exception = null)
         {

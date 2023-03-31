@@ -1,35 +1,32 @@
-﻿
-
-using System.IO;
-
-using Cysharp.Threading.Tasks;
+﻿using System.IO;
 
 using Framework.Shared.Serializations;
 
 namespace Framework.Shared.IO
 {
-    public abstract class LocalFileSerializer : Serializer, IFileAsync
+    public class LocalFile<T> : IFile<T>
     {
         private readonly FileInfo file;
+        private readonly ISerializer serializer;
 
+        public LocalFile(ISerializer serializer, string path)
+        {
+            file = new FileInfo(path);
 
-        public LocalFileSerializer(string directory, string name)
-            : this(Path.Combine(directory, name)) { }
-        public LocalFileSerializer(string path)
-            => file = new FileInfo(path);
+            this.serializer = serializer;
+        }
 
-
-        public async UniTask<T> LoadAsync<T>()
+        public T Load()
         {
             using FileStream stream = GetFileStream(FileMode.OpenOrCreate, FileAccess.Read);
 
-            return await Deserialize<T>(stream);
+            return serializer.Deserialize<T>(stream);
         }
-        public async UniTask<bool> SaveAsync<T>(T data)
+        public bool Save(T data)
         {
             using FileStream stream = GetFileStream(FileMode.Create, FileAccess.Write);
 
-            return await Serialize(stream, data);
+            return serializer.Serialize(stream, data);
         }
 
         private FileStream GetFileStream(FileMode mode, FileAccess access, FileShare share = FileShare.None)
