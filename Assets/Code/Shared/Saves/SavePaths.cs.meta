@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Code/Durak/Collections/DiscardPile/IDiscardPile.cs.meta
+guid: 3720b656b616d7a4c8341a633be2f0a8
+=======
+guid: 076997bbff6fc7342b4d5a393ee043b7
+>>>>>>> refactor: rewrite old save system. Move from Framework.Shared.Services.Saves to Framework.Shared.Saves namespace:Assets/Code/Shared/Saves/SavePaths.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

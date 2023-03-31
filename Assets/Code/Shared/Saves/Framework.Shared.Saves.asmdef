@@ -2,8 +2,9 @@
     "name": "Framework.Shared.Saves",
     "rootNamespace": "Framework.Shared.Saves",
     "references": [
-        "GUID:676b16af7f5e5a14ba40aeff55d44347",
-        "GUID:c23d8554e1fa8c74a8918184075c8fbf"
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:11c7c1f836db5d8478002474feaa884f",
+        "GUID:9ba0b5fd22746764dba8f226114c72fc"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
