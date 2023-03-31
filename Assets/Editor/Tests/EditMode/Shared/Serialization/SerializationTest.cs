@@ -8,26 +8,12 @@ using Framework.Shared.Tests;
 
 using NUnit.Framework;
 
-namespace Framework.Shared.Serialization.Tests
+namespace Framework.Shared.Serialization
 {
-    public abstract class EntitySerialization
+    public abstract class SerializationTest
     {
         [Test]
-        public void SaveData_SerializationDeserialization_True()
-        {
-            SerializationDeserialization(DataToCompare.data, out var deserialized);
-
-            Assert.IsTrue(DataToCompare.Compare(deserialized));
-        }
-        [Test]
-        public void StorageGuid_SerializationDeserialization_True()
-        {
-            SerializationDeserialization(StorageToCompare<Guid>._storage, out var deserialized);
-
-            Assert.IsTrue(StorageToCompare<Guid>.Compare(deserialized));
-        }
-        [Test]
-        public void DeckData_SerializationDeserialization_True()
+        public void DeckData_True()
         {
             Deck<Data> entity = EntityCreator.CreateDeck(count: 56);
 
@@ -36,7 +22,7 @@ namespace Framework.Shared.Serialization.Tests
             Assert.IsTrue(entity.SequenceEqual(deserialized));
         }
         [Test]
-        public void BoardData_SerializationDeserialization_True()
+        public void BoardData_True()
         {
             Board<Data> entity = EntityCreator.CreateBoard(row_count: 6);
 
@@ -45,7 +31,7 @@ namespace Framework.Shared.Serialization.Tests
             Assert.IsTrue(entity.SequenceEqual(deserialized));
         }
         [Test]
-        public void DecrementalIndexes_SerializationDeserialization_True()
+        public void DecrementalIndexes_True()
         {
             DecrementalIndexes entity = EntityCreator.CreateDecrementalIndexes(count: 6);
 
@@ -53,8 +39,24 @@ namespace Framework.Shared.Serialization.Tests
 
             Assert.IsTrue(entity.SequenceEqual(deserialized));
         }
+
+        [Test()]
+        public void SaveData_True()
+        {
+            SerializationDeserialization(DataToCompare.data, out var deserialized);
+
+            Assert.IsTrue(DataToCompare.Compare(deserialized));
+        }
         [Test]
-        public void MapGuidData_SerializationDeserialization_True()
+        public void StorageGuid_True()
+        {
+            SerializationDeserialization(StorageToCompare<Guid>._storage, out var deserialized);
+
+            Assert.IsTrue(StorageToCompare<Guid>.Compare(deserialized));
+        }
+
+        [Test]
+        public void MapGuidData_True()
         {
             int count = 10;
 
@@ -76,26 +78,36 @@ namespace Framework.Shared.Serialization.Tests
             Assert.IsTrue(deserialized.Count == deserialized.Forward.Count);
         }
 
-
         protected abstract void Serialize<T>(Stream stream, T data);
-        protected abstract object Deserialize(Stream stream);
+        protected abstract T Deserialize<T>(Stream stream);
 
         private void SerializationDeserialization<T>(T origin, out T deserialized)
             where T : class
         {
-            using MemoryStream stream = new MemoryStream();
+            using MemoryStream serialization = new();
 
             try
             {
-                Serialize(stream, origin);
+                Serialize(serialization, origin);
 
-                stream.Flush();
+                serialization.Flush();
 
-                stream.Position = 0;
+                serialization.Position = 0;
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
 
-                var result = Deserialize(stream);
+                deserialized = default;
 
-                deserialized = result as T;
+                return;
+            }
+
+            using MemoryStream deserialization = new(serialization.GetBuffer());
+
+            try
+            {
+                deserialized = Deserialize<T>(deserialization);
             }
             catch (Exception ex)
             {

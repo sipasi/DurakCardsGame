@@ -19,28 +19,28 @@ namespace ProjectCard.Editor.TestModule.IO
         protected string FullPath
             => Path.Combine(Application.persistentDataPath, "Test", nameof(IO), LocalPath);
 
-        protected abstract IFileAsync GetFile();
+        protected abstract IFile<SaveData> GetFile();
 
-        [UnityTest]
-        public IEnumerator SaveLoad_True()
+        [Test]
+        public void SaveLoad_True()
         {
-            yield return SaveSerializableOperation().ToCoroutine();
-            yield return LoadSerializableOperation().ToCoroutine();
+            SaveSerializableOperation();
+            LoadSerializableOperation();
         }
 
-        private async UniTask SaveSerializableOperation()
+        private void SaveSerializableOperation()
         {
-            IFileAsync file = GetFile();
+            IFile<SaveData> file = GetFile();
 
-            bool result = await file.SaveAsync(DataToCompare.data);
+            bool result = file.Save(DataToCompare.data);
 
             Assert.IsTrue(result);
         }
-        private async UniTask LoadSerializableOperation()
+        private void LoadSerializableOperation()
         {
-            IFileAsync file = GetFile();
+            IFile<SaveData> file = GetFile();
 
-            var result = await file.LoadAsync<SaveData>();
+            var result = file.Load();
 
             Assert.IsNotNull(result);
 

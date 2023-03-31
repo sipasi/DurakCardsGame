@@ -1,4 +1,5 @@
 ﻿using Framework.Shared.IO;
+using Framework.Shared.Tests;
 
 namespace ProjectCard.Editor.TestModule.IO
 {
@@ -6,6 +7,6 @@ namespace ProjectCard.Editor.TestModule.IO
     {
         protected override string LocalPath => "file.binary";
 
-        protected override IFileAsync GetFile() => new BinaryFile(FullPath);
+        protected override IFile<SaveData> GetFile() => new LocalBinaryFile<SaveData>(FullPath);
     }
 }
