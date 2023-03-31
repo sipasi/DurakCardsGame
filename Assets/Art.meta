@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Art.meta
 guid: 3728c3f9e10f84a499d9580940883177
+=======
+guid: 02dcbcfa30020b849ac515bb12faf1cc
+>>>>>>> refactor:Assets/Code/Durak/Saves.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
