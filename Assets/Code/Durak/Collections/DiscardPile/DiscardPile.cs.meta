@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Code/Durak/Collections/DiscardPile/DiscardPile.cs.meta
 guid: 931161a14d9a8ab4a890c6a0a15b4456
+=======
+guid: 72ee137cb674a6749b32a61974cd10e3
+>>>>>>> refactor: rewrite old save system. Move from Framework.Shared.Services.Saves to Framework.Shared.Saves namespace:Assets/Code/Shared/Saves/ISaveMetadata.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

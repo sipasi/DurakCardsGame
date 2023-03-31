@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Code/Durak/Collections/DiscardPile/IDiscardPileReference.cs.meta
 guid: a44f286075955fd4ebf0ff5565d854d0
+=======
+guid: ecf5c6c577e988943958455546d421c2
+>>>>>>> refactor rewrite:Assets/Code/Shared/IO/File/IFile.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
